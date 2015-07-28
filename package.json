@@ -1,0 +1,22 @@
+{
+  "name": "redmine-theme-minimalflat2",
+  "version": "1.0.0",
+  "description": "Minimal and flat design theme for Redmine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akabekobeko/redmine-theme-minimalflat2.git"
+  },
+  "keywords": [
+    "Redmine"
+  ],
+  "author": "akabeko",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/akabekobeko/redmine-theme-minimalflat2/issues"
+  },
+  "homepage": "https://github.com/akabekobeko/redmine-theme-minimalflat2#readme"
+}
