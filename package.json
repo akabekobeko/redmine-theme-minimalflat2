@@ -4,6 +4,7 @@
   "description": "Minimal and flat design theme for Redmine.",
   "main": "index.js",
   "scripts": {
+    "start": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/akabekobeko/redmine-theme-minimalflat2/issues"
   },
-  "homepage": "https://github.com/akabekobeko/redmine-theme-minimalflat2#readme"
+  "homepage": "https://github.com/akabekobeko/redmine-theme-minimalflat2#readme",
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5"
+  }
 }
