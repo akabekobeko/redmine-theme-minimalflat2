@@ -1,0 +1,8 @@
+node_modules/
+dist/
+src/javascripts
+src/stylesheets
+
+.*
+.map
+!.gitignore
