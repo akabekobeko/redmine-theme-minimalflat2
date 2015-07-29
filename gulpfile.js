@@ -24,12 +24,14 @@ gulp.task( 'clean', function( done ) {
   del( [ common.dest ], done );
 } );
 
-// リリース用イメージのビルド
-gulp.task( 'build', [ 'clean', 'stylus' ], function() {
-  // README など
+// リリース用ドキュメントのコピー
+gulp.task( 'doc', [ 'clean' ], function() {
   gulp.src( [ './README.md', './LICENSE' ] )
     .pipe( gulp.dest( common.dest ) );
+} );
 
+// リリース用イメージのビルド
+gulp.task( 'build', [ 'doc', 'stylus' ], function() {
   var src = [
     common.src + '/stylesheets/application.css',
     common.src + '/javascripts/theme.js',
