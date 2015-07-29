@@ -4,5 +4,6 @@ src/javascripts
 src/stylesheets
 
 .*
-.map
+*.map
+*.zip
 !.gitignore
