@@ -13,7 +13,7 @@ gulp.task( 'stylus', function() {
     .pipe( $.plumber() )
     .pipe( $.sourcemaps.init() )
     .pipe( $.stylus() )
-    .pipe( $.rename( 'bundle.css' ) )
+    .pipe( $.rename( 'application.css' ) )
     .pipe( $.sourcemaps.write( '.' ) )
     .pipe( gulp.dest( common.src + '/stylesheets' ) );
 } );
