@@ -9,7 +9,11 @@ table.list {
   width 100%
   margin-bottom 4px
 
-  th {  background-color:#EEEEEE; padding: 4px; white-space:nowrap; }
+  th {
+    background-color #EEEEEE
+    padding 4px
+    white-space nowrap
+  }
 
   td {
     text-align center
@@ -90,7 +94,7 @@ table.list {
     }
 
     &:hover {
-      background-color:#ffffdd
+      background-color #ffffdd
     }
   }
 }
@@ -101,22 +105,48 @@ tr.project {
   }
 
   &.closed, &.archived, &.archived a {
-    color: #aaa
+    color #aaa
   }
 
   &.idnt td.name span {
     icon( icon_chevron_right, color_gray_dark )
   }
 
-  &.idnt-1 td.name { padding-left: 0.5em;  }
-  &.idnt-2 td.name { padding-left: 2em;    }
-  &.idnt-3 td.name { padding-left: 3.5em;  }
-  &.idnt-4 td.name { padding-left: 5em;    }
-  &.idnt-5 td.name { padding-left: 6.5em;  }
-  &.idnt-6 td.name { padding-left: 8em;    }
-  &.idnt-7 td.name { padding-left: 9.5em;  }
-  &.idnt-8 td.name { padding-left: 11em;   }
-  &.idnt-9 td.name { padding-left: 12.5em; }
+  &.idnt-1 td.name {
+    padding-left .5em
+  }
+  
+  &.idnt-2 td.name {
+    padding-left 2em
+  }
+  
+  &.idnt-3 td.name {
+    padding-left 3.5em
+  }
+  
+  &.idnt-4 td.name {
+    padding-left 5em
+  }
+  
+  &.idnt-5 td.name {
+    padding-left 6.5em
+  }
+  
+  &.idnt-6 td.name {
+    padding-left 8em
+  }
+  
+  &.idnt-7 td.name {
+    padding-left 9.5em
+  }
+  
+  &.idnt-8 td.name {
+    padding-left 11em
+  }
+  
+  &.idnt-9 td.name {
+    padding-left 12.5em
+  }
 }
 
 tr.issue {
@@ -144,15 +174,41 @@ tr.issue {
     icon( icon_chevron_right, color_gray_dark )
   }
 
-  &.idnt-1 td.subject { padding-left: 0.5em;  }
-  &.idnt-2 td.subject { padding-left: 2em;    }
-  &.idnt-3 td.subject { padding-left: 3.5em;  }
-  &.idnt-4 td.subject { padding-left: 5em;    }
-  &.idnt-5 td.subject { padding-left: 6.5em;  }
-  &.idnt-6 td.subject { padding-left: 8em;    }
-  &.idnt-7 td.subject { padding-left: 9.5em;  }
-  &.idnt-8 td.subject { padding-left: 11em;   }
-  &.idnt-9 td.subject { padding-left: 12.5em; }
+  &.idnt-1 td.subject {
+    padding-left 0.5em
+  }
+
+  &.idnt-2 td.subject {
+    padding-left 2em
+  }
+
+  &.idnt-3 td.subject {
+    padding-left 3.5em
+  }
+
+  &.idnt-4 td.subject {
+    padding-left 5em
+  }
+
+  &.idnt-5 td.subject {
+    padding-left 6.5em
+  }
+
+  &.idnt-6 td.subject {
+    padding-left 8em
+  }
+
+  &.idnt-7 td.subject {
+    padding-left 9.5em
+  }
+
+  &.idnt-8 td.subject {
+    padding-left 11em
+  }
+
+  &.idnt-9 td.subject {
+    padding-left 12.5em
+  }
 }
 
 table.issues td.description {
@@ -176,7 +232,7 @@ tr.entry {
   border 1px solid #f8f8f8
 
   td {
-    white-space: nowrap
+    white-space nowrap
 
     &.filename {
       width 30%
@@ -332,7 +388,7 @@ tr.user {
   }
 
   &.locked, &.locked a, &.registered, &.registered a {
-    color: #aaa
+    color #aaa
   }
 }
 
@@ -340,14 +396,37 @@ td.username, td.firstname, td.lastname, td.email {
   text-align left !important
 }
 
-table.permissions td.role {color:#999;font-size:90%;font-weight:normal !important;text-align:center;vertical-align:bottom;}
+table.permissions td.role {
+  color #999
+  font-size .9em
+  font-weight normal !important
+  text-align center
+  vertical-align bottom
+}
 
-tr.wiki-page-version td.updated_on, tr.wiki-page-version td.author {text-align:center;}
+tr.wiki-page-version td.updated_on, tr.wiki-page-version td.author {
+  text-align center
+}
 
-tr.time-entry { text-align: center; white-space: nowrap; }
-tr.time-entry td.issue, tr.time-entry td.comments { text-align: left; white-space: normal; }
-td.hours { text-align: right; font-weight: bold; padding-right: 0.5em; }
-td.hours .hours-dec { font-size: 0.9em; }
+tr.time-entry {
+  text-align center
+  white-space nowrap
+
+  td.issue, td.comments {
+    text-align left
+    white-space normal
+  }
+}
+
+td.hours {
+  text-align right
+  font-weight bold
+  padding-right .5em
+
+  .hours-dec {
+    font-size .9em
+  }
+}
 
 // Plugins
 table.plugins {
@@ -469,7 +548,9 @@ table.query-columns {
   }
 }
 
-td.center {text-align:center;}
+td.center {
+  text-align center
+}
 
 h3.version:before {
   icon( icon_package, color_yellow )
@@ -517,10 +598,12 @@ span#watchers_inputs {
   display block
 }
 
-span.search_for_watchers {display:block;}
+span.search_for_watchers {
+  display block
+}
 
 span.search_for_watchers, span.add_attachment {
-  font-size 80%
+  font-size .8em
   line-height 2.5em
 }
 
@@ -561,7 +644,8 @@ div.square {
   float left
   margin .3em .4em 0 .4em
   overflow hidden
-  width .6em; height: .6em
+  width .6em
+  height .6em
 }
 .contextual {
   float right
@@ -576,7 +660,9 @@ div.square {
   }
 }
 
-.message .contextual { margin-top: 0; }
+.message .contextual {
+  margin-top 0
+}
 
 .splitcontent {
   overflow auto
@@ -602,35 +688,80 @@ input, select {
   margin-bottom 1px
 }
 
-fieldset {border: 1px solid #e4e4e4; margin:0;}
+fieldset {
+  border 1px solid #e4e4e4
+  margin 0
+}
 
-legend {color: #484848;}
+legend {
+  color #484848
+}
 
-hr { width: 100%; height: 1px; background: #ccc; border: 0;}
+hr {
+  width 100%
+  height 1px
+  background #ccc
+  border 0
+}
 
-blockquote { font-style: italic; border-left: 3px solid #e0e0e0; padding-left: 0.6em; margin-left: 2.4em;}
+blockquote {
+  font-style italic
+  border-left 3px solid #e0e0e0
+  padding-left .6em
+  margin-left 2.4em
+}
 
-blockquote blockquote { margin-left: 0;}
+blockquote blockquote {
+  margin-left 0
+}
 
-abbr, span[title] { border-bottom: 1px dotted #aaa; cursor: help; }
+abbr, span[title] {
+  border-bottom 1px dotted #aaa
+  cursor help
+}
 
-textarea.wiki-edit {width:99%; resize:vertical;}
+textarea.wiki-edit {
+  width 99%
+  resize vertical
+}
 
-li p {margin-top: 0;}
+li p {
+  margin-top 0
+}
 
-div.issue {background:#ffffdd; padding:6px; margin-bottom:6px;border: 1px solid #d7d7d7;}
+p.breadcrumb {
+  margin 4px 0 4px 0
+  font-size .9em
+}
 
-p.breadcrumb { font-size: 0.9em; margin: 4px 0 4px 0;}
+p.subtitle {
+  margin -6px 0 12px 0
+  font-size 0.9em
+  font-style italic
+}
 
-p.subtitle { font-size: 0.9em; margin: -6px 0 12px 0; font-style: italic; }
+p.footnote {
+  margin-top 0
+  margin-bottom 0
+  font-size .9em
+}
 
-p.footnote { font-size: 0.9em; margin-top: 0px; margin-bottom: 0px; }
+.ltr {
+  direction ltr !important
+  unicode-bidi bidi-override
+}
 
-.ltr {direction:ltr !important; unicode-bidi:bidi-override;}
-
-.rtl {direction:rtl !important; unicode-bidi:bidi-override;}
+.rtl {
+  direction rtl !important
+  unicode-bidi bidi-override
+}
 
 div.issue {
+  background #ffffdd
+  padding 6px
+  margin-bottom 6px
+  border 1px solid #d7d7d7
+
   div.subject {
     div div {
       padding-left 16px
@@ -794,26 +925,87 @@ div#issue-changesets {
   }
 }
 
-.journal ul.details img {margin:0 0 -3px 4px;}
-div.journal {overflow:auto;}
-div.journal.private-notes {border-left:2px solid #d22; padding-left:4px; margin-left:-6px;}
+.journal ul.details img {
+  margin 0 0 -3px 4px
+}
 
-div#activity dl, #search-results { margin-left: 2em; }
-div#activity dd, #search-results dd { margin-bottom: 1em; padding-left: 18px; font-size: 0.9em; }
-div#activity dt, #search-results dt { margin-bottom: 0px; padding-left: 20px; line-height: 18px; background-position: 0 50%; background-repeat: no-repeat; }
-div#activity dt.me .time { border-bottom: 1px solid #999; }
-div#activity dt .time { color: #777; font-size: 80%; }
-div#activity dd .description, #search-results dd .description { font-style: italic; }
-div#activity span.project:after, #search-results span.project:after { content: " -"; }
-div#activity dd span.description, #search-results dd span.description { display:block; color: #808080; }
-div#activity dt.grouped {margin-left:5em;}
-div#activity dd.grouped {margin-left:9em;}
+div.journal {
+  overflow auto
 
-#search-results dd { margin-bottom: 1em; padding-left: 20px; margin-left:0px; }
+  &.private-notes {
+    border-left 2px solid #d22
+    padding-left 4px
+    margin-left -6px
+  }
+}
 
-div#search-results-counts {float:right;}
-div#search-results-counts ul { margin-top: 0.5em; }
-div#search-results-counts  li { list-style-type:none; float: left; margin-left: 1em; }
+div#activity dl, #search-results {
+  margin-left 2em
+}
+
+div#activity dd, #search-results dd {
+  margin-bottom 1em
+  padding-left 18px
+  font-size .9em
+}
+
+div#activity dt, #search-results dt {
+  margin-bottom 0
+  padding-left 20px
+  line-height 18px
+  background-position 0 50%
+  background-repeat no-repeat
+}
+
+div#activity dt.me .time {
+  border-bottom 1px solid #999
+}
+
+div#activity dt .time {
+  color #777
+  font-size 80%
+}
+
+div#activity dd .description, #search-results dd .description {
+  font-style italic
+}
+
+div#activity span.project:after, #search-results span.project:after {
+  content " -"
+}
+
+div#activity dd span.description, #search-results dd span.description {
+  display block
+  color #808080
+}
+
+div#activity dt.grouped {
+  margin-left 5em
+}
+
+div#activity dd.grouped {
+  margin-left 9em
+}
+
+#search-results dd {
+  margin-bottom 1em
+  padding-left 20px
+  margin-left 0
+}
+
+div#search-results-counts {
+  float right
+
+  ul {
+    margin-top .5em
+  }
+
+  li {
+    list-style-type none
+    float left
+    margin-left 1em
+  }
+}
 
 dt {
   &.issue:before {
@@ -873,40 +1065,136 @@ dt {
   icon( icon_check, color_green )
 }
 
-div#roadmap .related-issues { margin-bottom: 1em; }
-div#roadmap .related-issues td.checkbox { display: none; }
-div#roadmap .wiki h1:first-child { display: none; }
-div#roadmap .wiki h1 { font-size: 120%; }
-div#roadmap .wiki h2 { font-size: 110%; }
-body.controller-versions.action-show div#roadmap .related-issues {width:70%;}
+div#roadmap {
+  .related-issues {
+    margin-bottom 1em
 
-div#version-summary { float:right; width:28%; margin-left: 16px; margin-bottom: 16px; background-color: #fff; }
-div#version-summary fieldset { margin-bottom: 1em; }
-div#version-summary fieldset.time-tracking table { width:100%; }
-div#version-summary th, div#version-summary td.total-hours { text-align: right; }
+    td.checkbox {
+      display none
+    }
+  }
 
-table#time-report td.hours, table#time-report th.period, table#time-report th.total { text-align: right; padding-right: 0.5em; }
-table#time-report tbody tr.subtotal { font-style: italic; color:#777;}
-table#time-report tbody tr.subtotal td.hours { color:#b0b0b0; }
-table#time-report tbody tr.total { font-weight: bold; background-color:#EEEEEE; border-top:1px solid #e4e4e4;}
-table#time-report .hours-dec { font-size: 0.9em; }
+  .wiki h1 {
+    font-size 1.2em
 
-div.wiki-page .contextual a {opacity: 0.4}
-div.wiki-page .contextual a:hover {opacity: 1}
+    &:first-child {
+      display none
+    }
+  }
 
-form .attributes select { width: 60%; }
-input#issue_subject, input#document_title { width: 99%; }
-select#issue_done_ratio { width: 95px; }
+  .wiki h2 {
+    font-size 1.1em
+  }
+}
 
-ul.projects {margin:0; padding-left:1em;}
-ul.projects ul {padding-left:1.6em;}
-ul.projects.root {margin:0; padding:0;}
-ul.projects li {list-style-type:none;}
+body.controller-versions.action-show div#roadmap .related-issues {
+  width 70%
+}
 
-#projects-index ul.projects ul.projects { border-left: 3px solid #e0e0e0; padding-left:1em;}
-#projects-index ul.projects li.root {margin-bottom: 1em;}
-#projects-index ul.projects li.child {margin-top: 1em;}
-#projects-index ul.projects div.root a.project { font-family: "Trebuchet MS", Verdana, sans-serif; font-weight: bold; font-size: 16px; margin: 0 0 10px 0; }
+div#version-summary {
+  float right
+  width 28%
+  margin-left 16px
+  margin-bottom 16px
+  background-color color_white
+
+  div#version-summary fieldset {
+    margin-bottom 1em
+
+    &.time-tracking table {
+      width 100%
+    }
+  }
+
+  th, td.total-hours {
+    text-align right
+  }
+}
+
+table#time-report {
+  td.hours, th.period, th.total {
+    text-align right
+    padding-right 0.5em
+  }
+
+  tbody tr.subtotal {
+    font-style italic
+    color #777
+
+    td.hours {
+      color #b0b0b0
+    }
+  }
+
+  tbody tr.total {
+    font-weight bold
+    background-color #EEEEEE
+    border-top 1px solid #e4e4e4
+  }
+
+  table#time-report .hours-dec {
+    font-size 0.9em
+  }
+}
+
+div.wiki-page .contextual a {
+  opacity 0.4
+
+  &:hover {
+    opacity 1
+  }
+}
+
+form .attributes select {
+  width 60%
+}
+
+input#issue_subject, input#document_title {
+  width 99%
+}
+
+select#issue_done_ratio {
+  width 95px
+}
+
+ul.projects {
+  margin 0
+  padding-left 1em
+
+  &.root {
+    margin 0
+    padding 0
+  }
+
+  ul {
+    padding-left 1.6em
+  }
+
+  li {
+    list-style-type none
+  }
+}
+
+#projects-index ul.projects {
+  ul.projects {
+    border-left 3px solid #e0e0e0
+    padding-left 1em
+  }
+
+  li.root {
+    margin-bottom 1em
+  }
+
+  li.child {
+    margin-top 1em
+  }
+
+  div.root a.project {
+    font-weight bold
+    font-size 16px
+    margin 0 0 10px 0
+  }
+}
 
 .my-project:before {
   icon( icon_fav, color_yellow )
@@ -917,31 +1205,89 @@ ul.projects li {list-style-type:none;}
   overflow-y auto
 }
 
-#related-issues li img {vertical-align:middle;}
+#related-issues li img {
+  vertical-align middle
+}
 
-ul.properties {padding:0; font-size: 0.9em; color: #777;}
-ul.properties li {list-style-type:none;}
-ul.properties li span {font-style:italic;}
+ul.properties {
+  padding 0
+  font-size .9em
+  color #777
 
-.total-hours { font-size: 110%; font-weight: bold; }
-.total-hours span.hours-int { font-size: 120%; }
+  li {
+    list-style-type none
 
-.autoscroll {overflow-x: auto; padding:1px; margin-bottom: 1.2em;}
-#user_login, #user_firstname, #user_lastname, #user_mail, #my_account_form select, #user_form select, #user_identity_url { width: 90%; }
+    span {
+      font-style italic
+    }
+  }
+}
 
-#workflow_copy_form select { width: 200px; }
-table.transitions td.enabled {background: #bfb;}
-#workflow_form table select {font-size:90%; max-width:100px;}
-table.fields_permissions td.readonly {background:#ddd;}
-table.fields_permissions td.required {background:#d88;}
+.total-hours {
+  font-size 1.1em
+  font-weight bold
 
-select.expandable {vertical-align:top;}
+  span.hours-int {
+    font-size 1.2em
+  }
+}
 
-textarea#custom_field_possible_values {width: 95%; resize:vertical}
-textarea#custom_field_default_value {width: 95%; resize:vertical}
+.autoscroll {
+  overflow-x auto
+  padding 1px
+  margin-bottom 1.2em
+}
 
-input#content_comments {width: 99%}
+#user_login, #user_firstname, #user_lastname, #user_mail, #my_account_form select, #user_form select, #user_identity_url {
+  width 90%
+}
 
-p.pagination {margin-top:8px; font-size: 90%}
+#workflow_copy_form select {
+  width 200px
+}
 
-#search-form fieldset p {margin:0.2em 0;}
+table.transitions td.enabled {
+  background #bfb
+}
+
+#workflow_form table select {
+  font-size .9em
+  max-width 100px
+}
+
+table.fields_permissions {
+  td.readonly {
+    background #ddd
+  }
+
+  td.required {
+    background #d88
+  }
+}
+
+select.expandable {
+  vertical-align top
+}
+
+textarea#custom_field_possible_values {
+  width 95%
+  resize vertical
+}
+
+textarea#custom_field_default_value {
+  width 95%
+  resize vertical
+}
+
+input#content_comments {
+  width 99%
+}
+
+p.pagination {
+  margin-top 8px
+  font-size 90%
+}
+
+#search-form fieldset p {
+  margin .2em 0
+}
