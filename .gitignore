@@ -2,6 +2,9 @@ node_modules/
 dist/
 src/javascripts
 src/stylesheets
+defaults/
+samples/
+images/
 
 .*
 *.map
