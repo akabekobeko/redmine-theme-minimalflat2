@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Settings - Administration - Redmine</title>
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==">
+<link rel="shortcut icon" href="./favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery/jquery-ui-1.11.0.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<script src="javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.3.js"></script>
+<script src="javascripts/application.js"></script>
+
+<!-- page specific tags -->
+<link rel="stylesheet" media="screen" href="defaults/stylesheets/jstoolbar.css">
+</head>
+<body class="controller-settings action-index">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="./my/account">My account</a></li>
+<li><a class="logout" rel="nofollow" data-method="post" href="./logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
+    <ul><li><a class="home" href="./">Home</a></li>
+<li><a class="my-page" href="./my/page">My page</a></li>
+<li><a class="projects" href="./projects">Projects</a></li>
+<li><a class="administration" href="./admin">Administration</a></li>
+<li><a class="help" href="http://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+    <div id="quick-search">
+        <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        
+        <label for="q">
+          <a accesskey="4" href="./search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        
+    </div>
+
+    <h1>Redmine</h1>
+
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <h3>Administration</h3>
+    <div id="admin-menu">
+  <ul><li><a class="projects" href="./admin/projects">Projects</a></li>
+<li><a class="users" href="./users">Users</a></li>
+<li><a class="groups" href="./groups">Groups</a></li>
+<li><a class="roles" href="./roles">Roles and permissions</a></li>
+<li><a class="trackers" href="./trackers">Trackers</a></li>
+<li><a class="issue_statuses issue-statuses" href="./issue_statuses">Issue statuses</a></li>
+<li><a class="workflows" href="./workflows/edit">Workflow</a></li>
+<li><a class="custom_fields custom-fields" href="./custom_fields">Custom fields</a></li>
+<li><a class="enumerations" href="./enumerations">Enumerations</a></li>
+<li><a class="settings selected" href="./settings">Settings</a></li>
+<li><a class="server_authentication ldap-authentication" href="./auth_sources">LDAP authentication</a></li>
+<li><a class="plugins" href="./admin/plugins">Plugins</a></li>
+<li><a class="info" href="./admin/info">Information</a></li></ul>
+</div>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>Settings</h2>
+
+<div class="tabs">
+  <ul>
+    <li><a id="tab-general" class="selected" onclick="showTab('general', this.href); this.blur(); return false;" href="./settings?tab=general">General</a></li>
+    <li><a id="tab-display" onclick="showTab('display', this.href); this.blur(); return false;" href="./settings?tab=display">Display</a></li>
+    <li><a id="tab-authentication" onclick="showTab('authentication', this.href); this.blur(); return false;" href="./settings?tab=authentication">Authentication</a></li>
+    <li><a id="tab-projects" onclick="showTab('projects', this.href); this.blur(); return false;" href="./settings?tab=projects">Projects</a></li>
+    <li><a id="tab-issues" onclick="showTab('issues', this.href); this.blur(); return false;" href="./settings?tab=issues">Issue tracking</a></li>
+    <li><a id="tab-notifications" onclick="showTab('notifications', this.href); this.blur(); return false;" href="./settings?tab=notifications">Email notifications</a></li>
+    <li><a id="tab-mail_handler" onclick="showTab('mail_handler', this.href); this.blur(); return false;" href="./settings?tab=mail_handler">Incoming emails</a></li>
+    <li><a id="tab-repositories" onclick="showTab('repositories', this.href); this.blur(); return false;" href="./settings?tab=repositories">Repositories</a></li>
+  </ul>
+  <div class="tabs-buttons" style="display:none;">
+    <button class="tab-left" type="button" onclick="moveTabLeft(this);"></button>
+    <button class="tab-right" type="button" onclick="moveTabRight(this);"></button>
+  </div>
+</div>
+
+<script>
+  $(document).ready(displayTabsButtons);
+  $(window).resize(displayTabsButtons);
+</script>
+
+  <div id="tab-content-general" class="tab-content"><form action="/settings/edit" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<div class="box tabular settings">
+<p><label for="settings_app_title">Application title</label><input name="settings[app_title]" id="settings_app_title" value="Redmine" size="30" type="text"></p>
+
+<p><label for="settings_welcome_text">Welcome text</label>
+  <span class="jstElements"><button title="Strong" class="jstb_strong" tabindex="200" type="button"><span>Strong</span></button><button title="Italic" class="jstb_em" tabindex="200" type="button"><span>Italic</span></button><button title="Underline" class="jstb_ins" tabindex="200" type="button"><span>Underline</span></button><button title="Deleted" class="jstb_del" tabindex="200" type="button"><span>Deleted</span></button><button title="Inline Code" class="jstb_code" tabindex="200" type="button"><span>Inline Code</span></button><span class="jstSpacer" id="space1">&nbsp;</span><button title="Heading 1" class="jstb_h1" tabindex="200" type="button"><span>Heading 1</span></button><button title="Heading 2" class="jstb_h2" tabindex="200" type="button"><span>Heading 2</span></button><button title="Heading 3" class="jstb_h3" tabindex="200" type="button"><span>Heading 3</span></button><span class="jstSpacer" id="space2">&nbsp;</span><button title="Unordered list" class="jstb_ul" tabindex="200" type="button"><span>Unordered list</span></button><button title="Ordered list" class="jstb_ol" tabindex="200" type="button"><span>Ordered list</span></button><span class="jstSpacer" id="space3">&nbsp;</span><button title="Quote" class="jstb_bq" tabindex="200" type="button"><span>Quote</span></button><button title="Remove Quote" class="jstb_unbq" tabindex="200" type="button"><span>Remove Quote</span></button><button title="Preformatted text" class="jstb_pre" tabindex="200" type="button"><span>Preformatted text</span></button><span class="jstSpacer" id="space4">&nbsp;</span><button title="Link to a Wiki page" class="jstb_link" tabindex="200" type="button"><span>Link to a Wiki page</span></button><button title="Image" class="jstb_img" tabindex="200" type="button"><span>Image</span></button><span class="jstSpacer" id="space5">&nbsp;</span><button title="Help" class="jstb_help" tabindex="200" type="button"><span>Help</span></button></span>
+  <span class="jstEditor"><textarea name="settings[welcome_text]" id="settings_welcome_text" cols="60" rows="5" class="wiki-edit"></textarea></span>
+</p>
+
+
+<p><label for="settings_attachment_max_size">Maximum attachment size</label><input name="settings[attachment_max_size]" id="settings_attachment_max_size" value="5120" size="6" type="text"> KB</p>
+
+<p><label for="settings_per_page_options">Objects per page options</label><input name="settings[per_page_options]" id="settings_per_page_options" value="25,50,100" size="20" type="text">
+<em class="info">Multiple values allowed (comma separated).</em></p>
+
+<p><label for="settings_search_results_per_page">Search results per page</label><input name="settings[search_results_per_page]" id="settings_search_results_per_page" value="10" size="6" type="text">
+
+</p><p><label for="settings_activity_days_default">Days displayed on project activity</label><input name="settings[activity_days_default]" id="settings_activity_days_default" value="30" size="6" type="text"> days</p>
+
+<p><label for="settings_host_name">Host name and path</label><input name="settings[host_name]" id="settings_host_name" value="localhost:3000" size="60" type="text">
+<em class="info">Example: 192.168.33.10</em></p>
+
+<p><label for="settings_protocol">Protocol</label><select name="settings[protocol]" id="settings_protocol"><option selected="selected" value="http">HTTP</option>
+<option value="https">HTTPS</option></select></p>
+
+<p><label for="settings_text_formatting">Text formatting</label><select name="settings[text_formatting]" id="settings_text_formatting"><option value="">none</option>
+<option selected="selected" value="textile">Textile</option>
+<option value="markdown">Markdown (experimental)</option></select></p>
+
+<p><label for="settings_cache_formatted_text">Cache formatted text</label><input name="settings[cache_formatted_text]" value="0" type="hidden"><input name="settings[cache_formatted_text]" id="settings_cache_formatted_text" value="1" type="checkbox"></p>
+
+<p><label for="settings_wiki_compression">Wiki history compression</label><select name="settings[wiki_compression]" id="settings_wiki_compression"><option selected="selected" value="">none</option>
+<option value="gzip">Gzip</option></select></p>
+
+<p><label for="settings_feeds_limit">Maximum number of items in Atom feeds</label><input name="settings[feeds_limit]" id="settings_feeds_limit" value="15" size="6" type="text"></p>
+
+<p><label for="settings_file_max_size_displayed">Maximum size of text files displayed inline</label><input name="settings[file_max_size_displayed]" id="settings_file_max_size_displayed" value="512" size="6" type="text"> KB</p>
+
+<p><label for="settings_diff_max_lines_displayed">Maximum number of diff lines displayed</label><input name="settings[diff_max_lines_displayed]" id="settings_diff_max_lines_displayed" value="1500" size="6" type="text"></p>
+
+<p><label for="settings_repositories_encodings">Attachments and repositories encodings</label><input name="settings[repositories_encodings]" id="settings_repositories_encodings" size="60" type="text">
+<em class="info">Multiple values allowed (comma separated).</em></p>
+
+
+</div>
+
+<input name="commit" value="Save" type="submit">
+</form></div>
+  <div id="tab-content-display" style="display:none" class="tab-content"><form action="/settings/edit?tab=display" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<div class="box tabular settings">
+<p><label for="settings_ui_theme">Theme</label><select name="settings[ui_theme]" id="settings_ui_theme"><option selected="selected" value="">Default</option>
+<option value="alternate">Alternate</option>
+<option value="classic">Classic</option>
+<option value="minimalflat2">Minimalflat2</option></select></p>
+
+<p><label for="settings_default_language">Default language</label><select name="settings[default_language]" id="settings_default_language"><option value="sq">Albanian (Shqip)</option>
+<option value="ar">Arabic (عربي)</option>
+<option value="az">Azerbaijanian (Azeri)</option>
+<option value="eu">Basque (Euskara)</option>
+<option value="bs">Bosnian (Bosanski)</option>
+<option value="bg">Bulgarian (Български)</option>
+<option value="ca">Catalan (Català)</option>
+<option value="hr">Croatian (Hrvatski)</option>
+<option value="cs">Czech (Čeština)</option>
+<option value="da">Danish (Dansk)</option>
+<option value="nl">Dutch (Nederlands)</option>
+<option selected="selected" value="en">English</option>
+<option value="en-GB">English (British)</option>
+<option value="et">Estonian (Eesti)</option>
+<option value="fi">Finnish (Suomi)</option>
+<option value="fr">French (Français)</option>
+<option value="gl">Galician (Galego)</option>
+<option value="de">German (Deutsch)</option>
+<option value="el">Greek (Ελληνικά)</option>
+<option value="he">Hebrew (עברית)</option>
+<option value="hu">Hungarian (Magyar)</option>
+<option value="id">Indonesian (Bahasa Indonesia)</option>
+<option value="it">Italian (Italiano)</option>
+<option value="ja">Japanese (日本語)</option>
+<option value="ko">Korean (한국어)</option>
+<option value="lv">Latvian (Latviešu)</option>
+<option value="lt">Lithuanian (lietuvių)</option>
+<option value="mk">Macedonian (Македонски)</option>
+<option value="mn">Mongolian (Монгол)</option>
+<option value="no">Norwegian (Norsk bokmål)</option>
+<option value="fa">Persian (پارسی)</option>
+<option value="pl">Polish (Polski)</option>
+<option value="pt">Portuguese (Português)</option>
+<option value="pt-BR">Portuguese/Brasil (Português/Brasil)</option>
+<option value="ro">Romanian (Română)</option>
+<option value="ru">Russian (Русский)</option>
+<option value="sr-YU">Serbian (Srpski)</option>
+<option value="sr">Serbian Cyrillic (Српски)</option>
+<option value="zh">Simplified Chinese (简体中文)</option>
+<option value="sk">Slovak (Slovenčina)</option>
+<option value="sl">Slovene (Slovenščina)</option>
+<option value="es">Spanish (Español)</option>
+<option value="es-PA">Spanish/Panama (Español/Panamá)</option>
+<option value="sv">Swedish (Svenska)</option>
+<option value="th">Thai (ไทย)</option>
+<option value="zh-TW">Traditional Chinese (繁體中文)</option>
+<option value="tr">Turkish (Türkçe)</option>
+<option value="uk">Ukrainian (Українська)</option>
+<option value="vi">Vietnamese (Tiếng Việt)</option></select></p>
+
+<p><label for="settings_force_default_language_for_anonymous">Force default language for anonymous users</label><input name="settings[force_default_language_for_anonymous]" value="0" type="hidden"><input name="settings[force_default_language_for_anonymous]" id="settings_force_default_language_for_anonymous" value="1" type="checkbox"></p>
+
+<p><label for="settings_force_default_language_for_loggedin">Force default language for logged-in users</label><input name="settings[force_default_language_for_loggedin]" value="0" type="hidden"><input name="settings[force_default_language_for_loggedin]" id="settings_force_default_language_for_loggedin" value="1" type="checkbox"></p>
+
+<p><label for="settings_start_of_week">Start calendars on</label><select name="settings[start_of_week]" id="settings_start_of_week"><option selected="selected" value="">Based on user's language</option>
+<option value="1">Monday</option>
+<option value="6">Saturday</option>
+<option value="7">Sunday</option></select></p>
+<p><label for="settings_date_format">Date format</label><select name="settings[date_format]" id="settings_date_format"><option selected="selected" value="">Based on user's language</option>
+<option value="%Y-%m-%d">2015-08-13</option>
+<option value="%d/%m/%Y">13/08/2015</option>
+<option value="%d.%m.%Y">13.08.2015</option>
+<option value="%d-%m-%Y">13-08-2015</option>
+<option value="%m/%d/%Y">08/13/2015</option>
+<option value="%d %b %Y">13 Aug 2015</option>
+<option value="%d %B %Y">13 August 2015</option>
+<option value="%b %d, %Y">Aug 13, 2015</option>
+<option value="%B %d, %Y">August 13, 2015</option></select></p>
+
+<p><label for="settings_time_format">Time format</label><select name="settings[time_format]" id="settings_time_format"><option selected="selected" value="">Based on user's language</option>
+<option value="%H:%M">00:52</option>
+<option value="%I:%M %p">12:52 AM</option></select></p>
+
+<p><label for="settings_user_format">Users display format</label><select name="settings[user_format]" id="settings_user_format"><option selected="selected" value="firstname_lastname">Redmine Admin</option>
+<option value="firstname_lastinitial">Redmine A.</option>
+<option value="firstinitial_lastname">R. Admin</option>
+<option value="firstname">Redmine</option>
+<option value="lastname_firstname">Admin Redmine</option>
+<option value="lastname_coma_firstname">Admin, Redmine</option>
+<option value="lastname">Admin</option>
+<option value="username">admin</option></select></p>
+
+<p><label for="settings_gravatar_enabled">Use Gravatar user icons</label><input name="settings[gravatar_enabled]" value="0" type="hidden"><input name="settings[gravatar_enabled]" id="settings_gravatar_enabled" value="1" type="checkbox"></p>
+
+<p><label for="settings_gravatar_default">Default Gravatar image</label><select name="settings[gravatar_default]" id="settings_gravatar_default"><option selected="selected" value="">none</option>
+<option value="wavatar">Wavatars</option>
+<option value="identicon">Identicons</option>
+<option value="monsterid">Monster ids</option>
+<option value="retro">Retro</option>
+<option value="mm">Mystery man</option></select></p>
+
+<p><label for="settings_thumbnails_enabled">Display attachment thumbnails</label><input name="settings[thumbnails_enabled]" value="0" type="hidden"><input name="settings[thumbnails_enabled]" id="settings_thumbnails_enabled" value="1" type="checkbox"></p>
+
+<p><label for="settings_thumbnails_size">Thumbnails size (in pixels)</label><input name="settings[thumbnails_size]" id="settings_thumbnails_size" value="100" size="6" type="text"></p>
+</div>
+
+<input name="commit" value="Save" type="submit">
+</form></div>
+  <div id="tab-content-authentication" style="display:none" class="tab-content"><form action="/settings/edit?tab=authentication" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<div class="box tabular settings">
+<p><label for="settings_login_required">Authentication required</label><input name="settings[login_required]" value="0" type="hidden"><input name="settings[login_required]" id="settings_login_required" value="1" type="checkbox"></p>
+
+<p><label for="settings_autologin">Autologin</label><select name="settings[autologin]" id="settings_autologin"><option selected="selected" value="0">disabled</option>
+<option value="1">1 day</option>
+<option value="7">7 days</option>
+<option value="30">30 days</option>
+<option value="365">365 days</option></select></p>
+
+<p><label for="settings_self_registration">Self-registration</label><select name="settings[self_registration]" id="settings_self_registration"><option value="0">disabled</option>
+<option value="1">account activation by email</option>
+<option selected="selected" value="2">manual account activation</option>
+<option value="3">automatic account activation</option></select></p>
+
+<p><label for="settings_unsubscribe">Allow users to delete their own account</label><input name="settings[unsubscribe]" value="0" type="hidden"><input name="settings[unsubscribe]" id="settings_unsubscribe" value="1" checked="checked" type="checkbox"></p>
+
+<p><label for="settings_password_min_length">Minimum password length</label><input name="settings[password_min_length]" id="settings_password_min_length" value="8" size="6" type="text"></p>
+
+<p><label for="settings_lost_password">Lost password</label><input name="settings[lost_password]" value="0" type="hidden"><input name="settings[lost_password]" id="settings_lost_password" value="1" checked="checked" type="checkbox"></p>
+
+<p><label for="settings_max_additional_emails">Maximum number of additional email addresses</label><input name="settings[max_additional_emails]" id="settings_max_additional_emails" value="5" size="6" type="text"></p>
+
+<p><label for="settings_openid">Allow OpenID login and registration</label><input name="settings[openid]" value="0" type="hidden"><input name="settings[openid]" id="settings_openid" value="1" type="checkbox"></p>
+
+<p><label for="settings_rest_api_enabled">Enable REST web service</label><input name="settings[rest_api_enabled]" value="0" type="hidden"><input name="settings[rest_api_enabled]" id="settings_rest_api_enabled" value="1" type="checkbox"></p>
+
+<p><label for="settings_jsonp_enabled">Enable JSONP support</label><input name="settings[jsonp_enabled]" value="0" type="hidden"><input name="settings[jsonp_enabled]" id="settings_jsonp_enabled" value="1" type="checkbox"></p>
+</div>
+
+<fieldset class="box">
+  <legend>Session expiration</legend>
+
+  <div class="tabular settings">
+    <p><label for="settings_session_lifetime">Session maximum lifetime</label><select name="settings[session_lifetime]" id="settings_session_lifetime"><option selected="selected" value="0">disabled</option>
+<option value="1440">1 day</option>
+<option value="10080">7 days</option>
+<option value="43200">30 days</option>
+<option value="86400">60 days</option>
+<option value="525600">365 days</option></select></p>
+    <p><label for="settings_session_timeout">Session inactivity timeout</label><select name="settings[session_timeout]" id="settings_session_timeout"><option selected="selected" value="0">disabled</option>
+<option value="60">1 hour</option>
+<option value="120">2 hours</option>
+<option value="240">4 hours</option>
+<option value="480">8 hours</option>
+<option value="720">12 hours</option>
+<option value="1440">24 hours</option>
+<option value="2880">48 hours</option></select></p>
+  </div>
+  
+  <p><em class="info">Warning: changing these settings may expire the current sessions including yours.</em></p>
+</fieldset>
+
+<input name="commit" value="Save" type="submit">
+</form></div>
+  <div id="tab-content-projects" style="display:none" class="tab-content"><form action="/settings/edit?tab=projects" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<div class="box tabular settings">
+<p><label for="settings_default_projects_public">New projects are public by default</label><input name="settings[default_projects_public]" value="0" type="hidden"><input name="settings[default_projects_public]" id="settings_default_projects_public" value="1" checked="checked" type="checkbox"></p>
+
+<p><label>Default enabled modules for new projects</label><input name="settings[default_projects_modules][]" id="settings_default_projects_modules_" value="" type="hidden"><label class="block"><input name="settings[default_projects_modules][]" value="issue_tracking" checked="checked" type="checkbox">Issue tracking</label><label class="block"><input name="settings[default_projects_modules][]" value="time_tracking" checked="checked" type="checkbox">Time tracking</label><label class="block"><input name="settings[default_projects_modules][]" value="news" checked="checked" type="checkbox">News</label><label class="block"><input name="settings[default_projects_modules][]" value="documents" checked="checked" type="checkbox">Documents</label><label class="block"><input name="settings[default_projects_modules][]" value="files" checked="checked" type="checkbox">Files</label><label class="block"><input name="settings[default_projects_modules][]" value="wiki" checked="checked" type="checkbox">Wiki</label><label class="block"><input name="settings[default_projects_modules][]" value="repository" checked="checked" type="checkbox">Repository</label><label class="block"><input name="settings[default_projects_modules][]" value="boards" checked="checked" type="checkbox">Forums</label><label class="block"><input name="settings[default_projects_modules][]" value="calendar" checked="checked" type="checkbox">Calendar</label><label class="block"><input name="settings[default_projects_modules][]" value="gantt" checked="checked" type="checkbox">Gantt</label></p>
+
+<p><label>Default trackers for new projects</label><input name="settings[default_projects_tracker_ids][]" id="settings_default_projects_tracker_ids_" value="" type="hidden"><label class="block"><input name="settings[default_projects_tracker_ids][]" value="1" type="checkbox">Bug</label><label class="block"><input name="settings[default_projects_tracker_ids][]" value="2" type="checkbox">Feature</label><label class="block"><input name="settings[default_projects_tracker_ids][]" value="3" type="checkbox">Support</label></p>
+
+<p><label for="settings_sequential_project_identifiers">Generate sequential project identifiers</label><input name="settings[sequential_project_identifiers]" value="0" type="hidden"><input name="settings[sequential_project_identifiers]" id="settings_sequential_project_identifiers" value="1" type="checkbox"></p>
+
+<p><label for="settings_new_project_user_role_id">Role given to a non-admin user who creates a project</label><select name="settings[new_project_user_role_id]" id="settings_new_project_user_role_id"><option selected="selected" value="">--- Please select ---</option>
+<option value="3">管理者</option>
+<option value="4">開発者</option>
+<option value="5">報告者</option></select></p>
+</div>
+
+<input name="commit" value="Save" type="submit">
+</form></div>
+  <div id="tab-content-issues" style="display:none" class="tab-content"><form action="/settings/edit?tab=issues" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<div class="box tabular settings">
+<p><label for="settings_cross_project_issue_relations">Allow cross-project issue relations</label><input name="settings[cross_project_issue_relations]" value="0" type="hidden"><input name="settings[cross_project_issue_relations]" id="settings_cross_project_issue_relations" value="1" type="checkbox"></p>
+
+<p><label for="settings_link_copied_issue">Link issues on copy</label><select name="settings[link_copied_issue]" id="settings_link_copied_issue"><option value="yes">Yes</option>
+<option value="no">No</option>
+<option selected="selected" value="ask">Ask</option></select></p>
+
+<p><label for="settings_cross_project_subtasks">Allow cross-project subtasks</label><select name="settings[cross_project_subtasks]" id="settings_cross_project_subtasks"><option value="">disabled</option>
+<option value="system">With all projects</option>
+<option selected="selected" value="tree">With project tree</option>
+<option value="hierarchy">With project hierarchy</option>
+<option value="descendants">With subprojects</option></select></p>
+
+<p><label for="settings_issue_group_assignment">Allow issue assignment to groups</label><input name="settings[issue_group_assignment]" value="0" type="hidden"><input name="settings[issue_group_assignment]" id="settings_issue_group_assignment" value="1" type="checkbox"></p>
+
+<p><label for="settings_default_issue_start_date_to_creation_date">Use current date as start date for new issues</label><input name="settings[default_issue_start_date_to_creation_date]" value="0" type="hidden"><input name="settings[default_issue_start_date_to_creation_date]" id="settings_default_issue_start_date_to_creation_date" value="1" checked="checked" type="checkbox"></p>
+
+<p><label for="settings_display_subprojects_issues">Display subprojects issues on main projects by default</label><input name="settings[display_subprojects_issues]" value="0" type="hidden"><input name="settings[display_subprojects_issues]" id="settings_display_subprojects_issues" value="1" checked="checked" type="checkbox"></p>
+
+<p><label for="settings_issue_done_ratio">Calculate the issue done ratio with</label><select name="settings[issue_done_ratio]" id="settings_issue_done_ratio"><option selected="selected" value="issue_field">Use the issue field</option>
+<option value="issue_status">Use the issue status</option></select></p>
+
+<p><label>Non-working days</label><input name="settings[non_working_week_days][]" id="settings_non_working_week_days_" value="" type="hidden"><label class="inline"><input name="settings[non_working_week_days][]" value="1" type="checkbox">Monday</label><label class="inline"><input name="settings[non_working_week_days][]" value="2" type="checkbox">Tuesday</label><label class="inline"><input name="settings[non_working_week_days][]" value="3" type="checkbox">Wednesday</label><label class="inline"><input name="settings[non_working_week_days][]" value="4" type="checkbox">Thursday</label><label class="inline"><input name="settings[non_working_week_days][]" value="5" type="checkbox">Friday</label><label class="inline"><input name="settings[non_working_week_days][]" value="6" checked="checked" type="checkbox">Saturday</label><label class="inline"><input name="settings[non_working_week_days][]" value="7" checked="checked" type="checkbox">Sunday</label></p>
+
+<p><label for="settings_issues_export_limit">Issues export limit</label><input name="settings[issues_export_limit]" id="settings_issues_export_limit" value="500" size="6" type="text"></p>
+
+<p><label for="settings_gantt_items_limit">Maximum number of items displayed on the gantt chart</label><input name="settings[gantt_items_limit]" id="settings_gantt_items_limit" value="500" size="6" type="text"></p>
+</div>
+
+<fieldset class="box">
+  <legend>Default columns displayed on the issue list</legend>
+  <table class="query-columns">
+  <tbody><tr>
+    <td style="padding-left:0">
+      <label for="available_columns">Available Columns</label>
+      <br>
+      <select name="available_columns[]" id="available_columns" multiple="multiple" size="10" style="width:150px" ondblclick="moveOptions(this.form.available_columns, this.form.selected_columns);"><option value="project">Project</option>
+<option value="parent">Parent task</option>
+<option value="author">Author</option>
+<option value="category">Category</option>
+<option value="fixed_version">Target version</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="spent_hours">Spent time</option>
+<option value="done_ratio">% Done</option>
+<option value="created_on">Created</option>
+<option value="closed_on">Closed</option>
+<option value="relations">Related issues</option>
+<option value="is_private">Private</option></select>
+    </td>
+    <td class="buttons">
+      <input value="→" onclick="moveOptions(this.form.available_columns, this.form.selected_columns);" type="button"><br>
+      <input value="←" onclick="moveOptions(this.form.selected_columns, this.form.available_columns);" type="button">
+    </td>
+    <td>
+      <label for="selected_columns">Selected Columns</label>
+      <br>
+      <select name="settings[issue_list_default_columns][]" id="selected_columns" multiple="multiple" size="10" style="width:150px" ondblclick="moveOptions(this.form.selected_columns, this.form.available_columns);"><option value="tracker">Tracker</option>
+<option value="status">Status</option>
+<option value="priority">Priority</option>
+<option value="subject">Subject</option>
+<option value="assigned_to">Assignee</option>
+<option value="updated_on">Updated</option></select>
+    </td>
+    <td class="buttons">
+      <input value="⇈" onclick="moveOptionTop(this.form.selected_columns);" type="button"><br>
+      <input value="↑" onclick="moveOptionUp(this.form.selected_columns);" type="button"><br>
+      <input value="↓" onclick="moveOptionDown(this.form.selected_columns);" type="button"><br>
+      <input value="⇊" onclick="moveOptionBottom(this.form.selected_columns);" type="button">
+    </td>
+  </tr>
+</tbody></table>
+
+<script>
+//<![CDATA[
+
+$(document).ready(function(){
+  $('.query-columns').closest('form').submit(function(){
+    $('#selected_columns option').prop('selected', true);
+  });
+});
+
+//]]>
+</script>
+</fieldset>
+
+<input name="commit" value="Save" type="submit">
+</form></div>
+  <div id="tab-content-notifications" style="display:none" class="tab-content"><div class="nodata">
+<p>Email delivery is not configured, and notifications are disabled.
+<br>Configure your SMTP server in config/configuration.yml and restart the application to enable them.</p>
+</div>
+</div>
+  <div id="tab-content-mail_handler" style="display:none" class="tab-content"><form action="/settings/edit?tab=mail_handler" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<div class="box tabular settings">
+  <p>
+    <label for="settings_mail_handler_body_delimiters">Truncate emails after one of these lines</label><textarea name="settings[mail_handler_body_delimiters]" id="settings_mail_handler_body_delimiters" rows="5"></textarea>
+    <em class="info">Multiple values allowed (one line for each value).</em>
+  </p>
+  <p>
+    <label for="settings_mail_handler_excluded_filenames">Exclude attachments by name</label><input name="settings[mail_handler_excluded_filenames]" id="settings_mail_handler_excluded_filenames" size="60" type="text">
+    <em class="info">Multiple values allowed (comma separated).
+    Example: smime.p7s, *.vcf</em>
+  </p>
+</div>
+
+<div class="box tabular settings">
+<p><label for="settings_mail_handler_api_enabled">Enable WS for incoming emails</label><input name="settings[mail_handler_api_enabled]" value="0" type="hidden"><input name="settings[mail_handler_api_enabled]" id="settings_mail_handler_api_enabled" value="1" onclick="if (this.checked) { $('#settings_mail_handler_api_key').removeAttr('disabled'); } else { $('#settings_mail_handler_api_key').attr('disabled', true); }" type="checkbox"></p>
+
+<p><label for="settings_mail_handler_api_key">API key</label><input name="settings[mail_handler_api_key]" id="settings_mail_handler_api_key" size="30" disabled="disabled" type="text">
+  <a href="#" onclick="if (!$('#settings_mail_handler_api_key').attr('disabled')) { $('#settings_mail_handler_api_key').val(randomKey(20)) }; return false;">Generate a key</a>
+</p>
+</div>
+
+<input name="commit" value="Save" type="submit">
+
+</form></div>
+  <div id="tab-content-repositories" style="display:none" class="tab-content"><form action="/settings/edit?tab=repositories" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="ODJr/ygInnF2OdHlCz3G9GlDSLEOUdAi/gXYF8b/dcNYjkbIQf0bWSb2M8HX+z+bg+L1OeSBvnSzy6TE6OCs6w==" type="hidden">
+
+<fieldset class="box settings enabled_scm">
+<legend>Enabled SCM</legend>
+<input name="settings[enabled_scm][]" id="settings_enabled_scm_" value="" type="hidden">
+<table>
+  <tbody><tr>
+    <th></th>
+    <th>Command</th>
+    <th>Version</th>
+  </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Subversion" checked="checked" type="checkbox">
+          Subversion
+        </label>
+      </td>
+      <td>
+          <img style="vertical-align:bottom;" src="settings_files/true.png" alt="True">
+          svn
+      </td>
+      <td>
+        1.6.11
+      </td>
+    </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Darcs" checked="checked" type="checkbox">
+          Darcs
+        </label>
+      </td>
+      <td>
+          <img style="vertical-align:bottom;" src="settings_files/exclamation.png" alt="Exclamation">
+          darcs
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Mercurial" checked="checked" type="checkbox">
+          Mercurial
+        </label>
+      </td>
+      <td>
+          <img style="vertical-align:bottom;" src="settings_files/exclamation.png" alt="Exclamation">
+          hg
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Cvs" checked="checked" type="checkbox">
+          Cvs
+        </label>
+      </td>
+      <td>
+          <img style="vertical-align:bottom;" src="settings_files/exclamation.png" alt="Exclamation">
+          cvs
+      </td>
+      <td>
+        1.11.23
+      </td>
+    </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Bazaar" checked="checked" type="checkbox">
+          Bazaar
+        </label>
+      </td>
+      <td>
+          <img style="vertical-align:bottom;" src="settings_files/exclamation.png" alt="Exclamation">
+          bzr
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Git" checked="checked" type="checkbox">
+          Git
+        </label>
+      </td>
+      <td>
+          <img style="vertical-align:bottom;" src="settings_files/true.png" alt="True">
+          git
+      </td>
+      <td>
+        1.7.1
+      </td>
+    </tr>
+    <tr>
+      <td class="scm_name">
+        <label>
+          <input name="settings[enabled_scm][]" value="Filesystem" type="checkbox">
+          Filesystem
+        </label>
+      </td>
+      <td>
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+</tbody></table>
+<p><em class="info">You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.</em></p>
+</fieldset>
+
+<div class="box tabular settings">
+<p><label for="settings_autofetch_changesets">Fetch commits automatically</label><input name="settings[autofetch_changesets]" value="0" type="hidden"><input name="settings[autofetch_changesets]" id="settings_autofetch_changesets" value="1" checked="checked" type="checkbox"></p>
+
+<p><label for="settings_sys_api_enabled">Enable WS for repository management</label><input name="settings[sys_api_enabled]" value="0" type="hidden"><input name="settings[sys_api_enabled]" id="settings_sys_api_enabled" value="1" onclick="if (this.checked) { $('#settings_sys_api_key').removeAttr('disabled'); } else { $('#settings_sys_api_key').attr('disabled', true); }" type="checkbox"></p>
+
+<p><label for="settings_sys_api_key">API key</label><input name="settings[sys_api_key]" id="settings_sys_api_key" size="30" disabled="disabled" type="text">
+  <a href="#" onclick="if (!$('#settings_sys_api_key').attr('disabled')) { $('#settings_sys_api_key').val(randomKey(20)) }; return false;">Generate a key</a>
+</p>
+
+<p><label for="settings_repository_log_display_limit">Maximum number of revisions displayed on file log</label><input name="settings[repository_log_display_limit]" id="settings_repository_log_display_limit" value="100" size="6" type="text"></p>
+</div>
+
+<fieldset class="box tabular settings">
+<legend>Referencing and fixing issues in commit messages</legend>
+<p><label for="settings_commit_ref_keywords">Referencing keywords</label><input name="settings[commit_ref_keywords]" id="settings_commit_ref_keywords" value="refs,references,IssueID" size="30" type="text">
+<em class="info">Multiple values allowed (comma separated).</em></p>
+
+<p><label for="settings_commit_cross_project_ref">Allow issues of all the other projects to be referenced and fixed</label><input name="settings[commit_cross_project_ref]" value="0" type="hidden"><input name="settings[commit_cross_project_ref]" id="settings_commit_cross_project_ref" value="1" type="checkbox"></p>
+
+<p><label for="settings_commit_logtime_enabled">Enable time logging</label><input name="settings[commit_logtime_enabled]" value="0" type="hidden"><input name="settings[commit_logtime_enabled]" id="settings_commit_logtime_enabled" value="1" onclick="if (this.checked) { $('#settings_commit_logtime_activity_id').removeAttr('disabled'); } else { $('#settings_commit_logtime_activity_id').attr('disabled', true); }" type="checkbox"></p>
+
+<p><label for="settings_commit_logtime_activity_id">Activity for logged time</label><select name="settings[commit_logtime_activity_id]" id="settings_commit_logtime_activity_id" disabled="disabled"><option selected="selected" value="0">Default</option>
+<option value="8">設計作業</option>
+<option value="9">開発作業</option></select></p>
+</fieldset>
+
+<table class="list" id="commit-keywords">
+  <thead>
+    <tr>
+      <th>Tracker</th>
+      <th>Fixing keywords</th>
+      <th>Applied status</th>
+      <th>% Done</th>
+      <th class="buttons"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="commit-keywords">
+      <td>
+        <select name="settings[commit_update_keywords][if_tracker_id][]"><option selected="selected" value="">all</option>
+<option value="1">Bug</option>
+<option value="2">Feature</option>
+<option value="3">Support</option></select>
+      </td>
+      <td>
+        <input name="settings[commit_update_keywords][keywords][]" size="30" type="text">
+      </td>
+      <td>
+        <select name="settings[commit_update_keywords][status_id][]"><option selected="selected" value="0"></option>
+<option value="1">新規</option>
+<option value="2">進行中</option>
+<option value="3">解決</option>
+<option value="4">フィードバック</option>
+<option value="5">終了</option>
+<option value="6">却下</option></select>
+      </td>
+      <td>
+        <select name="settings[commit_update_keywords][done_ratio][]"><option selected="selected" value=""></option>
+<option value="0">0 %</option>
+<option value="10">10 %</option>
+<option value="20">20 %</option>
+<option value="30">30 %</option>
+<option value="40">40 %</option>
+<option value="50">50 %</option>
+<option value="60">60 %</option>
+<option value="70">70 %</option>
+<option value="80">80 %</option>
+<option value="90">90 %</option>
+<option value="100">100 %</option></select>
+      </td>
+      <td class="buttons">
+        <a class="delete-commit-keywords" href="#"><img src="settings_files/delete.png" alt="Delete"></a>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><em class="info">Multiple values allowed (comma separated).</em></td>
+      <td></td>
+      <td></td>
+      <td class="buttons"><a class="add-commit-keywords" href="#"><img src="settings_files/add.png" alt="Add"></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><input name="commit" value="Save" type="submit"></p>
+</form>
+<script>
+//<![CDATA[
+
+$('#commit-keywords').on('click', 'a.delete-commit-keywords', function(e){
+  e.preventDefault();
+  if ($('#commit-keywords tbody tr.commit-keywords').length > 1) {
+    $(this).parents('#commit-keywords tr').remove();
+  } else {
+    $('#commit-keywords tbody tr.commit-keywords').find('input, select').val('');
+  }
+});
+$('#commit-keywords').on('click', 'a.add-commit-keywords', function(e){
+  e.preventDefault();
+  var row = $('#commit-keywords tr.commit-keywords:last');
+  row.clone().insertAfter(row).find('input, select').val('');
+});
+
+//]]>
+</script></div>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> © 2006-2015 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+
+</body></html>
