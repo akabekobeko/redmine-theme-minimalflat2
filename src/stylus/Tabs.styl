@@ -1,0 +1,70 @@
+// Tabs
+
+@import "./common/IconFonts.styl"
+@import "./common/Color.styl"
+
+#content .tabs {height: 2.6em; margin-bottom:1.2em; position:relative; overflow:hidden;}
+#content .tabs ul {margin:0; position:absolute; bottom:0; padding-left:0.5em; width: 2000px; border-bottom: 1px solid #bbbbbb;}
+#content .tabs ul li {
+  float:left;
+  list-style-type:none;
+  white-space:nowrap;
+  margin-right:4px;
+  background:#fff;
+  position:relative;
+  margin-bottom:-1px;
+}
+#content .tabs ul li a{
+  display:block;
+  font-size: 0.9em;
+  text-decoration:none;
+  line-height:1.3em;
+  padding:4px 6px 4px 6px;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbbbbb;
+  background-color: #f6f6f6;
+  color:#999;
+  font-weight:bold;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+}
+
+#content .tabs ul li a:hover {
+  background-color: #ffffdd;
+  text-decoration:none;
+}
+
+#content .tabs ul li a.selected {
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+  border-bottom: 1px solid #fff;
+  color:#444;
+}
+
+#content .tabs ul li a.selected:hover {background-color: #fff;}
+
+div.tabs-buttons { position:absolute; right: 0; width: 48px; height: 24px; background: white; bottom: 0; border-bottom: 1px solid #bbbbbb; }
+
+button.tab-left, button.tab-right {
+  font-size: 0.9em;
+  cursor: pointer;
+  height:24px;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbbbbb;
+  position:absolute;
+  padding:4px;
+  width: 20px;
+  bottom: -1px;
+}
+
+button.tab-left {
+  icon( icon_chevron_left, color_gray_dark )
+  right 20px
+  border-top-left-radius 3px
+}
+
+button.tab-right {
+  icon( icon_chevron_right, color_gray_dark )
+  right 0
+  border-top-right-radius 3px
+}

@@ -1,0 +1,255 @@
+// Tabular forms
+
+@import "./common/IconFonts.styl"
+@import "./common/Color.styl"
+
+html > body .tabular p {
+  overflow hidden
+}
+
+.tabular {
+  p {
+    margin 0
+    padding 3px 0 3px 0
+
+    // width of left column containing the label elements
+    padding-left 180px
+
+    min-height 1.8em
+    clear left
+  }
+
+  input, select {
+    max-width 95%
+  }
+
+  textarea {
+    width 95%
+    resize vertical
+  }
+
+  label {
+    font-weight bold
+    float left
+    text-align right
+    // width of left column
+    margin-left -180px
+    // width of labels. Should be smaller than left column to create some right margin
+    width 175px
+
+    &.floating{
+      font-weight normal
+      margin-left 0
+      text-align left
+      width 270px
+    }
+
+    &.block{
+      font-weight normal
+      margin-left 0px !important
+      text-align left
+      float none
+      display block
+      width auto !important
+    }
+
+    &.inline {
+      font-weight normal
+      float none
+      margin-left 5px !important
+      width auto
+    }
+  }
+}
+
+label.no-css {
+  font-weight: inherit;
+  float:none;
+  text-align:left;
+  margin-left:0px;
+  width:auto;
+}
+input#time_entry_comments { width: 90%;}
+
+#preview fieldset {margin-top: 1em; background: url(../images/draft.png)}
+
+.tabular.settings p{ padding-left: 300px; }
+.tabular.settings label{ margin-left: -300px; width: 295px; }
+.tabular.settings textarea { width: 99%; }
+
+.settings.enabled_scm table {width:100%}
+.settings.enabled_scm td.scm_name{ font-weight: bold; }
+
+fieldset.settings label { display: block; }
+fieldset#notified_events .parent { padding-left: 20px; }
+
+span.required {color: #bb0000;}
+.summary {font-style: italic;}
+
+.check_box_group {
+  display:block;
+  width:95%;
+  max-height:300px;
+  overflow-y:auto;
+  padding:2px 4px 4px 2px;
+  background:#fff;
+  border:1px solid #9EB1C2;
+  border-radius:2px
+}
+.check_box_group label {
+  font-weight: normal;
+  margin-left: 0px !important;
+  text-align: left;
+  float: none;
+  display: block;
+  width: auto;
+}
+.check_box_group.bool_cf {border:0; background:inherit;}
+.check_box_group.bool_cf label {display: inline;}
+
+#attachments_fields input.description {margin-left:4px; width:340px;}
+#attachments_fields span {display:block; white-space:nowrap;}
+#attachments_fields input.filename {
+  border:0; height:1.8em; width:250px; color:#555; background-color:inherit;
+  &:before {
+    icon( icon_attachment, color_gray )
+  }
+}
+#attachments_fields .ajax-waiting input.filename:before {
+  icon( icon_hourglass, color_gray )
+}
+
+#attachments_fields .ajax-loading input.filename {background:url(../images/loading.gif) no-repeat 0px 50%;}
+#attachments_fields div.ui-progressbar { width: 100px; height:14px; margin: 2px 0 -5px 8px; display: inline-block; }
+
+a.remove-upload:before {
+  icon( icon_trash, color_gray )
+}
+
+a.remove-upload:hover {text-decoration:none !important;}
+
+div.fileover { background-color: lavender; }
+
+div.attachments {
+  margin-top 12px
+
+  p {
+    margin 4px 0 2px 0
+  }
+
+  img {
+    vertical-align middle
+  }
+
+  span.author {
+    font-size 0.9em
+    color #888
+  }
+}
+
+div.thumbnails {
+  margin-top 0.6em
+
+  div {
+    background #fff
+    border 2px solid #ddd
+    display inline-block
+    margin-right 2px
+  }
+
+  img {
+    margin 3px
+  }
+}
+
+
+p.other-formats { text-align: right; font-size:0.9em; color: #666; }
+.other-formats span + span:before { content: "| "; }
+
+a.atom:before {
+  icon( icon_feed, color_blue )
+}
+
+a.csv:before {
+  icon( icon_file_text, color_green )
+}
+
+a.pdf:before {
+  icon( icon_file_pdf, color_red )
+}
+
+a.html:before {
+  icon( icon_file_text, color_red )
+}
+
+a.txt:before {
+  icon( icon_file_text, color_blue )
+}
+
+em.info {font-style:normal;font-size:90%;color:#888;display:block;}
+em.info.error:before {
+  icon( icon_error, color_red )
+}
+
+textarea.text_cf {width:95%; resize:vertical;}
+input.string_cf, input.link_cf {width:95%;}
+select.bool_cf {width:auto !important;}
+
+#tab-content-modules fieldset p {margin:3px 0 4px 0;}
+
+#tab-content-users .splitcontentleft {width: 64%;}
+#tab-content-users .splitcontentright {width: 34%;}
+#tab-content-users fieldset {padding:1em; margin-bottom: 1em;}
+#tab-content-users fieldset legend {font-weight: bold;}
+#tab-content-users fieldset label {display: block;}
+#tab-content-users #principals {max-height: 400px; overflow: auto;}
+
+#users_for_watcher {height: 200px; overflow:auto;}
+#users_for_watcher label {display: block;}
+
+table.members td.name {padding-left: 20px;}
+table.members td.group, table.members td.groupnonmember, table.members td.groupanonymous {
+  &:before {
+    icon( icon_group, color_green )
+  }
+}
+
+input#principal_search, input#user_search {width:90%}
+.roles-selection label {display:inline-block; width:210px;}
+
+input.autocomplete {
+  border 1px solid #9EB1C2
+  border-radius 2px
+  height 1.5em
+
+  &:before {
+    icon( icon_search, color_blue )
+  }
+}
+input.autocomplete.ajax-loading {
+  background-image: url(../images/loading.gif);
+}
+
+.role-visibility {padding-left:2em;}
+
+.objects-selection {
+  height: 300px;
+  overflow: auto;
+}
+
+.objects-selection label {
+  display: block;
+}
+
+.objects-selection>div {
+  column-count: auto;
+  column-width: 200px;
+  -webkit-column-count: auto;
+  -webkit-column-width: 200px;
+  -webkit-column-gap : 0.5rem;
+  -webkit-column-rule: 1px solid #ccc;
+  -moz-column-count: auto;
+  -moz-column-width: 200px;
+  -moz-column-gap : 0.5rem;
+  -moz-column-rule: 1px solid #ccc;
+}

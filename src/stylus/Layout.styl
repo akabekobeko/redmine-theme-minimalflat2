@@ -1,0 +1,357 @@
+// Layouts
+
+@import "./common/IconFonts.styl"
+@import "./common/Color.styl"
+
+#wrapper {
+  background color_white
+}
+
+// Main
+#main {
+  background-color #EEEEEE
+
+  &.nosidebar #sidebar{
+    display none
+  }
+
+  &.nosidebar #content{
+    width auto
+    border-right 0
+  }
+}
+
+// Top menu
+#top-menu {
+  background #3E5B76
+  color color_white
+  height 1.8em
+  font-size .9em
+  padding .2em .2em 0 .6em
+
+  ul {
+    margin 0
+    padding 0
+  }
+
+  li {
+    float left
+    list-style-type none
+    margin 0
+    padding 0
+    white-space nowrap
+  }
+
+  a {
+    color color_white
+    margin-right 8px
+    font-weight bold
+  }
+
+  #loggedas {
+    float right
+    margin-right 0.5em
+    color color_white
+  }
+}
+
+#account {
+  float right
+}
+
+// Header
+#header {
+  min-height 5.3em
+  margin 0
+  background-color #628DB6
+  color #f8f8f8
+  padding 4px 8px 20px 6px
+  position relative
+
+  h1 a.ancestor {
+    font-size .8em
+  }
+
+  a {
+    color #f8f8f8
+  }
+}
+
+#quick-search {
+  float right
+}
+
+// Main menu
+#main-menu {
+  position absolute
+  bottom 0
+  left 6px
+  margin-right: -500px
+
+  ul {
+    margin 0
+    padding 0
+  }
+
+  li {
+    float left
+    list-style-type none
+    margin 0 2px 0 0
+    padding 0
+    white-space nowrap
+
+    a {
+      display block
+      color color_white
+      text-decoration none
+      font-weight bold
+      margin 0
+      padding 4px 10px 4px 10px
+
+      &:hover {
+        background #759FCF
+        color color_white
+      }
+
+      &.selected, &.selected:hover {
+        background color_white
+        color #555
+      }
+    }
+  }
+}
+
+// Administrator menu
+#admin-menu {
+  ul {
+    margin 0
+    padding 0
+  }
+
+  li {
+    margin 0
+    padding 0 0 6px 0
+    list-style-type none
+  }
+
+  a {
+    line-height 1.7em
+
+    .selected {
+      padding-left 20px !important
+      background-position: 2px 40%
+    }
+
+    &.projects:before {
+      icon( icon_projects, color_blue )
+    }
+
+    &.users:before {
+      icon( icon_user, color_green )
+    }
+
+    &.groups:before {
+      icon( icon_group, color_green )
+    }
+
+    &.roles:before {
+      icon( icon_database_key, color_gray )
+    }
+
+    &.trackers:before {
+      icon( icon_ticket, color_yellow )
+    }
+
+    &.issue_statuses:before {
+      icon( icon_ticket, color_green )
+    }
+
+    &.workflows:before {
+      icon( icon_ticket, color_blue )
+    }
+
+    &.custom_fields:before {
+      icon( icon_textfield, color_gray )
+    }
+
+    &.enumerations:before {
+      icon( icon_list, color_gray )
+    }
+
+    &.settings:before {
+      icon( icon_config, color_gray )
+    }
+
+    &.plugins:before {
+      icon( icon_plugin, color_green )
+    }
+
+    &.info:before {
+      icon( icon_help, color_blue )
+    }
+
+    &.server_authentication:before {
+      icon( icon_server_key, color_yellow )
+    }
+  }
+}
+
+// Sidebar
+#sidebar{
+  position relative
+  z-index 9
+  float right
+  width 22%
+  margin 0
+  padding 0
+
+  a.selected {
+    line-height 1.7em
+    padding 1px 3px 2px 2px
+    margin-left -2px
+    background-color #9DB9D5
+    color #fff
+    border-radius 2px
+
+    &:hover {
+      text-decoration none
+    }
+  }
+
+  h3 {
+    font-size 14px
+    margin-top 14px
+    color #666
+  }
+
+  hr {
+    width 100%
+    margin 0 auto
+    height 1px
+    background #ccc
+    border 0
+  }
+
+  .contextual {
+    margin-right 1em
+  }
+
+  ul {
+    margin 0
+    padding 0
+
+    li {
+      list-style-type none
+      margin 0 2px 0 0
+      padding 0
+    }
+  }
+}
+
+* html #sidebar{
+  width: 22%
+
+  hr {
+    width 95%
+    position relative
+    left -6px
+    color: #ccc
+  }
+}
+
+// Content
+#content {
+  z-index 10
+  width 75%
+  margin 0
+  padding 6px 10px 10px 10px
+  border-right 1px solid #ddd
+  background-color color_white
+}
+
+* html #content {
+  width 75%
+  padding-left 0
+  margin-top 0
+  padding 6px 10px 10px 10px
+}
+
+html > body #content {
+  min-height 600px
+}
+
+// IE
+* html body #content {
+  height 600px
+}
+
+// Footer
+#footer {
+  clear both
+  border-top 1px solid #bbb
+  font-size .9em
+  color #aaa
+  padding 5px
+  text-align center
+  background color_white
+}
+
+// Login form
+#login-form {
+  table {
+    margin-top 5em
+    padding 1em
+    margin-left  auto
+    margin-right  auto
+    border 2px solid #FDBF3B
+    background-color #FFEBC1
+
+    td {
+      padding 6px
+    }
+  }
+
+  label {
+    font-weight bold
+  }
+
+  input#username, input#password {
+    width 300px
+  }
+}
+
+// Modal dialog
+div.modal {
+  z-index 50
+  padding 4px
+  border-radius 5px
+  background color_white
+}
+
+div.modal h3.title {
+  display none
+}
+
+div.modal p.buttons {
+  text-align right
+  margin-bottom 0
+}
+
+div.modal .box p {
+  margin 0.3em 0
+}
+
+input#openid_url {
+  background url(../images/openid-bg.gif) no-repeat
+  background-color color_white
+  background-position 0 50%
+  padding-left 18px
+}
+
+.clear:after{
+  content "."
+  display block
+  height 0
+  clear both
+  visibility hidden
+}
