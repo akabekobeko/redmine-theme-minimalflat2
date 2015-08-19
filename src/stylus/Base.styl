@@ -17,9 +17,10 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family "Trebuchet MS", Verdana, sans-serif
+  font-family "Helvetica Neue", Helvetica, Verdana, sans-serif
   padding 2px 10px 1px 0px
   margin 0 0 10px 0
+  font-weight normal
 }
 
 #content h1, h2, h3, h4 {
@@ -27,15 +28,15 @@ h1, h2, h3, h4 {
 }
 
 h2, .wiki h1 {
-  font-size 20px
+  font-size 1.8em
 }
 
 h3, .wiki h2 {
-  font-size 16px
+  font-size 1.5em
 }
 
 h4, .wiki h3 {
-  font-size 13px
+  font-size 1.3em
 }
 
 h4 {
@@ -43,7 +44,7 @@ h4 {
 }
 
 pre, code {
-  font-family Consolas, Menlo, "Liberation Mono", Courier, monospace
+  font-family monospace
 }
 
 // Links
@@ -73,13 +74,12 @@ a {
     color #999
   }
 
-  .collapsible {
-    padding-left 12px
-    background url(../images/arrow_expanded.png) no-repeat -3px 40%
+  .collapsible:before {
+    icon( icon_toggle_plus, color_gray )
   }
 
   .collapsible.collapsed {
-    background url(../images/arrow_collapsed.png) no-repeat -5px 40%
+    icon( icon_toggle_minus, color_gray )
   }
 
   #toggle-completed-versions {
@@ -95,28 +95,39 @@ a {
   border 2px solid
 }
 
-div.flash {margin-top: 8px;}
+div.flash {
+  margin-top 8px
+}
 
 div.flash.error, #errorExplanation {
-  background url(../images/exclamation.png) 8px 50% no-repeat
   background-color #ffe3e3
   border-color #dd0000
   color #880000
+
+  &:before {
+    icon( icon_error, color_red )
+  }
 }
 
 div.flash.notice {
-  background url(../images/true.png) 8px 5px no-repeat
   background-color #dfffdf
   border-color #9fcf9f
   color #005f00
+
+  &:before {
+    icon( icon_check, color_green )
+  }
 }
 
 div.flash.warning, .conflict {
-  background url(../images/warning.png) 8px 5px no-repeat
   background-color #FFEBC1
   border-color #FDBF3B
   color #A6750C
   text-align left
+
+  &:before {
+    icon( icon_warning, color_yellow )
+  }
 }
 
 .nodata, .warning {
@@ -138,31 +149,33 @@ div.flash.warning, .conflict {
   font-size 80%
 }
 
-/***** Ajax indicator ******/
+// Ajax indicator
 #ajax-indicator {
-  position: absolute;
+  position absolute
+  z-index 100
+  opacity 0.5
+  top 35%
+  left 40%
+  width 20%
+  padding .6em
+  border 1px solid #bbb
+  font-weight bold
+  text-align center
+
   // fixed not supported by IE
-  background-color:#eee;
-  border: 1px solid #bbb;
-  top:35%;
-  left:40%;
-  width:20%;
-  font-weight:bold;
-  text-align:center;
-  padding:0.6em;
-  z-index:100;
-  opacity: 0.5;
+  background-color #eee
+
+  span {
+    background-position 0% 40%
+    background-repeat no-repeat
+    background-image url(../images/loading.gif)
+    padding-left 26px
+    vertical-align bottom
+  }
 }
 
-html > body #ajax-indicator { position: fixed;
-}
-
-#ajax-indicator span {
-  background-position: 0% 40%;
-  background-repeat: no-repeat;
-  background-image: url(../images/loading.gif);
-  padding-left: 26px;
-  vertical-align: bottom;
+html > body #ajax-indicator {
+  position fixed
 }
 
 // Calendar
@@ -187,33 +200,33 @@ table.cal {
   }
 
   td {
-    border: 1px solid #d7d7d7;
-    vertical-align: top;
-    font-size: 0.9em;
+    border 1px solid #d7d7d7
+    vertical-align top
+    font-size 0.9em
   }
 
   td.week-number {
-    background-color:#EEEEEE;
-    padding: 4px;
-    border:none;
-    font-size: 1em;
+    background-color #EEEEEE
+    padding 4px
+    border none
+    font-size 1em
   }
 
   td p.day-num {
-    font-size: 1.1em;
-    text-align:right;
+    font-size 1.1em
+    text-align right
   }
 
   td.odd p.day-num {
-    color: #bbb;
+    color #bbb
   }
 
   td.today {
-    background:#ffffdd;
+    background #ffffdd
   }
 
   td.today p.day-num {
-    font-weight: bold;
+    font-weight bold
   }
 
   .starting a:before {
@@ -323,36 +336,45 @@ p.progress-info {
 }
 
 // Diff
-.diff_out { background: #fcc;
+.diff_out {
+  background #fcc
+
+  span {
+    background #faa
+  }
 }
-.diff_out span { background: #faa;
-}
-.diff_in { background: #cfc;
-}
-.diff_in span { background: #afa;
+
+.diff_in {
+  background #cfc
+
+  span {
+    background #afa
+  }
 }
 
 .text-diff {
-  padding: 1em;
-  background-color:#f6f6f6;
-  color:#505050;
-  border: 1px solid #e4e4e4;
+  padding 1em
+  background-color #f6f6f6
+  color #505050
+  border 1px solid #e4e4e4
 }
 
 // My page layout
 .block-receiver {
-  border:1px dashed #c0c0c0;
-  margin-bottom: 20px;
-  padding: 15px 0 15px 0;
+  border 1px dashed #c0c0c0
+  margin-bottom 20px
+  padding 15px 0 15px 0
 }
 
 .mypage-box {
-  margin:0 0 20px 0;
-  color:#505050;
-  line-height:1.5em;
+  margin 0 0 20px 0
+  color #505050
+  line-height 1.5em
 }
 
-.handle {cursor: move;}
+.handle {
+  cursor move
+}
 
 a.close-icon:before {
   icon( icon_close, color_gray )
@@ -373,71 +395,122 @@ a.close-icon:hover {
 
 // Media print specific styles
 @media print {
-  #top-menu, #header, #main-menu, #sidebar, #footer, .contextual, .other-formats { display:none;
-}
-  #main { background: #fff;
-}
-  #content { width: 99%;
-margin: 0;
-padding: 0;
-border: 0;
-background: #fff;
-overflow: visible !important;}
-  #wiki_add_attachment { display:none;
-}
-  .hide-when-print { display: none;
-}
-  .autoscroll {overflow-x: visible;}
-  table.list {margin-top:0.5em;}
-  table.list th, table.list td {border: 1px solid #aaa;}
+  #top-menu, #header, #main-menu, #sidebar, #footer, .contextual, .other-formats {
+    display none
+  }
+
+  #main {
+    background #fff
+  }
+
+  #content {
+    width 99%
+    margin 0
+    padding 0
+    border 0
+    background #fff
+    overflow visible !important
+  }
+
+  #wiki_add_attachment {
+    display none
+  }
+
+  .hide-when-print {
+    display none
+  }
+
+  .autoscroll {
+    overflow-x visible
+  }
+  
+  table.list {
+    margin-top .5em
+
+    th, td {
+      border 1px solid #aaa
+    }
+  }
 }
 
 // Accessibility specific styles
 .hidden-for-sighted {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+  position absolute
+  left -10000px
+  top auto
+  width 1px
+  height 1px
+  overflow hidden
 }
 
 img.gravatar {
-  padding: 2px;
-  border: solid 1px #d5d5d5;
-  background: #fff;
-  vertical-align: middle;
+  padding 2px
+  border solid 1px #d5d5d5
+  background color_white
+  vertical-align middle
 }
 
 div.issue img.gravatar {
-  float: left;
-  margin: 0 6px 0 0;
-  padding: 5px;
+  float left
+  margin 0 6px 0 0
+  padding 5px
 }
 
 div.issue table img.gravatar {
-  height: 14px;
-  width: 14px;
-  padding: 2px;
-  float: left;
-  margin: 0 0.5em 0 0;
+  height 14px
+  width 14px
+  padding 2px
+  float left
+  margin 0 .5em 0 0
 }
 
-h2 img.gravatar {margin: -2px 4px -4px 0;}
-h3 img.gravatar {margin: -4px 4px -4px 0;}
-h4 img.gravatar {margin: -6px 4px -4px 0;}
-td.username img.gravatar {margin: 0 0.5em 0 0; vertical-align: top;}
-#activity dt img.gravatar {float: left; margin: 0 1em 1em 0;}
-/* Used on 12px Gravatar img tags without the icon background */
-.icon-gravatar {float: left; margin-right: 4px;}
+h2 img.gravatar {
+  margin -2px 4px -4px 0
+}
 
-#activity dt, .journal {clear: left;}
+h3 img.gravatar {
+  margin -4px 4px -4px 0
+}
 
-.journal-link {float: right;}
+h4 img.gravatar {
+  margin -6px 4px -4px 0
+}
 
-h2 img { vertical-align:middle; }
+td.username img.gravatar {
+  margin 0 .5em 0 0
+  vertical-align top
+}
 
-.hascontextmenu { cursor: context-menu; }
+#activity dt img.gravatar {
+  float left
+  margin 0 1em 1em 0
+}
 
-/* Custom JQuery styles */
-.ui-datepicker-title select {width:70px !important; margin-top:-2px !important; margin-right:4px !important;}
+// Used on 12px Gravatar img tags without the icon background
+.icon-gravatar {
+  float left
+  margin-right 4px
+}
+
+#activity dt, .journal {
+  clear left
+}
+
+.journal-link {
+  float right
+}
+
+h2 img {
+  vertical-align middle
+}
+
+.hascontextmenu {
+  cursor context-menu
+}
+
+// Custom jQuery styles
+.ui-datepicker-title select {
+  width 70px !important
+  margin-top -2px !important
+  margin-right 4px !important
+}
