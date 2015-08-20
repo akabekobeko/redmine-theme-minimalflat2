@@ -3,13 +3,9 @@
 @import "./common/IconFonts.styl"
 @import "./common/Color.styl"
 
-#wrapper {
-  background color_white
-}
-
 // Main
 #main {
-  background-color #EEEEEE
+  background-color color_gray_light_b
 
   &.nosidebar #sidebar{
     display none
@@ -25,8 +21,8 @@
 #top-menu {
   background color_indigo_dark
   color color_white
-  height 1.8em
-  font-size .9em
+  height 1.6em
+  font-size .7em
   padding .34em .2em 0 .6em
 
   ul {
@@ -44,7 +40,7 @@
 
   a {
     color color_white
-    margin-right 8px
+    margin-right .6em
     text-decoration none
 
     &:hover {
@@ -53,7 +49,7 @@
   }
 
   .home:before {
-    icon( icon_app, color_yellow )
+    icon( icon_home, color_yellow )
   }
 
   .my-page:before {
@@ -61,7 +57,7 @@
   }
 
   .projects:before {
-    icon( icon_projects, color_yellow )
+    icon( icon_app, color_yellow )
   }
 
   .administration:before {
@@ -101,7 +97,7 @@
 
 // Header
 #header {
-  min-height 8em
+  min-height 6em
   margin 0
   background-color color_indigo
   color color_white
@@ -109,7 +105,7 @@
 
   h1 {
     padding .5em 0 0 .3em
-    font-size 1.8em
+    font-size 1.6em
 
     &:before {
       icon( icon_app, color_red )
@@ -124,11 +120,13 @@
 #quick-search {
   float right
   margin 1em .8em 0 0
+  font-size .9em
 
   input[type="text"] {
     box-sizong border-box
     padding .3em .5em
-    border none
+    border solid 1px color_white
+    border-radius .2em
     color color_indigo
   }
 }
@@ -139,6 +137,7 @@
   bottom 0
   width 100%
   background-color color_indigo_light
+  font-size .8em
 
   ul {
     margin 0
@@ -192,7 +191,7 @@
     }
 
     &.projects:before {
-      icon( icon_projects, color_blue )
+      icon( icon_app, color_blue )
     }
 
     &.users:before {
@@ -254,11 +253,14 @@
   margin 0
   padding 0
 
+  a {
+    padding .3em .5em
+  }
+
   a.selected {
     line-height 1.7em
-    padding 1px 3px 2px 2px
     margin-left -2px
-    background-color #9DB9D5
+    background-color color_indigo
     color #fff
     border-radius 2px
 
@@ -315,7 +317,7 @@
   margin 0
   padding 6px 10px 10px 10px
   border-right 1px solid #ddd
-  background-color color_white
+  background-color color_page_back
 }
 
 * html #content {
@@ -352,11 +354,11 @@ html > body #content {
     padding 1em
     margin-left  auto
     margin-right  auto
-    border 2px solid #FDBF3B
-    background-color #FFEBC1
+    border 2px solid color_orange
+    background-color color_orange_light
 
     td {
-      padding 6px
+      padding .5em .5em
     }
   }
 

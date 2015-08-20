@@ -4,21 +4,25 @@
 @import "./common/Color.styl"
 
 table.list {
-  border 1px solid #e4e4e4
+  border 1px solid color_gray_light_a
   border-collapse collapse
   width 100%
   margin-bottom 4px
+  font-size .9em
 
   th {
-    background-color #EEEEEE
+    border 1px solid color_gray_light_a
+    background-color color_gray_light_b
     padding 4px
     white-space nowrap
+    font-weight normal
   }
 
   td {
+    border 1px solid color_gray_light_a
     text-align center
     vertical-align top
-    padding-right 10px
+    padding .3em
   }
 
   td.id {
@@ -35,8 +39,8 @@ table.list {
   }
 
   td.checkbox {
-    width 15px
-    padding 2px 0 0 0
+    width 1em
+    padding .1em
 
     input {
       padding 0
@@ -229,10 +233,11 @@ table.issue-report {
 
 // Entry
 tr.entry {
-  border 1px solid #f8f8f8
+  border 1px solid color_gray_light_b
 
   td {
     white-space nowrap
+    padding .2em .5em
 
     &.filename {
       width 30%
@@ -258,24 +263,29 @@ tr.entry {
     }
   }
 
-  tr.entry.file td.filename a {
-    margin-left 16px
+  &.file td.filename a {
+    margin-left 1.3em
   }
 
-  tr.entry.file td.filename_no_report a {
-    margin-left 16px
+  &.file td.filename_no_report a {
+    margin-left 1.3em
   }
 }
 
 tr span.expander:before {
   icon( icon_toggle_plus, color_gray )
-  margin-right 0
+  font-size 12px
+  padding-left .2em
+  margin-right -.5em
   cursor pointer
 }
 
 tr.open span.expander:before {
   icon( icon_toggle_minus, color_gray )
-  margin-right 0
+  font-size 12px
+  padding-left .2em
+  margin-right -.5em
+  cursor pointer
 }
 
 // Chnage set
@@ -481,7 +491,7 @@ table p {
 }
 
 .odd {
-  background-color #f6f7f8
+  background-color color_gray_light_c
 }
 
 .even {
@@ -530,10 +540,6 @@ table.messages td.last_message {
   text-align left
 }
 
-#query_form_content {
-  font-size 90%
-}
-
 table.query-columns {
   border-collapse collapse
   border 0
@@ -556,19 +562,19 @@ h3.version:before {
   icon( icon_package, color_yellow )
 }
 
-div.issues h3 {
+div.issues h3:before {
   icon( icon_ticket, color_yellow )
 }
 
-div.members h3 {
+div.members h3:before {
   icon( icon_group, color_green )
 }
 
-div.news h3 {
+div.news h3:before {
   icon( icon_news, color_gray )
 }
 
-div.projects h3 {
+div.projects h3:before {
   icon( icon_projects, color_blue )
 }
 
@@ -630,12 +636,11 @@ span.search_for_watchers a, span.add_attachment a {
 }
 
 .box {
-  padding 6px
-  margin-bottom 10px
-  background-color #f6f6f6
-  color #505050
+  margin-bottom 1em
+  padding .5em
+  background-color color_gray_light_c
+  border 1px solid color_gray_light_a
   line-height 1.5em
-  border 1px solid #e4e4e4
   word-wrap break-word
 }
 
@@ -647,6 +652,7 @@ div.square {
   width .6em
   height .6em
 }
+
 .contextual {
   float right
   white-space nowrap
@@ -706,9 +712,9 @@ hr {
 
 blockquote {
   font-style italic
-  border-left 3px solid #e0e0e0
-  padding-left .6em
-  margin-left 2.4em
+  border-left 2px solid color_green
+  padding 0 .5em
+  margin 1em
 }
 
 blockquote blockquote {
@@ -757,10 +763,11 @@ p.footnote {
 }
 
 div.issue {
-  background #ffffdd
+  background color_yellow_light
   padding 6px
   margin-bottom 6px
   border 1px solid #d7d7d7
+  font-size .9em
 
   div.subject {
     div div {
@@ -809,6 +816,20 @@ div.issue {
     td {
       width 28%
     }
+  }
+}
+
+#issue-form {
+}
+
+// Issue histories
+#history {
+  font-size .9em
+
+  h4 {
+    font-size 1.2em
+    padding-bottom .2em
+    border-bottom dotted 2px color_gray_light_a
   }
 }
 

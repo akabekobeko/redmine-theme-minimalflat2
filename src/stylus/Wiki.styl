@@ -3,44 +3,28 @@
 @import "./common/IconFonts.styl"
 @import "./common/Color.styl"
 
-div.wiki table {
-  border-collapse collapse
-  margin-bottom 1em
+.wiki {
+  padding 0 .5em 1em
 
-  table, td, th {
-    border 1px solid #bbb
-    padding 4px
+  h2 {
+    padding .8em
+    border-left 4px solid color_blue
   }
 
-  .noborder, .noborder td, .noborder th {
-    border 0
+  h3 {
+    padding .8em
+    border-left 4px solid color_gray_light_a
   }
 
-  .external:before {
-    icon( icon_external, color_gray )
-  }
-
-  a {
-    word-wrap break-word
-
-    &.new {
-      color #b73535
-    }
-  }
-
-  ul, ol {
-    margin-bottom 1em
-  }
-
-  li > ul, li > ol {
-    margin-bottom 0
+  h4 {
+    border-bottom 2px dotted color_gray_light_a
   }
 
   pre {
-    margin 1em 1em 1em 1.6em
+    margin 1em
     padding 8px
-    background-color #fafafa
-    border 1px solid #e2e2e2
+    background-color color_gray_light_c
+    border 1px solid color_gray_light_a
     width auto
     overflow-x auto
     overflow-y hidden
@@ -90,13 +74,37 @@ div.wiki table {
       font-size 0.9em
       font-weight normal
       text-decoration none
-      color #606060
+      color color_gray_dark
 
       &:hover {
-        color #c61a1a
+        color color_red
         text-decoration underline
       }
     }
+  }
+
+  .noborder, .noborder td, .noborder th {
+    border 0
+  }
+
+  .external:before {
+    icon( icon_external, color_gray )
+  }
+
+  a {
+    word-wrap break-word
+
+    &.new {
+      color color_red
+    }
+  }
+
+  ul, ol {
+    margin-bottom 1em
+  }
+
+  li > ul, li > ol {
+    margin-bottom 0
   }
 }
 
@@ -105,6 +113,26 @@ div.wiki table {
   width 50%
 }
 
+// Table
+div.wiki table {
+  margin-bottom 1em
+  border-collapse collapse
+  border 1px solid color_gray
+
+  th {
+    padding .3em .5em
+    background-color color_gray_light_b
+    border 1px solid color_gray
+    font-weight normal
+  }
+
+  td {
+    padding .3em .5em
+    border 1px solid color_gray
+  }
+}
+
+// Anchor
 a.wiki-anchor {
   display none
   margin-left 6px
@@ -124,4 +152,8 @@ h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor {
 div.wiki img {
   vertical-align middle
   max-width 100%
+}
+
+#attach_files_link:before {
+  icon( icon_add, color_green )
 }
