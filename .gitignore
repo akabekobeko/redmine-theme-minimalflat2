@@ -5,6 +5,7 @@ src/stylesheets
 defaults/
 samples/
 images/
+icon/
 
 .*
 *.map
