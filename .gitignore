@@ -1,6 +1,5 @@
 node_modules/
 dist/
-src/javascripts
 src/stylesheets
 defaults/
 samples/
@@ -10,4 +9,6 @@ icon/
 .*
 *.map
 *.zip
+*.js
+!theme.js
 !.gitignore

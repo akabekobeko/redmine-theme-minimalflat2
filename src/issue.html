@@ -14,6 +14,7 @@
   <link rel="stylesheet" media="screen" href="defaults/stylesheets/jstoolbar.css">
   <script src="javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.3.js"></script>
   <script src="javascripts/application.js"></script>
+  <script src="javascripts/theme.js"></script>
 </head>
 <body class="theme-Minimalflat2 project-redmine-theme-minimalflat2 controller-issues action-show">
 <div id="wrapper">
@@ -186,18 +187,6 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
 <a href="#" onclick='$("#new-relation-form").hide();; return false;'>Cancel</a>
 </p>
 
-<script>
-//<![CDATA[
-observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?project_id=redmine-theme-minimalflat2')
-//]]>
-</script>
-
-<script>
-//<![CDATA[
-setPredecessorFieldsVisibility();
-//]]>
-</script>
-
 </form>
 </div>
 
@@ -278,11 +267,6 @@ setPredecessorFieldsVisibility();
   <span id="issue_description_and_toolbar" style="display:none">
     <div class="jstElements"><button title="Strong" class="jstb_strong" tabindex="200" type="button"><span>Strong</span></button><button title="Italic" class="jstb_em" tabindex="200" type="button"><span>Italic</span></button><button title="Underline" class="jstb_ins" tabindex="200" type="button"><span>Underline</span></button><button title="Deleted" class="jstb_del" tabindex="200" type="button"><span>Deleted</span></button><button title="Inline Code" class="jstb_code" tabindex="200" type="button"><span>Inline Code</span></button><span class="jstSpacer" id="space1">&nbsp;</span><button title="Heading 1" class="jstb_h1" tabindex="200" type="button"><span>Heading 1</span></button><button title="Heading 2" class="jstb_h2" tabindex="200" type="button"><span>Heading 2</span></button><button title="Heading 3" class="jstb_h3" tabindex="200" type="button"><span>Heading 3</span></button><span class="jstSpacer" id="space2">&nbsp;</span><button title="Unordered list" class="jstb_ul" tabindex="200" type="button"><span>Unordered list</span></button><button title="Ordered list" class="jstb_ol" tabindex="200" type="button"><span>Ordered list</span></button><span class="jstSpacer" id="space3">&nbsp;</span><button title="Quote" class="jstb_bq" tabindex="200" type="button"><span>Quote</span></button><button title="Remove Quote" class="jstb_unbq" tabindex="200" type="button"><span>Remove Quote</span></button><button title="Preformatted text" class="jstb_pre" tabindex="200" type="button"><span>Preformatted text</span></button><span class="jstSpacer" id="space4">&nbsp;</span><button title="Link to a Wiki page" class="jstb_link" tabindex="200" type="button"><span>Link to a Wiki page</span></button><button title="Image" class="jstb_img" tabindex="200" type="button"><span>Image</span></button><span class="jstSpacer" id="space5">&nbsp;</span><button title="Help" class="jstb_help" tabindex="200" type="button"><span>Help</span></button></div><div class="jstEditor"><textarea cols="60" rows="10" class="wiki-edit" name="issue[description]" id="issue_description">Sample issue.</textarea></div>
 </span></p>
-<script>
-//<![CDATA[
-var wikiToolbar = new jsToolBar(document.getElementById('issue_description')); wikiToolbar.setHelpLink('/help/en/wiki_syntax.html'); wikiToolbar.draw();
-//]]>
-</script>
 
 <div id="attributes" class="attributes">
   
@@ -311,28 +295,13 @@ var wikiToolbar = new jsToolBar(document.getElementById('issue_description')); w
 
 <div class="splitcontentright">
 <p id="parent_issue"><label for="issue_parent_issue_id">Parent task</label><input autocomplete="off" class="ui-autocomplete-input autocomplete" size="10" name="issue[parent_issue_id]" id="issue_parent_issue_id" type="text"></p>
-<script>
-//<![CDATA[
-observeAutocompleteField('issue_parent_issue_id', '/issues/auto_complete?project_id=redmine-theme-minimalflat2&scope=tree')
-//]]>
-</script>
 
 <p id="start_date_area">
   <label for="issue_start_date">Start date</label><input class="hasDatepicker" size="10" value="2015-08-12" name="issue[start_date]" id="issue_start_date" type="text"><img title="..." alt="..." src="issue_files/calendar.png" class="ui-datepicker-trigger">
-  <script>
-//<![CDATA[
-$(function() { $('#issue_start_date').datepicker(datepickerOptions); });
-//]]>
-</script>
 </p>
 
 <p id="due_date_area">
   <label for="issue_due_date">Due date</label><input class="hasDatepicker" size="10" value="2015-08-28" name="issue[due_date]" id="issue_due_date" type="text"><img title="..." alt="..." src="issue_files/calendar.png" class="ui-datepicker-trigger">
-  <script>
-//<![CDATA[
-$(function() { $('#issue_due_date').datepicker(datepickerOptions); });
-//]]>
-</script>
 </p>
 
 <p><label for="issue_estimated_hours">Estimated time</label><input size="3" name="issue[estimated_hours]" id="issue_estimated_hours" type="text"> Hours</p>
@@ -392,11 +361,6 @@ $(document).ready(function(){
 
     <fieldset><legend>Notes</legend>
     <div class="jstElements"><button title="Strong" class="jstb_strong" tabindex="200" type="button"><span>Strong</span></button><button title="Italic" class="jstb_em" tabindex="200" type="button"><span>Italic</span></button><button title="Underline" class="jstb_ins" tabindex="200" type="button"><span>Underline</span></button><button title="Deleted" class="jstb_del" tabindex="200" type="button"><span>Deleted</span></button><button title="Inline Code" class="jstb_code" tabindex="200" type="button"><span>Inline Code</span></button><span class="jstSpacer" id="space1">&nbsp;</span><button title="Heading 1" class="jstb_h1" tabindex="200" type="button"><span>Heading 1</span></button><button title="Heading 2" class="jstb_h2" tabindex="200" type="button"><span>Heading 2</span></button><button title="Heading 3" class="jstb_h3" tabindex="200" type="button"><span>Heading 3</span></button><span class="jstSpacer" id="space2">&nbsp;</span><button title="Unordered list" class="jstb_ul" tabindex="200" type="button"><span>Unordered list</span></button><button title="Ordered list" class="jstb_ol" tabindex="200" type="button"><span>Ordered list</span></button><span class="jstSpacer" id="space3">&nbsp;</span><button title="Quote" class="jstb_bq" tabindex="200" type="button"><span>Quote</span></button><button title="Remove Quote" class="jstb_unbq" tabindex="200" type="button"><span>Remove Quote</span></button><button title="Preformatted text" class="jstb_pre" tabindex="200" type="button"><span>Preformatted text</span></button><span class="jstSpacer" id="space4">&nbsp;</span><button title="Link to a Wiki page" class="jstb_link" tabindex="200" type="button"><span>Link to a Wiki page</span></button><button title="Image" class="jstb_img" tabindex="200" type="button"><span>Image</span></button><span class="jstSpacer" id="space5">&nbsp;</span><button title="Help" class="jstb_help" tabindex="200" type="button"><span>Help</span></button></div><div class="jstEditor"><textarea cols="60" rows="10" class="wiki-edit" name="issue[notes]" id="issue_notes"></textarea></div>
-    <script>
-//<![CDATA[
-var wikiToolbar = new jsToolBar(document.getElementById('issue_notes')); wikiToolbar.setHelpLink('/help/en/wiki_syntax.html'); wikiToolbar.draw();
-//]]>
-</script>
 
     <input name="issue[private_notes]" value="0" type="hidden"><input value="1" name="issue[private_notes]" id="issue_private_notes" type="checkbox"> <label for="issue_private_notes">Private notes</label>
 
@@ -429,13 +393,7 @@ var wikiToolbar = new jsToolBar(document.getElementById('issue_notes')); wikiToo
   <span><a class="pdf" rel="nofollow" href="./issues/1.pdf">PDF</a></span>
 </p>
 
-
-
-<script>
-//<![CDATA[
-contextMenuInit('/issues/context_menu')
-//]]>
-</script><div style="display:none;" id="context-menu"></div>
+<div style="display:none;" id="context-menu"></div>
 
         
         <div style="clear:both;"></div>

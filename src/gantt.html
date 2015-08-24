@@ -13,6 +13,7 @@
   <link rel="stylesheet" media="all" href="stylesheets/application.css">
   <script src="javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.3.js"></script>
   <script src="javascripts/application.js"></script>
+  <script src="javascripts/theme.js"></script>
 </head>
 <body class="project-redmine-theme-minimalflat2 controller-gantts action-show">
 <div id="wrapper">
@@ -98,21 +99,7 @@
 <fieldset id="filters" class="collapsible ">
   <legend onclick="toggleFieldset(this);">Filters</legend>
   <div style="">
-    <script>
-//<![CDATA[
 
-var operatorLabels = {"=":"is","!":"is not","o":"open","c":"closed","!*":"none","*":"any",">=":"\u003e=","<=":"\u003c=","><":"between","<t+":"in less than",">t+":"in more than","><t+":"in the next","t+":"in","t":"today","ld":"yesterday","w":"this week","lw":"last week","l2w":"last 2 weeks","m":"this month","lm":"last month","y":"this year",">t-":"less than days ago","<t-":"more than days ago","><t-":"in the past","t-":"days ago","~":"contains","!~":"doesn't contain","=p":"any issues in project","=!p":"any issues not in project","!p":"no issues in project"};
-var operatorByType = {"list":["=","!"],"list_status":["o","=","!","c","*"],"list_optional":["=","!","!*","*"],"list_subprojects":["*","!*","="],"date":["=","\u003e=","\u003c=","\u003e\u003c","\u003ct+","\u003et+","\u003e\u003ct+","t+","t","ld","w","lw","l2w","m","lm","y","\u003et-","\u003ct-","\u003e\u003ct-","t-","!*","*"],"date_past":["=","\u003e=","\u003c=","\u003e\u003c","\u003et-","\u003ct-","\u003e\u003ct-","t-","t","ld","w","lw","l2w","m","lm","y","!*","*"],"string":["=","~","!","!~","!*","*"],"text":["~","!~","!*","*"],"integer":["=","\u003e=","\u003c=","\u003e\u003c","!*","*"],"float":["=","\u003e=","\u003c=","\u003e\u003c","!*","*"],"relation":["=","=p","=!p","!p","!*","*"]};
-var availableFilters = {"status_id":{"type":"list_status","name":"Status","values":[["新規","1"],["進行中","2"],["解決","3"],["フィードバック","4"],["終了","5"],["却下","6"]]},"tracker_id":{"type":"list","name":"Tracker","values":[["Bug","1"],["Feature","2"],["Support","3"]]},"priority_id":{"type":"list","name":"Priority","values":[["低め","1"],["通常","2"],["高め","3"],["急いで","4"],["今すぐ","5"]]},"author_id":{"type":"list","name":"Author","values":[["\u003c\u003c me \u003e\u003e","me"]]},"assigned_to_id":{"type":"list_optional","name":"Assignee","values":[["\u003c\u003c me \u003e\u003e","me"]]},"assigned_to_role":{"type":"list_optional","name":"Assignee's role","values":[["管理者","3"],["開発者","4"],["報告者","5"]]},"subject":{"type":"text","name":"Subject"},"created_on":{"type":"date_past","name":"Created"},"updated_on":{"type":"date_past","name":"Updated"},"closed_on":{"type":"date_past","name":"Closed"},"start_date":{"type":"date","name":"Start date"},"due_date":{"type":"date","name":"Due date"},"estimated_hours":{"type":"float","name":"Estimated time"},"done_ratio":{"type":"integer","name":"% Done"},"is_private":{"type":"list","name":"Private","values":[["yes","1"],["no","0"]]},"watcher_id":{"type":"list","name":"Watcher","values":[["\u003c\u003c me \u003e\u003e","me"]]},"relates":{"type":"relation","name":"Related to"},"duplicates":{"type":"relation","name":"Duplicates"},"duplicated":{"type":"relation","name":"Duplicated by"},"blocks":{"type":"relation","name":"Blocks"},"blocked":{"type":"relation","name":"Blocked by"},"precedes":{"type":"relation","name":"Precedes"},"follows":{"type":"relation","name":"Follows"},"copied_to":{"type":"relation","name":"Copied to"},"copied_from":{"type":"relation","name":"Copied from"}};
-var labelDayPlural = "days";
-var allProjects = [["redmine-theme-minimalflat2","1"],["Sample","2"]];
-$(document).ready(function(){
-  initFilters();
-  addFilter("status_id", "o", [""]);
-});
-
-//]]>
-</script>
 <table style="width:100%">
 <tbody><tr>
 <td>
@@ -361,22 +348,6 @@ months from
   <span><a class="png" rel="nofollow" href="./projects/redmine-theme-minimalflat2/issues/gantt.png?month=8&amp;months=6&amp;year=2015&amp;zoom=2">PNG</a></span>
 </p>
 
-
-
-<script>
-//<![CDATA[
-
-  var issue_relation_type = {"blocks":{"landscape_margin":16,"color":"#F34F4F"},"precedes":{"landscape_margin":20,"color":"#628FEA"}};
-  $(document).ready(drawGanttHandler);
-  $(window).resize(drawGanttHandler);
-  $(function() {
-    $("#draw_relations").change(drawGanttHandler);
-    $("#draw_progress_line").change(drawGanttHandler);
-  });
-
-//]]>
-</script>
-        
         <div style="clear:both;"></div>
     </div>
 </div>

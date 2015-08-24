@@ -1,8 +1,88 @@
-// Tabular forms
+// Form
 
 @import "./common/IconFonts.styl"
 @import "./common/Color.styl"
 
+input, select {
+  font-size .8em
+}
+
+input[type="text"], input[type="password"] {
+  border solid 1px color_gray_light_a
+  border-radius .2em
+  padding .3em
+  color color_indigo
+}
+
+textarea {
+  border solid 1px color_gray_light_a
+  border-radius .2em
+  padding .3em
+  color color_indigo
+  box-sizing border-box
+  font-size .9em
+}
+
+// Submit button
+input[type="submit"] {
+  background-color color_white
+  border solid 2px color_blue
+  color color_blue
+  padding .2em .5em
+  border-radius .2em
+  letter-spacing .09em
+
+  &:hover {
+    background-color color_blue
+    color color_white
+  }
+}
+
+// Normal button
+input[type="button"] {
+  background-color color_white
+  border solid 2px color_green
+  color color_green
+  padding .2em .5em
+  border-radius .2em
+  letter-spacing .09em
+
+  &:hover {
+    background-color color_green
+    color color_white
+  }
+}
+
+// Ajax indicator
+#ajax-indicator {
+  position absolute
+  z-index 100
+  opacity 0.5
+  top 35%
+  left 40%
+  width 20%
+  padding .6em
+  border 1px solid #bbb
+  font-weight bold
+  text-align center
+
+  // fixed not supported by IE
+  background-color #eee
+
+  span {
+    background-position 0% 40%
+    background-repeat no-repeat
+    background-image url(../images/loading.gif)
+    padding-left 26px
+    vertical-align bottom
+  }
+}
+
+html > body #ajax-indicator {
+  position fixed
+}
+
+// Tabular forms
 html > body .tabular p {
   overflow hidden
 }

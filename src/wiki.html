@@ -13,6 +13,7 @@
   <link rel="stylesheet" media="all" href="stylesheets/application.css">
   <script src="javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.3.js"></script>
   <script src="javascripts/application.js"></script>
+  <script src="javascripts/theme.js"></script>
 </head>
 <body class="project-redmine-theme-minimalflat2 controller-wiki action-show">
 <div id="wrapper">
@@ -226,8 +227,27 @@
 </blockquote>
 </div>
 
+<h2>Misc</h2>
 
+<div class="flash notice" id="flash_notice">Notice</div>
 
+<div class="flash warning" id="flash_warning">Warinig</div>
+
+<div class="flash error" id="flash_error">Error</div>
+
+<p>
+<input type="text">
+</p>
+
+<p>
+<input type="submit" value="Submit">
+</p>
+
+<p>
+<input type="button" value="Button">
+</p>
+
+<hr>
 
 <div id="wiki_add_attachment">
 <p><a onclick="$('#add_attachment_form').show(); return false;" id="attach_files_link" href="./projects/redmine-theme-minimalflat2/wiki/Wiki">New file</a></p>
