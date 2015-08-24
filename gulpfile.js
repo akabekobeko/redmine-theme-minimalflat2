@@ -3,19 +3,29 @@ var $    = require( 'gulp-load-plugins' )();
 
 // 共通タスク設定
 var common = {
-  src:  './src',
-  dest: './dist'
+  src:       './src',
+  dest:      './dist',
+  isRelease: false
 };
 
 // Stylus コンパイルと結合
 gulp.task( 'stylus', function() {
+  var isSourceMaps = !( common.isRelease );
+  var dest         = ( common.isRelease ? common.dest : common.src );
+
   return gulp.src( [ common.src + '/stylus/App.styl' ] )
     .pipe( $.plumber() )
-    .pipe( $.sourcemaps.init() )
+    .pipe( $.if( isSourceMaps, $.sourcemaps.init() ) )
     .pipe( $.stylus() )
     .pipe( $.rename( 'application.css' ) )
-    .pipe( $.sourcemaps.write( '.' ) )
-    .pipe( gulp.dest( common.src + '/stylesheets' ) );
+    .pipe( $.if( isSourceMaps, $.sourcemaps.write( '.' ) ) )
+    .pipe( gulp.dest( dest + '/stylesheets' ) );
+} );
+
+// リリース用イメージ削除
+gulp.task( 'release:enable', function( done ) {
+  common.isRelease = true;
+  done();
 } );
 
 // リリース用イメージ削除
@@ -25,7 +35,7 @@ gulp.task( 'clean', function( done ) {
 } );
 
 // リリース用ドキュメントのコピー
-gulp.task( 'doc', [ 'clean' ], function() {
+gulp.task( 'doc', [ 'clean', 'release:enable' ], function() {
   gulp.src( [ './README.md', './LICENSE' ] )
     .pipe( gulp.dest( common.dest ) );
 } );
@@ -33,7 +43,6 @@ gulp.task( 'doc', [ 'clean' ], function() {
 // リリース用イメージのビルド
 gulp.task( 'build', [ 'doc', 'stylus' ], function() {
   var src = [
-    common.src + '/stylesheets/application.css',
     common.src + '/javascripts/theme.js',
     common.src + '/fonts/**'
   ];
