@@ -7,15 +7,15 @@
   position absolute
   top 0
   height 16px
-  border-top 1px solid #c0c0c0
-  border-bottom 1px solid #c0c0c0
-  border-right 1px solid #c0c0c0
+  border-top 1px solid color_gray_light_a
+  border-bottom 1px solid color_gray_light_a
+  border-right 1px solid color_gray_light_a
   text-align center
   overflow hidden
   font-size .8em
 
   &.nwday {
-    background-color #f1f1f1
+    background-color color_gray_light_b
   }
 }
 
@@ -35,7 +35,7 @@
   position absolute
   height 8px
   font-size .8em
-  color #888
+  color color_gray_dark
   padding 0
   margin 0
   line-height 16px
@@ -52,23 +52,23 @@
 
 
 .task_late {
-  background-color #f66
-  border 1px solid #f66
+  background-color color_red
+  border 1px solid color_red
 }
 
 .task_done {
-  background-color #00c600
-  border 1px solid #00c600
+  background-color color_green
+  border 1px solid color_green
 }
 
 .task_todo {
-  background-color #aaa
-  border 1px solid #aaa
+  background-color color_gray_light_a
+  border 1px solid color_gray_light_a
 
   &.parent {
     height 3px
-    border 1px solid #888
-    background #888
+    border 1px solid color_gray
+    background color_gray
   }
 }
 
@@ -100,15 +100,15 @@
 
 .version {
   &.task_late {
-    background-color #f66
-    border 1px solid #f66
+    background-color color_red
+    border 1px solid color_red
     height 2px
     margin-top 3px
   }
 
   &.task_done {
-    background-color #00c600
-    border 1px solid #00c600
+    background-color color_green
+    border 1px solid color_green
     height 2px
     margin-top 3px
   }
@@ -130,15 +130,15 @@
 
 .project {
   &.task_late {
-    background-color #f66
-    border 1px solid #f66
+    background-color color_red
+    border 1px solid color_red
     height 2px
     margin-top 3px
   }
 
   &.task_done {
-    background-color #00c600
-    border 1px solid #00c600
+    background-color color_green
+    border 1px solid color_green
     height 2px
     margin-top 3px
   }
@@ -158,9 +158,9 @@
 }
 
 .version-behind-schedule a, .issue-behind-schedule a {
-  color #f66914
+  color color_orange
 }
 
 .version-overdue a, .issue-overdue a, .project-overdue a {
-  color #f00
+  color color_red
 }
