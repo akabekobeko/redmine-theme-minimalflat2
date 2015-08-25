@@ -35,9 +35,10 @@
 
     // a > img icons
     $( 'a[onclick*="removeFileField(this);"]' ).addClass( 'js-replace-icon-trash' ).empty();
-    $( 'a[data-method="delete"]'              ).addClass( 'js-replace-icon-trash' );
+    $( 'a[data-method="delete"]'              ).addClass( 'js-replace-icon-trash' ).empty();
     $( 'img[src*="toggle_check.png"]'         ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-check' ) );
-    $( 'img[src*="edit.png"]'         ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-edit' ) );
+    $( 'img[src*="edit.png"]'                 ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-edit' ) );
+    $( 'img[src*="calendar.png"]'             ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-calendar' ) );
     $( 'a[href*="edit?section="]'             ).addClass( 'js-replace-icon-edit' ).empty();
     $( 'a[href*="quoted?journal_id="]'        ).addClass( 'js-replace-icon-comment' ).empty();
     $( 'a[onclick*="journals/edit"]'          ).addClass( 'js-replace-icon-edit' ).empty();
