@@ -2,45 +2,55 @@
   if( !( $ ) ) { return; }
 
   $( document ).ready( function() {
-    function addIcon( target, iconClass ) {
+    function buttonIcon( target, iconClass ) {
       $( target ).each( function() {
         $( '<i>' ).addClass( iconClass ).prependTo( $( this ) );
       } );
     }
 
-    function replace( target, text ) {
+    function buttonText( target, text ) {
       $( target ).each( function() {
         $( '<strong>' ).text( text ).prependTo( $( this ) );
       } );
     }
 
+    function imageToIcon( target, icon ) {
+      $( target ).each( function() {
+        var title = $( this ).attr( 'alt' );
+        $( this ).replaceWith( $( '<i>' ).addClass( icon ).attr( 'title', title ) );
+      } );
+    }
+
     // Editor toolbar
     $( '.jstElements' ).removeClass( 'jstElements' ).addClass( 'js-replace-jstElements' );
-    addIcon( '.jstb_strong', 'js-replace-icon-strong' );
-    addIcon( '.jstb_em',     'js-replace-icon-italic' );
-    addIcon( '.jstb_ins',    'js-replace-icon-underline' );
-    addIcon( '.jstb_del',    'js-replace-icon-strike' );
-    replace( '.jstb_code',    'C' );
-    replace( '.jstb_h1',     'H1' );
-    replace( '.jstb_h2',     'H2' );
-    replace( '.jstb_h3',     'H3' );
-    addIcon( '.jstb_ul',     'js-replace-icon-ul' );
-    addIcon( '.jstb_ol',     'js-replace-icon-ol' );
-    addIcon( '.jstb_bq',     'js-replace-icon-bq' );
-    addIcon( '.jstb_unbq',   'js-replace-icon-unbq' );
-    addIcon( '.jstb_pre',    'js-replace-icon-pre' );
-    addIcon( '.jstb_link',   'js-replace-icon-link' );
-    addIcon( '.jstb_img',    'js-replace-icon-image' );
-    addIcon( '.jstb_help',   'js-replace-icon-help' );
+    buttonIcon( '.jstb_strong', 'js-replace-icon-strong' );
+    buttonIcon( '.jstb_em',     'js-replace-icon-italic' );
+    buttonIcon( '.jstb_ins',    'js-replace-icon-underline' );
+    buttonIcon( '.jstb_del',    'js-replace-icon-strike' );
+    buttonText( '.jstb_code',   'C' );
+    buttonText( '.jstb_h1',     'H1' );
+    buttonText( '.jstb_h2',     'H2' );
+    buttonText( '.jstb_h3',     'H3' );
+    buttonIcon( '.jstb_ul',     'js-replace-icon-ul' );
+    buttonIcon( '.jstb_ol',     'js-replace-icon-ol' );
+    buttonIcon( '.jstb_bq',     'js-replace-icon-bq' );
+    buttonIcon( '.jstb_unbq',   'js-replace-icon-unbq' );
+    buttonIcon( '.jstb_pre',    'js-replace-icon-pre' );
+    buttonIcon( '.jstb_link',   'js-replace-icon-link' );
+    buttonIcon( '.jstb_img',    'js-replace-icon-image' );
+    buttonIcon( '.jstb_help',   'js-replace-icon-help' );
 
-    // a > img icons
-    $( 'a[onclick*="removeFileField(this);"]' ).addClass( 'js-replace-icon-trash' ).empty();
-    $( 'a[data-method="delete"]'              ).addClass( 'js-replace-icon-trash' ).empty();
-    $( 'img[src*="toggle_check.png"]'         ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-check' ) );
-    $( 'img[src*="edit.png"]'                 ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-edit' ) );
-    $( 'img[src*="calendar.png"]'             ).replaceWith( $( '<i>' ).addClass( 'js-replace-icon-calendar' ) );
-    $( 'a[href*="edit?section="]'             ).addClass( 'js-replace-icon-edit' ).empty();
-    $( 'a[href*="quoted?journal_id="]'        ).addClass( 'js-replace-icon-comment' ).empty();
-    $( 'a[onclick*="journals/edit"]'          ).addClass( 'js-replace-icon-edit' ).empty();
+    // img
+    imageToIcon( 'img[src*="toggle_check.png"]', 'js-replace-icon-check'          );
+    imageToIcon( 'img[src*="true.png"]',         'js-replace-icon-check'          );
+    imageToIcon( 'img[src*="exclamation.png"]',  'js-replace-icon-warning'        );
+    imageToIcon( 'img[src*="delete.png"]',       'js-replace-icon-trash'          );
+    imageToIcon( 'img[src*="add.png"]',          'js-replace-icon-add'            );
+    imageToIcon( 'img[src*="edit.png"]',         'js-replace-icon-edit'           );
+    imageToIcon( 'img[src*="calendar.png"]',     'js-replace-icon-calendar'       );
+    imageToIcon( 'img[src*="2uparrow.png"]',     'js-replace-icon-chevron-top'    );
+    imageToIcon( 'img[src*="1uparrow.png"]',     'js-replace-icon-chevron-up'     );
+    imageToIcon( 'img[src*="1downarrow.png"]',   'js-replace-icon-chevron-down'   );
+    imageToIcon( 'img[src*="2downarrow.png"]',   'js-replace-icon-chevron-bottom' );
   } );
 } )( jQuery );
