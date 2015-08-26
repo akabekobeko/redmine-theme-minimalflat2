@@ -47,6 +47,7 @@
     imageToIcon( 'img[src*="delete.png"]',       'js-replace-icon-trash'          );
     imageToIcon( 'img[src*="add.png"]',          'js-replace-icon-add'            );
     imageToIcon( 'img[src*="edit.png"]',         'js-replace-icon-edit'           );
+    imageToIcon( 'img[src*="comment.png"]',      'js-replace-icon-comment'        );
     imageToIcon( 'img[src*="calendar.png"]',     'js-replace-icon-calendar'       );
     imageToIcon( 'img[src*="2uparrow.png"]',     'js-replace-icon-chevron-top'    );
     imageToIcon( 'img[src*="1uparrow.png"]',     'js-replace-icon-chevron-up'     );
