@@ -56,4 +56,4 @@
     imageToIcon( 'img[src*="1downarrow.png"]',         'js-replace-icon-chevron-down'   );
     imageToIcon( 'img[src*="2downarrow.png"]',         'js-replace-icon-chevron-bottom' );
   } );
-} )( jQuery );
+} )( window.jQuery );
