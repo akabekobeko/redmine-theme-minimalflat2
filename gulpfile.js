@@ -36,14 +36,15 @@ gulp.task( 'clean', function( done ) {
 
 // リリース用ドキュメントのコピー
 gulp.task( 'doc', [ 'clean', 'release:enable' ], function() {
-  gulp.src( [ './README.md', './LICENSE' ] )
+  return gulp.src( [ './README.md', './LICENSE' ] )
     .pipe( gulp.dest( common.dest ) );
 } );
 
-// リリース用イメージのビルド
+// リリース用イメージのビルドとコピー
 gulp.task( 'build', [ 'doc', 'stylus' ], function() {
   var src = [
     common.src + '/javascripts/theme.js',
+    common.src + '/favicon/favicon.ico',
     common.src + '/fonts/**'
   ];
 

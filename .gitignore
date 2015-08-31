@@ -1,10 +1,7 @@
 node_modules/
 dist/
 src/stylesheets
-defaults/
 samples/
-images/
-icon/
 
 .*
 *.map
