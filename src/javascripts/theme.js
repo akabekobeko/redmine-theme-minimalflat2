@@ -88,21 +88,6 @@
         area.next( 'ul.projects' ).toggle();
         toggleExpandSymbol( $( this ) );
       } );
-
-
-
-      /*
-      // Add expander
-      if( $( this ).next().is( 'ul.projects' ) ) {
-        $( this ).prepend( $( '<i>' ).addClass( 'expander' ) );
-      }
-
-      $( this ).next( 'ul.projects' ).toggle();
-      $( this ).on( 'click', function() {
-        $( this ).next( 'ul.projects' ).toggle();
-        toggleExpandSymbol( $( this ) );
-      } )
-      */
     } );
   }
 
