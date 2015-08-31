@@ -7,7 +7,7 @@
   <meta name="description" content="Redmine">
   <meta name="keywords" content="issue,bug,tracker">
   <meta name="csrf-param" content="authenticity_token">
-  <meta name="csrf-token" content="4quixvHWGodmQhY52x7xgppjZ/tesgrjkLEmL1VXCXCCF4/xmCOfrzaN9B0H2AjtcMLac7RiZLXdf1r8e0jQWA==">
+  <meta name="csrf-token" content="H5otKoGQxk7ROrrjB2+dT75gate6ZzV+UkhMpOhkcoAuvyLgCQUpuRVvsqmntVJmCdy74IGnDoH04SMCCidiuQ==">
   <link rel="shortcut icon" href="./favicon.ico">
   <link rel="stylesheet" media="all" href="stylesheets/jquery/jquery-ui-1.11.0.css">
   <link rel="stylesheet" media="all" href="stylesheets/application.css">
@@ -15,7 +15,7 @@
   <script src="javascripts/application.js"></script>
   <script src="javascripts/theme.js"></script>
 </head>
-<body class="controller-projects action-index">
+<body class="theme-Minimalflat2 controller-projects action-index">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="wrapper3">
@@ -72,8 +72,14 @@
 
 <div id="projects-index">
 <ul class="projects root">
-<li class="root"><div class="root"><a class="project root leaf " href="./projects/redmine-theme-minimalflat2">redmine-theme-minimalflat2</a><div class="wiki description"><p>Minimal and flat design theme for Redmine.</p></div></div>
-</li><li class="root"><div class="root"><a class="project root leaf " href="./projects/sample">Sample</a><div class="wiki description"><p>Sample project.</p></div></div>
+<li class="root"><div class="root"><a class="project root leaf my-project" href="./projects/redmine-theme-minimalflat2">redmine-theme-minimalflat2</a><div class="wiki description"><p>Minimal and flat design theme for Redmine.</p></div></div>
+</li><li class="root"><div class="root"><a class="project root parent my-project" href="./projects/sample">Sample</a><div class="wiki description"><p>Sample project.</p></div></div>
+<ul class="projects ">
+<li class="child"><div class="child"><a class="project child parent" href="./projects/sample-child">Child</a><div class="wiki description"><p>Child project.</p><p>Paragraph 2.</p></div></div>
+<ul class="projects ">
+<li class="child"><div class="child"><a class="project child leaf my-project" href="./projects/sample-child-child">Child-Child</a><div class="wiki description"><p>Child project.</p></div></div>
+</li></ul>
+</li></ul>
 </li></ul>
 
 </div>

@@ -16,12 +16,13 @@ table.list {
     padding 4px
     white-space nowrap
     font-weight normal
+    vertical-align middle
   }
 
   td {
     border 1px solid color_gray_light_a
     text-align center
-    vertical-align top
+    vertical-align middle
     padding .3em
   }
 
@@ -1180,54 +1181,6 @@ input#issue_subject, input#document_title {
 
 select#issue_done_ratio {
   width 95px
-}
-
-ul.projects {
-  margin 0
-  padding-left 1em
-
-  &.root {
-    margin 0
-    padding 0
-  }
-
-  ul {
-    padding-left 1.6em
-  }
-
-  li {
-    list-style-type none
-  }
-}
-
-#projects-index ul.projects {
-  ul.projects {
-    border-left 3px solid #e0e0e0
-    padding-left 1em
-  }
-
-  li.root {
-    margin-bottom 1em
-  }
-
-  li.child {
-    margin-top 1em
-  }
-
-  div.root a.project {
-    font-weight bold
-    font-size 16px
-    margin 0 0 10px 0
-  }
-}
-
-.my-project:before {
-  icon( icon_fav, color_yellow )
-}
-
-#notified-projects > ul, #tracker_project_ids > ul, #custom_field_project_ids > ul {
-  max-height 250px
-  overflow-y auto
 }
 
 #related-issues li img {
