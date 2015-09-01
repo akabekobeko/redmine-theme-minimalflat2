@@ -30,6 +30,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-stylus": "^2.0.5",
-    "gulp-zip": "^3.0.2"
+    "gulp-zip": "^3.0.2",
+    "run-sequence": "^1.1.2"
   }
 }

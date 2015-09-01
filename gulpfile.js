@@ -9,7 +9,7 @@ var common = {
 };
 
 // Stylus コンパイルと結合
-gulp.task( 'stylus', function() {
+gulp.task( 'build:stylus', function() {
   var isSourceMaps = !( common.isRelease );
   var dest         = ( common.isRelease ? common.dest : common.src );
 
@@ -23,25 +23,25 @@ gulp.task( 'stylus', function() {
 } );
 
 // リリース用イメージ削除
-gulp.task( 'release:enable', function( done ) {
-  common.isRelease = true;
-  done();
-} );
-
-// リリース用イメージ削除
-gulp.task( 'clean', function( done ) {
+gulp.task( 'release:clean', function( done ) {
   var del = require( 'del' );
-  del( [ common.dest ], done );
+  del( [ common.dest, './minimalflat2.zip' ], done );
 } );
 
 // リリース用ドキュメントのコピー
-gulp.task( 'doc', [ 'clean', 'release:enable' ], function() {
-  return gulp.src( [ './README.md', './LICENSE' ] )
+gulp.task( 'release:copy-doc', [ 'release:clean' ], function() {
+  var src = [
+    './README.md',
+    './ss.png',
+    './LICENSE.txt'
+  ];
+
+  return gulp.src( src )
     .pipe( gulp.dest( common.dest ) );
 } );
 
-// リリース用イメージのビルドとコピー
-gulp.task( 'build', [ 'doc', 'stylus' ], function() {
+// リリース用ファイルのコピー
+gulp.task( 'release:copy', [ 'release:copy-doc' ], function() {
   var src = [
     common.src + '/javascripts/theme.js',
     common.src + '/favicon/favicon.ico',
@@ -52,16 +52,21 @@ gulp.task( 'build', [ 'doc', 'stylus' ], function() {
     .pipe( gulp.dest( common.dest ) );
 } );
 
-// リリース用 ZIP イメージ生成
-gulp.task( 'release', [ 'build' ], function() {
-  return gulp.src( [ common.dest + '/**' ], { base: '.' } )
+// リリース用イメージのビルドと ZIP イメージ生成
+gulp.task( 'release', [ 'release:copy' ], function() {
+  var runSequence = require( 'run-sequence' );
+  common.isRelease = true;
+  runSequence( 'build:stylus' );
+
+  //return gulp.src( [ common.dest + '/**' ], { base: '.' } )
+  return gulp.src( common.dest + '/**/*.*' )
     .pipe( $.zip( 'minimalflat2.zip' ) )
     .pipe( gulp.dest( './' ) );
 } );
 
 // ファイル監視
-gulp.task( 'watch', [ 'stylus' ], function() {
-  gulp.watch( [ common.src + '/stylus/*.styl' ], [ 'stylus'   ] );
+gulp.task( 'watch', [ 'build:stylus' ], function() {
+  gulp.watch( [ common.src + '/stylus/*.styl' ], [ 'build:stylus'   ] );
 } );
 
 // 既定タスク
