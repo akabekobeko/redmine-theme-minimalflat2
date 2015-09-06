@@ -1,0 +1,172 @@
+// Wiki
+
+@import "./common/Color.styl"
+
+.wiki {
+  padding 0 .5em 1em
+
+  &.description {
+    padding 0
+
+    p {
+      margin-top .5em
+      margin-bottom .5em
+      font-size .9em
+    }
+  }
+
+  h2 {
+    padding .8em
+    border-left 4px solid color_blue
+  }
+
+  h3 {
+    padding .8em
+    border-left 4px solid color_gray_light_a
+  }
+
+  h4 {
+    border-bottom 2px dotted color_gray_light_a
+  }
+
+  pre {
+    overflow-x auto
+    overflow-y hidden
+    width auto
+    margin 1em
+    padding .8em
+    background-color #414141
+    border 1px solid #414141
+    border-radius .3em
+    color color_white
+    font-family monospace
+    font-size 1.1em
+  }
+
+  ul.toc {
+    background-color #ffffdd
+    border 1px solid #e4e4e4
+    padding 4px
+    line-height 1.2em
+    margin-bottom 12px
+    margin-right 12px
+    margin-left 0
+    display table
+
+    &.right {
+      float right
+      margin-left 12px
+      margin-right 0
+      width auto
+    }
+
+    &.left {
+      float left
+      margin-right 12px
+      margin-left 0
+      width auto
+    }
+
+    ul {
+      margin 0
+      padding 0
+    }
+
+    li {
+      list-style-type none
+      margin 0
+      font-size 12px
+    }
+
+    li li {
+      margin-left 1.5em
+      font-size 10px
+    }
+
+    a {
+      font-size 0.9em
+      font-weight normal
+      text-decoration none
+      color color_gray_dark
+
+      &:hover {
+        color color_red
+        text-decoration underline
+      }
+    }
+  }
+
+  .noborder, .noborder td, .noborder th {
+    border 0
+  }
+
+  .external:before {
+    icon( icon_external, color_gray )
+  }
+
+  a {
+    word-wrap break-word
+
+    &.new {
+      color color_red
+    }
+  }
+
+  ul, ol {
+    margin-bottom 1em
+  }
+
+  li > ul, li > ol {
+    margin-bottom 0
+  }
+}
+
+// IE6 doesn't autosize div
+* html div.wiki ul.toc {
+  width 50%
+}
+
+// Table
+div.wiki table {
+  margin-bottom 1em
+  border-collapse collapse
+  border 1px solid color_gray
+
+  th {
+    padding .3em .5em
+    background-color color_gray_light_b
+    border 1px solid color_gray
+    font-weight normal
+  }
+
+  td {
+    padding .3em .5em
+    border 1px solid color_gray
+  }
+}
+
+// Anchor
+a.wiki-anchor {
+  display none
+  margin-left 6px
+  text-decoration none
+
+  &:hover {
+    color #aaa !important
+    text-decoration none
+  }
+}
+
+h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor {
+  display inline
+  color #ddd
+}
+
+div.wiki img {
+  vertical-align middle
+  max-width 100%
+}
+
+#attach_files_link:before {
+  icon( icon_add, color_green )
+}

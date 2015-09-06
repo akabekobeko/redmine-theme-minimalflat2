@@ -1,0 +1,11 @@
+node_modules/
+dist/
+src/stylesheets
+samples/
+
+.*
+*.map
+*.zip
+*.js
+!theme.js
+!.gitignore

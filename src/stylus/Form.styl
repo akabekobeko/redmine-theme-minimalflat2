@@ -1,0 +1,475 @@
+// Form
+
+@import "./common/Color.styl"
+
+input, select {
+  font-size .8em
+}
+
+input[type="text"], input[type="password"] {
+  border solid 1px color_gray_light_a
+  border-radius .2em
+  padding .3em
+  color color_indigo
+}
+
+textarea {
+  border solid 1px color_gray_light_a
+  border-radius .2em
+  padding .3em
+  color color_indigo
+  box-sizing border-box
+  font-size .9em
+}
+
+// Submit button
+input[type="submit"] {
+  background-color color_white
+  border solid 2px color_blue
+  color color_blue
+  padding .2em .5em
+  border-radius .2em
+  letter-spacing .09em
+
+  &:hover {
+    background-color color_blue
+    color color_white
+  }
+}
+
+// Normal button
+input[type="button"] {
+  background-color color_white
+  border solid 2px color_green
+  color color_green
+  padding .2em .5em
+  border-radius .2em
+  letter-spacing .09em
+
+  &:hover {
+    background-color color_green
+    color color_white
+  }
+}
+
+// Checkbox
+input[type="checkbox"] {
+  margin-right .5em
+}
+
+// Ajax indicator
+#ajax-indicator {
+  position absolute
+  z-index 100
+  opacity 0.5
+  top 35%
+  left 40%
+  width 20%
+  padding .6em
+  border 1px solid #bbb
+  font-weight bold
+  text-align center
+
+  // fixed not supported by IE
+  background-color #eee
+
+  span {
+    background-position 0% 40%
+    background-repeat no-repeat
+    background-image url(../images/loading.gif)
+    padding-left 26px
+    vertical-align bottom
+  }
+}
+
+html > body #ajax-indicator {
+  position fixed
+}
+
+// Tabular forms
+html > body .tabular p {
+  overflow hidden
+}
+
+.tabular {
+  p {
+    margin 0
+    padding 3px 0 3px 0
+
+    // width of left column containing the label elements
+    padding-left 180px
+
+    min-height 1.8em
+    clear left
+  }
+
+  input, select {
+    max-width 95%
+    font-size .8em
+  }
+
+  textarea {
+    width 95%
+    resize vertical
+  }
+
+  label {
+    font-weight bold
+    float left
+    text-align right
+    // width of left column
+    margin-left -180px
+    // width of labels. Should be smaller than left column to create some right margin
+    width 175px
+
+    &.floating{
+      font-weight normal
+      margin-left 0
+      text-align left
+      width 270px
+    }
+
+    &.block{
+      font-weight normal
+      margin-left 0px !important
+      text-align left
+      float none
+      display block
+      width auto !important
+    }
+
+    &.inline {
+      font-weight normal
+      float none
+      margin-left 5px !important
+      width auto
+    }
+  }
+}
+
+label.no-css {
+  font-weight inherit
+  float none
+  text-align left
+  margin-left 0
+  width auto
+}
+
+input#time_entry_comments {
+  width 90%
+}
+
+#preview fieldset {
+  margin-top 1em
+  background url(../images/draft.png)
+}
+
+.tabular.settings {
+  p {
+    padding-left 24em
+  }
+
+  label{
+    margin-left -25em
+    margin-right .5em
+    width 24em
+  }
+
+  textarea {
+    width 99%
+  }
+}
+
+.settings.enabled_scm {
+  table {
+    width 100%
+  }
+
+  td.scm_name{
+    font-weight bold
+  }
+}
+
+fieldset.settings label {
+  display block
+}
+
+fieldset#notified_events .parent {
+  padding-left 20px
+}
+
+span.required {
+  color color_red
+}
+
+.summary {
+  font-style italic
+}
+
+.check_box_group {
+  display block
+  width 95%
+  max-height 300px
+  overflow-y auto
+  padding 2px 4px 4px 2px
+  background color_white
+  border 1px solid color_gray
+  border-radius 2px
+
+  label {
+    font-weight normal
+    margin-left 0 !important
+    text-align left
+    float none
+    display block
+    width auto
+  }
+
+  &.bool_cf {
+    border 0
+    background inherit
+  }
+
+  &.bool_cf label {
+    display inline
+  }
+}
+
+#attachments_fields {
+  input.description {
+    margin-left 4px
+    width 340px
+  }
+
+  span {
+    display block
+    white-space nowrap
+  }
+
+  input.filename {
+    border 0
+    height 1.8em
+    width 250px
+    background-color inherit
+ 
+    &:before {
+      icon( icon_attachment, color_gray )
+    }
+  }
+
+  .ajax-waiting {
+    input.filename:before {
+      icon( icon_hourglass, color_gray )
+    }
+  }
+
+  div.ui-progressbar {
+    width 100px
+    height 14px
+    margin 2px 0 -5px 8px
+    display inline-block
+  }
+}
+
+a.remove-upload:before {
+  &:before {
+    icon( icon_trash, color_gray )
+  }
+
+  &:hover {
+    text-decoration none !important
+  }
+}
+
+div.fileover {
+  background-color lavender
+}
+
+div.attachments {
+  margin-top 12px
+
+  p {
+    margin 4px 0 2px 0
+  }
+
+  img {
+    vertical-align middle
+  }
+
+  span.author {
+    font-size 0.9em
+  }
+}
+
+div.thumbnails {
+  margin-top 0.6em
+
+  div {
+    border 2px solid color_gray
+    display inline-block
+    margin-right 2px
+  }
+
+  img {
+    margin 3px
+  }
+}
+
+
+p.other-formats {
+  text-align right
+  font-size .9em
+}
+
+.other-formats span + span:before {
+  content "| "
+}
+
+a.atom:before {
+  icon( icon_feed, color_orange )
+}
+
+a.csv:before {
+  icon( icon_file_text, color_green )
+}
+
+a.png:before {
+  icon( icon_file_image, color_orange )
+}
+
+a.pdf:before {
+  icon( icon_file_pdf, color_red )
+}
+
+a.html:before {
+  icon( icon_file_text, color_red )
+}
+
+a.txt:before {
+  icon( icon_file_text, color_blue )
+}
+
+em.info {
+  font-style normal
+  font-size 90%
+  display block
+
+  &.error:before {
+    icon( icon_error, color_red )
+  }
+}
+
+textarea.text_cf {
+  width 95%
+  resize vertical
+}
+
+input.string_cf, input.link_cf {
+  width 95%
+}
+
+select.bool_cf {
+  width auto !important
+}
+
+#tab-content-modules fieldset p {
+  margin 3px 0 4px 0
+}
+
+#tab-content-users {
+  .splitcontentleft {
+    width 64%
+  }
+
+  .splitcontentright {
+    width 34%
+  }
+
+  fieldset {
+    padding 1em
+    margin-bottom 1em
+
+    legend {
+      font-weight bold
+    }
+
+    label {
+      display block
+    }
+  }
+
+  #principals {
+    max-height 400px
+    overflow auto
+  }
+}
+
+#users_for_watcher {
+  height 200px
+  overflow auto
+
+  label {
+    display block
+  }
+}
+
+table.members {
+  td.name {
+    padding-left 20px
+  }
+
+  td.group, td.groupnonmember, td.groupanonymous {
+    &:before {
+      icon( icon_group, color_green )
+    }
+  }
+}
+
+input#principal_search, input#user_search {
+  width 90%
+}
+
+.roles-selection label {
+  display inline-block
+  width 210px
+}
+
+input.autocomplete {
+  border 1px solid #9EB1C2
+  border-radius 2px
+  height 1.5em
+
+  &:before {
+    icon( icon_search, color_blue )
+  }
+
+  &.ajax-loading {
+    background-image url(../images/loading.gif)
+  }
+}
+
+.role-visibility {
+  padding-left 2em
+}
+
+.objects-selection {
+  height 300px
+  overflow auto
+
+  label {
+    display block
+  }
+
+  > div {
+    column-count auto
+    column-width 200px
+    -webkit-column-count auto
+    -webkit-column-width 200px
+    -webkit-column-gap 0.5rem
+    -webkit-column-rule 1px solid #ccc
+    -moz-column-count auto
+    -moz-column-width 200px
+    -moz-column-gap .5rem
+    -moz-column-rule 1px solid #ccc
+  }
+}

@@ -1,0 +1,66 @@
+// Message
+
+@import "./common/Color.styl"
+
+// Flash & error messages
+#errorExplanation, div.flash, .nodata, .warning, .conflict {
+  margin-bottom 1em
+  padding .2em .2em .2em 1em
+  border 2px solid
+}
+
+div.flash {
+  margin-top 1em
+}
+
+div.flash.error, #errorExplanation {
+  background-color color_red_light
+  border-color color_red
+  color color_red_dark
+
+  &:before {
+    icon( icon_error, color_red )
+  }
+}
+
+div.flash.notice {
+  background-color color_green_light
+  border-color color_green
+  color color_green_dark
+
+  &:before {
+    icon( icon_check, color_green )
+  }
+}
+
+div.flash.warning, .conflict {
+  background-color color_yellow_light
+  border-color color_yellow
+  color color_yellow_dark
+  text-align left
+
+  &:before {
+    icon( icon_warning, color_yellow )
+  }
+}
+
+.nodata, .warning {
+  text-align center
+  background-color color_yellow_light
+  border-color color_yellow
+  color color_yellow_dark
+}
+
+#errorExplanation {
+  ul {
+    font-size .9em
+  }
+
+  h2, p {
+    display none
+  }
+}
+
+.conflict-details {
+  font-size 80%
+}

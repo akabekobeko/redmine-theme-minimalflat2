@@ -1,0 +1,403 @@
+// Base
+
+@import "./common/Color.styl"
+
+html {
+  overflow-y scroll
+}
+
+body {
+  font-family "Helvetica Neue", Helvetica, Verdana, sans-serif
+  background-color color_page_back
+  color color_indigo
+  margin 0
+  padding 0
+  min-width 900px
+  letter-spacing .09em
+}
+
+h1, h2, h3, h4 {
+  padding 0 0 .5em
+  margin 0 0 .8em 0
+  font-weight normal
+}
+
+h2, .wiki h1 {
+  font-size 1.8em
+}
+
+h3, .wiki h2 {
+  font-size 1.5em
+}
+
+h4, .wiki h3 {
+  font-size 1.3em
+}
+
+pre, code {
+  font-family monospace
+}
+
+// Links
+a {
+  text-decoration none
+  color color_blue
+
+  &:hover, &:active {
+    color color_red
+  }
+
+  img {
+    border 0
+  }
+
+  .issue.closed, .issue.closed:link, .issue.closed:visited {
+    color color_gray
+    text-decoration line-through
+  }
+
+  .project.closed, .project.closed:link, .project.closed:visited {
+    color color_gray
+  }
+
+  .user.locked, .user.locked:link, .user.locked:visited {
+    color color_gray
+  }
+
+  .collapsible:before {
+    icon( icon_toggle_plus, color_gray )
+  }
+
+  .collapsible.collapsed {
+    icon( icon_toggle_minus, color_gray )
+  }
+
+  #toggle-completed-versions {
+    color color_gray
+  }
+}
+
+// Calendar
+table.cal {
+  border-collapse collapse
+  width 100%
+  margin 0px 0 6px 0
+  border 1px solid #d7d7d7
+  font-size .8em
+
+  thead th {
+    width 14%
+    background-color color_gray_light_b
+    padding 4px
+    font-weight normal
+  }
+
+  thead th.week-number {
+    width auto
+  }
+
+  tbody tr {
+    height 100px
+  }
+
+  td {
+    border 1px solid color_gray_light_a
+    vertical-align top
+  }
+
+  td.week-number {
+    background-color color_gray_light_b
+    padding 4px
+    border none
+    font-size 1em
+  }
+
+  td p.day-num {
+    font-size 1.1em
+    text-align right
+  }
+
+  td.odd p.day-num {
+    color color_gray
+  }
+
+  td.today {
+    background color_yellow_light
+  }
+
+  td.today p.day-num {
+    font-weight bold
+  }
+
+  .starting a:before {
+    icon( icon_arrow_right, color_green )
+  }
+
+  .ending a:before {
+    icon( icon_arrow_left, color_red )
+  }
+
+  .starting.ending a:before {
+    icon( icon_circle, color_blue )
+  }
+}
+
+p.cal.legend .starting:before {
+  icon( icon_arrow_right, color_green )
+}
+
+p.cal.legend .ending:before {
+  icon( icon_arrow_left, color_red )
+}
+
+p.cal.legend .starting.ending:before {
+  icon( icon_circle, color_red )
+}
+
+
+p.cal.legend span {
+  display block
+}
+
+// Tooltips
+.tooltip {
+  position relative
+  z-index 24
+
+  &:hover{
+    z-index 25
+    color #000
+  }
+
+  span.tip {
+    display none
+    text-align left
+  }
+}
+
+div.tooltip:hover span.tip {
+  display block
+  position absolute
+  top 12px
+  left 24px
+  width 270px
+  border 1px solid #555
+  background-color #fff
+  padding 4px
+  font-size 0.8em
+  color #505050
+}
+
+img.ui-datepicker-trigger {
+  cursor pointer
+  vertical-align middle
+  margin-left 4px
+}
+
+// Progress bar
+table.progress {
+  border-collapse collapse
+  border-spacing 0
+  empty-cells show
+  text-align center
+  float left
+  margin 1px 6px 1px 0
+
+  td {
+    height 1em
+  }
+
+  td.closed {
+    background-color color_green
+  }
+
+  td.done {
+    background-color color_viridian_light
+  }
+
+  td.todo {
+    background-color color_gray_light_a
+  }
+}
+
+p.percent {
+  font-size 80%
+}
+
+p.progress-info {
+  clear left
+  font-size 80%
+  margin-top -4px
+  color color_gray
+}
+
+#roadmap table.progress td {
+  height 1.2em
+}
+
+// Diff
+.diff_out {
+  background #fcc
+
+  span {
+    background #faa
+  }
+}
+
+.diff_in {
+  background #cfc
+
+  span {
+    background #afa
+  }
+}
+
+.text-diff {
+  padding 1em
+  background-color #f6f6f6
+  color #505050
+  border 1px solid #e4e4e4
+}
+
+// My page layout
+.block-receiver {
+  border 1px dashed #c0c0c0
+  margin-bottom 20px
+  padding 15px 0 15px 0
+}
+
+.mypage-box {
+  margin 0 0 20px 0
+  color #505050
+  line-height 1.5em
+}
+
+.handle {
+  cursor move
+}
+
+a.close-icon:before {
+  icon( icon_close, color_gray )
+  cursor pointer
+}
+
+a.close-icon:hover {
+  &:before {
+    icon( icon_close, color_blue )
+  }
+}
+
+// Media print specific styles
+@media print {
+  #top-menu, #header, #main-menu, #sidebar, #footer, .contextual, .other-formats {
+    display none
+  }
+
+  #main {
+    background #fff
+  }
+
+  #content {
+    width 99%
+    margin 0
+    padding 0
+    border 0
+    background #fff
+    overflow visible !important
+  }
+
+  #wiki_add_attachment {
+    display none
+  }
+
+  .hide-when-print {
+    display none
+  }
+
+  .autoscroll {
+    overflow-x visible
+  }
+  
+  table.list {
+    margin-top .5em
+
+    th, td {
+      border 1px solid #aaa
+    }
+  }
+}
+
+// Accessibility specific styles
+.hidden-for-sighted {
+  position absolute
+  left -10000px
+  top auto
+  width 1px
+  height 1px
+  overflow hidden
+}
+
+img.gravatar {
+  padding 2px
+  border solid 1px #d5d5d5
+  background color_white
+  vertical-align middle
+}
+
+div.issue img.gravatar {
+  float left
+  margin 0 6px 0 0
+  padding 5px
+}
+
+div.issue table img.gravatar {
+  height 14px
+  width 14px
+  padding 2px
+  float left
+  margin 0 .5em 0 0
+}
+
+h2 img.gravatar {
+  margin -2px 4px -4px 0
+}
+
+h3 img.gravatar {
+  margin -4px 4px -4px 0
+}
+
+h4 img.gravatar {
+  margin -6px 4px -4px 0
+}
+
+td.username img.gravatar {
+  margin 0 .5em 0 0
+  vertical-align top
+}
+
+#activity dt img.gravatar {
+  float left
+  margin 0 1em 1em 0
+}
+
+// Used on 12px Gravatar img tags without the icon background
+.icon-gravatar {
+  float left
+  margin-right 4px
+}
+
+#activity dt, .journal {
+  clear left
+}
+
+.journal-link {
+  float right
+}
+
+h2 img {
+  vertical-align middle
+}
+
+.hascontextmenu {
+  cursor context-menu
+}

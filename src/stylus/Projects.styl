@@ -1,0 +1,85 @@
+// Projects
+
+@import "./common/Color.styl"
+
+ul.projects {
+  margin 0
+  padding-left 1em
+
+  &.root {
+    margin 0
+    padding 0
+  }
+
+  ul {
+    padding-left 1.6em
+  }
+
+  li {
+    list-style-type none
+  }
+}
+
+#projects-index ul.projects {
+  ul.projects {
+    border-left 2px solid color_gray_light_a
+    padding-left 1em
+  }
+
+  li.root {
+    margin-bottom 1em
+  }
+
+  li.child {
+    margin-top 1em
+  }
+
+  div.root a.project {
+    font-weight bold
+    font-size 16px
+    margin 0 0 10px 0
+  }
+
+  div.root, div.child {
+    border solid 1px color_gray_light_a
+  }
+
+  .header {
+    cursor pointer
+    padding .3em
+    border-bottom solid 1px color_gray_light_a
+    background-color color_gray_light_b
+
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+
+    &:hover {
+      background-color color_gray_light_c
+    }
+
+    .expander {
+      &:before {
+        icon( icon_toggle_plus, color_gray )
+      }
+
+      &.expanded:before {
+        icon( icon_toggle_minus, color_gray )
+      }
+    }
+  }
+
+  .description {
+    padding .3em
+  }
+}
+
+.my-project:before {
+  icon( icon_fav, color_yellow )
+}
+
+#notified-projects > ul, #tracker_project_ids > ul, #custom_field_project_ids > ul {
+  max-height 250px
+  overflow-y auto
+}
