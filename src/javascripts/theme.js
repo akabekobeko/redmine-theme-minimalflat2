@@ -51,6 +51,7 @@
     imageToIcon( 'img[src*="edit.png"]',               'js-replace-icon-edit'           );
     imageToIcon( 'img[src*="comment.png"]',            'js-replace-icon-comment'        );
     imageToIcon( 'img[src*="bullet_toggle_plus.png"]', 'js-replace-icon-toggle-plus'    );
+    imageToIcon( 'img[src*="link_break.png"]',         'js-replace-icon-trash'          );
     imageToIcon( 'img[src*="2uparrow.png"]',           'js-replace-icon-chevron-top'    );
     imageToIcon( 'img[src*="1uparrow.png"]',           'js-replace-icon-chevron-up'     );
     imageToIcon( 'img[src*="1downarrow.png"]',         'js-replace-icon-chevron-down'   );

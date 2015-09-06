@@ -167,8 +167,20 @@
 <p><strong>Related issues</strong></p>
 
 
-<form id="new-relation-form" style="display: none;" class="new_relation" action="/issues/1/relations" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden">
-
+<form>
+<table class="list issues">
+  <tbody><tr class="issue hascontextmenu" id="relation-1">
+  <td class="checkbox"><input name="ids[]" value="4" type="checkbox"></td>
+  <td class="subject" style="width: 50%">
+    Related to <a class="issue tracker-1 status-1 priority-1 priority-lowest created-by-me assigned-to-me" href="/issues/4">Bug #4</a>: Sample
+  </td>
+  <td class="status">New</td>
+  <td class="start_date">09/06/2015</td>
+  <td class="due_date"></td>
+  <td class="buttons"><a data-confirm="Are you sure?" title="Delete relation" data-remote="true" rel="nofollow" data-method="delete" href="/relations/1"><img src="/images/link_break.png" alt="Link break"></a></td>
+  </tr>
+</tbody></table>
+</form>
 
 <p><select onchange="setPredecessorFieldsVisibility();" name="relation[relation_type]" id="relation_relation_type"><option selected="selected" value="relates">Related to</option>
 <option value="duplicates">Duplicates</option>
