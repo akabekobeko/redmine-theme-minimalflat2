@@ -99,7 +99,7 @@ table.list {
     }
 
     &:hover {
-      background-color #ffffdd
+      background-color #dfeff7
     }
   }
 }
@@ -220,15 +220,115 @@ tr.issue {
   }
 }
 
-table.issues td.description {
-  color #777
-  font-size 90%
-  padding 4px 4px 4px 24px
-  text-align left
-  white-space normal
+table.issues {
+  // Issue priority colors from Circle Theme ( http://www.redminecrm.com/pages/circle-theme )
+  .priority-highest {
+    color #900
+    font-weight bold
 
-  pre {
+    &.odd {
+      background-color #ffe2e2
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #faefef
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #900
+    }
+  }
+
+  .priority-high2 {
+    color #900
+
+    &.odd {
+      background-color #ffe2e2
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #faefef
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #900
+    }
+  }
+
+  .priority-high3 {
+    color #900
+
+    &.odd {
+      background-color #ffeeee
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #fff2f2
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #900
+    }
+  }
+
+  .priority-lowest {
+    color #559
+
+    &.odd {
+      background-color #eaf7ff
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #f2faff
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #559
+    }
+  }
+
+  td.description {
+    color #777
+    font-size 90%
+    padding 4px 4px 4px 24px
+    text-align left
     white-space normal
+
+    pre {
+      white-space normal
+    }
   }
 }
 
