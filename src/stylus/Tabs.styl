@@ -32,7 +32,7 @@
     font-size  .9em
     text-decoration none
     line-height 1.3em
-    padding 4px 6px 4px 6px
+    padding .3em .4em
     border 1px solid #ccc
     border-bottom 1px solid color_gray_light_a
     background-color color_gray_light_c
@@ -59,34 +59,42 @@
 div.tabs-buttons {
   position absolute
   right 0
-  width 48px
-  height 24px
-  background color_white
+  width 4em
   bottom 0
-  border-bottom 1px
-  solid #bbbbbb
+  border-bottom solid 1px color_gray_light_a
 }
 
 button.tab-left, button.tab-right {
-  font-size 0.9em
-  cursor pointer
-  height 24px
-  border 1px solid #ccc
-  border-bottom 1px solid #bbbbbb
   position absolute
-  padding 4px
-  width 20px
+  padding .2em
+  width 1.5em
+  height 1.5em
   bottom -1px
+  border 1px solid color_gray_light_a
+  line-height .9em
+  font-size .9em
+  cursor pointer
+
+  &:hover {
+    background-color color_yellow_light
+    text-decoration none
+  }
 }
 
 button.tab-left {
-  icon( icon_chevron_left, color_gray_dark )
-  right 20px
-  border-top-left-radius 3px
+  right 1.4em
+
+  &:before {
+    font-size .9em
+    icon( icon_chevron_left, color_gray_dark )
+  }
 }
 
 button.tab-right {
-  icon( icon_chevron_right, color_gray_dark )
   right 0
-  border-top-right-radius 3px
+
+  &:before {
+    font-size .9em
+    icon( icon_chevron_right, color_gray_dark )
+  }
 }
