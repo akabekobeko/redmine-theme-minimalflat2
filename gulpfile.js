@@ -9,7 +9,7 @@ var common = {
 };
 
 // Stylus コンパイルと結合
-gulp.task( 'build:stylus', function() {
+gulp.task( 'build:css', function() {
   var isSourceMaps = !( common.isRelease );
   var dest         = ( common.isRelease ? common.dest : common.src );
 
@@ -28,8 +28,14 @@ gulp.task( 'release:clean', function( done ) {
   del( [ common.dest, './minimalflat2.zip' ], done );
 } );
 
+gulp.task( 'release:css', [ 'release:clean' ], function( done ) {
+  var runSequence = require( 'run-sequence' );
+  common.isRelease = true;
+  runSequence( 'build:css', done );
+} );
+
 // リリース用ドキュメントのコピー
-gulp.task( 'release:copy-doc', [ 'release:clean' ], function() {
+gulp.task( 'release:copy-doc', [ 'release:css' ], function() {
   var src = [
     './README.md',
     './ss.png',
@@ -53,20 +59,15 @@ gulp.task( 'release:copy', [ 'release:copy-doc' ], function() {
 } );
 
 // リリース用イメージのビルドと ZIP イメージ生成
-gulp.task( 'release', [ 'release:copy' ], function() {
-  var runSequence = require( 'run-sequence' );
-  common.isRelease = true;
-  runSequence( 'build:stylus' );
-
-  //return gulp.src( [ common.dest + '/**' ], { base: '.' } )
+gulp.task( 'release', [ 'release:copy', 'release:css' ], function() {
   return gulp.src( common.dest + '/**/*.*' )
     .pipe( $.zip( 'minimalflat2.zip' ) )
     .pipe( gulp.dest( './' ) );
 } );
 
 // ファイル監視
-gulp.task( 'watch', [ 'build:stylus' ], function() {
-  gulp.watch( [ common.src + '/stylus/*.styl' ], [ 'build:stylus'   ] );
+gulp.task( 'watch', [ 'build:css' ], function() {
+  gulp.watch( [ common.src + '/stylus/*.styl' ], [ 'build:css'   ] );
 } );
 
 // 既定タスク
