@@ -33,4 +33,4 @@ Minimal and flat design theme for Redmine.
 
 # Change log
 
-* Initial commit
+* 2015/09/06 : v1.0.0 release
