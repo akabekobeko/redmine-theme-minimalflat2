@@ -27,10 +27,10 @@ Minimal and flat design theme for Redmine.
 |[Entypo](http://www.entypo.com/)|[Daniel Bruce](http://danielbruce.se/)|CC BY-SA 4.0|
 |[bymathias/normalize.styl](https://github.com/bymathias/normalize.styl)|[Mathias Brouilly](http://mathias.brouilly.fr/)|MIT|
 
+# Change history
+
+* [CHANGELOG](CHANGELOG.md)
+
 # License
 
 * [GNU GENERAL PUBLIC LICENSE Version 2](LICENSE.txt)
-
-# Change log
-
-* 2015/09/06 : v1.0.0 release
