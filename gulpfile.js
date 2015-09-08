@@ -5,13 +5,14 @@ var $    = require( 'gulp-load-plugins' )();
 var common = {
   src:       './src',
   dest:      './dist',
+  archive:   './dist/minimalflat2',
   isRelease: false
 };
 
 // Stylus コンパイルと結合
 gulp.task( 'build:css', function() {
   var isSourceMaps = !( common.isRelease );
-  var dest         = ( common.isRelease ? common.dest : common.src );
+  var dest         = ( common.isRelease ? common.archive : common.src );
 
   return gulp.src( [ common.src + '/stylus/App.styl' ] )
     .pipe( $.plumber() )
@@ -25,7 +26,7 @@ gulp.task( 'build:css', function() {
 // リリース用イメージ削除
 gulp.task( 'release:clean', function( done ) {
   var del = require( 'del' );
-  del( [ common.dest, './minimalflat2.zip' ], done );
+  del( [ common.dest, './*.zip' ], done );
 } );
 
 gulp.task( 'release:css', [ 'release:clean' ], function( done ) {
@@ -43,7 +44,7 @@ gulp.task( 'release:copy-doc', [ 'release:css' ], function() {
   ];
 
   return gulp.src( src )
-    .pipe( gulp.dest( common.dest ) );
+    .pipe( gulp.dest( common.archive ) );
 } );
 
 // リリース用ファイルのコピー
@@ -55,13 +56,16 @@ gulp.task( 'release:copy', [ 'release:copy-doc' ], function() {
   ];
 
   return gulp.src( src, { base: common.src } )
-    .pipe( gulp.dest( common.dest ) );
+    .pipe( gulp.dest( common.archive ) );
 } );
 
 // リリース用イメージのビルドと ZIP イメージ生成
 gulp.task( 'release', [ 'release:copy', 'release:css' ], function() {
+  var pkg      = require( './package.json' );
+  var filename = 'minimalflat2-v' + pkg.version + '.zip';
+
   return gulp.src( common.dest + '/**/*.*' )
-    .pipe( $.zip( 'minimalflat2.zip' ) )
+    .pipe( $.zip( filename ) )
     .pipe( gulp.dest( './' ) );
 } );
 

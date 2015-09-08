@@ -3,9 +3,9 @@
 @import "./common/Color.styl"
 
 #content .tabs {
+  position relative
   height 2.6em
   margin-bottom 1.2em
-  position relative
   overflow hidden
 
   ul {
@@ -13,18 +13,21 @@
     bottom 0
     width 2000px
     margin 0
-    padding-left .5em
-    border-bottom 1px solid #bbbbbb
+    padding 0
+    border-bottom 1px solid color_gray_light_a
   }
 
   ul li {
     float left
     list-style-type none
     white-space nowrap
-    margin-right 4px
     background color_white
     position relative
     margin-bottom -1px
+
+    &:first-child {
+      border-left 1px solid color_gray_light_a
+    }
   }
 
   ul li a {
@@ -32,20 +35,22 @@
     font-size  .9em
     text-decoration none
     line-height 1.3em
-    padding .3em .4em
-    border 1px solid #ccc
+    padding .3em .5em
+    border-top 2px solid color_gray_light_a
+    border-right 1px solid color_gray_light_a
     border-bottom 1px solid color_gray_light_a
     background-color color_gray_light_c
     color color_gray_dark
 
     &:hover {
-      background-color color_yellow_light
+      border-top 2px solid color_yellow
+      background-color color_white
       text-decoration none
     }
 
     &.selected {
       background-color color_white
-      border 1px solid color_gray_light_a
+      border-top 2px solid color_red
       border-bottom 1px solid color_white
       color color_indigo
 
