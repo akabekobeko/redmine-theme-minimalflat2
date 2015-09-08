@@ -14,10 +14,10 @@ Minimal and flat design theme for Redmine.
 
 # Installation
 
-1. Download archive ( minimalflat2.zip ) from [release page](https://github.com/akabekobeko/redmine-theme-minimalflat2/releases)
-2. Extract archive, and move to `public/themes/minimalflat` at Redmine directory
+1. Download zip file from [release page](https://github.com/akabekobeko/redmine-theme-minimalflat2/releases)
+2. Extract zip file, and move to `public/themes/minimalflat` at Redmine directory
 3. Open Redmine page, and go to **Administration > Settings > Display**
-4. Enable the **minimalflat2** from **Theme**
+4. Enable the **minimalflat2** from **Theme**, and **save** settings
 
 # Libraries
 
