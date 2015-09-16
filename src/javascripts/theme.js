@@ -18,7 +18,12 @@
     function imageToIcon( target, icon ) {
       $( target ).each( function() {
         var title = $( this ).attr( 'alt' );
-        $( this ).replaceWith( $( '<i>' ).addClass( icon ).attr( 'title', title ) );
+        $( this ).replaceWith( $( '<i>' ).addClass( icon ).attr( 'title', title ).on( 'click', function() {
+          if( target === 'img[src*="toggle_check.png"]' && typeof toggleIssuesSelection === 'function' ) {
+            toggleIssuesSelection( $( this ).parent() );
+            return false;
+          }
+        } ) );
       } );
     }
 
