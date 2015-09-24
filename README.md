@@ -27,7 +27,7 @@ Minimal and flat design theme for Redmine.
 |[Entypo](http://www.entypo.com/)|[Daniel Bruce](http://danielbruce.se/)|CC BY-SA 4.0|
 |[bymathias/normalize.styl](https://github.com/bymathias/normalize.styl)|[Mathias Brouilly](http://mathias.brouilly.fr/)|MIT|
 
-# Change history
+# ChangeLog
 
 * [CHANGELOG](CHANGELOG.md)
 
