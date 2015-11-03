@@ -51,28 +51,28 @@ a {
     border 0
   }
 
-  .issue.closed, .issue.closed:link, .issue.closed:visited {
+  &.issue.closed, &.issue.closed:link, &.issue.closed:visited {
     color color_gray
     text-decoration line-through
   }
 
-  .project.closed, .project.closed:link, .project.closed:visited {
+  &.project.closed, &.project.closed:link, &.project.closed:visited {
     color color_gray
   }
 
-  .user.locked, .user.locked:link, .user.locked:visited {
+  &.user.locked, &.user.locked:link, &.user.locked:visited {
     color color_gray
   }
 
-  .collapsible:before {
+  &.collapsible:before {
     icon( icon_toggle_plus, color_gray )
   }
 
-  .collapsible.collapsed {
+  &.collapsible.collapsed {
     icon( icon_toggle_minus, color_gray )
   }
 
-  #toggle-completed-versions {
+  &#toggle-completed-versions {
     color color_gray
   }
 }
