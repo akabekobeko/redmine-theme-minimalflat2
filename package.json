@@ -29,7 +29,7 @@
     "release:css": "stylus -c ./src/stylus/App.styl -o ./minimalflat2/stylesheets/application.css",
     "release:clean": "rimraf ./minimalflat2",
     "release:copy-src": "cpx \"./src/**/*(|theme.js|application.css|favicon.ico|icon.svg|icon.eot|icon.ttf|icon.woff|!(*.*))\" ./minimalflat2",
-    "release:copy-doc": "cpx \"./*(README.md|README.ja.md|LICENSE.txt|ss.png|!(Vagrantfile|*.*))\" ./minimalflat2",
+    "release:copy-doc": "cpx \"./*(README.md|README.ja.md|CHANGELOG.md|LICENSE.txt|ss.png|!(Vagrantfile|*.*))\" ./minimalflat2",
     "release:copy": "npm-run-all release:copy-src release:copy-doc",
     "release:archive": "bestzip minimalflat2-v1.0.3.zip ./minimalflat2",
     "release": "npm-run-all -s release:clean release:copy release:css release:archive"
