@@ -1,10 +1,11 @@
 node_modules/
-dist/
+minimalflat2/
 src/stylesheets
 samples/
 
 .*
 *.map
+*.log
 *.zip
 *.js
 !theme.js

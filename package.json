@@ -1,36 +1,45 @@
 {
   "name": "redmine-theme-minimalflat2",
-  "version": "1.0.2",
   "description": "Minimal and flat design theme for Redmine.",
+  "version": "1.0.3",
+  "author": "akabeko",
+  "license": "GPL-2.0",
   "main": "index.js",
-  "scripts": {
-    "start": "gulp watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "gulp release"
-  },
+  "keywords": [
+    "Redmine",
+    "Theme",
+    "Minimal",
+    "Flat"
+  ],
+  "homepage": "https://github.com/akabekobeko/redmine-theme-minimalflat2#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akabekobeko/redmine-theme-minimalflat2.git"
   },
-  "keywords": [
-    "Redmine"
-  ],
-  "author": "akabeko",
-  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/akabekobeko/redmine-theme-minimalflat2/issues"
   },
-  "homepage": "https://github.com/akabekobeko/redmine-theme-minimalflat2#readme",
+  "scripts": {
+    "start": "npm run watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "stylus ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-root ./stylus",
+    "watch:css": "stylus -w ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-root ./stylus",
+    "watch:server": "browser-sync start --server src",
+    "watch": "npm-run-all -p watch:css watch:server",
+    "release:css": "stylus -c ./src/stylus/App.styl -o ./minimalflat2/stylesheets/application.css",
+    "release:clean": "rimraf ./minimalflat2",
+    "release:copy-src": "cpx \"./src/**/*(|theme.js|application.css|favicon.ico|icon.svg|icon.eot|icon.ttf|icon.woff|!(*.*))\" ./minimalflat2",
+    "release:copy-doc": "cpx \"./*(README.md|README.ja.md|LICENSE.txt|ss.png|!(Vagrantfile|*.*))\" ./minimalflat2",
+    "release:copy": "npm-run-all release:copy-src release:copy-doc",
+    "release:archive": "bestzip minimalflat2-v1.0.3.zip ./minimalflat2",
+    "release": "npm-run-all -s release:clean release:copy release:css release:archive"
+  },
   "devDependencies": {
-    "del": "^1.2.0",
-    "gulp": "^3.9.0",
-    "gulp-if": "^1.2.5",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-stylus": "^2.0.5",
-    "gulp-zip": "^3.0.2",
-    "run-sequence": "^1.1.2"
+    "bestzip": "^1.1.2",
+    "browser-sync": "^2.9.11",
+    "cpx": "^1.2.1",
+    "npm-run-all": "^1.2.12",
+    "rimraf": "^2.4.3",
+    "stylus": "^0.52.4"
   }
 }
