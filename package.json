@@ -36,10 +36,10 @@
   },
   "devDependencies": {
     "bestzip": "^1.1.2",
-    "browser-sync": "^2.9.11",
+    "browser-sync": "^2.10.0",
     "cpx": "^1.2.1",
-    "npm-run-all": "^1.2.12",
-    "rimraf": "^2.4.3",
-    "stylus": "^0.52.4"
+    "npm-run-all": "^1.4.0",
+    "rimraf": "^2.4.4",
+    "stylus": "^0.53.0"
   }
 }
