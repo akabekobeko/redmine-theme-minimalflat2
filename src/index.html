@@ -5,25 +5,51 @@
   <title>minimalflat2</title>
   <link rel="shortcut icon" href="favicon/favicon.ico">
   <link rel="stylesheet" media="all" href="stylesheets/application.css">
+  <link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+  <script src="javascripts/jquery-1.js"></script>
+  <script src="javascripts/application.js"></script>
+  <script src="javascripts/responsive.js"></script>
 </head>
 <body>
-<div id="top-menu">
-  <div id="account">
-    <ul>
-      <li><a class="my-account" href="./my/account">My account</a></li>
-      <li><a class="logout" rel="nofollow" data-method="post" href="./logout">Sign out</a></li>
-    </ul>
+<div id="wrapper">
+  <div class="flyout-menu js-flyout-menu">
+    <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+        <input name="q" id="flyout-search" class="small js-search-input" placeholder="検索" type="text">
+      </form>
+    </div>
+    <div class="flyout-menu__avatar flyout-menu__avatar--no-avatar">
+      <a class="user active" href="users/1">admin</a>
+    </div>
+    <h3>Common</h3>
+      <span class="js-general-menu">
+        <ul>
+          <li><a class="home" href="">Home</a></li>
+          <li><a class="my-page" href="my/page">My page</a></li>
+          <li><a class="projects" href="projects">Project</a></li>
+          <li><a class="administration" href="admin">Administration</a></li>
+          <li><a class="help" href="https://www.redmine.org/guide">Help</a></li>
+        </ul>
+      </span>
+      <span class="js-sidebar flyout-menu__sidebar"></span>
+    <h3>Profile</h3>
+      <span class="js-profile-menu">
+        <ul>
+          <li><a class="my-account" href="my/account">My account</a></li>
+          <li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li>
+        </ul>
+      </span>
+    </div>
+<div id="wrapper2">
+<div id="wrapper3">
+  <div id="top-menu">
+    <div id="account">
+    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
   </div>
-  <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
-  <ul>
-    <li><a class="home" href="./">Home</a></li>
-    <li><a class="my-page" href="./my/page">My page</a></li>
-    <li><a class="projects" href="./projects">Projects</a></li>
-    <li><a class="administration" href="./admin">Administration</a></li>
-    <li><a class="help" href="http://www.redmine.org/guide">Help</a></li>
-  </ul>
-</div>
 <div id="header">
+  <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
     <div id="quick-search">
         <form action="/projects/redmine-theme-minimalflat2/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
         <input name="wiki_pages" value="1" type="hidden">
@@ -31,7 +57,7 @@
           <a accesskey="4" href="./projects/redmine-theme-minimalflat2/search">Search</a>:
         </label>
         <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
-</form>        
+</form>
     </div>
 
     <h1>redmine-theme-minimalflat2</h1>
@@ -67,6 +93,9 @@
     <li><a href="./syntaxhighlight.html" target="_blank">syntaxhighlight</a></li>
     <li><a href="./wiki.html" target="_blank">wiki</a></li>
   </ul>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>

@@ -5,35 +5,56 @@
   <meta charset="utf-8">
   <title>Feature #1: Sample issue - redmine-theme-minimalflat2 - Redmine</title>
   <link rel="shortcut icon" href="favicon/favicon.ico">
-  <link rel="stylesheet" media="all" href="stylesheets/jquery/jquery-ui-1.11.0.css">
+  <link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+  <link rel="stylesheet" media="all" href="stylesheets/jstoolbar.css">
   <link rel="stylesheet" media="all" href="stylesheets/application.css">
-  <link rel="stylesheet" media="screen" href="defaults/stylesheets/jstoolbar.css">
-  <script src="javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.3.js"></script>
+  <link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+  <script src="javascripts/jquery-1.js"></script>
+  <script src="javascripts/jstoolbar.js"></script>
   <script src="javascripts/application.js"></script>
-  <script src="javascripts/theme.js"></script>
+  <script src="javascripts/responsive.js"></script>
 </head>
 <body class="theme-Minimalflat2 project-redmine-theme-minimalflat2 controller-issues action-show">
 <div id="wrapper">
+  <div class="flyout-menu js-flyout-menu">
+    <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+        <input name="q" id="flyout-search" class="small js-search-input" placeholder="検索" type="text">
+      </form>
+    </div>
+    <div class="flyout-menu__avatar flyout-menu__avatar--no-avatar">
+      <a class="user active" href="users/1">admin</a>
+    </div>
+    <h3>Common</h3>
+      <span class="js-general-menu">
+        <ul>
+          <li><a class="home" href="">Home</a></li>
+          <li><a class="my-page" href="my/page">My page</a></li>
+          <li><a class="projects" href="projects">Project</a></li>
+          <li><a class="administration" href="admin">Administration</a></li>
+          <li><a class="help" href="https://www.redmine.org/guide">Help</a></li>
+        </ul>
+      </span>
+      <span class="js-sidebar flyout-menu__sidebar"></span>
+    <h3>Profile</h3>
+      <span class="js-profile-menu">
+        <ul>
+          <li><a class="my-account" href="my/account">My account</a></li>
+          <li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li>
+        </ul>
+      </span>
+  </div>
 <div id="wrapper2">
 <div id="wrapper3">
-<div id="top-menu">
-  <div id="account">
-    <ul>
-      <li><a class="my-account" href="./my/account">My account</a></li>
-      <li><a class="logout" rel="nofollow" data-method="post" href="./logout">Sign out</a></li>
-    </ul>
+  <div id="top-menu">
+    <div id="account">
+    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
   </div>
-  <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
-  <ul>
-    <li><a class="home" href="./">Home</a></li>
-    <li><a class="my-page" href="./my/page">My page</a></li>
-    <li><a class="projects" href="./projects">Projects</a></li>
-    <li><a class="administration" href="./admin">Administration</a></li>
-    <li><a class="help" href="http://www.redmine.org/guide">Help</a></li>
-  </ul>
-</div>
 
 <div id="header">
+  <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
     <div id="quick-search">
         <form action="/projects/redmine-theme-minimalflat2/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
         <input name="issues" value="1" type="hidden">
@@ -41,7 +62,7 @@
           <a accesskey="4" href="./projects/redmine-theme-minimalflat2/search">Search</a>:
         </label>
         <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
-</form>        
+</form>
     </div>
 
     <h1>redmine-theme-minimalflat2</h1>
@@ -91,11 +112,11 @@
 
     </div>
 
-        
+
     </div>
 
     <div id="content">
-        
+
         <div class="contextual">
 <a onclick='showAndScrollTo("update", "issue_notes"); return false;' class="icon icon-edit" accesskey="e" href="./issues/1/edit">Edit</a>
 <a class="icon icon-time-add" href="./issues/1/time_entries/new">Log time</a>
@@ -215,10 +236,10 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
        <li><strong>Status</strong> changed from <i>新規</i> to <i>進行中</i></li>
        <li><strong>% Done</strong> changed from <i>0</i> to <i>40</i></li>
     </ul>
-    
+
     </div>
   </div>
-  
+
   <div id="change-2" class="journal has-notes">
     <div id="note-2">
     <h4><a href="#note-2" class="journal-link">#2</a>
@@ -229,7 +250,7 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
     <div id="journal-2-notes" class="wiki editable"><div class="contextual"><a title="Quote" data-remote="true" rel="nofollow" data-method="post" href="./issues/1/quoted?journal_id=2"><img src="issue_files/comment.png" alt="Comment"></a> <a title="Edit" onclick="$.ajax({url: '/journals/edit/2.js', type: 'get'}); return false;" href="#"><img src="issue_files/edit.png" alt="Edit"></a></div><p>Comment</p></div>
     </div>
   </div>
-  
+
 
 
 </div>
@@ -249,12 +270,12 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
   <div id="update" style="">
   <h3>Edit</h3>
   <form id="issue-form" class="edit_issue" enctype="multipart/form-data" action="/issues/1" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="patch" type="hidden"><input name="authenticity_token" value="e+HYtPiSPPzyyQiRjg+ga/Bdoni8Jr3hwu46eVLOrLCxuRMduSql7lGYO+UneK8Eazly2ByPoNMnVmL0sjVxhA==" type="hidden">
-    
-    
+
+
     <div class="box">
         <fieldset class="tabular"><legend>Change properties</legend>
         <div id="all_attributes">
-        
+
 
 
 <p style="float:right; margin-right:1em;">
@@ -277,7 +298,7 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
 </span></p>
 
 <div id="attributes" class="attributes">
-  
+
 
 <div class="splitcontent">
 <div class="splitcontentleft">
@@ -355,7 +376,7 @@ $(document).ready(function(){
         </div>
         </fieldset>
         <fieldset class="tabular"><legend>Log time</legend>
-        
+
         <div class="splitcontentleft">
         <p><label for="time_entry_hours">Spent time</label><input size="6" name="time_entry[hours]" id="time_entry_hours" type="text"> Hours</p>
         </div>
@@ -372,7 +393,7 @@ $(document).ready(function(){
 
     <input name="issue[private_notes]" value="0" type="hidden"><input value="1" name="issue[private_notes]" id="issue_private_notes" type="checkbox"> <label for="issue_private_notes">Private notes</label>
 
-    
+
     </fieldset>
 
     <fieldset><legend>Files</legend>
@@ -403,7 +424,7 @@ $(document).ready(function(){
 
 <div style="display:none;" id="context-menu"></div>
 
-        
+
         <div style="clear:both;"></div>
     </div>
 </div>

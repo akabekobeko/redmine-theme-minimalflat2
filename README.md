@@ -2,7 +2,15 @@
 
 Minimal and flat design theme for Redmine.
 
+## Screenshot
+
+### Projects
+
 ![Projects](ss.png)
+
+### For mobile
+
+![For mobile](ss2.png)
 
 # Feature
 

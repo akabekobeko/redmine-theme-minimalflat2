@@ -5,36 +5,53 @@
   <meta charset="utf-8">
   <title>/ - Diff - Redmine</title>
   <link rel="shortcut icon" href="favicon/favicon.ico">
-  <link rel="stylesheet" media="all" href="stylesheets/jquery/jquery-ui-1.11.0.css">
   <link rel="stylesheet" media="all" href="stylesheets/application.css">
-  <link rel="stylesheet" media="all" href="stylesheets/scm.css">
-  <link href="diff_files/scm.css" media="screen" rel="stylesheet" type="text/css">
-  <script src="javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.3.js"></script>
+  <link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+  <script src="javascripts/jquery-1.js"></script>
   <script src="javascripts/application.js"></script>
-  <script src="javascripts/theme.js"></script>
+  <script src="javascripts/responsive.js"></script>
 </head>
 <body class="theme-Redmine project-redmine controller-repositories action-diff">
 <div id="wrapper">
+  <div class="flyout-menu js-flyout-menu">
+    <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+        <input name="q" id="flyout-search" class="small js-search-input" placeholder="検索" type="text">
+      </form>
+    </div>
+    <div class="flyout-menu__avatar flyout-menu__avatar--no-avatar">
+      <a class="user active" href="users/1">admin</a>
+    </div>
+    <h3>Common</h3>
+      <span class="js-general-menu">
+        <ul>
+          <li><a class="home" href="">Home</a></li>
+          <li><a class="my-page" href="my/page">My page</a></li>
+          <li><a class="projects" href="projects">Project</a></li>
+          <li><a class="administration" href="admin">Administration</a></li>
+          <li><a class="help" href="https://www.redmine.org/guide">Help</a></li>
+        </ul>
+      </span>
+      <span class="js-sidebar flyout-menu__sidebar"></span>
+    <h3>Profile</h3>
+      <span class="js-profile-menu">
+        <ul>
+          <li><a class="my-account" href="my/account">My account</a></li>
+          <li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li>
+        </ul>
+      </span>
+  </div>
 <div id="wrapper2">
 <div id="wrapper3">
-<div id="top-menu">
-  <div id="account">
-    <ul>
-      <li><a class="my-account" href="./my/account">My account</a></li>
-      <li><a class="logout" rel="nofollow" data-method="post" href="./logout">Sign out</a></li>
-    </ul>
+  <div id="top-menu">
+    <div id="account">
+    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
   </div>
-  <div id="loggedas">Logged in as <a class="user active" href="./users/1">admin</a></div>
-  <ul>
-    <li><a class="home" href="./">Home</a></li>
-    <li><a class="my-page" href="./my/page">My page</a></li>
-    <li><a class="projects" href="./projects">Projects</a></li>
-    <li><a class="administration" href="./admin">Administration</a></li>
-    <li><a class="help" href="http://www.redmine.org/guide">Help</a></li>
-  </ul>
-</div>
 
 <div id="header">
+  <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
     <div id="quick-search">
         <form accept-charset="UTF-8" action="/projects/redmine/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
         <input name="changesets" value="1" type="hidden">
@@ -42,7 +59,7 @@
           <a href="./projects/redmine/search" accesskey="4">Search</a>:
         </label>
         <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-</form>        
+</form>
     </div>
 
     <h1>Redmine</h1>
@@ -81,19 +98,19 @@
 		google_color_url = "2A5685";
 		//-->
 		</script>
-		
+
                 <br>
 
-        
+
     </div>
 
     <div id="content">
-        
+
         <h2>Revision 14518 </h2>
 
 <!-- Choose view type -->
 <form accept-charset="UTF-8" action="/projects/redmine/repository/revisions/14518/diff" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
-  
+
   <p>
     Watch diff:
     <label><input id="type_inline" name="type" onchange="this.form.submit()" value="inline" type="radio"> Inline</label>
@@ -641,7 +658,7 @@
 </p>
 
 
-        
+
         <div style="clear:both;"></div>
     </div>
 </div>
