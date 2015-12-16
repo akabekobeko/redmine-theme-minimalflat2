@@ -22,17 +22,21 @@
   "scripts": {
     "start": "npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "stylus ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-root ./stylus",
-    "watch:css": "stylus -w ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-root ./stylus",
+    "build:css1": "stylus ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-root ./stylus",
+    "build:css2": "stylus ./src/stylus/Responsive.styl -o ./src/stylesheets/responsive.css -m --sourcemap-root ./stylus",
+    "build": "npm-run-all -p build:css1 build:css2",
+    "watch:css1": "stylus -w ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-root ./stylus",
+    "watch:css2": "stylus -w ./src/stylus/Responsive.styl -o ./src/stylesheets/responsive.css -m --sourcemap-root ./stylus",
     "watch:server": "browser-sync start --server src",
-    "watch": "npm-run-all -p watch:css watch:server",
-    "release:css": "stylus -c ./src/stylus/App.styl -o ./minimalflat2/stylesheets/application.css",
+    "watch": "npm-run-all -p watch:css1 watch:css2 watch:server",
+    "release:css1": "stylus -c ./src/stylus/App.styl -o ./minimalflat2/stylesheets/application.css",
+    "release:css2": "stylus -c ./src/stylus/Responsive.styl -o ./minimalflat2/stylesheets/stylesheets.css",
     "release:clean": "rimraf ./minimalflat2",
-    "release:copy-src": "cpx \"./src/**/*(|theme.js|application.css|favicon.ico|icon.svg|icon.eot|icon.ttf|icon.woff|!(*.*))\" ./minimalflat2",
+    "release:copy-src": "cpx \"./src/**/*(|theme.js|application.css|responsive.css|favicon.ico|icon.svg|icon.eot|icon.ttf|icon.woff|!(*.*))\" ./minimalflat2",
     "release:copy-doc": "cpx \"./*(README.md|README.ja.md|CHANGELOG.md|LICENSE.txt|ss.png|!(Vagrantfile|*.*))\" ./minimalflat2",
     "release:copy": "npm-run-all release:copy-src release:copy-doc",
     "release:archive": "bestzip minimalflat2-v1.0.4.zip ./minimalflat2",
-    "release": "npm-run-all -s release:clean release:copy release:css release:archive"
+    "release": "npm-run-all -s release:clean release:copy release:css1 release:css2 release:archive"
   },
   "devDependencies": {
     "bestzip": "^1.1.2",
