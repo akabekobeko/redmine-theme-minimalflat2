@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.4
+
+* [#39](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/39) Redmine v3.2 support
+
 ## 1.0.3
 
 * [#38](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/38) To increase the margin of the table
@@ -16,7 +20,7 @@
 * [#29](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/29) Fixed the left border of the display tab of Settings screen.
 * [#28](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/28) Change the appearance of the button
 * [#27](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/27) Fixed icon display is broken problem in the context menu of issues
-* [#25](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/25) Fixed multiple selection doesn't work problem of issues 
+* [#25](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/25) Fixed multiple selection doesn't work problem of issues
 
 ## 1.0.1
 
