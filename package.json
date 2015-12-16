@@ -30,7 +30,7 @@
     "watch:server": "browser-sync start --server src",
     "watch": "npm-run-all -p watch:css1 watch:css2 watch:server",
     "release:css1": "stylus -c ./src/stylus/App.styl -o ./minimalflat2/stylesheets/application.css",
-    "release:css2": "stylus -c ./src/stylus/Responsive.styl -o ./minimalflat2/stylesheets/stylesheets.css",
+    "release:css2": "stylus -c ./src/stylus/Responsive.styl -o ./minimalflat2/stylesheets/responsive.css",
     "release:clean": "rimraf ./minimalflat2",
     "release:copy-src": "cpx \"./src/**/*(|theme.js|application.css|responsive.css|favicon.ico|icon.svg|icon.eot|icon.ttf|icon.woff|!(*.*))\" ./minimalflat2",
     "release:copy-doc": "cpx \"./*(README.md|README.ja.md|CHANGELOG.md|LICENSE.txt|ss.png|!(Vagrantfile|*.*))\" ./minimalflat2",
