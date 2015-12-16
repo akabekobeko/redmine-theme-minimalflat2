@@ -2,7 +2,15 @@
 
 簡素でフラットな外観の Redmine テーマです。
 
+## スクリーンショット
+
+### プロジェクト一覧
+
 ![Projects](ss.png)
+
+### モバイル用レイアウト
+
+![For mobile](ss2.png)
 
 # 機能
 
@@ -17,7 +25,7 @@
 
 # インストール方法
 
-1. [release page](https://github.com/akabekobeko/redmine-theme-minimalflat2/releases) から ZIP ファイルをダウンロード 
+1. [release page](https://github.com/akabekobeko/redmine-theme-minimalflat2/releases) から ZIP ファイルをダウンロード
 2. ZIP ファイルを展開し、Redmine ディレクトリ内の `public/themes/minimalflat2` に配置
 3. Redmine から **管理 > 設定 > 表示** へアクセス
 4. **テーマ** から **minimalflat2** を選択して設定を保存
