@@ -603,19 +603,17 @@
 
   #content > .contextual a,
   p.buttons a {
-    font-weight bold
-
     display inline-block
+    margin .5em 0
+    padding .5em
+    border-radius .2em
+    background-color color_indigo
+    color color_white
+    font-size .9em
 
-    margin 5px 0
-    margin-right 2px
-    padding 9px
-
-    border 1px solid #ddd
-    -webkit-border-radius 3px
-    border-radius 3px
-    background-color transparent
-    background-position-x 4px
+    &:hover {
+      opacity .8
+    }
   }
 
   .flyout-menu .contextual {
