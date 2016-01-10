@@ -10,6 +10,7 @@
   <script src="javascripts/jquery-1.js"></script>
   <script src="javascripts/application.js"></script>
   <script src="javascripts/responsive.js"></script>
+  <script src="javascripts/theme.js"></script>
 </head>
 <body class="project-redmine-theme-minimalflat2 controller-wiki action-show">
 <div id="wrapper">
@@ -121,35 +122,34 @@
   <p>Wiki sample.</p>
 
 
-  <div class="contextual" title="Edit this section" id="section-2"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=2"><img src="wiki_files/edit.png" alt="Edit"></a></div><a name="Header"></a>
+  <div class="contextual" title="Edit this section" id="section-2"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=2"><i title="Edit" class="js-replace-icon-edit"></i></a></div><a name="Header"></a>
 <h2>Header<a href="#Header" class="wiki-anchor">¶</a></h2>
 
 
-  <div class="contextual" title="Edit this section" id="section-3"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=3"><img src="wiki_files/edit.png" alt="Edit"></a></div><a name="H3"></a>
+  <div class="contextual" title="Edit this section" id="section-3"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=3"><i title="Edit" class="js-replace-icon-edit"></i></a></div><a name="H3"></a>
 <h3>H3<a href="#H3" class="wiki-anchor">¶</a></h3>
 
 
-  <div class="contextual" title="Edit this section" id="section-4"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=4"><img src="wiki_files/edit.png" alt="Edit"></a></div><a name="H4"></a>
+  <div class="contextual" title="Edit this section" id="section-4"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=4"><i title="Edit" class="js-replace-icon-edit"></i></a></div><a name="H4"></a>
 <h4>H4<a href="#H4" class="wiki-anchor">¶</a></h4>
 
 
-  <div class="contextual" title="Edit this section" id="section-5"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=5"><img src="wiki_files/edit.png" alt="Edit"></a></div><a name="H5"></a>
+  <div class="contextual" title="Edit this section" id="section-5"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=5"><i title="Edit" class="js-replace-icon-edit"></i></a></div><a name="H5"></a>
 <h5>H5<a href="#H5" class="wiki-anchor">¶</a></h5>
 
 
-  <div class="contextual" title="Edit this section" id="section-6"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=6"><img src="wiki_files/edit.png" alt="Edit"></a></div><a name="H6"></a>
+  <div class="contextual" title="Edit this section" id="section-6"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=6"><i title="Edit" class="js-replace-icon-edit"></i></a></div><a name="H6"></a>
 <h6>H6<a href="#H6" class="wiki-anchor">¶</a></h6>
 
 
-  <div class="contextual" title="Edit this section" id="section-7"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=7"><img src="wiki_files/edit.png" alt="Edit"></a></div><a name="Misc"></a>
+  <div class="contextual" title="Edit this section" id="section-7"><a href="./projects/redmine-theme-minimalflat2/wiki/Wiki/edit?section=7"><i title="Edit" class="js-replace-icon-edit"></i></a></div><a name="Misc"></a>
 <h2>Misc<a href="#Misc" class="wiki-anchor">¶</a></h2>
 
 
   <p><a href="http://example.com/" class="external">Link text</a></p>
 
 
-  <p>Normal list</p>
-
+<h3>Normal list</h3>
   <ul>
   <li>Value 1</li>
     <li>Value 2
@@ -164,10 +164,7 @@
     <li>Value 3</li>
   </ul>
 
-
-  <p>Number list</p>
-
-
+<h3>Number list</h3>
   <ol>
   <li>Value 1</li>
     <li>Value 2
@@ -182,9 +179,7 @@
     <li>Value 3</li>
   </ol>
 
-
-  <p>Table</p>
-
+<h3>Table</h3>
   <table>
     <tbody><tr>
       <th>Header 1</th>
@@ -204,24 +199,15 @@
     </tr>
   </tbody></table>
 
-
-
-
-  <p>Header line</p>
-
-
+<h3>Header line</h3>
 <hr>
 
 
-  <p>Pre</p>
-
-
+<h3>Pre</h3>
 <pre>pre text
 </pre>
 
-  <p>Code</p>
-
-
+<h3>Code</h3>
 <pre><code class="js syntaxhl"><span class="CodeRay"><span class="keyword">function</span> <span class="function">sample</span>( isSample ) {
   <span class="keyword">if</span>( isSample ) {
     console.log( <span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span> );
@@ -229,48 +215,33 @@
 }
 </span></code></pre>
 
-  <p>Quote</p>
+<h3>Quote</h3>
+  <blockquote>
+    <p>text<br>text</p>
+  </blockquote>
 
+<h3>Paragraph</h3>
 
-<blockquote>
+  <p>
+  Soon Lara spotted other landmarks—an outcropping of limestone beside the path that had a silhouette like a man’s face, a marshy spot beside the river where the waterfowl were easily startled, a tall tree that looked like a man with his arms upraised. They were drawing near to the place where there was an island in the river. The island was a good spot to make camp. They would sleep on the island tonight.
+  </p>
+  <p>
+  Lara had been back and forth along the river path many times in her short life. Her people had not created the path—it had always been there, like the river—but their deerskin-shod feet and the wooden wheels of their handcarts kept the path well worn. Lara’s people were salt traders, and their livelihood took them on a continual journey.
+  </p>
+  <p>
+  <a href="">#100</a> <a href="" class="issue closed">#101</a>
+  </p>
 
-  <p>text<br>text</p>
+<h3>Flash</h3>
+  <div class="flash notice" id="flash_notice">Notice</div>
+  <div class="flash warning" id="flash_warning">Warinig</div>
+  <div class="flash error" id="flash_error">Error</div>
 
-
-</blockquote>
-
-<p>
-Soon Lara spotted other landmarks—an outcropping of limestone beside the path that had a silhouette like a man’s face, a marshy spot beside the river where the waterfowl were easily startled, a tall tree that looked like a man with his arms upraised. They were drawing near to the place where there was an island in the river. The island was a good spot to make camp. They would sleep on the island tonight.
-</p>
-<p>
-Lara had been back and forth along the river path many times in her short life. Her people had not created the path—it had always been there, like the river—but their deerskin-shod feet and the wooden wheels of their handcarts kept the path well worn. Lara’s people were salt traders, and their livelihood took them on a continual journey.
-</p>
-<p>
-<a href="">#100</a> <a href="" class="issue closed">#101</a>
-</p>
-
-<div class="flash notice" id="flash_notice">Notice</div>
-
-<div class="flash warning" id="flash_warning">Warinig</div>
-
-<div class="flash error" id="flash_error">Error</div>
-
-<p>
-<input type="text">
-</p>
-
-<p>
-<textarea name="" id="" cols="30" rows="10"></textarea>
-</p>
-
-<p>
+<h3>Form</h3>
+<input type="text"><p></p>
+<textarea name="" id="" cols="30" rows="10"></textarea><p></p>
 <input type="submit" value="Submit">
-</p>
-
-<p>
 <input type="button" value="Button">
-</p>
-
 
 </div><!-- wiki wiki-page -->
 
