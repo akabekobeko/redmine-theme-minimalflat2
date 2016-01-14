@@ -85,15 +85,39 @@ table.list {
         text-align left
       }
 
+      span.name {
+        font-weight bold
+      }
+
       span.count {
         position relative
         top -1px
         color color_white
         font-size 10px
+        font-weight bold
         background #9DB9D5
         padding 0 6px 1px 6px
         border-radius 3px
         margin-left 4px
+      }
+
+
+      span.totals {
+        color #aaa
+        font-size .8em
+      }
+
+      span.totals .value {
+        font-weight bold
+        color #777
+      }
+
+      a.toggle-all {
+        color #aaa
+        font-size .8em
+        display none
+        float right
+        margin-right 4px
       }
     }
 
@@ -644,6 +668,11 @@ table.messages td.last_message {
   text-align left
 }
 
+.query_sort_criteria_count {
+  display inline-block
+  min-width 1em
+}
+
 table.query-columns {
   border-collapse collapse
   border 0
@@ -655,6 +684,19 @@ table.query-columns {
     input[type="button"] {
       width 35px
     }
+  }
+}
+
+.query-totals {
+  text-align right
+  margin-top -2.3em
+
+  > span {
+    margin-left .6em
+  }
+
+  .value {
+    font-weight bold
   }
 }
 
@@ -747,6 +789,10 @@ span.search_for_watchers a, span.add_attachment a {
   line-height 1.5em
   word-wrap break-word
   font-size .9em
+}
+
+.pagination .per-page span.selected {
+  font-weight bold
 }
 
 div.square {
@@ -921,6 +967,29 @@ div.issue {
       width 28%
     }
   }
+
+  .attributes {
+    margin-top 2em
+  }
+
+  .attribute {
+    padding-left 180px
+    clear left
+    min-height 1.8em
+
+    .label {
+      width 170px
+      margin-left -180px
+      font-weight bold
+      float left
+    }
+  }
+
+  &.overdue .due-date .value {
+    color #c22
+  }
+
+
 }
 
 #issue-form {
@@ -1019,6 +1088,18 @@ fieldset {
   }
 }
 
+#filters-table {
+  width 60%
+  float left
+}
+
+.add-filter {
+  width 35%
+  float right
+  text-align right
+  vertical-align top
+}
+
 .toggle-multiselect:before {
   icon( icon_toggle_plus, color_gray )
   cursor pointer
@@ -1061,6 +1142,19 @@ div.journal {
     border-left 2px solid #d22
     padding-left 4px
     margin-left -6px
+  }
+
+  ul.details {
+    color color_gray_light_b
+    margin-bottom 1.5em
+
+    a {
+      color #70A7CD
+
+      &:hover {
+        color #D14848
+      }
+    }
   }
 }
 
@@ -1359,6 +1453,61 @@ input#content_comments {
 p.pagination {
   margin-top 8px
   font-size 90%
+}
+
+span.pagination {
+  margin-left 3px
+  color color_gray_light_b
+}
+
+.pagination ul.pages {
+  margin 0 5px 0 0
+  padding 0
+  display inline
+}
+
+.pagination ul.pages li {
+  display inline-block
+  padding 0
+  border 1px solid #ccc
+  margin-left -1px
+  line-height 2em
+  margin-bottom 1em
+  white-space nowrap
+  text-align center
+
+  a, span {
+    padding 3px 8px
+  }
+
+  &:first-child {
+    border-top-left-radius 4px
+    border-bottom-left-radius 4px
+  }
+
+  &:last-child {
+    border-top-right-radius 4px
+    border-bottom-right-radius 4px
+  }
+
+  &.current {
+    color color_white
+    background-color #628DB6
+    border-color #628DB6
+  }
+
+  &.page:hover {
+    background-color color_gray_light_c
+  }
+
+  a:hover, a:active {
+    color inherit
+    text-decoration inherit
+  }
+}
+
+span.pagination > span {
+  white-space nowrap
 }
 
 #search-form fieldset p {
