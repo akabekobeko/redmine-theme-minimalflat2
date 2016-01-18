@@ -8,9 +8,25 @@ Minimal and flat design theme for Redmine.
 
 ![Projects](ss.png)
 
+### Editor
+
+![Editor](ss2.png)
+
+### Issue
+
+![Issue](ss3.png)
+
+### Settings
+
+![Settings](ss4.png)
+
 ### For mobile
 
-![For mobile](ss2.png)
+![For mobile](ss5.png)
+
+### Menu
+
+![Menu](ss6.png)
 
 # Feature
 

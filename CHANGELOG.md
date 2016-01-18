@@ -1,5 +1,16 @@
 # ChangeLog
 
+## 1.1.0
+
+* [#53](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/53) Redmine v3.2 support
+* [#52](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/52) Button on the toolbar is default by the status change of the issue
+* [#50](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/50) Label of the setting screen is not displayed part
+* [#49](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/49) Progress graph does not appear part in issues list of Redmine 3.2
+* [#48](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/48) Margin is displayed on the bottom of the header
+* [#47](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/47) Change the content and sidebar layout
+* [#46](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/46) Makes the toolbar buttons to dark color
+* [#44](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/44) Make a user image to circle
+
 ## 1.0.4
 
 * [#39](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/39) Redmine v3.2 support

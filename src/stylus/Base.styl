@@ -35,7 +35,6 @@ h4, .wiki h3 {
 }
 
 p {
-  margin 1em
   line-height 1.5em
 }
 
@@ -210,6 +209,7 @@ table.progress {
   text-align center
   float left
   margin 1px 6px 1px 0
+  width 80px
 
   td {
     height 1em
@@ -241,6 +241,14 @@ p.progress-info {
 
 #roadmap table.progress td {
   height 1.2em
+}
+
+.version-overview table.progress {
+  width 40em
+
+  td {
+    height 1.2em
+  }
 }
 
 // Diff
@@ -325,7 +333,7 @@ a.close-icon:hover {
   .autoscroll {
     overflow-x visible
   }
-  
+
   table.list {
     margin-top .5em
 
@@ -346,36 +354,21 @@ a.close-icon:hover {
 }
 
 img.gravatar {
-  padding 2px
-  border solid 1px color_gray
-  background color_white
   vertical-align middle
+  border-radius 50%
 }
 
 div.issue img.gravatar {
   float left
-  margin 0 6px 0 0
-  padding 5px
+  margin-right 1em
 }
 
 div.issue table img.gravatar {
   height 14px
   width 14px
-  padding 2px
+  padding 4px
   float left
   margin 0 .5em 0 0
-}
-
-h2 img.gravatar {
-  margin -2px 4px -4px 0
-}
-
-h3 img.gravatar {
-  margin -4px 4px -4px 0
-}
-
-h4 img.gravatar {
-  margin -6px 4px -4px 0
 }
 
 td.username img.gravatar {
@@ -408,4 +401,35 @@ h2 img {
 
 .hascontextmenu {
   cursor context-menu
+}
+
+.sample-data {
+  border 1px solid color_gray
+  border-collapse collapse
+  background-color color_white
+  margin 0.5em
+
+  td {
+    border 1px solid color_gray
+    padding 2px 4px
+    font-family monospace
+  }
+
+  tr:first-child td {
+    font-weight bold
+    text-align center
+  }
+}
+
+.ui-progressbar {
+  position relative
+}
+
+#progress-label {
+  position absolute
+  left 50%
+  top 4px
+  font-weight bold
+  color color_gray_dark
+  text-shadow 1px 1px 0 color_white
 }

@@ -4,13 +4,29 @@
 
 ## スクリーンショット
 
-### プロジェクト一覧
+### Projects
 
 ![Projects](ss.png)
 
-### モバイル用レイアウト
+### Editor
 
-![For mobile](ss2.png)
+![Editor](ss2.png)
+
+### Issue
+
+![Issue](ss3.png)
+
+### Settings
+
+![Settings](ss4.png)
+
+### For mobile
+
+![For mobile](ss5.png)
+
+### Menu
+
+![Menu](ss6.png)
 
 # 機能
 

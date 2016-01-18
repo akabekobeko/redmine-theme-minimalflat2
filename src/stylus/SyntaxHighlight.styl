@@ -93,6 +93,8 @@ syntax_color_yellow     = #E7BC79
   .attribute-name      { color: syntax_color_yellow; }
   .attribute-value     { color: syntax_color_green; }
   .binary              { color: syntax_color_purple; }
+  .binary .char        { color: #325 }
+  .binary .delimiter   { color: #325 }
   .char .content       { color: syntax_color_red; }
   .char .delimiter     { color: syntax_color_red; }
   .char                { color: syntax_color_red; }
@@ -110,15 +112,19 @@ syntax_color_yellow     = #E7BC79
   .directive           { color: syntax_color_purple; }
   .doc                 { color: syntax_color_yellow; }
   .doc-string          { color: syntax_color_red; }
+  .docstring           { color: syntax_color_red; }
   .doctype             { color: syntax_color_blue }
+  .done                { color: color_gray; text-decoration: line-through; }
   .entity              { color: syntax_color_red; }
   .error               { color: syntax_color_red; }
   .escape              { color: syntax_color_gray; }
   .exception           { color: syntax_color_red; }
   .float               { color: syntax_color_red; }
   .function            { color: syntax_color_blue; }
+  .function .delimiter { color: syntax_color_blue; }
   .global-variable     { color: syntax_color_yellow; }
   .hex                 { color: syntax_color_blue; }
+  .id                  { color: syntax_color_blue; }
   .imaginary           { color: syntax_color_red; }
   .id                  { color: syntax_color_yellow; }
   .include             { color: syntax_color_red; }
@@ -126,12 +132,16 @@ syntax_color_yellow     = #E7BC79
   .inline-delimiter    { color: syntax_color_gray; }
   .instance-variable   { color: syntax_color_blue; }
   .integer             { color: syntax_color_red; }
+  .imaginary           { color: syntax_color_red; }
+  .important           { color: syntax_color_red; }
+  .key                 { color: syntax_color_green; }
   .key .char           { color: syntax_color_blue; }
   .key .delimiter      { color: syntax_color_green; }
-  .key                 { color: syntax_color_green; }
   .keyword             { color: syntax_color_purple; }
   .label               { color: syntax_color_yellow; }
   .local-variable      { color: syntax_color_red; }
+  .map .content        { color: syntax_color_purple; }
+  .map .delimiter      { color: syntax_color_purple; }
   .namespace           { color: syntax_color_purple; }
   .octal               { color: syntax_color_blue; }
   .operator            { }
@@ -152,6 +162,7 @@ syntax_color_yellow     = #E7BC79
   .string .content     { color: syntax_color_green; }
   .string .delimiter   { color: syntax_color_green; }
   .string .modifier    { color: syntax_color_green; }
+  .symbol              { color: syntax_color_red; }
   .symbol .content     { color: syntax_color_red; }
   .symbol .delimiter   { color: syntax_color_red; }
   .symbol              { color: syntax_color_red; }

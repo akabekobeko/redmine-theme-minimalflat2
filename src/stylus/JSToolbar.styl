@@ -2,105 +2,114 @@
 
 @import "./common/Color.styl"
 
-.js-replace-jstElements {
+.jstElements {
   button {
-    border solid 1px color_gray
-    border-radius .2em
-    background none color_white
-    color color_indigo
-    width 26px
-    height 26px
-    margin-right .2em
-    padding 0
-    font-family sans-serif
-    font-size 12px
-    line-height 26px
-    letter-spacing 0
+    border solid 1px color_indigo !important
+    border-radius .2em !important
+    background none color_indigo !important
+    color color_white !important
+    width 28px !important
+    height 28px !important
+    margin-right .2em !important
+    margin-bottom .2em !important
+    padding 0 !important
+    font-family sans-serif !important
+    font-size 13px !important
+    line-height 28px !important
+    letter-spacing 0 !important
+    vertical-align bottom
 
     &:hover {
-      background-color color_gray_light_b
+      opacity .7
     }
 
     span {
-      display none
+      display inline-block !important
+      overflow hidden
+      width 13px
+      height 26px
+      color transparent
     }
-  }
 
-  .help {
-    float right
-    font-size .9em
-    margin-right .5em
-    padding-top 8px
-
-    a {
-      background-image none
-      padding 0
-
-      &:before {
-        icon( icon_help, color_blue )
-      }
+    &.jstb_strong span:before {
+      icon( icon_edit_bold, color_white )
+      margin-right 0
     }
-  }
 
-  .js-replace-icon-strong:before {
-    icon( icon_edit_bold, color_indigo )
-    margin-right 0
-  }
+    &.jstb_em span:before {
+      icon( icon_edit_italic, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-italic:before {
-    icon( icon_edit_italic, color_indigo )
-    margin-right 0
-  }
+    &.jstb_ins span:before {
+      icon( icon_edit_underline, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-underline:before {
-    icon( icon_edit_underline, color_indigo )
-    margin-right 0
-  }
+    &.jstb_del span:before {
+      icon( icon_edit_strike, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-strike:before {
-    icon( icon_edit_strike, color_indigo )
-    margin-right 0
-  }
+    &.jstb_code span:before {
+      icon( icon_code, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-ul:before {
-    icon( icon_list_2, color_indigo )
-    margin-right 0
-  }
+    &.jstb_h1 span:before {
+      icon( icon_h1, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-ol:before {
-    icon( icon_list_num, color_indigo )
-    margin-right 0
-  }
+    &.jstb_h2 span:before {
+      icon( icon_h2, color_white )
+      margin-right 0
+    }
 
+    &.jstb_h3 span:before {
+      icon( icon_h3, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-unbq:before {
-    icon( icon_unbq, color_indigo )
-    margin-right 0
-  }
+    &.jstb_ul span:before {
+      icon( icon_list_2, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-bq:before {
-    icon( icon_bq, color_indigo )
-    margin-right 0
-  }
+    &.jstb_ol span:before {
+      icon( icon_list_num, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-pre:before {
-    icon( icon_edit_pre, color_indigo )
-    margin-right 0
-  }
+    &.jstb_bq span:before {
+      icon( icon_bq, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-link:before {
-    icon( icon_link, color_gray )
-    margin-right 0
-  }
+    &.jstb_unbq span:before {
+      icon( icon_unbq, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-image:before {
-    icon( icon_image, color_green )
-    margin-right 0
-  }
+    &.jstb_pre span:before {
+      icon( icon_edit_pre, color_white )
+      margin-right 0
+    }
 
-  .js-replace-icon-help:before {
-    icon( icon_help, color_blue )
-    margin-right 0
+    &.jstb_link span:before {
+      icon( icon_link, color_red_light )
+      margin-right 0
+    }
+
+    &.jstb_img span:before {
+      icon( icon_image, color_viridian_light )
+      margin-right 0
+    }
+
+    &.jstb_help span:before {
+      icon( icon_help, color_blue_light )
+      margin-right 0
+    }
   }
 }
 

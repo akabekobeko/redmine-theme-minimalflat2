@@ -103,6 +103,7 @@
   position relative
 
   h1 {
+    margin 0
     padding .5em 0 0 .3em
     font-size 1.6em
 
@@ -250,23 +251,16 @@
 
 // Sidebar
 #sidebar{
+  box-sizing border-box
   position relative
   z-index 9
   float right
-  width 22%
+  width 25%
   margin 0
-  padding 0
-
-  a {
-    padding .3em .5em
-  }
+  padding 0 1em
 
   a.selected {
-    line-height 1.7em
-    margin-left -2px
-    background-color color_indigo
-    color color_white
-    border-radius 2px
+    color color_red
 
     &:hover {
       text-decoration none
@@ -274,7 +268,8 @@
   }
 
   h3 {
-    margin-top .2em
+    margin .5em 0 .5em
+    padding 0
     color color_gray_dark
     font-size 1.2em
   }
@@ -317,9 +312,10 @@
 // Content
 #content {
   z-index 10
+  box-sizing border-box
   width 75%
   margin 0
-  padding 6px 10px 10px 10px
+  padding .5em 1em
   border-right 1px solid color_gray_light_a
   background-color color_page_back
 }
@@ -408,4 +404,8 @@ input#openid_url {
   height 0
   clear both
   visibility hidden
+}
+
+.mobile-show {
+  display none
 }
