@@ -1,0 +1,48 @@
+// Source Code Management
+
+@import "./common/Color.styl"
+
+div.changeset-changes > ul > li {
+  padding-left 0 !important
+}
+
+li.change {
+  background-image none !important
+  padding 0 0 0 1em !important
+
+  &:before {
+    icon( icon_circle, color_gray_dark )
+  }
+}
+
+li.change.folder:before {
+  icon( icon_folder, color_blue )
+}
+
+li.change.folder.change-A:before {
+  icon( icon_folder, color_orange )
+}
+
+li.change.folder.change-M:before {
+  icon( icon_folder_add, color_green )
+}
+
+li.change.change-A:before {
+  icon( icon_add, color_green )
+}
+
+li.change.change-M:before {
+  icon( icon_circle, color_orange )
+}
+
+li.change.change-C:before {
+  icon( icon_circle, color_blue )
+}
+
+li.change.change-R:before {
+  icon( icon_circle, color_purple )
+}
+
+li.change.change-D:before {
+  icon( icon_delete, color_red )
+}

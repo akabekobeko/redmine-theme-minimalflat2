@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Revision 15067 - Tab left/right buttons for project menu (#20632).
+
+Patch by Felix Gliesche. - Redmine</title>
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script src="javascripts/theme.js"></script>
+<!-- page specific tags -->
+<link rel="stylesheet" media="all" href="stylesheets/scm.css">
+<style>@-webkit-keyframes popaeactspdvrrahgcxnrktedfzagkrjokl {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popaeactspdvrrahgcxnrktedfzagkrjokl {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#aeactspdvrrahgcxnrktedfzagkrjokl{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:solid 2px #fff !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-moz-border-radius:5px !important;border-radius:5px !important;-moz-box-shadow:0px 0px 20px #000 !important;box-shadow:0px 0px 20px #000 !important;}.aeactspdvrrahgcxnrktedfzagkrjokl-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;color:#AAA !important;display:inline !important;text-decoration:line-through !important;}#aeactspdvrrahgcxnrktedfzagkrjokl br{display:inline-block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#aeactspdvrrahgcxnrktedfzagkrjokl span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#aeactspdvrrahgcxnrktedfzagkrjokl div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#aeactspdvrrahgcxnrktedfzagkrjokl a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#aeactspdvrrahgcxnrktedfzagkrjokl-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(resource://firefox-at-ghostery-dot-com/ghostery/data/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#aeactspdvrrahgcxnrktedfzagkrjokl-gear:hover{-webkit-animation-name:popaeactspdvrrahgcxnrktedfzagkrjokl !important;animation-name:popaeactspdvrrahgcxnrktedfzagkrjokl !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#aeactspdvrrahgcxnrktedfzagkrjokl:hover #aeactspdvrrahgcxnrktedfzagkrjokl-gear{text-decoration:none !important;display:inline-block !important;}#aeactspdvrrahgcxnrktedfzagkrjokl hr{visibility:hidden !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;height:1em;}@media print{#aeactspdvrrahgcxnrktedfzagkrjokl{display:none !important;}}</style></head>
+<body class="theme-Redmine project-redmine controller-repositories action-revision">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="http://www.redmine.org/my/account" class="my-account">My account</a></li>
+<li><a href="http://www.redmine.org/logout" class="logout" data-method="post" rel="nofollow">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a href="http://www.redmine.org/users/141728" class="user active">akabeko</a></div>
+    <ul><li><a href="http://www.redmine.org/" class="home">Home</a></li>
+<li><a href="http://www.redmine.org/my/page" class="my-page">My page</a></li>
+<li><a href="http://www.redmine.org/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
+<div id="header">
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/redmine/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+        <input name="changesets" value="1" type="hidden">
+        <label for="q">
+          <a href="http://www.redmine.org/projects/redmine/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+</form>
+    </div>
+
+    <h1>Redmine</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="http://www.redmine.org/projects/redmine" class="overview">Overview</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/wiki/Download" class="download">Download</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/activity" class="activity">Activity</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/issues" class="issues">Issues</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/issues/new" accesskey="7" class="new-issue">New issue</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/news" class="news">News</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/wiki" class="wiki">Wiki</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/boards" class="boards">Forums</a></li>
+<li><a href="http://www.redmine.org/projects/redmine/repository" class="repository selected">Repository</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+        		<br>
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-0447284344517370";
+		google_alternate_color = "FFFFFF";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		google_ad_format = "160x600_as";
+		google_ad_type = "text_image";
+		google_ad_channel = "";
+		google_color_border = "EEEEEE";
+		google_color_bg = "FFFFFF";
+		google_color_link = "484848";
+		google_color_text = "484848";
+		google_color_url = "2A5685";
+		//-->
+		</script>
+
+                <br>
+
+
+    </div>
+
+    <div id="content">
+
+        <div class="contextual">
+  «
+    <a href="http://www.redmine.org/projects/redmine/repository/revisions/15066" title="Revision 15066">Previous</a>
+|
+    Next
+  »&nbsp;
+
+  <form accept-charset="UTF-8" action="/projects/redmine/repository/revision" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+    <input id="rev" name="rev" size="8" value="15067" type="text">
+    <input value="OK" type="submit">
+</form></div>
+
+<h2><img alt="" class="gravatar" default="" rating="PG" src="revisions_files/d10cc640844d4c0503fb1e4b7c95e6cc.jpg" ssl="false" title="">Revision 15067</h2>
+
+
+<p>
+<span class="author">
+Added by <a href="http://www.redmine.org/users/1" class="user active">Jean-Philippe Lang</a> <a href="http://www.redmine.org/projects/redmine/activity?from=2016-01-16" title="2016-01-16 10:14">2 days</a> ago
+</span>
+</p>
+
+<p>Tab left/right buttons for project menu (<a href="http://www.redmine.org/issues/20632" class="issue tracker-3 status-5 priority-4 priority-default closed" title="Tab left/right buttons for project menu (Closed)">#20632</a>).</p>
+
+
+	<p>Patch by Felix Gliesche.</p>
+
+
+<div id="related-issues">
+
+<h3>Related issues</h3>
+<ul>
+  <li id="related-issue-20632"><a href="http://www.redmine.org/issues/20632" class="issue tracker-3 status-5 priority-4 priority-default closed">Patch #20632</a>: Tab left/right buttons for project menu
+
+  </li>
+</ul>
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+observeAutocompleteField('issue_id', '/issues/auto_complete?project_id=redmine&scope=all')
+//]]>
+</script>
+
+
+<h3>Files</h3>
+<ul id="changes-legend">
+<li class="change change-A">added</li>
+<li class="change change-M">modified</li>
+<li class="change change-C">copied</li>
+<li class="change change-R">renamed</li>
+<li class="change change-D">deleted</li>
+</ul>
+
+<p><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/diff/">View differences</a></p>
+
+<div class="changeset-changes">
+<ul><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk">trunk</a><ul><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/app">app</a><ul><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/app/views">views</a><ul><li class="change folder change-M"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/app/views/common">common</a><ul><li class="change"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/entry/trunk/app/views/common/_tabs.html.erb">_tabs.html.erb</a> (<a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/diff/trunk/app/views/common/_tabs.html.erb">diff</a>) </li></ul></li><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/app/views/layouts">layouts</a><ul><li class="change change-R"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/entry/trunk/app/views/layouts/base.html.erb">base.html.erb</a> (<a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/diff/trunk/app/views/layouts/base.html.erb">diff</a>) </li></ul></li></ul></li></ul></li><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/lib">lib</a><ul><li class="change folder change-A"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/lib/redmine">redmine</a><ul><li class="change change-C"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/entry/trunk/lib/redmine/menu_manager.rb">menu_manager.rb</a> (<a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/diff/trunk/lib/redmine/menu_manager.rb">diff</a>) </li></ul></li></ul></li><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/public">public</a><ul><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/public/javascripts">javascripts</a><ul><li class="change change-D"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/entry/trunk/public/javascripts/application.js">application.js</a> (<a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/diff/trunk/public/javascripts/application.js">diff</a>) </li></ul></li><li class="change folder"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/show/trunk/public/stylesheets">stylesheets</a><ul><li class="change change-M"><a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/entry/trunk/public/stylesheets/application.css">application.css</a> (<a href="http://www.redmine.org/projects/redmine/repository/revisions/15067/diff/trunk/public/stylesheets/application.css">diff</a>) </li></ul></li></ul></li></ul></li></ul>
+</div>
+
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> © 2006-2014 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>
