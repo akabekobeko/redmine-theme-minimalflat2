@@ -1,5 +1,14 @@
 # ChangeLog
 
+# 1.1.2
+
+* [#59](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/59) letter-spacing normal is better for displaying
+* [#58](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/58) Responsive view
+
+# 1.1.1
+
+* [#56](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/56) Customize the appearance of the revisions screen
+
 ## 1.1.0
 
 * [#53](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/53) Redmine v3.2 support

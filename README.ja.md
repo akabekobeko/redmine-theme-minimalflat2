@@ -38,6 +38,7 @@
  * [IcoMoon](https://icomoon.io/)
 * 開閉可能なプロジェクト一覧画面
 * Favicon 対応 ( Redmine 2.5 以降 )
+* Responsive 対応 ( Redmine 3.2 以降 )
 
 # インストール方法
 
