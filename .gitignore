@@ -2,7 +2,6 @@ node_modules/
 minimalflat2/
 src/stylesheets
 samples/
-images/
 
 .*
 *.map
