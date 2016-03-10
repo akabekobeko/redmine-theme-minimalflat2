@@ -1,5 +1,9 @@
 # ChangeLog
 
+# 1.1.3
+
+* [#61 · akabekobeko/redmine-theme-minimalflat2](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/61) Strange symbols
+
 # 1.1.2
 
 * [#59](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/59) letter-spacing normal is better for displaying
