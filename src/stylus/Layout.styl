@@ -190,61 +190,120 @@
   a {
     line-height 1.7em
 
+    // Redmine default ( for plugin menu )
+    background-position 0% 40%
+    background-repeat no-repeat
+    padding-left 20px
+    padding-top 2px
+    padding-bottom 3px
+
     .selected {
       padding-left 20px !important
       background-position 2px 40%
     }
 
-    &.projects:before {
-      icon( icon_app, color_blue )
+    &.projects {
+      padding-left 0
+
+      &:before {
+        icon( icon_app, color_blue )
+      }
     }
 
-    &.users:before {
-      icon( icon_user, color_green )
+    &.users {
+      padding-left 0
+
+      &:before {
+        icon( icon_user, color_green )
+      }
     }
 
-    &.groups:before {
-      icon( icon_group, color_green )
+    &.groups {
+      padding-left 0
+
+      &:before {
+        icon( icon_group, color_green )
+      }
     }
 
-    &.roles:before {
-      icon( icon_database_key, color_gray )
+    &.roles {
+      padding-left 0
+
+      &:before {
+        icon( icon_database_key, color_gray )
+      }
     }
 
-    &.trackers:before {
-      icon( icon_ticket, color_yellow )
+    &.trackers {
+      padding-left 0
+
+      &:before {
+        icon( icon_ticket, color_yellow )
+      }
     }
 
-    &.issue_statuses:before {
-      icon( icon_ticket, color_green )
+    &.issue_statuses {
+      padding-left 0
+
+      &:before {
+        icon( icon_ticket, color_green )
+      }
     }
 
-    &.workflows:before {
-      icon( icon_ticket, color_blue )
+    &.workflows {
+      padding-left 0
+
+      &:before {
+        icon( icon_ticket, color_blue )
+      }
     }
 
-    &.custom_fields:before {
-      icon( icon_textfield, color_gray )
+    &.custom_fields {
+      padding-left 0
+
+      &:before {
+        icon( icon_textfield, color_gray )
+      }
     }
 
-    &.enumerations:before {
-      icon( icon_list, color_gray )
+    &.enumerations {
+      padding-left 0
+
+      &:before {
+        icon( icon_list, color_gray )
+      }
     }
 
-    &.settings:before {
-      icon( icon_config, color_gray )
+    &.settings {
+      padding-left 0
+
+      &:before {
+        icon( icon_config, color_gray )
+      }
     }
 
-    &.plugins:before {
-      icon( icon_plugin, color_green )
+    &.plugins {
+      padding-left 0
+
+      &:before {
+        icon( icon_plugin, color_green )
+      }
     }
 
-    &.info:before {
-      icon( icon_help, color_blue )
+    &.info {
+      padding-left 0
+
+      &:before {
+        icon( icon_help, color_blue )
+      }
     }
 
-    &.server_authentication:before {
-      icon( icon_server_key, color_yellow )
+    &.server_authentication {
+      padding-left 0
+
+      &:before {
+        icon( icon_server_key, color_yellow )
+      }
     }
   }
 }
