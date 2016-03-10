@@ -35,7 +35,7 @@
     "release:copy-src": "cpx \"./src/**/*(|theme.js|application.css|responsive.css|favicon.ico|icon.svg|icon.eot|icon.ttf|icon.woff|!(*.*))\" ./minimalflat2",
     "release:copy-doc": "cpx \"./*(README.md|README.ja.md|CHANGELOG.md|LICENSE.txt|ss.png|ss2.png|ss3.png|ss4.png|ss5.png|ss6.png|!(Vagrantfile|*.*))\" ./minimalflat2",
     "release:copy": "npm-run-all release:copy-src release:copy-doc",
-    "release:archive": "bestzip minimalflat2-v1.1.2.zip ./minimalflat2",
+    "release:archive": "bestzip minimalflat2-v1.1.3.zip ./minimalflat2",
     "release": "npm-run-all -s release:clean release:copy release:css1 release:css2 release:archive"
   },
   "devDependencies": {
