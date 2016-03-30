@@ -2,113 +2,302 @@
 
 @import "./common/Color.styl"
 
+jstb_button_style() {
+  border solid 1px color_indigo !important
+  border-radius .2em !important
+  background none color_indigo !important
+  color color_white !important
+  width 28px !important
+  height 28px !important
+  margin-right .2em !important
+  margin-bottom .2em !important
+  padding 0 !important
+  font-family sans-serif !important
+  font-size 13px !important
+  line-height 28px !important
+  letter-spacing 0 !important
+  vertical-align bottom
+}
+
+jstb_button_span_style() {
+  display inline-block !important
+  overflow hidden
+  width 13px
+  height 26px
+  color transparent
+}
+
+// Overwrite only default buttons and menus
 .jstElements {
-  button {
-    border solid 1px color_indigo !important
-    border-radius .2em !important
-    background none color_indigo !important
-    color color_white !important
-    width 28px !important
-    height 28px !important
-    margin-right .2em !important
-    margin-bottom .2em !important
-    padding 0 !important
-    font-family sans-serif !important
-    font-size 13px !important
-    line-height 28px !important
-    letter-spacing 0 !important
-    vertical-align bottom
+  .jstb_strong {
+    jstb_button_style()
 
     &:hover {
       opacity .7
     }
 
     span {
-      display inline-block !important
-      overflow hidden
-      width 13px
-      height 26px
-      color transparent
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_edit_bold, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_em {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_strong span:before {
-      icon( icon_edit_bold, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_edit_italic, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_ins {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_em span:before {
-      icon( icon_edit_italic, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_edit_underline, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_del {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_ins span:before {
-      icon( icon_edit_underline, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_edit_strike, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_code {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_del span:before {
-      icon( icon_edit_strike, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_code, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_h1 {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_code span:before {
-      icon( icon_code, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_h1, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_h2 {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_h1 span:before {
-      icon( icon_h1, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_h2, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_h3 {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_h2 span:before {
-      icon( icon_h2, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_h3, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_ul {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_h3 span:before {
-      icon( icon_h3, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_list_2, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_ol {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_ul span:before {
-      icon( icon_list_2, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_list_num, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_bq {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_ol span:before {
-      icon( icon_list_num, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_bq, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_unbq {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_bq span:before {
-      icon( icon_bq, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_unbq, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_pre {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_unbq span:before {
-      icon( icon_unbq, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_edit_pre, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_link {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_pre span:before {
-      icon( icon_edit_pre, color_white )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_link, color_red_light )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_img {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_link span:before {
-      icon( icon_link, color_red_light )
-      margin-right 0
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_image, color_viridian_light )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_help {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
     }
 
-    &.jstb_img span:before {
-      icon( icon_image, color_viridian_light )
-      margin-right 0
-    }
+    span {
+      jstb_button_span_style()
 
-    &.jstb_help span:before {
-      icon( icon_help, color_blue_light )
-      margin-right 0
+      &:before {
+        icon( icon_help, color_blue_light )
+        margin-right 0
+      }
     }
   }
 }
