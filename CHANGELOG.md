@@ -1,8 +1,13 @@
 # ChangeLog
 
+# 1.1.4
+
+* [#65](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/65) Missing images/loading.gif
+* [#66](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/66) (Layout) - Redmine jsToolbar Images Extension
+
 # 1.1.3
 
-* [#61 · akabekobeko/redmine-theme-minimalflat2](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/61) Strange symbols
+* [#61](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/61) Strange symbols
 
 # 1.1.2
 
