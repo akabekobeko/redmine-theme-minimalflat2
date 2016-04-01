@@ -425,7 +425,18 @@ html > body #content {
   }
 
   input#username, input#password {
-    width 300px
+    box-sizing border-box
+    width 100%
+    min-width 300px
+  }
+}
+
+// For mobile
+@media all and ( max-width: 480px ) {
+  #login-form {
+    input#username, input#password {
+      min-width 100%
+    }
   }
 }
 
