@@ -1,5 +1,9 @@
 # ChangeLog
 
+# 1.1.5
+
+[#68](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/68) Login form Not fit in mobile view
+
 # 1.1.4
 
 * [#65](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/65) Missing images/loading.gif

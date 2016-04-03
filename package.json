@@ -1,7 +1,7 @@
 {
   "name": "redmine-theme-minimalflat2",
   "description": "Minimal and flat design theme for Redmine.",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "akabeko",
   "license": "GPL-2.0",
   "main": "index.js",
@@ -36,14 +36,14 @@
     "release:copy-img": "cpx \"./src/images/*.*\" ./minimalflat2/images",
     "release:copy-doc": "cpx \"./*(README.md|README.ja.md|CHANGELOG.md|LICENSE.txt|ss.png|ss2.png|ss3.png|ss4.png|ss5.png|ss6.png|!(Vagrantfile|*.*))\" ./minimalflat2",
     "release:copy": "npm-run-all release:copy-src release:copy-img release:copy-doc",
-    "release:archive": "bestzip minimalflat2-v1.1.4.zip ./minimalflat2",
+    "release:archive": "bestzip minimalflat2-v1.1.5.zip ./minimalflat2",
     "release": "npm-run-all -s release:clean release:copy release:css1 release:css2 release:archive"
   },
   "devDependencies": {
     "bestzip": "^1.1.3",
     "browser-sync": "^2.11.2",
     "cpx": "^1.3.1",
-    "npm-run-all": "^1.6.0",
+    "npm-run-all": "^1.7.0",
     "rimraf": "^2.5.2",
     "stylus": "^0.54.2"
   }
