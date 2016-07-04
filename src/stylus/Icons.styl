@@ -1,6 +1,6 @@
 // Icons
 
-@import "./common/Color.styl"
+@import "common/Color.styl"
 
 .icon-add:before {
   icon( icon_add, color_green )
@@ -81,8 +81,12 @@
   icon( icon_stats, color_purple )
 }
 
-.icon-warning:before:before {
+.icon-warning:before {
   icon( icon_warning, color_red )
+}
+
+.icon-error:before {
+  icon( icon_error, color_red )
 }
 
 .icon-fav:before {
@@ -141,6 +145,10 @@
   icon( icon_zoom_out, color_red )
 }
 
+.icon-magnifier:before {
+  icon( icon_zoom_in, color_blue )
+}
+
 .icon-passwd:before {
   icon( icon_textfield, color_gray )
 }
@@ -149,8 +157,47 @@
   icon( icon_arrow_right, color_green )
 }
 
+.icon-email:before {
+  icon( icon_mail, color_blue )
+}
+
+.icon-email-disabled:before {
+  icon( icon_mail, color_gray )
+}
+
 .icon-email-add:before {
   icon( icon_mail, color_green )
+}
+
+.icon-move-up:before {
+  icon( icon_chevron_up, color_green )
+}
+
+.icon-move-top:before {
+  icon( icon_chevron_up, color_red )
+}
+
+.icon-move-down:before {
+  icon( icon_chevron_down, color_green )
+}
+.icon-move-bottom:before {
+  icon( icon_chevron_down, color_red )
+}
+
+.icon-ok:before {
+  icon( icon_check, color_green )
+}
+
+.icon-not-ok:before {
+  icon( icon_cross, color_red )
+}
+
+.icon-link-break:before {
+  icon( icon_trash, color_gray )
+}
+
+.icon-list:before {
+  icon( icon_list_2, color_gray )
 }
 
 .icon-file:before {
@@ -223,4 +270,159 @@
 
 .icon-file.application-x-gzip:before {
   icon( icon_file_zip, color_green )
+}
+
+// Override the default icon images padding
+.icon {
+  &.icon-add,
+  &.icon-edit,
+  &.icon-copy,
+  &.icon-duplicate,
+  &.icon-del,
+  &.icon-move,
+  &.icon-save,
+  &.icon-cancel,
+  &.icon-multiple,
+  &.icon-folder,
+  &.open .icon-folder,
+  &.icon-package,
+  &.icon-user,
+  &.icon-projects,
+  &.icon-help,
+  &.icon-attachment,
+  &.icon-history,
+  &.icon-time,
+  &.icon-time-add,
+  &.icon-stats,
+  &.icon-warning,
+  &.icon-error,
+  &.icon-fav,
+  &.icon-fav-off,
+  &.icon-reload,
+  &.icon-lock,
+  &.icon-unlock,
+  &.icon-checked,
+  &.icon-details,
+  &.icon-report,
+  &.icon-comment,
+  &.icon-summary,
+  &.icon-server-authentication,
+  &.icon-issue,
+  &.icon-zoom-in,
+  &.icon-zoom-out,
+  &.icon-magnifier,
+  &.icon-passwd,
+  &.icon-test,
+  &.icon-email,
+  &.icon-email-disabled,
+  &.icon-email-add,
+  &.icon-move-up,
+  &.icon-move-top,
+  &.icon-move-down,
+  &.icon-move-bottom,
+  &.icon-ok,
+  &.icon-not-ok,
+  &.icon-link-break,
+  &.icon-list,
+  &.icon-file,
+  &.icon-file.text-plain,
+  &.icon-file.text-x-c,
+  &.icon-file.text-x-csharp,
+  &.icon-file.text-x-java,
+  &.icon-file.text-x-javascript,
+  &.icon-file.text-x-php,
+  &.icon-file.text-x-ruby,
+  &.icon-file.text-xml,
+  &.icon-file.text-css,
+  &.icon-file.text-html,
+  &.icon-file.image-gif,
+  &.icon-file.image-jpeg,
+  &.icon-file.image-png,
+  &.icon-file.image-tiff,
+  &.icon-file.application-pdf,
+  &.icon-file.application-zip,
+  &.icon-file.application-x-gzip {
+    padding 0
+  }
+}
+
+.icon-only {
+  &.icon-add,
+  &.icon-edit,
+  &.icon-copy,
+  &.icon-duplicate,
+  &.icon-del,
+  &.icon-move,
+  &.icon-save,
+  &.icon-cancel,
+  &.icon-multiple,
+  &.icon-folder,
+  &.open .icon-folder,
+  &.icon-package,
+  &.icon-user,
+  &.icon-projects,
+  &.icon-help,
+  &.icon-attachment,
+  &.icon-history,
+  &.icon-time,
+  &.icon-time-add,
+  &.icon-stats,
+  &.icon-warning,
+  &.icon-error,
+  &.icon-fav,
+  &.icon-fav-off,
+  &.icon-reload,
+  &.icon-lock,
+  &.icon-unlock,
+  &.icon-checked,
+  &.icon-details,
+  &.icon-report,
+  &.icon-comment,
+  &.icon-summary,
+  &.icon-server-authentication,
+  &.icon-issue,
+  &.icon-zoom-in,
+  &.icon-zoom-out,
+  &.icon-magnifier,
+  &.icon-passwd,
+  &.icon-test,
+  &.icon-email,
+  &.icon-email-disabled,
+  &.icon-email-add,
+  &.icon-move-up,
+  &.icon-move-top,
+  &.icon-move-down,
+  &.icon-move-bottom,
+  &.icon-ok,
+  &.icon-not-ok,
+  &.icon-link-break,
+  &.icon-list,
+  &.icon-file,
+  &.icon-file.text-plain,
+  &.icon-file.text-x-c,
+  &.icon-file.text-x-csharp,
+  &.icon-file.text-x-java,
+  &.icon-file.text-x-javascript,
+  &.icon-file.text-x-php,
+  &.icon-file.text-x-ruby,
+  &.icon-file.text-xml,
+  &.icon-file.text-css,
+  &.icon-file.text-html,
+  &.icon-file.image-gif,
+  &.icon-file.image-jpeg,
+  &.icon-file.image-png,
+  &.icon-file.image-tiff,
+  &.icon-file.application-pdf,
+  &.icon-file.application-zip,
+  &.icon-file.application-x-gzip {
+    width 1em
+    height auto
+    padding 0
+    font-size 1em
+    color transparent
+
+    &:after {
+      content ""
+    }
+  }
 }
