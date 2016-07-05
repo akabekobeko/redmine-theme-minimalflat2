@@ -1,5 +1,7 @@
 # minimalflat2
 
+![Redmine](https://img.shields.io/badge/Redmine-3.3-red.svg)
+
 簡素でフラットな外観の Redmine テーマです。
 
 ## スクリーンショット

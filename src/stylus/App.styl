@@ -1,19 +1,3855 @@
 // stylesheets.css
 
-@import "./lib/Normalize.styl"
+@import "../../node_modules/normalize.css/normalize.css"
+@import "common/Color.styl"
+@import "common/IconDefine.styl"
 @import "IconFonts.styl"
-@import "IconDefine.styl"
-@import "Base.styl"
-@import "Form.styl"
-@import "GanttChart.styl"
 @import "Icons.styl"
 @import "JSToolbar.styl"
-@import "Layout.styl"
-@import "Message.styl"
-@import "Projects.styl"
-@import "SyntaxHighlight.styl"
-@import "Tables.styl"
-@import "Tabs.styl"
-@import "Wiki.styl"
 @import "Widget.styl"
-@import "Revisions.styl"
+
+html {
+  overflow-y scroll
+}
+
+body {
+  font-family "Helvetica Neue", Helvetica, Verdana, sans-serif
+  background-color color_page_back
+  color color_indigo
+  margin 0
+  padding 0
+  min-width 900px
+  letter-spacing .07em
+}
+
+h1, h2, h3, h4 {
+  padding 0
+  margin 0 0 .8em 0
+  font-weight normal
+}
+
+h2, .wiki h1 {
+  font-size 1.8em
+}
+
+h3, .wiki h2 {
+  font-size 1.5em
+}
+
+h4, .wiki h3 {
+  font-size 1.3em
+}
+
+h4 {
+  border-bottom 1px dotted color_gray_dark
+}
+
+pre, code {
+  font-family monospace
+}
+
+p {
+  line-height 1.5em
+}
+
+li {
+  line-height 1.5em
+}
+
+/***** Layout *****/
+#wrapper {
+  overflow hidden
+}
+
+#top-menu {
+  background color_indigo_dark
+  color color_white
+  height 1.6em
+  font-size .7em
+  padding .34em .2em 0 .6em
+
+  ul {
+    margin 0
+    padding 0
+  }
+
+  li {
+    float left
+    list-style-type none
+    margin 0
+    padding 0
+    white-space nowrap
+  }
+
+  a {
+    color color_white
+    margin-right .6em
+    text-decoration none
+
+    &:hover {
+      color color_yellow
+    }
+  }
+
+  .home:before {
+    icon( icon_home, color_yellow )
+  }
+
+  .my-page:before {
+    icon( icon_user, color_yellow )
+  }
+
+  .projects:before {
+    icon( icon_app, color_yellow )
+  }
+
+  .administration:before {
+    icon( icon_config, color_yellow )
+  }
+
+  .help:before {
+    icon( icon_help_2, color_yellow )
+  }
+
+  #loggedas {
+    float right
+    margin-right .5em
+    color color_white
+
+    .user:before {
+      icon( icon_user, color_yellow )
+    }
+  }
+}
+
+#account {
+  float right
+
+  .my-account:before {
+    icon( icon_config, color_yellow )
+  }
+
+  .login:before {
+    icon( icon_arrow_right, color_yellow )
+  }
+
+  .logout:before {
+    icon( icon_arrow_left, color_yellow )
+  }
+}
+
+#header {
+  min-height 6em
+  margin 0
+  background-color color_indigo
+  color color_white
+  position relative
+
+  h1 {
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+    margin 0
+    padding .5em 0 0 .3em
+    font-size 1.6em
+
+    &:before {
+      icon( icon_app, color_red )
+    }
+
+    .breadcrumbs {
+      display inline-block
+      font-size .6em
+      font-weight normal
+    }
+
+    .current-project {
+      padding-left .2em
+    }
+  }
+
+  a {
+    color #f8f8f8
+  }
+}
+
+#quick-search {
+  float right
+  margin 1em .8em 0 0
+  font-size .9em
+
+  input[type="text"] {
+    box-sizong border-box
+    padding .3em .5em
+    border solid 1px color_white
+    border-radius .2em
+    color color_indigo
+  }
+
+  select {
+    color color_indigo
+  }
+}
+
+#main-menu {
+  position absolute
+  bottom 0
+  width 100%
+  background-color color_indigo_light
+  font-size .8em
+
+  ul {
+    margin 0
+    padding 0
+    width 100%
+    white-space nowrap
+  }
+
+  li {
+    float none
+    list-style-type none
+    white-space nowrap
+    display inline-block
+
+    a {
+      display block
+      border-top solid 2px color_indigo_light
+      border-bottom solid 2px color_indigo_light
+      color color_gray
+      text-decoration none
+      padding .5em 1em
+
+      &:hover {
+        border-top solid 2px color_yellow
+        color color_white
+
+        ul.menu-children {
+          display block
+        }
+      }
+
+      &.selected {
+        border-top solid 2px color_red
+        color color_white
+      }
+
+      &.new-object {
+      }
+    }
+
+    &:hover ul.menu-children, ul.menu-children.visible {
+      display block
+    }
+  }
+
+  .menu-children {
+    display none
+    position absolute
+    width inherit
+    z-index 1
+    background-color color_white
+    border-right 1px solid color_blue_light
+    border-bottom 1px solid color_blue_light
+    border-left 1px solid color_blue_light
+
+    li {
+      float left
+      clear both
+      width 100%
+
+      a {
+        color color_indigo
+        background-color color_white
+        font-weight normal
+        border-top none
+        border-bottom none
+
+        &:hover {
+          color color_white
+          background-color color_blue_light
+        }
+      }
+    }
+  }
+
+  .tabs-buttons {
+    right 6px
+    background-color transparent
+    border-bottom-color transparent
+  }
+}
+
+#admin-menu {
+  ul {
+    margin 0
+    padding 0
+  }
+
+  li {
+    margin 0
+    padding 0 0 6px 0
+    list-style-type none
+  }
+
+  a {
+    line-height 1.7em
+
+    // Redmine default ( for plugin menu )
+    background-position 0% 40%
+    background-repeat no-repeat
+    padding-left 20px
+    padding-top 2px
+    padding-bottom 3px
+
+    .selected {
+      padding-left 20px !important
+      background-position 2px 40%
+    }
+
+    &.projects {
+      padding-left 0
+
+      &:before {
+        icon( icon_app, color_blue )
+      }
+    }
+
+    &.users {
+      padding-left 0
+
+      &:before {
+        icon( icon_user, color_green )
+      }
+    }
+
+    &.groups {
+      padding-left 0
+
+      &:before {
+        icon( icon_group, color_green )
+      }
+    }
+
+    &.roles {
+      padding-left 0
+
+      &:before {
+        icon( icon_database_key, color_gray )
+      }
+    }
+
+    &.trackers {
+      padding-left 0
+
+      &:before {
+        icon( icon_ticket, color_yellow )
+      }
+    }
+
+    &.issue_statuses {
+      padding-left 0
+
+      &:before {
+        icon( icon_ticket, color_green )
+      }
+    }
+
+    &.workflows {
+      padding-left 0
+
+      &:before {
+        icon( icon_ticket, color_blue )
+      }
+    }
+
+    &.custom_fields {
+      padding-left 0
+
+      &:before {
+        icon( icon_textfield, color_gray )
+      }
+    }
+
+    &.enumerations {
+      padding-left 0
+
+      &:before {
+        icon( icon_list, color_gray )
+      }
+    }
+
+    &.settings {
+      padding-left 0
+
+      &:before {
+        icon( icon_config, color_gray )
+      }
+    }
+
+    &.plugins {
+      padding-left 0
+
+      &:before {
+        icon( icon_plugin, color_green )
+      }
+    }
+
+    &.info {
+      padding-left 0
+
+      &:before {
+        icon( icon_help, color_blue )
+      }
+    }
+
+    &.server_authentication {
+      padding-left 0
+
+      &:before {
+        icon( icon_server_key, color_yellow )
+      }
+    }
+  }
+}
+
+#main {
+  background-color color_gray_light_b
+
+  &.nosidebar #sidebar{
+    display none
+  }
+
+  &.nosidebar #content{
+    width auto
+    border-right 0
+  }
+}
+
+#sidebar{
+  box-sizing border-box
+  position relative
+  z-index 9
+  float right
+  width 25%
+  margin 0
+  padding 0 1em
+
+  a.selected {
+    color color_red
+
+    &:hover {
+      text-decoration none
+    }
+  }
+
+  h3 {
+    margin .5em 0 .5em
+    padding 0
+    color color_gray_dark
+    font-size 1.2em
+  }
+
+  hr {
+    width 100%
+    margin 0 auto
+    height 1px
+    background color_gray_light_a
+    border 0
+  }
+
+  .contextual {
+    margin-right 1em
+  }
+
+  ul, ul.flat {
+    margin 0
+    padding 0
+
+    li {
+      list-style-type none
+      margin 0 2px 0 0
+      padding 0
+    }
+  }
+
+  div.wiki ul {
+    margin inherit
+    padding-left 1em
+
+    li {
+      list-style-type inherit
+    }
+  }
+}
+
+* html #sidebar{
+  width 22%
+
+  hr {
+    width 95%
+    position relative
+    left -6px
+    color color_gray_light_a
+  }
+}
+
+#content {
+  z-index 10
+  box-sizing border-box
+  width 75%
+  margin 0
+  padding .5em 1em
+  border-right 1px solid color_gray_light_a
+  background-color color_page_back
+}
+
+* html #content {
+  width 75%
+  padding-left 0
+  margin-top 0
+  padding 6px 10px 10px 10px
+}
+
+html > body #content {
+  min-height 600px
+}
+
+// IE
+* html body #content {
+  height 600px
+}
+
+#footer {
+  clear both
+  border-top 1px solid color_gray_light_a
+  font-size .9em
+  color color_gray_dark
+  padding 5px
+  text-align center
+}
+
+#login-form {
+  table {
+    margin-top 5em
+    padding 1em
+    margin-left  auto
+    margin-right  auto
+    border 2px solid color_orange
+    background-color color_orange_light
+
+    td {
+      padding .5em .5em
+    }
+  }
+
+  label {
+    font-weight bold
+  }
+
+  input#username, input#password {
+    box-sizing border-box
+    width 100%
+    min-width 300px
+  }
+}
+
+// For mobile
+@media all and ( max-width: 480px ) {
+  #login-form {
+    input#username, input#password {
+      min-width 100%
+    }
+  }
+}
+
+div.modal {
+  z-index 50
+  padding 4px
+  border-radius 5px
+  background color_white
+}
+
+div.modal h3.title {
+  display none
+}
+
+div.modal p.buttons {
+  text-align right
+  margin-bottom 0
+}
+
+div.modal .box p {
+  margin 0.3em 0
+}
+
+input#openid_url {
+  background url(../images/openid-bg.gif) no-repeat
+  background-color color_white
+  background-position 0 50%
+  padding-left 18px
+}
+
+.clear:after {
+  content "."
+  display block
+  height 0
+  clear both
+  visibility hidden
+}
+
+.mobile-show {
+  display none
+}
+
+/***** Links *****/
+a {
+  text-decoration none
+  color color_blue
+
+  &:hover, &:active {
+    color color_red
+  }
+
+  img {
+    border 0
+  }
+
+  &.issue.closed, &.issue.closed:link, &.issue.closed:visited {
+    color color_gray
+    text-decoration line-through
+  }
+
+  &.project.closed, &.project.closed:link, &.project.closed:visited {
+    color color_gray
+  }
+
+  &.user.locked, &.user.locked:link, &.user.locked:visited {
+    color color_gray
+  }
+
+  &.collapsible:before {
+    icon( icon_toggle_plus, color_gray )
+  }
+
+  &.collapsible.collapsed {
+    icon( icon_toggle_minus, color_gray )
+  }
+
+  &#toggle-completed-versions {
+    color color_gray
+  }
+
+  &.toggle-checkboxes:before {
+    icon( icon_check, color_green )
+  }
+}
+
+/***** Tables *****/
+table.list, .table-list {
+  border 1px solid color_gray_light_a
+  border-collapse collapse
+  width 100%
+  margin-bottom 4px
+  font-size .9em
+
+  th, .table-list-header {
+    border 1px solid color_gray_light_a
+    background-color color_gray_light_b
+    padding .5em
+    white-space nowrap
+    font-weight normal
+    vertical-align middle
+  }
+
+  .table-list-row {
+    padding .5em
+  }
+
+  td {
+    border 1px solid color_gray_light_a
+    text-align center
+    vertical-align middle
+    padding .3em
+  }
+
+  td.id {
+    width 2%
+    text-align center
+  }
+
+  td.name, td.description, td.subject, td.comments, td.roles {
+    text-align left
+  }
+
+  td.tick {
+    width 15%
+  }
+
+  td.checkbox {
+    width 1em
+    padding .3em
+
+    input {
+      padding 0
+    }
+  }
+
+  td.buttons, div.buttons {
+    width 15%
+    white-space nowrap
+    text-align right
+
+    a {
+      padding-right 0.6em
+    }
+
+    img {
+      vertical-align middle
+    }
+  }
+
+  td.reorder {
+    width 15%
+    white-space nowrap
+    text-align center
+  }
+
+  table.progress td {
+    padding-right 0px
+  }
+
+  caption {
+    text-align left
+    padding .5em .5em .5em 0
+  }
+
+  tbody tr {
+    &.group {
+      &:hover {
+        background-color inherit
+      }
+
+      td {
+        padding .8em 0 .5em .3em
+        font-weight bold
+        border-bottom 1px solid color_gray_light_a
+        text-align left
+      }
+
+      span.name {
+        font-weight bold
+      }
+
+      span.count {
+        position relative
+        top -1px
+        color color_white
+        font-size 10px
+        font-weight bold
+        background #9DB9D5
+        padding 0 6px 1px 6px
+        border-radius 3px
+        margin-left 4px
+      }
+
+
+      span.totals {
+        color #aaa
+        font-size .8em
+      }
+
+      span.totals .value {
+        font-weight bold
+        color #777
+      }
+
+      a.toggle-all {
+        color #aaa
+        font-size .8em
+        display none
+        float right
+        margin-right 4px
+      }
+    }
+
+    &:hover {
+      background-color #dfeff7
+    }
+  }
+}
+
+#role-permissions-trackers table.list th {
+  white-space normal
+}
+
+.table-list-cell {
+  display table-cell
+  vertical-align top
+  padding 2px
+}
+
+tr.project {
+  td.name a {
+    white-space nowrap
+  }
+
+  &.closed, &.archived, &.archived a {
+    color #aaa
+  }
+
+  &.idnt td.name span:before {
+    icon( icon_chevron_right, color_gray_dark )
+  }
+
+  &.idnt-1 td.name {
+    padding-left .5em
+  }
+
+  &.idnt-2 td.name {
+    padding-left 2em
+  }
+
+  &.idnt-3 td.name {
+    padding-left 3.5em
+  }
+
+  &.idnt-4 td.name {
+    padding-left 5em
+  }
+
+  &.idnt-5 td.name {
+    padding-left 6.5em
+  }
+
+  &.idnt-6 td.name {
+    padding-left 8em
+  }
+
+  &.idnt-7 td.name {
+    padding-left 9.5em
+  }
+
+  &.idnt-8 td.name {
+    padding-left 11em
+  }
+
+  &.idnt-9 td.name {
+    padding-left 12.5em
+  }
+}
+
+tr.issue {
+  text-align center
+  white-space nowrap
+
+  td.subject, td.category, td.assigned_to, td.string, td.text, td.list, td.relations, td.parent {
+    white-space normal
+  }
+
+  td.relations {
+    text-align left
+  }
+
+  td.done_ratio table.progress {
+    margin-left auto
+    margin-right auto
+    width 100%
+
+    td {
+      padding 0
+    }
+  }
+
+  td.relations span {
+    white-space nowrap
+  }
+
+  &.idnt td.subject a:before {
+    icon( icon_chevron_right, color_gray_dark )
+  }
+
+  &.idnt-1 td.subject {
+    padding-left 0.5em
+  }
+
+  &.idnt-2 td.subject {
+    padding-left 2em
+  }
+
+  &.idnt-3 td.subject {
+    padding-left 3.5em
+  }
+
+  &.idnt-4 td.subject {
+    padding-left 5em
+  }
+
+  &.idnt-5 td.subject {
+    padding-left 6.5em
+  }
+
+  &.idnt-6 td.subject {
+    padding-left 8em
+  }
+
+  &.idnt-7 td.subject {
+    padding-left 9.5em
+  }
+
+  &.idnt-8 td.subject {
+    padding-left 11em
+  }
+
+  &.idnt-9 td.subject {
+    padding-left 12.5em
+  }
+}
+
+table.issues {
+  // Issue priority colors from Circle Theme ( http://www.redminecrm.com/pages/circle-theme )
+  .priority-highest {
+    color #900
+
+    &.odd {
+      background-color #ffe2e2
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #faefef
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #900
+    }
+  }
+
+  .priority-high2 {
+    color #900
+
+    &.odd {
+      background-color #ffe2e2
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #faefef
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #900
+    }
+  }
+
+  .priority-high3 {
+    color #900
+
+    &.odd {
+      background-color #ffeeee
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #fff2f2
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #900
+    }
+  }
+
+  .priority-lowest {
+    color #559
+
+    &.odd {
+      background-color #eaf7ff
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    &.even {
+      background-color #f2faff
+
+      &:hover {
+        background-color #dfeff7
+      }
+    }
+
+    a, &:hover a {
+      color #559
+    }
+  }
+
+  td.description {
+    color #777
+    font-size .9em
+    padding 4px 4px 4px 24px
+    text-align left
+    white-space normal
+
+    pre {
+      white-space normal
+    }
+  }
+}
+
+table.issue-report {
+  table-layout fixed
+}
+
+// Entry
+tr.entry {
+  border 1px solid color_gray_light_b
+
+  td {
+    white-space nowrap
+    padding .2em .5em
+
+    &.filename {
+      width 30%
+      text-align left
+    }
+
+    &.filename_no_report {
+      width 70%
+      text-align left
+    }
+
+    &.size {
+      text-align right
+      font-size 90%
+    }
+
+    &.revision, tr.entry td.author {
+      text-align center
+    }
+
+    &.age {
+      text-align right
+    }
+  }
+
+  &.file td.filename a {
+    margin-left 1.3em
+  }
+
+  &.file td.filename_no_report a {
+    margin-left 1.3em
+  }
+}
+
+tr span.expander:before {
+  icon( icon_toggle_plus, color_gray )
+  font-size 12px
+  padding-left .2em
+  margin-right -.5em
+  cursor pointer
+}
+
+tr.open span.expander:before {
+  icon( icon_toggle_minus, color_gray )
+  font-size 12px
+  padding-left .2em
+  margin-right -.5em
+  cursor pointer
+}
+
+// Chnage set
+tr.changeset {
+  height 20px
+
+  ul, ol {
+    margin-top 0
+    margin-bottom 0
+  }
+
+  td.revision_graph {
+    width 15%
+    background-color #fffffb
+  }
+
+  td.author {
+    text-align center
+    width 15%
+    white-spacenowrap
+  }
+
+  td.committed_on {
+    text-align center
+    width 15%
+    white-space nowrap
+  }
+}
+
+// Files
+table.files {
+  tbody th {
+    text-align left
+  }
+
+  tr.file {
+    td.filename {
+      text-align left
+      padding-left 24px
+    }
+
+    td.digest {
+      font-size 80%
+    }
+  }
+}
+
+table.members td.roles, table.memberships td.roles {
+  width 45%
+}
+
+// Message
+tr.message {
+  height 2.6em
+
+  &.locked td.subject:before {
+    icon( icon_lock, color_yellow_dark )
+  }
+
+  &.sticky td.subject {
+    font-weight bold
+
+    &:before {
+      icon( icon_arrow_right, color_green )
+    }
+  }
+
+  td.subject {
+    padding-left 20px
+  }
+
+  td.created_on {
+    white-space nowrap
+  }
+
+  td.last_message {
+    font-size 80%
+    white-space nowrap
+  }
+}
+
+// Version
+tr.version {
+  &.closed, &.closed a {
+    color #999
+  }
+
+  &.shared td.name:before {
+    icon( icon_link, color_gray )
+  }
+
+  td.name {
+    padding-left 20px
+  }
+
+  td.date, td.status, td.sharing {
+    text-align center
+    white-space nowrap
+  }
+}
+
+tr.user {
+  td {
+    width 13%
+    white-space nowrap
+
+    &.email {
+      width 18%
+    }
+  }
+
+  &.locked, &.locked a, &.registered, &.registered a {
+    color color_gray
+  }
+}
+
+td.username, td.firstname, td.lastname, td.email {
+  text-align left !important
+}
+
+table.permissions td.role {
+  color color_gray
+  font-size .9em
+  font-weight normal !important
+  text-align center
+  vertical-align bottom
+}
+
+tr.wiki-page-version td.updated_on, tr.wiki-page-version td.author {
+  text-align center
+}
+
+tr.time-entry {
+  text-align center
+  white-space nowrap
+
+  td.issue, td.comments {
+    text-align left
+    white-space normal
+  }
+}
+
+td.hours {
+  text-align right
+  font-weight bold
+  padding-right .5em
+
+  .hours-dec {
+    font-size .9em
+  }
+}
+
+// Plugins
+table.plugins {
+  td {
+    vertical-align middle
+
+    &.configure {
+      text-align right
+      padding-right 1em
+    }
+  }
+
+  span.name {
+    font-weight bold
+    display block
+    margin-bottom 6px
+  }
+
+  span.description {
+    display block
+    font-size 0.9em
+  }
+
+  span.url {
+    display block
+    font-size 0.9em
+  }
+}
+
+tr.group a.toggle-all {
+  color color_gray
+  font-size 80%
+  font-weight normal
+  display none
+}
+
+tr.group:hover a.toggle-all {
+  display inline
+}
+
+
+a.toggle-all:hover {
+  text-decoration none
+}
+
+table td {
+  padding 2px
+}
+
+table p {
+  margin 0
+}
+
+.odd {
+  background-color color_gray_light_c
+}
+
+.even {
+  background-color color_white
+}
+
+tr.builtin td.name {
+  font-style italic
+}
+
+a.sort {
+  &.asc:after  {
+    icon( icon_chevron_up, color_gray_dark )
+  }
+
+  &.desc:after {
+    icon( icon_chevron_down, color_gray_dark )
+  }
+}
+
+table.attributes {
+  width 100%
+
+  th {
+    vertical-align top
+    text-align left
+  }
+
+  td {
+    vertical-align top
+  }
+}
+
+table.boards a.board, h3.comments {
+  &:before {
+    icon( icon_comment, color_blue )
+  }
+}
+
+table.boards td.last-message {
+  text-align left
+  font-size 80%
+}
+
+div.table-list.boards .table-list-cell.name {
+  width 30%
+}
+
+table.messages td.last_message {
+  text-align left
+}
+
+.query_sort_criteria_count {
+  display inline-block
+  min-width 1em
+}
+
+table.query-columns {
+  border-collapse collapse
+  border 0
+
+  td.buttons {
+    vertical-align middle
+    text-align center
+
+    input[type="button"] {
+      width 35px
+    }
+  }
+}
+
+.query-totals {
+  text-align right
+  margin-top -2.3em
+
+  > span {
+    margin-left .6em
+  }
+
+  .value {
+    font-weight bold
+  }
+}
+
+td.center {
+  text-align center
+}
+
+h3.version:before {
+  icon( icon_package, color_yellow )
+}
+
+div.issues h3:before {
+  icon( icon_ticket, color_yellow )
+}
+
+div.members h3:before {
+  icon( icon_group, color_green )
+}
+
+div.news h3:before {
+  icon( icon_news, color_gray )
+}
+
+div.projects h3:before {
+  icon( icon_app, color_blue )
+}
+
+#watchers {
+  select {
+    width 95%
+    display block
+  }
+
+  a.delete {
+    opacity 0.4
+    vertical-align middle
+    margin-left .2em
+  }
+
+  a.delete:hover {
+    opacity 1
+  }
+
+  img.gravatar {
+    margin 0 4px 2px 0
+  }
+}
+
+span#watchers_inputs {
+  overflow auto
+  display block
+}
+
+span.search_for_watchers {
+  display block
+}
+
+span.search_for_watchers, span.add_attachment {
+  font-size .8em
+  line-height 2.5em
+}
+
+span.search_for_watchers a, span.add_attachment a {
+  &:before {
+    icon( icon_add, color_green )
+  }
+}
+
+.highlight {
+  background-color #FCFD8D
+
+  &.token-1 {
+    background-color #faa
+  }
+
+  &.token-2 {
+    background-color #afa
+  }
+
+  &.token-3 {
+    background-color #aaf
+  }
+}
+
+.box {
+  margin-bottom 1em
+  padding .5em
+  background-color color_gray_light_c
+  border 1px solid color_gray_light_a
+  line-height 1.5em
+  word-wrap break-word
+  font-size .9em
+}
+
+.pagination .per-page span.selected {
+  font-weight bold
+}
+
+div.square {
+  border 1px solid #999
+  float left
+  margin .3em .4em 0 .4em
+  overflow hidden
+  width .6em
+  height .6em
+}
+
+.contextual {
+  float right
+  white-space nowrap
+  line-height 1.4em
+  margin-top 5px
+  padding-left 10px
+  font-size .9em
+
+  input, select {
+    font-size .9em
+  }
+}
+
+.message .contextual {
+  margin-top 0
+}
+
+.splitcontent {
+  overflow auto
+}
+
+.splitcontentleft {
+  float left
+  width 49%
+}
+
+.splitcontentright {
+  float right
+  width 49%
+}
+
+form {
+  display inline
+}
+
+input, select {
+  vertical-align middle
+  margin-top 1px
+  margin-bottom 1px
+}
+
+fieldset {
+  border 1px solid #e4e4e4
+  margin 0
+}
+
+legend {
+  color #484848
+}
+
+hr {
+  width 100%
+  height 1px
+  background #ccc
+  border 0
+}
+
+blockquote {
+  font-style italic
+  border-left 2px solid color_green
+  padding 0 .5em
+  margin 1em
+}
+
+blockquote blockquote {
+  margin-left 0
+}
+
+abbr, span[title] {
+  border-bottom 1px dotted #aaa
+  cursor help
+}
+
+textarea.wiki-edit {
+  width 99%
+  resize vertical
+}
+
+li p {
+  margin-top 0
+}
+
+p.breadcrumb {
+  margin 4px 0 4px 0
+  font-size .9em
+}
+
+p.subtitle {
+  margin -6px 0 12px 0
+  font-size 0.9em
+  font-style italic
+}
+
+p.footnote {
+  margin-top 0
+  margin-bottom 0
+  font-size .9em
+}
+
+.ltr {
+  direction ltr !important
+  unicode-bidi bidi-override
+}
+
+.rtl {
+  direction rtl !important
+  unicode-bidi bidi-override
+}
+
+div.issue {
+  background color_yellow_light
+  padding .5em
+  margin-bottom .5em
+  border 1px solid #d7d7d7
+
+  div.subject {
+    div div {
+      padding-left 16px
+    }
+
+    p {
+      margin 0
+      margin-bottom .1em
+      font-size 90%
+      color color_gray
+    }
+
+    > div > p {
+      margin-top 0.5em
+    }
+
+    h3 {
+      margin 0
+      margin-bottom 0.1em
+    }
+  }
+
+  span.private, div.journal span.private {
+    position relative
+    bottom 2px
+    text-transform uppercase
+    background #d22
+    color color_white
+    font-weight bold
+    padding 0 2px 0 2px
+    font-size 60%
+    margin-right 2px
+    border-radius 2px
+  }
+
+  .next-prev-links {
+    color color_gray
+  }
+
+  table.attributes {
+    th {
+      width 22%
+    }
+
+    td {
+      width 28%
+    }
+  }
+
+  .attributes {
+    margin-top 2em
+  }
+
+  .attribute {
+    padding-left 180px
+    clear left
+    min-height 1.8em
+
+    .label {
+      width 170px
+      margin-left -180px
+      font-weight bold
+      float left
+    }
+  }
+
+  &.overdue .due-date .value {
+    color #c22
+  }
+}
+
+#issue-form {
+}
+
+// Issue histories
+#history {
+  font-size .9em
+
+  h4 {
+    font-size 1.2em
+    padding-bottom .2em
+    border-bottom dotted 2px color_gray_light_a
+  }
+}
+
+#issue_tree table.issues, #relations table.issues {
+  border 0
+}
+
+#issue_tree td.checkbox, #relations td.checkbox {
+  display none
+}
+
+#relations td.buttons {
+  padding 0
+}
+
+fieldset.collapsible {
+  border-width 1px 0 0 0
+
+  > legend {
+    cursor pointer
+
+    &:before {
+      icon( icon_chevron_down, color_gray )
+      font-weight bold
+    }
+  }
+
+  &.collapsed > legend {
+    &:before {
+      icon( icon_chevron_right, color_gray )
+      font-weight bold
+    }
+  }
+}
+
+fieldset {
+  &#date-range p {
+    margin 2px 0 2px 0
+  }
+
+  &#filters {
+    table {
+      border-collapse collapse
+    }
+
+    table td {
+      padding 0
+      vertical-align middle
+
+      &.field {
+        width 230px
+      }
+
+      &.operator {
+        width 180px
+      }
+
+      &.operator select {
+        max-width 170px
+      }
+
+      &.values {
+        white-space nowrap
+      }
+
+      &.values select {
+        min-width 130px
+      }
+
+      &.values input {
+        height 1em
+      }
+
+      &.add-filter {
+        text-align right
+        vertical-align top
+      }
+    }
+
+    tr.filter {
+      height 2.1em
+    }
+  }
+}
+
+#filters-table {
+  width 60%
+  float left
+}
+
+.add-filter {
+  width 35%
+  float right
+  text-align right
+  vertical-align top
+}
+
+#issue_is_private_wrap {
+  float right
+  margin-right 1em
+}
+
+.toggle-multiselect:before {
+  icon( icon_toggle_plus, color_gray )
+  cursor pointer
+}
+
+.buttons {
+  font-size .9em
+  margin-bottom 1.4em
+  margin-top 1em
+}
+
+div#issue-changesets {
+  float right
+  width 45%
+  margin-left 1em
+  margin-bottom 1em
+  background color_white
+  padding-left 1em
+  font-size 90%
+
+  div.changeset {
+    padding 4px
+    border-bottom 1px solid color_gray_light
+  }
+
+  p {
+    margin-top 0
+    margin-bottom 1em
+  }
+}
+
+div.journal {
+  overflow auto
+
+  &.private-notes {
+    border-left 2px solid color_red
+    padding-left 4px
+    margin-left -6px
+  }
+
+  ul.details {
+    color color_gray_dark
+    margin-bottom 1.5em
+
+    a {
+      color color_blue_light
+
+      &:hover {
+        color color_red
+      }
+    }
+  }
+}
+
+div#activity dd, #search-results dd {
+  margin-bottom 1em
+  padding-left 18px
+  font-size .9em
+}
+
+div#activity dt, #search-results dt {
+  margin-bottom 0
+  padding-left 20px
+  line-height 18px
+  background-position 0 50%
+  background-repeat no-repeat
+}
+
+div#activity dt.me .time {
+  border-bottom 1px solid color_gray
+}
+
+div#activity dt .time {
+  color #777
+  font-size 80%
+}
+
+div#activity dd .description, #search-results dd .description {
+  font-style italic
+}
+
+div#activity span.project:after, #search-results span.project:after {
+  content " -"
+}
+
+div#activity dd span.description, #search-results dd span.description {
+  display block
+  color #808080
+}
+
+div#activity dt.grouped {
+  margin-left 5em
+}
+
+div#activity dd.grouped {
+  margin-left 9em
+}
+
+#search-results dd {
+  margin-bottom 1em
+  padding-left 20px
+  margin-left 0
+}
+
+div#search-results-counts {
+  float right
+
+  ul {
+    margin-top .5em
+  }
+
+  li {
+    list-style-type none
+    float left
+    margin-left 1em
+  }
+}
+
+dt {
+  &.issue:before {
+    icon( icon_ticket, color_green )
+  }
+
+  &.issue-edit:before {
+    icon( icon_ticket, color_yellow_dark )
+  }
+
+  &.issue-closed:before {
+    icon( icon_ticket, color_gray )
+  }
+
+  &.issue-note:before {
+    icon( icon_ticket, color_blue )
+  }
+
+  &.changeset:before {
+    icon( icon_config, color_gray )
+  }
+
+  &.news:before:before {
+    icon( icon_news, color_gray )
+  }
+
+  &.message:before {
+    icon( icon_message, color_blue )
+  }
+
+  &.reply:before {
+    icon( icon_comments, color_blue )
+  }
+
+  &.wiki-page:before {
+    icon( icon_wiki_edit, color_yellow_dark )
+  }
+
+  &.attachment:before {
+    icon( icon_attachment, color_gray )
+  }
+
+  &.document:before {
+    icon( icon_file_text, color_gray_dark )
+  }
+
+  &.project:before {
+    icon( icon_projects, color_blue )
+  }
+
+  &.time-entry:before {
+    icon( icon_hourglass, color_green )
+  }
+}
+
+#search-results dt.issue.closed:before {
+  icon( icon_check, color_green )
+}
+
+div#roadmap {
+  .related-issues {
+    margin-bottom 1em
+
+    td.checkbox {
+      display none
+    }
+  }
+
+  .wiki h1 {
+    font-size 1.2em
+
+    &:first-child {
+      display none
+    }
+  }
+
+  .wiki h2 {
+    font-size 1.1em
+  }
+}
+
+body.controller-versions.action-show div#roadmap .related-issues {
+  width 70%
+}
+
+div#version-summary {
+  float right
+  width 28%
+  margin-left 16px
+  margin-bottom 16px
+  background-color color_white
+
+  div#version-summary fieldset {
+    margin-bottom 1em
+
+    &.time-tracking table {
+      width 100%
+    }
+  }
+
+  th, td.total-hours {
+    text-align right
+  }
+}
+
+table#time-report {
+  td.hours, th.period, th.total {
+    text-align right
+    padding-right 0.5em
+  }
+
+  tbody tr.subtotal {
+    font-style italic
+    color color_gray_dark
+
+    td.hours {
+      color color_gray
+    }
+  }
+
+  tbody tr.total {
+    font-weight bold
+    background-color color_gray_light
+    border-top 1px solid color_gray
+  }
+
+  table#time-report .hours-dec {
+    font-size 0.9em
+  }
+}
+
+div.wiki-page .contextual a {
+  opacity 0.4
+
+  &:hover {
+    opacity 1
+  }
+}
+
+form .attributes select {
+  width 60%
+}
+
+form .attributes select + a.icon-only {
+  vertical-align middle
+  margin-left .2em
+}
+
+input#issue_subject, input#document_title {
+  width 99%
+}
+
+select#issue_done_ratio {
+  width 95px
+}
+
+#related-issues li img {
+  vertical-align middle
+}
+
+ul.properties {
+  padding 0
+  font-size .9em
+  color color_gray_dark
+
+  li {
+    list-style-type none
+
+    span {
+      font-style italic
+    }
+  }
+}
+
+.total-hours {
+  font-size 1.1em
+  font-weight bold
+
+  span.hours-int {
+    font-size 1.2em
+  }
+}
+
+.autoscroll {
+  overflow-x auto
+  padding 1px
+  margin-bottom 1.2em
+  position relative
+}
+
+#user_login, #user_firstname, #user_lastname, #user_mail, #my_account_form select, #user_form select, #user_identity_url {
+  width 90%
+}
+
+#workflow_copy_form select {
+  width 200px
+}
+
+table.transitions td.enabled {
+  background #bfb
+}
+
+#workflow_form table select {
+  font-size .9em
+  max-width 100px
+}
+
+table.fields_permissions {
+  td.readonly {
+    background #ddd
+  }
+
+  td.required {
+    background #d88
+  }
+}
+
+select.expandable {
+  vertical-align top
+}
+
+textarea#custom_field_possible_values {
+  width 95%
+  resize vertical
+}
+
+textarea#custom_field_default_value {
+  width 95%
+  resize vertical
+}
+
+input#content_comments {
+  width 99%
+}
+
+p.pagination {
+  margin-top 8px
+  font-size 90%
+}
+
+span.pagination {
+  margin-left 3px
+  color color_gray
+}
+
+.pagination ul.pages {
+  margin 0 5px 0 0
+  padding 0
+  display inline
+}
+
+.pagination ul.pages li {
+  display inline-block
+  padding 0
+  border 1px solid color_gray
+  margin-left -1px
+  line-height 2em
+  margin-bottom 1em
+  white-space nowrap
+  text-align center
+
+  a, span {
+    padding 3px 8px
+  }
+
+  &:first-child {
+    border-top-left-radius 4px
+    border-bottom-left-radius 4px
+  }
+
+  &:last-child {
+    border-top-right-radius 4px
+    border-bottom-right-radius 4px
+  }
+
+  &.current {
+    color color_white
+    background-color color_blue_light
+    border-color color_blue_light
+  }
+
+  &.page:hover {
+    background-color color_gray
+  }
+
+  a:hover, a:active {
+    color inherit
+    text-decoration inherit
+  }
+}
+
+span.pagination > span {
+  white-space nowrap
+}
+
+#search-form fieldset p {
+  margin .2em 0
+}
+
+
+ul.projects {
+  margin 0
+  padding-left 1em
+
+  &.root {
+    margin 0
+    padding 0
+  }
+
+  ul {
+    padding-left 1.6em
+  }
+
+  li {
+    list-style-type none
+  }
+}
+
+/***** Projects ******/
+#projects-index ul.projects {
+  ul.projects {
+    border-left 2px solid color_gray_light_a
+    padding-left 1em
+  }
+
+  li.root {
+    margin-bottom 1em
+  }
+
+  li.child {
+    margin-top 1em
+  }
+
+  div.root a.project {
+    font-weight bold
+    font-size 16px
+    margin 0 0 10px 0
+  }
+
+  div.root, div.child {
+    border solid 1px color_gray_light_a
+  }
+
+  .header {
+    cursor pointer
+    padding .3em
+    border-bottom solid 1px color_gray_light_a
+    background-color color_gray_light_b
+
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+
+    &:hover {
+      background-color color_gray_light_c
+    }
+
+    .expander {
+      &:before {
+        icon( icon_toggle_plus, color_gray )
+      }
+
+      &.expanded:before {
+        icon( icon_toggle_minus, color_gray )
+      }
+    }
+  }
+
+  .description {
+    padding .3em
+  }
+}
+
+.my-project:before {
+  icon( icon_fav, color_yellow )
+}
+
+#notified-projects > ul, #tracker_project_ids > ul, #custom_field_project_ids > ul {
+  max-height 250px
+  overflow-y auto
+}
+
+div.changeset-changes > ul > li {
+  padding-left 0 !important
+}
+
+/***** Revisions ******/
+li.change {
+  background-image none !important
+  padding 0 0 0 1em !important
+
+  &:before {
+    icon( icon_circle, color_gray_dark )
+  }
+}
+
+li.change.folder:before {
+  icon( icon_folder, color_blue )
+}
+
+li.change.folder.change-A:before {
+  icon( icon_folder, color_orange )
+}
+
+li.change.folder.change-M:before {
+  icon( icon_folder_add, color_green )
+}
+
+li.change.change-A:before {
+  icon( icon_add, color_green )
+}
+
+li.change.change-M:before {
+  icon( icon_circle, color_orange )
+}
+
+li.change.change-C:before {
+  icon( icon_circle, color_blue )
+}
+
+li.change.change-R:before {
+  icon( icon_circle, color_purple )
+}
+
+li.change.change-D:before {
+  icon( icon_delete, color_red )
+}
+
+/***** Tabular forms ******/
+html > body .tabular p {
+  overflow hidden
+}
+
+.tabular {
+  p {
+    margin 0
+    padding 3px 0 3px 0
+
+    // width of left column containing the label elements
+    padding-left 180px
+
+    min-height 1.8em
+    clear left
+  }
+
+  input, select {
+    max-width 95%
+    font-size .8em
+  }
+
+  textarea {
+    width 95%
+    resize vertical
+  }
+
+  label {
+    font-weight bold
+    float left
+    text-align right
+    // width of left column
+    margin-left -180px
+    // width of labels. Should be smaller than left column to create some right margin
+    width 175px
+
+    &.floating{
+      font-weight normal
+      margin-left 0
+      text-align left
+      width 270px
+    }
+
+    &.block{
+      font-weight normal
+      margin-left 0px !important
+      text-align left
+      float none
+      display block
+      width auto !important
+    }
+
+    &.inline {
+      font-weight normal
+      float none
+      margin-left 5px !important
+      width auto
+    }
+  }
+}
+
+label.no-css {
+  font-weight inherit
+  float none
+  text-align left
+  margin-left 0
+  width auto
+}
+
+input#time_entry_comments {
+  width 90%
+}
+
+#preview fieldset {
+  margin-top 1em
+  background url(../images/draft.png)
+}
+
+.tabular.settings {
+  p {
+    padding-left 24em
+  }
+
+  label{
+    margin-left -25em
+    margin-right .5em
+    padding 0 0 0 .5em
+    width 24em
+  }
+
+  textarea {
+    width 99%
+  }
+}
+
+.settings.enabled_scm {
+  table {
+    width 100%
+  }
+
+  td.scm_name{
+    font-weight bold
+  }
+}
+
+fieldset.settings label {
+  display block
+}
+
+fieldset#notified_events .parent {
+  padding-left 20px
+}
+
+span.required {
+  color color_red
+}
+
+.summary {
+  font-style italic
+}
+
+.check_box_group {
+  display block
+  width 95%
+  max-height 300px
+  overflow-y auto
+  padding 2px 4px 4px 2px
+  background color_white
+  border 1px solid color_gray
+  border-radius 2px
+
+  label {
+    font-weight normal
+    margin-left 0 !important
+    text-align left
+    float none
+    display block
+    width auto
+  }
+
+  &.bool_cf {
+    border 0
+    background inherit
+  }
+
+  &.bool_cf label {
+    display inline
+  }
+}
+
+#attachments_fields {
+  input.description {
+    margin-left 4px
+    width 340px
+  }
+
+  span {
+    display block
+    white-space nowrap
+  }
+
+  input.filename {
+    border 0
+    height 1.8em
+    width 250px
+    background-color inherit
+
+    &:before {
+      icon( icon_attachment, color_gray )
+    }
+  }
+
+  .ajax-waiting {
+    input.filename:before {
+      icon( icon_hourglass, color_gray )
+    }
+  }
+
+  div.ui-progressbar {
+    width 100px
+    height 14px
+    margin 2px 0 -5px 8px
+    display inline-block
+  }
+}
+
+a.remove-upload:before {
+  &:before {
+    icon( icon_trash, color_gray )
+  }
+
+  &:hover {
+    text-decoration none !important
+  }
+}
+
+div.fileover {
+  background-color lavender
+}
+
+div.attachments {
+  margin-top 12px
+
+  p {
+    margin 4px 0 2px 0
+  }
+
+  img {
+    vertical-align middle
+  }
+
+  span.author {
+    font-size .9em
+  }
+}
+
+div.thumbnails {
+  margin .6em
+
+  div {
+    border 2px solid color_gray
+    display inline-block
+    margin-right 2px
+  }
+
+  img {
+    margin 3px
+  }
+}
+
+#history div.thumbnails {
+  margin-left 2em
+}
+
+p.other-formats {
+  text-align right
+  font-size .9em
+}
+
+.other-formats span + span:before {
+  content "| "
+}
+
+a.atom:before {
+  icon( icon_feed, color_orange )
+}
+
+a.csv:before {
+  icon( icon_file_text, color_green )
+}
+
+a.png:before {
+  icon( icon_file_image, color_orange )
+}
+
+a.pdf:before {
+  icon( icon_file_pdf, color_red )
+}
+
+a.html:before {
+  icon( icon_file_text, color_red )
+}
+
+a.txt:before {
+  icon( icon_file_text, color_blue )
+}
+
+em.info {
+  font-style normal
+  font-size 90%
+  display block
+
+  &.error:before {
+    icon( icon_error, color_red )
+  }
+}
+
+textarea.text_cf {
+  width 95%
+  resize vertical
+}
+
+input.string_cf, input.link_cf {
+  width 95%
+}
+
+select.bool_cf {
+  width auto !important
+}
+
+#tab-content-modules fieldset p {
+  margin 3px 0 4px 0
+}
+
+#tab-content-users {
+  .splitcontentleft {
+    width 64%
+  }
+
+  .splitcontentright {
+    width 34%
+  }
+
+  fieldset {
+    padding 1em
+    margin-bottom 1em
+
+    legend {
+      font-weight bold
+    }
+
+    label {
+      display block
+    }
+  }
+
+  #principals {
+    max-height 400px
+    overflow auto
+  }
+}
+
+#users_for_watcher {
+  height 200px
+  overflow auto
+
+  label {
+    display block
+  }
+}
+
+table.members {
+  td.name {
+    padding-left 20px
+  }
+
+  td.group, td.groupnonmember, td.groupanonymous {
+    &:before {
+      icon( icon_group, color_green )
+    }
+  }
+}
+
+input#principal_search, input#user_search {
+  width 90%
+}
+
+.roles-selection label {
+  display inline-block
+  width 210px
+}
+
+input.autocomplete {
+  border 1px solid #9EB1C2
+  border-radius 2px
+  height 1.5em
+
+  &:before {
+    icon( icon_search, color_blue )
+  }
+
+  &.ajax-loading {
+    background-image url(../images/loading.gif)
+  }
+}
+
+.role-visibility {
+  padding-left 2em
+}
+
+.objects-selection {
+  height 300px
+  overflow auto
+
+  label {
+    display block
+  }
+
+  > div {
+    column-count auto
+    column-width 200px
+    -webkit-column-count auto
+    -webkit-column-width 200px
+    -webkit-column-gap .5rem
+    -webkit-column-rule 1px solid color_gray_light_a
+    -moz-column-count auto
+    -moz-column-width 200px
+    -moz-column-gap .5rem
+    -moz-column-rule 1px solid color_gray_light_a
+  }
+}
+
+/***** Flash & error messages ****/
+#errorExplanation, div.flash, .nodata, .warning, .conflict {
+  margin-bottom 1em
+  padding .2em .2em .2em 1em
+  border 2px solid
+}
+
+div.flash {
+  margin-top 1em
+}
+
+div.flash.error, #errorExplanation {
+  background-color color_red_light
+  border-color color_red
+  color color_red_dark
+
+  &:before {
+    icon( icon_error, color_red )
+  }
+}
+
+div.flash.notice {
+  background-color color_green_light
+  border-color color_green
+  color color_green_dark
+
+  &:before {
+    icon( icon_check, color_green )
+  }
+}
+
+div.flash.warning, .conflict {
+  background-color color_yellow_light
+  border-color color_yellow
+  color color_yellow_dark
+  text-align left
+
+  &:before {
+    icon( icon_warning, color_yellow )
+  }
+}
+
+.nodata, .warning {
+  text-align center
+  background-color color_yellow_light
+  border-color color_yellow
+  color color_yellow_dark
+}
+
+#errorExplanation {
+  ul {
+    font-size .9em
+  }
+
+  h2, p {
+    display none
+  }
+}
+
+.conflict-details {
+  font-size 80%
+}
+
+/***** Ajax indicator ******/
+#ajax-indicator {
+  position absolute // fixed not supported by IE
+  z-index 100
+  opacity 0.5
+  top 35%
+  left 40%
+  width 20%
+  padding .6em
+  border 1px solid color_gray
+  font-weight bold
+  text-align center
+
+  // fixed not supported by IE
+  background-color #eee
+
+  span {
+    background-position 0% 40%
+    background-repeat no-repeat
+    background-image url(../images/loading.gif)
+    padding-left 26px
+    vertical-align bottom
+  }
+}
+
+html > body #ajax-indicator {
+  position fixed
+}
+
+/***** Calendar *****/
+table.cal {
+  border-collapse collapse
+  width 100%
+  margin 0 0 6px 0
+  border 1px solid color_gray_light_a
+  font-size .8em
+
+  thead th {
+    width 14%
+    background-color color_gray_light_b
+    padding 4px
+    font-weight normal
+  }
+
+  thead th.week-number {
+    width auto
+  }
+
+  tbody tr {
+    height 100px
+  }
+
+  td {
+    border 1px solid color_gray_light_a
+    vertical-align top
+  }
+
+  td.week-number {
+    background-color color_gray_light_b
+    padding 4px
+    border none
+    font-size 1em
+  }
+
+  td p.day-num {
+    font-size 1.1em
+    text-align right
+  }
+
+  td.odd p.day-num {
+    color color_gray
+  }
+
+  td.today {
+    background color_yellow_light
+  }
+
+  td.today p.day-num {
+    font-weight bold
+  }
+
+  .starting a:before {
+    icon( icon_arrow_right, color_green )
+  }
+
+  .ending a:before {
+    icon( icon_arrow_left, color_red )
+  }
+
+  .starting.ending a:before {
+    icon( icon_circle, color_blue )
+  }
+}
+
+p.cal.legend .starting:before {
+  icon( icon_arrow_right, color_green )
+}
+
+p.cal.legend .ending:before {
+  icon( icon_arrow_left, color_red )
+}
+
+p.cal.legend .starting.ending:before {
+  icon( icon_circle, color_red )
+}
+
+
+p.cal.legend span {
+  display block
+}
+
+/***** Tooltips ******/
+.tooltip {
+  position relative
+  z-index 24
+
+  &:hover{
+    z-index 25
+    color color_black
+  }
+
+  span.tip {
+    display none
+    text-align left
+  }
+}
+
+div.tooltip:hover span.tip {
+  display block
+  position absolute
+  top 12px
+  left 24px
+  width 270px
+  border 1px solid color_gray_dark
+  background-color color_white
+  padding .5em
+  font-size .8em
+}
+
+img.ui-datepicker-trigger {
+  cursor pointer
+  vertical-align middle
+  margin-left 4px
+}
+
+/***** Progress bar *****/
+table.progress {
+  border-collapse collapse
+  border-spacing 0
+  empty-cells show
+  text-align center
+  float left
+  margin 1px 6px 1px 0
+  width 80px
+
+  td {
+    height 1em
+  }
+
+  td.closed {
+    background-color color_green
+  }
+
+  td.done {
+    background-color color_viridian_light
+  }
+
+  td.todo {
+    background-color color_gray_light_a
+  }
+}
+
+p.percent {
+  font-size 80%
+}
+
+p.progress-info {
+  clear left
+  font-size 80%
+  margin-top -4px
+  color color_gray
+}
+
+#roadmap table.progress td {
+  height 1.2em
+}
+
+.version-overview table.progress {
+  width 40em
+
+  td {
+    height 1.2em
+  }
+}
+
+/***** Tabs *****/
+#content .tabs {
+  position relative
+  height 2.6em
+  margin-bottom 1.2em
+  overflow hidden
+
+  ul {
+    position absolute
+    bottom 0
+    width 2000px
+    margin 0
+    padding 0
+    border-bottom 1px solid color_gray_light_a
+  }
+
+  ul li {
+    float left
+    list-style-type none
+    white-space nowrap
+    background color_white
+    position relative
+    margin-bottom -1px
+
+    &:last-child {
+      border-right 1px solid color_gray_light_a
+    }
+  }
+
+  ul li a {
+    display block
+    font-size  .9em
+    text-decoration none
+    line-height 1.3em
+    padding .3em .5em
+    border-top 2px solid color_gray_light_a
+    border-left 1px solid color_gray_light_a
+    border-bottom 1px solid color_gray_light_a
+    background-color color_gray_light_c
+    color color_gray_dark
+
+    &:hover {
+      border-top 2px solid color_yellow
+      background-color color_white
+      text-decoration none
+    }
+
+    &.selected {
+      background-color color_white
+      border-top 2px solid color_red
+      border-bottom 1px solid color_white
+      color color_indigo
+
+      &:hover {
+        background-color color_white
+      }
+    }
+  }
+}
+
+div.tabs-buttons {
+  position absolute
+  right 0
+  width 4em
+  bottom 0
+  border-bottom solid 1px color_gray_light_a
+}
+
+button.tab-left, button.tab-right {
+  position absolute
+  padding .2em
+  width 1.5em
+  height 1.5em
+  bottom -1px
+  border 1px solid color_gray_light_a
+  line-height .9em
+  font-size .9em
+  cursor pointer
+
+  &:hover {
+    background-color color_yellow_light
+    text-decoration none
+  }
+
+  &.disabled {
+    background-color color_gray
+    cursor unset
+  }
+}
+
+button.tab-left {
+  right 1.4em
+
+  &:before {
+    font-size .9em
+    icon( icon_chevron_left, color_gray_dark )
+  }
+}
+
+button.tab-right {
+  right 0
+
+  &:before {
+    font-size .9em
+    icon( icon_chevron_right, color_gray_dark )
+  }
+}
+
+/***** Diff *****/
+.diff_out {
+  background #fcc
+
+  span {
+    background #faa
+  }
+}
+
+.diff_in {
+  background #cfc
+
+  span {
+    background #afa
+  }
+}
+
+.text-diff {
+  padding 1em
+  background-color #f6f6f6
+  color #505050
+  border 1px solid #e4e4e4
+}
+
+/***** Wiki *****/
+.wiki {
+  padding 0 .5em 1em
+
+  &.wiki-page {
+    border-bottom solid 1px color_gray_light_a
+  }
+
+  &.description {
+    padding 0
+
+    p {
+      margin-top .5em
+      margin-bottom .5em
+      font-size .9em
+    }
+  }
+
+  h2 {
+    padding .8em
+    border-left 4px solid color_blue
+  }
+
+  h3 {
+    padding .8em
+    border-left 4px solid color_gray_light_a
+  }
+
+  h4 {
+    border-bottom 2px dotted color_gray_light_a
+  }
+
+  pre {
+    overflow-x auto
+    overflow-y hidden
+    width auto
+    margin 1em
+    padding .8em
+    background-color #414141
+    border 1px solid #414141
+    border-radius .3em
+    color color_white
+    font-family monospace
+    font-size 1.1em
+  }
+
+  ul.toc {
+    background-color #ffffdd
+    border 1px solid #e4e4e4
+    padding 4px
+    line-height 1.2em
+    margin-bottom 12px
+    margin-right 12px
+    margin-left 0
+    display table
+
+    &.right {
+      float right
+      margin-left 12px
+      margin-right 0
+      width auto
+    }
+
+    &.left {
+      float left
+      margin-right 12px
+      margin-left 0
+      width auto
+    }
+
+    ul {
+      margin 0
+      padding 0
+    }
+
+    li {
+      list-style-type none
+      margin 0
+      font-size 12px
+    }
+
+    li li {
+      margin-left 1.5em
+      font-size 10px
+    }
+
+    a {
+      font-size 0.9em
+      font-weight normal
+      text-decoration none
+      color color_gray_dark
+
+      &:hover {
+        color color_red
+        text-decoration underline
+      }
+    }
+  }
+
+  .noborder, .noborder td, .noborder th {
+    border 0
+  }
+
+  .external:before {
+    icon( icon_external, color_gray )
+  }
+
+  p {
+    margin 1em
+  }
+
+  a {
+    word-wrap break-word
+
+    &.new {
+      color color_red
+    }
+  }
+
+  ul, ol {
+    margin-bottom 1em
+  }
+
+  li > ul, li > ol {
+    margin-bottom 0
+  }
+}
+
+// IE6 doesn't autosize div
+* html div.wiki ul.toc {
+  width 50%
+}
+
+// Table
+div.wiki table {
+  margin 1em
+  border-collapse collapse
+  border 1px solid color_gray
+
+  th {
+    padding .3em .5em
+    background-color color_gray_light_b
+    border 1px solid color_gray
+    font-weight normal
+  }
+
+  td {
+    padding .3em .5em
+    border 1px solid color_gray
+  }
+}
+
+// Anchor
+a.wiki-anchor {
+  display none
+  margin-left 6px
+  text-decoration none
+
+  &:hover {
+    color #aaa !important
+    text-decoration none
+  }
+}
+
+h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor {
+  display inline
+  color #ddd
+}
+
+div.wiki img {
+  display block
+  margin auto
+  max-width 90%
+  vertical-align middle
+}
+
+#attach_files_link:before {
+  icon( icon_add, color_green )
+}
+
+/***** My page layout *****/
+.block-receiver {
+  border 1px dashed #c0c0c0
+  margin-bottom 20px
+  padding 15px 0 15px 0
+}
+
+.mypage-box {
+  margin 0 0 20px 0
+  color #505050
+  line-height 1.5em
+}
+
+.handle {
+  cursor move
+}
+
+a.close-icon:before {
+  icon( icon_close, color_gray )
+  cursor pointer
+}
+
+a.close-icon:hover {
+  &:before {
+    icon( icon_close, color_blue )
+  }
+}
+
+/***** Gantt chart *****/
+.gantt_hdr {
+  position absolute
+  top 0
+  height 16px
+  border-top 1px solid color_gray_light_a
+  border-bottom 1px solid color_gray_light_a
+  border-right 1px solid color_gray_light_a
+  text-align center
+  overflow hidden
+  font-size .8em
+
+  &.nwday {
+    background-color color_gray_light_b
+  }
+}
+
+.gantt_subjects {
+  font-size .8em
+
+  div {
+    line-height 16px
+    height 16px
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+  }
+}
+
+.task {
+  position absolute
+  height 8px
+  font-size .8em
+  color color_gray_dark
+  padding 0
+  margin 0
+  line-height 16px
+  white-space nowrap
+
+  &.label {
+    width 100%
+
+    &.project, &.version {
+      font-weight bold
+    }
+  }
+}
+
+
+.task_late {
+  background-color color_red
+  border 1px solid color_red
+}
+
+.task_done {
+  background-color color_green
+  border 1px solid color_green
+}
+
+.task_todo {
+  background-color color_gray_light_a
+  border 1px solid color_gray_light_a
+
+  &.parent {
+    height 3px
+    border 1px solid color_gray
+    background color_gray
+  }
+}
+
+.task_late.parent, .task_done.parent {
+  height 3px
+}
+
+.task.parent.marker {
+  &.starting  {
+    position absolute
+    left 0
+    top -1px
+    width 8px
+    height 16px
+    margin-left -4px
+    background url(../images/task_parent_end.png) no-repeat 0 0
+  }
+
+  &.ending {
+    position absolute
+    right 0px
+    top -1px
+    width 8px
+    height 16px
+    margin-left -4px
+    background url(../images/task_parent_end.png) no-repeat 0 0
+  }
+}
+
+.version {
+  &.task_late {
+    background-color color_red
+    border 1px solid color_red
+    height 2px
+    margin-top 3px
+  }
+
+  &.task_done {
+    background-color color_green
+    border 1px solid color_green
+    height 2px
+    margin-top 3px
+  }
+
+  &.task_todo {
+    background-color color_white
+    border 1px solid color_white
+    height 2px
+    margin-top 3px
+  }
+
+  &.marker {
+    icon( icon_circle, color_blue )
+    border 0
+    margin-left -4px
+    margin-top 1px
+  }
+}
+
+.project {
+  &.task_late {
+    background-color color_red
+    border 1px solid color_red
+    height 2px
+    margin-top 3px
+  }
+
+  &.task_done {
+    background-color color_green
+    border 1px solid color_green
+    height 2px
+    margin-top 3px
+  }
+
+  &.task_todo {
+    background-color color_gray_light_a
+    height 1px
+    margin-top 6px
+    margin-left 1px
+  }
+
+  &.marker:before {
+    icon( icon_square, color_blue )
+    margin-top 1px
+    margin-left -4px
+  }
+}
+
+.version-behind-schedule a, .issue-behind-schedule a {
+  color color_orange
+}
+
+.version-overdue a, .issue-overdue a, .project-overdue a {
+  color color_red
+}
+
+/***** Icons *****/
+.icon {
+  background-position 0% 50%
+  background-repeat no-repeat
+  padding-left 20px
+  padding-top 2px
+  padding-bottom 3px
+}
+
+.icon-only {
+  background-position 0% 50%
+  background-repeat no-repeat
+  padding-left 16px
+}
+
+a.icon-only {
+  display inline-block
+  width 0
+  height 16px
+  overflow hidden
+  padding-top 0
+  padding-bottom 0
+  font-size 8px
+  vertical-align text-bottom
+
+  &::after {
+    content "&nbsp;"
+  }
+}
+
+img.gravatar {
+  vertical-align middle
+  border-radius 50%
+}
+
+div.issue img.gravatar {
+  float left
+  margin-right 1em
+}
+
+div.issue table img.gravatar {
+  height 14px
+  width 14px
+  padding 4px
+  float left
+  margin 0 .5em 0 0
+}
+
+td.username img.gravatar {
+  margin 0 .5em 0 0
+  vertical-align top
+}
+
+#activity dt img.gravatar {
+  float left
+  margin 0 1em 1em 0
+}
+
+// Used on 12px Gravatar img tags without the icon background
+.icon-gravatar {
+  float left
+  margin-right 4px
+}
+
+#activity dt, .journal {
+  clear left
+}
+
+.journal-link {
+  float right
+}
+
+h2 img {
+  vertical-align middle
+}
+
+.hascontextmenu {
+  cursor context-menu
+}
+
+.sample-data {
+  border 1px solid color_gray
+  border-collapse collapse
+  background-color color_white
+  margin 0.5em
+
+  td {
+    border 1px solid color_gray
+    padding 2px 4px
+    font-family monospace
+  }
+
+  tr:first-child td {
+    font-weight bold
+    text-align center
+  }
+}
+
+.ui-progressbar {
+  position relative
+}
+
+#progress-label {
+  position absolute
+  left 50%
+  top 4px
+  font-weight bold
+  color color_gray_dark
+  text-shadow 1px 1px 0 color_white
+}
+
+/* Custom JQuery styles */
+.ui-datepicker-title select {
+  margin-top -2px !important
+  margin-right 4px !important
+}
+
+/************* CodeRay styles *************/
+.syntaxhl {
+  div {
+    display inline
+  }
+
+  .line-numbers {
+    padding .1em .2em
+    margin 0 .2em 0 0
+    color color_syntax_base;
+  }
+
+  .code pre {
+    overflow auto
+  }
+
+  .debug {
+    color color_syntax_base !important
+    background color_syntax_blue !important
+  }
+
+  .insert {
+    background hsla(120,100%,50%,0.12)
+
+    .insert {
+      color color_syntax_green
+      background transparent
+      font-weight: bold
+    }
+
+    .eyecatcher {
+      background-color hsla(120,100%,50%,0.2)
+      border 1px solid hsla(120,100%,25%,0.5)
+      margin -1px
+      border-top none
+      border-bottom-left-radius 5px
+      border-bottom-right-radius 5px
+    }
+  }
+
+  .delete {
+    background: hsla(0,100%,50%,0.12)
+
+    .delete {
+      color color_syntax_red
+      background transparent
+      font-weight bold
+    }
+
+    .eyecatcher {
+      background-color: hsla(0,100%,50%,0.2);
+      border: 1px solid hsla(0,100%,45%,0.5);
+      margin: -1px;
+      border-bottom: none;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+
+  .change {
+    color color_syntax_blue
+    background: color_syntax_blue
+
+    .change {
+      color color_syntax_blue_light
+    }
+  }
+
+  .head {
+    color color_syntax_purple
+    background color_syntax_purple
+
+    .filename {
+      color color_syntax_white
+    }
+
+    .head {
+      color #DAACDF
+    }
+  }
+
+  .annotation          { color: color_syntax_blue; }
+  .attribute-name      { color: color_syntax_yellow; }
+  .attribute-value     { color: color_syntax_green; }
+  .binary              { color: color_syntax_purple; }
+  .binary .char        { color: color_syntax_purple }
+  .binary .delimiter   { color: color_syntax_purple }
+  .char .content       { color: color_syntax_red; }
+  .char .delimiter     { color: color_syntax_red; }
+  .char                { color: color_syntax_red; }
+  .class               { color: color_syntax_blue_light; }
+  .class-variable      { color: color_syntax_green; }
+  .color               { color: color_syntax_green; }
+  .comment             { color: color_syntax_green; }
+  .comment .char       { color: color_syntax_green; }
+  .comment .delimiter  { color: color_syntax_green; }
+  .complex             { color: color_syntax_purple; }
+  .constant            { color: color_syntax_purple; }
+  .decorator           { color: color_syntax_purple;}
+  .definition          { color: color_syntax_green; }
+  .delimiter           { color: color_syntax_gray; }
+  .directive           { color: color_syntax_purple; }
+  .doc                 { color: color_syntax_yellow; }
+  .doc-string          { color: color_syntax_red; }
+  .docstring           { color: color_syntax_red; }
+  .doctype             { color: color_syntax_blue }
+  .done                { color: color_gray; text-decoration: line-through; }
+  .entity              { color: color_syntax_red; }
+  .error               { color: color_syntax_red; }
+  .escape              { color: color_syntax_gray; }
+  .exception           { color: color_syntax_red; }
+  .float               { color: color_syntax_red; }
+  .function            { color: color_syntax_blue; }
+  .function .delimiter { color: color_syntax_blue; }
+  .function .content   { color: color_syntax_blue; }
+  .global-variable     { color: color_syntax_yellow; }
+  .hex                 { color: color_syntax_blue; }
+  .id                  { color: color_syntax_blue; }
+  .imaginary           { color: color_syntax_red; }
+  .id                  { color: color_syntax_yellow; }
+  .include             { color: color_syntax_red; }
+  .inline              { color: color_syntax_gray; }
+  .inline-delimiter    { color: color_syntax_gray; }
+  .instance-variable   { color: color_syntax_blue; }
+  .integer             { color: color_syntax_red; }
+  .imaginary           { color: color_syntax_red; }
+  .important           { color: color_syntax_red; }
+  .key                 { color: color_syntax_green; }
+  .key .char           { color: color_syntax_blue; }
+  .key .delimiter      { color: color_syntax_green; }
+  .keyword             { color: color_syntax_purple; }
+  .label               { color: color_syntax_yellow; }
+  .local-variable      { color: color_syntax_red; }
+  .map .content        { color: color_syntax_purple; }
+  .map .delimiter      { color: color_syntax_purple; }
+  .namespace           { color: color_syntax_purple; }
+  .octal               { color: color_syntax_blue; }
+  .operator            { }
+  .predefined          { color: color_syntax_blue; }
+  .predefined-constant { color: color_syntax_blue; }
+  .predefined-type     { color: color_syntax_blue; }
+  .preprocessor        { color: color_syntax_blue; }
+  .pseudo-class        { color: color_syntax_blue; }
+  .regexp .content     { color: color_syntax_green; }
+  .regexp .delimiter   { color: color_syntax_purple; }
+  .regexp .modifier    { color: color_syntax_purple; }
+  .regexp              { }
+  .reserved            { color: color_syntax_green; }
+  .shell .content      { color: color_syntax_green; }
+  .shell .delimiter    { color: color_syntax_green; }
+  .shell               { }
+  .string              { color: color_syntax_green; }
+  .string .char        { color: color_syntax_green; }
+  .string .content     { color: color_syntax_green; }
+  .string .delimiter   { color: color_syntax_green; }
+  .string .modifier    { color: color_syntax_green; }
+  .symbol              { color: color_syntax_red; }
+  .symbol .content     { color: color_syntax_red; }
+  .symbol .delimiter   { color: color_syntax_red; }
+  .symbol              { color: color_syntax_red; }
+  .tag                 { color: color_syntax_purple; }
+  .type                { color: color_syntax_blue; }
+  .value               { color: color_syntax_red; }
+  .variable            { color: color_syntax_blue; }
+}
+
+/***** Media print specific styles *****/
+@media print {
+  #top-menu, #header, #main-menu, #sidebar, #footer, .contextual, .other-formats {
+    display none
+  }
+
+  #main {
+    background color_white
+  }
+
+  #content {
+    width 99%
+    margin 0
+    padding 0
+    border 0
+    background color_white
+    overflow visible !important
+  }
+
+  #wiki_add_attachment {
+    display none
+  }
+
+  .hide-when-print {
+    display none
+  }
+
+  .autoscroll {
+    overflow-x visible
+  }
+
+  table.list {
+    margin-top .5em
+
+    th, td {
+      border 1px solid color_gray_light_a
+    }
+  }
+}
+
+/* Accessibility specific styles */
+.hidden-for-sighted {
+  position absolute
+  left -10000px
+  top auto
+  width 1px
+  height 1px
+  overflow hidden
+}
+
+input, select {
+  font-size .8em
+}
+
+input[type="text"], input[type="password"] {
+  border solid 1px color_gray_light_a
+  border-radius .2em
+  padding .3em
+  color color_indigo
+}
+
+/***** Override Forms *****/
+textarea {
+  border solid 1px color_gray_light_a
+  border-radius .2em
+  padding .3em
+  color color_indigo
+  box-sizing border-box
+  font-size .9em
+}
+
+// Submit button
+input[type="submit"] {
+  background-color color_blue
+  border solid 1px color_blue
+  color color_white
+  padding .3em 1em
+  border-radius .2em
+  letter-spacing .12em
+
+  &:hover {
+    opacity .8
+  }
+}
+
+// Normal button
+input[type="button"] {
+  background-color color_green
+  border solid 1px color_green
+  color color_white
+  padding .3em 1em
+  border-radius .2em
+  letter-spacing .12em
+
+  &:hover {
+    opacity .8
+  }
+}
+
+// Checkbox
+input[type="checkbox"] {
+  margin-right .3em
+}

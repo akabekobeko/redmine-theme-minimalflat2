@@ -1,20 +1,20 @@
 // JSToolbar
 
-@import "./common/Color.styl"
+@import "common/Color.styl"
 
 jstb_button_style() {
   border solid 1px color_indigo !important
   border-radius .2em !important
   background none color_indigo !important
   color color_white !important
-  width 28px !important
-  height 28px !important
+  width 30px !important
+  height 30px !important
   margin-right .2em !important
   margin-bottom .2em !important
   padding 0 !important
   font-family sans-serif !important
   font-size 13px !important
-  line-height 28px !important
+  line-height 30px !important
   letter-spacing 0 !important
   vertical-align bottom
 }
@@ -22,8 +22,8 @@ jstb_button_style() {
 jstb_button_span_style() {
   display inline-block !important
   overflow hidden
-  width 13px
-  height 26px
+  width 15px
+  height 28px
   color transparent
 }
 
@@ -245,6 +245,23 @@ jstb_button_span_style() {
 
       &:before {
         icon( icon_edit_pre, color_white )
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_precode {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_edit_pre2, color_white )
         margin-right 0
       }
     }

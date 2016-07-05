@@ -1,5 +1,7 @@
 # minimalflat2
 
+![Redmine](https://img.shields.io/badge/Redmine-3.3-red.svg)
+
 Minimal and flat design theme for Redmine.
 
 ## Screenshot

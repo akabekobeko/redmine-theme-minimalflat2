@@ -66,20 +66,26 @@
 </form>
     </div>
 
-    <h1>redmine-theme-minimalflat2</h1>
+    <h1><span class="breadcrumbs"><a class="root" href="/projects/root?jump=overview">Root</a><span class="separator"> » </span><a class="ancestor" href="/projects/parent-project?jump=overview">Parent</a><span class="separator"> » </span></span><span class="current-project">redmine-theme-minimalflat2</span></h1>
 
-    <div id="main-menu">
-        <ul><li><a class="overview" href="./projects/redmine-theme-minimalflat2">Overview</a></li>
-<li><a class="activity" href="./projects/redmine-theme-minimalflat2/activity">Activity</a></li>
-<li><a class="issues selected" href="./projects/redmine-theme-minimalflat2/issues">Issues</a></li>
-<li><a accesskey="7" class="new-issue" href="./projects/redmine-theme-minimalflat2/issues/new">New issue</a></li>
-<li><a class="gantt" href="./projects/redmine-theme-minimalflat2/issues/gantt">Gantt</a></li>
-<li><a class="calendar" href="./projects/redmine-theme-minimalflat2/issues/calendar">Calendar</a></li>
-<li><a class="news" href="./projects/redmine-theme-minimalflat2/news">News</a></li>
-<li><a class="documents" href="./projects/redmine-theme-minimalflat2/documents">Documents</a></li>
-<li><a class="wiki" href="./projects/redmine-theme-minimalflat2/wiki">Wiki</a></li>
-<li><a class="files" href="./projects/redmine-theme-minimalflat2/files">Files</a></li>
-<li><a class="settings" href="./projects/redmine-theme-minimalflat2/settings">Settings</a></li></ul>
+    <div id="main-menu" class="tabs">
+      <ul>
+        <li><a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+          <ul class="menu-children">
+            <li><a accesskey="7" class="new-issue-sub" href="/projects/sample/issues/new">New issue</a></li>
+            <li><a class="new-issue-category" href="/projects/sample/issue_categories/new">New category</a></li>
+            <li><a class="new-version" href="/projects/sample/versions/new">New version</a></li>
+            <li><a class="new-news" href="/projects/sample/news/new">Add news</a></li>
+            <li><a class="new-document" href="/projects/sample/documents/new">New document</a></li>
+            <li><a class="new-wiki-page" href="/projects/sample/wiki/new">New wiki page</a></li>
+            <li><a class="new-file" href="/projects/sample/files/new">New file</a></li>
+          </ul>
+        </li><li><a class="overview selected" href="/projects/sample">Overview</a></li><li><a class="activity" href="/projects/sample/activity">Activity</a></li><li><a class="issues" href="/projects/sample/issues">Issues</a></li><li><a class="gantt" href="/projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="/projects/sample/news">News</a></li><li><a class="documents" href="/projects/sample/documents">Documents</a></li><li><a class="wiki" href="/projects/sample/wiki">Wiki</a></li><li><a class="boards" href="/projects/sample/boards">Forums</a></li><li><a class="files" href="/projects/sample/files">Files</a></li><li><a class="settings" href="/projects/sample/settings">Settings</a></li>
+      </ul>
+      <div class="tabs-buttons" style="">
+          <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+          <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+      </div>
     </div>
 </div>
 
@@ -196,8 +202,8 @@
   </td>
   <td class="status">New</td>
   <td class="start_date">09/06/2015</td>
-  <td class="due_date"></td>
-  <td class="buttons"><a data-confirm="Are you sure?" title="Delete relation" data-remote="true" rel="nofollow" data-method="delete" href="/relations/1"><img src="/images/link_break.png" alt="Link break"></a></td>
+  <td class="due_date">09/06/2015</td>
+  <td class="buttons"><a data-confirm="Are you sure?" title="Delete relation" class="icon-only icon-link-break" data-remote="true" rel="nofollow" data-method="delete" href="/relations/1">Delete relation</a></td>
   </tr>
 </tbody></table>
 </form>
@@ -249,7 +255,9 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
     Updated by <a class="user active" href="./users/1">Redmine Admin</a> <a title="08/20/2015 07:39 AM" href="./projects/redmine-theme-minimalflat2/activity?from=2015-08-20">1 minute</a> ago
     </h4>
 
-    <div id="journal-2-notes" class="wiki editable"><div class="contextual"><a title="Quote" data-remote="true" rel="nofollow" data-method="post" href="./issues/1/quoted?journal_id=2"><img src="issue_files/comment.png" alt="Comment"></a> <a title="Edit" href="#"><img src="issue_files/edit.png" alt="Edit"></a></div><p>Comment</p></div>
+    <div id="journal-2-notes" class="wiki editable">
+<div class="contextual"><a title="Quote" class="icon-only icon-comment" data-remote="true" rel="nofollow" data-method="post" href="/issues/1/quoted?journal_id=1">Quote</a> <a title="Edit" class="icon-only icon-edit" data-remote="true" data-method="get" href="/journals/1/edit">Edit</a> <a data-confirm="Are you sure?" title="Delete" class="icon-only icon-del" data-remote="true" rel="nofollow" data-method="put" href="/journals/1?notes=">Delete</a></div>
+      <p>Comment</p></div>
     </div>
   </div>
 
@@ -296,7 +304,8 @@ Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> d
   <label for="issue_description">Description</label>
   <a href="#"><img src="issue_files/edit.png" alt="Edit"></a>
   <span id="issue_description_and_toolbar" style="display:none">
-    <div class="jstElements"><button title="Strong" class="jstb_strong" tabindex="200" type="button"><span>Strong</span></button><button title="Italic" class="jstb_em" tabindex="200" type="button"><span>Italic</span></button><button title="Underline" class="jstb_ins" tabindex="200" type="button"><span>Underline</span></button><button title="Deleted" class="jstb_del" tabindex="200" type="button"><span>Deleted</span></button><button title="Inline Code" class="jstb_code" tabindex="200" type="button"><span>Inline Code</span></button><span class="jstSpacer">&nbsp;</span><button title="Heading 1" class="jstb_h1" tabindex="200" type="button"><span>Heading 1</span></button><button title="Heading 2" class="jstb_h2" tabindex="200" type="button"><span>Heading 2</span></button><button title="Heading 3" class="jstb_h3" tabindex="200" type="button"><span>Heading 3</span></button><span class="jstSpacer">&nbsp;</span><button title="Unordered list" class="jstb_ul" tabindex="200" type="button"><span>Unordered list</span></button><button title="Ordered list" class="jstb_ol" tabindex="200" type="button"><span>Ordered list</span></button><span class="jstSpacer">&nbsp;</span><button title="Quote" class="jstb_bq" tabindex="200" type="button"><span>Quote</span></button><button title="Remove Quote" class="jstb_unbq" tabindex="200" type="button"><span>Remove Quote</span></button><button title="Preformatted text" class="jstb_pre" tabindex="200" type="button"><span>Preformatted text</span></button><span class="jstSpacer">&nbsp;</span><button title="Link to a Wiki page" class="jstb_link" tabindex="200" type="button"><span>Link to a Wiki page</span></button><button title="Image" class="jstb_img" tabindex="200" type="button"><span>Image</span></button><span class="jstSpacer">&nbsp;</span><button title="Help" class="jstb_help" tabindex="200" type="button"><span>Help</span></button></div><div class="jstEditor"><textarea cols="60" rows="10" class="wiki-edit" name="issue[description]" id="issue_description">Sample issue.</textarea></div>
+    <div class="jstElements"><button title="Strong" class="jstb_strong" tabindex="200" type="button"><span>Strong</span></button><button title="Italic" class="jstb_em" tabindex="200" type="button"><span>Italic</span></button><button title="Underline" class="jstb_ins" tabindex="200" type="button"><span>Underline</span></button><button title="Deleted" class="jstb_del" tabindex="200" type="button"><span>Deleted</span></button><button title="Inline Code" class="jstb_code" tabindex="200" type="button"><span>Inline Code</span></button><span class="jstSpacer" id="space1">&nbsp;</span><button title="Heading 1" class="jstb_h1" tabindex="200" type="button"><span>Heading 1</span></button><button title="Heading 2" class="jstb_h2" tabindex="200" type="button"><span>Heading 2</span></button><button title="Heading 3" class="jstb_h3" tabindex="200" type="button"><span>Heading 3</span></button><span class="jstSpacer" id="space2">&nbsp;</span><button title="Unordered list" class="jstb_ul" tabindex="200" type="button"><span>Unordered list</span></button><button title="Ordered list" class="jstb_ol" tabindex="200" type="button"><span>Ordered list</span></button><span class="jstSpacer" id="space3">&nbsp;</span><button title="Quote" class="jstb_bq" tabindex="200" type="button"><span>Quote</span></button><button title="Remove Quote" class="jstb_unbq" tabindex="200" type="button"><span>Remove Quote</span></button><button title="Preformatted text" class="jstb_pre" tabindex="200" type="button"><span>Preformatted text</span></button><button title="Highlighted code" class="jstb_precode" tabindex="200" type="button"><span>Highlighted code</span></button><span class="jstSpacer" id="space4">&nbsp;</span><button title="Link to a Wiki page" class="jstb_link" tabindex="200" type="button"><span>Link to a Wiki page</span></button><button title="Image" class="jstb_img" tabindex="200" type="button"><span>Image</span></button><span class="jstSpacer" id="space5">&nbsp;</span><button title="Help" class="jstb_help" tabindex="200" type="button"><span>Help</span></button></div>
+    <div class="jstEditor"><textarea cols="60" rows="10" class="wiki-edit" name="issue[description]" id="issue_description">Sample issue.</textarea></div>
 </span></p>
 
 <div id="attributes" class="attributes">
