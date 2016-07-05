@@ -158,9 +158,13 @@ li {
     }
 
     .breadcrumbs {
-      display block
+      display inline-block
       font-size .6em
       font-weight normal
+    }
+
+    .current-project {
+      padding-left .2em
     }
   }
 
@@ -651,10 +655,14 @@ table.list, .table-list {
   th, .table-list-header {
     border 1px solid color_gray_light_a
     background-color color_gray_light_b
-    padding 4px
+    padding .5em
     white-space nowrap
     font-weight normal
     vertical-align middle
+  }
+
+  .table-list-row {
+    padding .5em
   }
 
   td {

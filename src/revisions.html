@@ -30,37 +30,36 @@ Patch by Felix Gliesche. - Redmine</title>
 <li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
 
 <div id="header">
-    <div id="quick-search">
-        <form accept-charset="UTF-8" action="/projects/redmine/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
-        <input name="changesets" value="1" type="hidden">
-        <label for="q">
-          <a href="http://www.redmine.org/projects/redmine/search" accesskey="4">Search</a>:
-        </label>
-        <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-</form>
-    </div>
+  <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+  <div id="quick-search">
+    <form action="/projects/redmine-theme-minimalflat2/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+      <input name="wiki_pages" value="1" type="hidden">
+      <label for="q"><a accesskey="4" href="./projects/redmine-theme-minimalflat2/search">Search</a>:</label>
+      <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+    </form>
+  </div>
 
-    <h1>Redmine</h1>
+  <h1><span class="breadcrumbs"><a class="root" href="/projects/root?jump=overview">Root</a><span class="separator"> » </span><a class="ancestor" href="/projects/parent-project?jump=overview">Parent</a><span class="separator"> » </span></span><span class="current-project">redmine-theme-minimalflat2</span></h1>
 
-    <div id="main-menu" class="tabs">
-      <ul>
-        <li><a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
-          <ul class="menu-children">
-            <li><a accesskey="7" class="new-issue-sub" href="/projects/sample/issues/new">New issue</a></li>
-            <li><a class="new-issue-category" href="/projects/sample/issue_categories/new">New category</a></li>
-            <li><a class="new-version" href="/projects/sample/versions/new">New version</a></li>
-            <li><a class="new-news" href="/projects/sample/news/new">Add news</a></li>
-            <li><a class="new-document" href="/projects/sample/documents/new">New document</a></li>
-            <li><a class="new-wiki-page" href="/projects/sample/wiki/new">New wiki page</a></li>
-            <li><a class="new-file" href="/projects/sample/files/new">New file</a></li>
-          </ul>
-        </li><li><a class="overview selected" href="/projects/sample">Overview</a></li><li><a class="activity" href="/projects/sample/activity">Activity</a></li><li><a class="issues" href="/projects/sample/issues">Issues</a></li><li><a class="gantt" href="/projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="/projects/sample/news">News</a></li><li><a class="documents" href="/projects/sample/documents">Documents</a></li><li><a class="wiki" href="/projects/sample/wiki">Wiki</a></li><li><a class="boards" href="/projects/sample/boards">Forums</a></li><li><a class="files" href="/projects/sample/files">Files</a></li><li><a class="settings" href="/projects/sample/settings">Settings</a></li>
-      </ul>
-      <div class="tabs-buttons" style="">
-          <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
-          <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
-      </div>
+  <div id="main-menu" class="tabs">
+    <ul>
+      <li><a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+        <ul class="menu-children">
+          <li><a accesskey="7" class="new-issue-sub" href="/projects/sample/issues/new">New issue</a></li>
+          <li><a class="new-issue-category" href="/projects/sample/issue_categories/new">New category</a></li>
+          <li><a class="new-version" href="/projects/sample/versions/new">New version</a></li>
+          <li><a class="new-news" href="/projects/sample/news/new">Add news</a></li>
+          <li><a class="new-document" href="/projects/sample/documents/new">New document</a></li>
+          <li><a class="new-wiki-page" href="/projects/sample/wiki/new">New wiki page</a></li>
+          <li><a class="new-file" href="/projects/sample/files/new">New file</a></li>
+        </ul>
+      </li><li><a class="overview selected" href="/projects/sample">Overview</a></li><li><a class="activity" href="/projects/sample/activity">Activity</a></li><li><a class="issues" href="/projects/sample/issues">Issues</a></li><li><a class="gantt" href="/projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="/projects/sample/news">News</a></li><li><a class="documents" href="/projects/sample/documents">Documents</a></li><li><a class="wiki" href="/projects/sample/wiki">Wiki</a></li><li><a class="boards" href="/projects/sample/boards">Forums</a></li><li><a class="files" href="/projects/sample/files">Files</a></li><li><a class="settings" href="/projects/sample/settings">Settings</a></li>
+    </ul>
+    <div class="tabs-buttons" style="">
+        <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+        <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
     </div>
+  </div>
 </div>
 
 <div id="main" class="">
