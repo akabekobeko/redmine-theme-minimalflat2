@@ -1508,6 +1508,7 @@ input, select {
   vertical-align middle
   margin-top 1px
   margin-bottom 1px
+  padding .3em
 }
 
 fieldset {
@@ -3805,13 +3806,18 @@ input, select {
   font-size .8em
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="date"] {
   border solid 1px color_gray_light_a
   border-radius .2em
   padding .3em
   color color_indigo
+  line-height initial
 }
 
+input[type="file"] {
+  color color_indigo
+  line-height initial
+}
 /***** Override Forms *****/
 textarea {
   border solid 1px color_gray_light_a
