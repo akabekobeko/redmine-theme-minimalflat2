@@ -391,6 +391,24 @@ jstb_button_span_style() {
       }
     }
   }
+
+  .jstb_more {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_help_2, color_blue_light )
+        margin-right 0
+      }
+    }
+  }
+
 }
 
 // Replace image
