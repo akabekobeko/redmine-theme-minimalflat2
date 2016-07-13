@@ -1,7 +1,7 @@
 {
   "name": "redmine-theme-minimalflat2",
   "description": "Minimal and flat design theme for Redmine.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "akabeko",
   "license": "GPL-2.0",
   "main": "index.js",

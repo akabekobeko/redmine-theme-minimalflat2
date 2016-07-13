@@ -1,5 +1,10 @@
 # ChangeLog
 
+# 1.2.1
+
+* Fix
+  * [Layout problem](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/72)
+
 # 1.2.0
 
 * Change
