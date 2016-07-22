@@ -1508,6 +1508,7 @@ input, select {
   vertical-align middle
   margin-top 1px
   margin-bottom 1px
+  padding .3em
 }
 
 fieldset {
@@ -3113,18 +3114,25 @@ button.tab-right {
       font-size .9em
     }
   }
+  
+  h2, h3, h4, h5, h6 {
+    padding 0 .8em
+  }
+
+  h4, h5, h6 {
+    margin-left 8px
+    font-size 1.1em
+  }
 
   h2 {
-    padding .8em
     border-left 4px solid color_blue
   }
 
   h3 {
-    padding .8em
     border-left 4px solid color_gray_light_a
   }
 
-  h4 {
+  h4, h5, h6 {
     border-bottom 2px dotted color_gray_light_a
   }
 
@@ -3804,13 +3812,18 @@ input, select {
   font-size .8em
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="date"] {
   border solid 1px color_gray_light_a
   border-radius .2em
   padding .3em
   color color_indigo
+  line-height initial
 }
 
+input[type="file"] {
+  color color_indigo
+  line-height initial
+}
 /***** Override Forms *****/
 textarea {
   border solid 1px color_gray_light_a

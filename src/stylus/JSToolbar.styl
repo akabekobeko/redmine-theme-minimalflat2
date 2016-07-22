@@ -2,10 +2,10 @@
 
 @import "common/Color.styl"
 
-jstb_button_style() {
+jstb_button_style_only_color() {
   border solid 1px color_indigo !important
   border-radius .2em !important
-  background none color_indigo !important
+  background-color color_indigo !important
   color color_white !important
   width 30px !important
   height 30px !important
@@ -17,6 +17,11 @@ jstb_button_style() {
   line-height 30px !important
   letter-spacing 0 !important
   vertical-align bottom
+}
+
+jstb_button_style() {
+  jstb_button_style_only_color()
+  background-image none !important
 }
 
 jstb_button_span_style() {
@@ -317,6 +322,93 @@ jstb_button_span_style() {
       }
     }
   }
+
+  .jstb_horizontal_rule {
+    jstb_button_style_only_color()
+    background-image url('../images/jstb_horizontal_rule.png')
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+	  
+      &:before {
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_ruby {
+    jstb_button_style_only_color()
+    background-image url('../images/jstb_ruby.png')
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_javascript {
+    jstb_button_style_only_color()
+    background-image url('../images/jstb_javascript.png')
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_link_title {
+    jstb_button_style_only_color()
+    background-image url('../images/jstb_link_title.png')
+    background-size 1.3em
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        margin-right 0
+      }
+    }
+  }
+
+  .jstb_more {
+    jstb_button_style()
+
+    &:hover {
+      opacity .7
+    }
+
+    span {
+      jstb_button_span_style()
+
+      &:before {
+        icon( icon_help_2, color_blue_light )
+        margin-right 0
+      }
+    }
+  }
+
 }
 
 // Replace image
