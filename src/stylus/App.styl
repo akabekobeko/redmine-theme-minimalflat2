@@ -2713,17 +2713,19 @@ input.autocomplete {
 #errorExplanation, div.flash, .nodata, .warning, .conflict {
   margin-bottom 1em
   padding .2em .2em .2em 1em
-  border 2px solid
+  border 2px solid !important
 }
 
 div.flash {
   margin-top 1em
+  background initial !important
+  font-size initial !important
 }
 
 div.flash.error, #errorExplanation {
-  background-color color_red_light
-  border-color color_red
-  color color_red_dark
+  background-color color_red_light !important
+  border-color color_red !important
+  color color_red_dark !important
 
   &:before {
     icon( icon_error, color_red )
@@ -2731,9 +2733,9 @@ div.flash.error, #errorExplanation {
 }
 
 div.flash.notice {
-  background-color color_green_light
-  border-color color_green
-  color color_green_dark
+  background-color color_green_light !important
+  border-color color_green !important
+  color color_green_dark !important
 
   &:before {
     icon( icon_check, color_green )
@@ -2741,14 +2743,18 @@ div.flash.notice {
 }
 
 div.flash.warning, .conflict {
-  background-color color_yellow_light
-  border-color color_yellow
-  color color_yellow_dark
+  background-color color_yellow_light !important
+  border-color color_yellow !important
+  color color_yellow_dark !important
   text-align left
 
   &:before {
     icon( icon_warning, color_yellow )
   }
+}
+
+div.flash.tip:before {
+  icon( icon_message, color_indigo )
 }
 
 .nodata, .warning {
