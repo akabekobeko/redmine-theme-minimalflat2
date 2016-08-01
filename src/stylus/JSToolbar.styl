@@ -323,9 +323,12 @@ jstb_button_span_style() {
     }
   }
 
+  ////////////////////////////////////////////////////////////////////////////////
+  // jsToolbar Buttons Extension
+  ////////////////////////////////////////////////////////////////////////////////
+
   .jstb_horizontal_rule {
-    jstb_button_style_only_color()
-    background-image url('../images/jstb_horizontal_rule.png')
+    jstb_button_style()
 
     &:hover {
       opacity .7
@@ -333,16 +336,16 @@ jstb_button_span_style() {
 
     span {
       jstb_button_span_style()
-	  
+
       &:before {
+        icon( icon_hr, color_white )
         margin-right 0
       }
     }
   }
 
   .jstb_ruby {
-    jstb_button_style_only_color()
-    background-image url('../images/jstb_ruby.png')
+    jstb_button_style()
 
     &:hover {
       opacity .7
@@ -352,14 +355,14 @@ jstb_button_span_style() {
       jstb_button_span_style()
 
       &:before {
+        icon( icon_ruby, color_red )
         margin-right 0
       }
     }
   }
 
   .jstb_javascript {
-    jstb_button_style_only_color()
-    background-image url('../images/jstb_javascript.png')
+    jstb_button_style()
 
     &:hover {
       opacity .7
@@ -369,15 +372,14 @@ jstb_button_span_style() {
       jstb_button_span_style()
 
       &:before {
+        icon( icon_js, color_yellow )
         margin-right 0
       }
     }
   }
 
   .jstb_link_title {
-    jstb_button_style_only_color()
-    background-image url('../images/jstb_link_title.png')
-    background-size 1.3em
+    jstb_button_style()
 
     &:hover {
       opacity .7
@@ -387,6 +389,7 @@ jstb_button_span_style() {
       jstb_button_span_style()
 
       &:before {
+        icon( icon_link, color_blue_light )
         margin-right 0
       }
     }
