@@ -1,5 +1,17 @@
 # ChangeLog
 
+# 1.2.2
+
+* Change
+  * [Change the appearance of the page switching button](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/85)
+  * [Change the font-size of the TOC in relative value](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/84)
+  * [Bitmap image of jsToolbar buttons extension and WikiNG extension to vector image](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/78)
+  * [Fix ajax loading indication](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/80) by TheMagician1
+  * [Support for the jsToolbar buttons extension and WikiNG extension](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/73)  by TheMagician1
+  * [Fix flash message style when used with WikiNG plugin](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/79) by jintux
+* Fix
+  * [Lack of Drag and drop order configuration for statuses, trackers, roles...](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/75)
+
 # 1.2.1
 
 * Fix
