@@ -1508,6 +1508,7 @@ input, select {
   vertical-align middle
   margin-top 1px
   margin-bottom 1px
+  padding .3em
 }
 
 fieldset {
@@ -2116,6 +2117,11 @@ textarea#custom_field_default_value {
   resize vertical
 }
 
+.sort-handle {
+  display inline-block
+  vertical-align middle
+}
+
 input#content_comments {
   width 99%
 }
@@ -2147,17 +2153,17 @@ span.pagination {
   text-align center
 
   a, span {
-    padding 3px 8px
+    padding .5em
   }
 
   &:first-child {
-    border-top-left-radius 4px
-    border-bottom-left-radius 4px
+    border-top-left-radius .2em
+    border-bottom-left-radius .2em
   }
 
   &:last-child {
-    border-top-right-radius 4px
-    border-bottom-right-radius 4px
+    border-top-right-radius .2em
+    border-bottom-right-radius .2em
   }
 
   &.current {
@@ -2167,7 +2173,7 @@ span.pagination {
   }
 
   &.page:hover {
-    background-color color_gray
+    background-color color_gray_light_b
   }
 
   a:hover, a:active {
@@ -2216,12 +2222,6 @@ ul.projects {
 
   li.child {
     margin-top 1em
-  }
-
-  div.root a.project {
-    font-weight bold
-    font-size 16px
-    margin 0 0 10px 0
   }
 
   div.root, div.child {
@@ -2677,6 +2677,8 @@ input.autocomplete {
 
   &.ajax-loading {
     background-image url(../images/loading.gif)
+    background-repeat no-repeat
+    background-position right center
   }
 }
 
@@ -2710,17 +2712,19 @@ input.autocomplete {
 #errorExplanation, div.flash, .nodata, .warning, .conflict {
   margin-bottom 1em
   padding .2em .2em .2em 1em
-  border 2px solid
+  border 2px solid !important
 }
 
 div.flash {
   margin-top 1em
+  background initial !important
+  font-size initial !important
 }
 
 div.flash.error, #errorExplanation {
-  background-color color_red_light
-  border-color color_red
-  color color_red_dark
+  background-color color_red_light !important
+  border-color color_red !important
+  color color_red_dark !important
 
   &:before {
     icon( icon_error, color_red )
@@ -2728,9 +2732,9 @@ div.flash.error, #errorExplanation {
 }
 
 div.flash.notice {
-  background-color color_green_light
-  border-color color_green
-  color color_green_dark
+  background-color color_green_light !important
+  border-color color_green !important
+  color color_green_dark !important
 
   &:before {
     icon( icon_check, color_green )
@@ -2738,14 +2742,18 @@ div.flash.notice {
 }
 
 div.flash.warning, .conflict {
-  background-color color_yellow_light
-  border-color color_yellow
-  color color_yellow_dark
+  background-color color_yellow_light !important
+  border-color color_yellow !important
+  color color_yellow_dark !important
   text-align left
 
   &:before {
     icon( icon_warning, color_yellow )
   }
+}
+
+div.flash.tip:before {
+  icon( icon_message, color_indigo )
 }
 
 .nodata, .warning {
@@ -3114,17 +3122,24 @@ button.tab-right {
     }
   }
 
+  h2, h3, h4, h5, h6 {
+    padding 0 .8em
+  }
+
+  h4, h5, h6 {
+    margin-left 8px
+    font-size 1.1em
+  }
+
   h2 {
-    padding .8em
     border-left 4px solid color_blue
   }
 
   h3 {
-    padding .8em
     border-left 4px solid color_gray_light_a
   }
 
-  h4 {
+  h4, h5, h6 {
     border-bottom 2px dotted color_gray_light_a
   }
 
@@ -3174,16 +3189,16 @@ button.tab-right {
     li {
       list-style-type none
       margin 0
-      font-size 12px
+      font-size .9em
     }
 
     li li {
       margin-left 1.5em
-      font-size 10px
+      font-size .9em
     }
 
     a {
-      font-size 0.9em
+      font-size .9em
       font-weight normal
       text-decoration none
       color color_gray_dark
@@ -3497,6 +3512,25 @@ a.icon-only {
   }
 }
 
+.sort-handle {
+  border none !important
+  cursor move !important
+
+  &:before {
+    icon( icon_updown, color_green )
+  }
+
+  &.ajax-loading {
+    width 16px
+    height 16px
+    background-image url(../images/loading.gif)
+  }
+}
+
+tr.ui-sortable-helper {
+  border 1px solid #e4e4e4
+}
+
 img.gravatar {
   vertical-align middle
   border-radius 50%
@@ -3804,13 +3838,18 @@ input, select {
   font-size .8em
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="date"] {
   border solid 1px color_gray_light_a
   border-radius .2em
   padding .3em
   color color_indigo
+  line-height initial
 }
 
+input[type="file"] {
+  color color_indigo
+  line-height initial
+}
 /***** Override Forms *****/
 textarea {
   border solid 1px color_gray_light_a

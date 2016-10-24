@@ -1,7 +1,7 @@
 {
   "name": "redmine-theme-minimalflat2",
   "description": "Minimal and flat design theme for Redmine.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "akabeko",
   "license": "GPL-2.0",
   "main": "index.js",
@@ -24,11 +24,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css1": "stylus --include-css ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-base ./stylus",
     "build:css2": "stylus ./src/stylus/Responsive.styl -o ./src/stylesheets/responsive.css -m --sourcemap-base ./stylus",
-    "build": "npm-run-all -p build:css1 build:css2",
+    "build": "npm-run-all -p build:*",
     "watch:css1": "stylus -w --include-css ./src/stylus/App.styl -o ./src/stylesheets/application.css -m --sourcemap-base ./stylus",
     "watch:css2": "stylus -w ./src/stylus/Responsive.styl -o ./src/stylesheets/responsive.css -m --sourcemap-base ./stylus",
     "watch:server": "browser-sync start --server ./ --startPath src/",
-    "watch": "npm-run-all -p watch:css1 watch:css2 watch:server",
+    "watch": "npm-run-all -p watch:*",
     "release:css1": "stylus -c --include-css ./src/stylus/App.styl -o ./minimalflat2/stylesheets/application.css",
     "release:css2": "stylus -c ./src/stylus/Responsive.styl -o ./minimalflat2/stylesheets/responsive.css",
     "release:clean": "rimraf ./minimalflat2",
@@ -37,18 +37,18 @@
     "release:copy-doc": "cpx \"./*(README.md|README.ja.md|CHANGELOG.md|LICENSE.txt|ss.png|ss2.png|ss3.png|ss4.png|ss5.png|ss6.png|!(Vagrantfile|*.*))\" ./minimalflat2",
     "release:copy": "npm-run-all release:copy-src release:copy-img release:copy-doc",
     "release:archive": "cross-conf-env bestzip minimalflat2-vnpm_package_version.zip ./minimalflat2",
-    "release": "npm-run-all -s release:clean release:copy release:css1 release:css2 release:archive"
+    "release": "npm-run-all -s release:clean release:copy release:css* release:archive"
   },
   "devDependencies": {
     "bestzip": "^1.1.3",
-    "browser-sync": "^2.13.0",
-    "cpx": "^1.3.1",
-    "cross-conf-env": "^1.0.5",
-    "npm-run-all": "^2.3.0",
-    "rimraf": "^2.5.3",
+    "browser-sync": "^2.17.5",
+    "cpx": "^1.5.0",
+    "cross-conf-env": "^1.0.6",
+    "npm-run-all": "^3.1.1",
+    "rimraf": "^2.5.4",
     "stylus": "^0.54.5"
   },
   "dependencies": {
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^5.0.0"
   }
 }
