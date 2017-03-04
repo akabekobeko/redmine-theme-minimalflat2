@@ -3122,25 +3122,22 @@ button.tab-right {
     }
   }
 
-  h2, h3, h4, h5, h6 {
-    padding 0 .8em
-  }
-
-  h4, h5, h6 {
-    margin-left 8px
-    font-size 1.1em
-  }
-
   h2 {
-    border-left 4px solid color_blue
+    padding .8em
+    border-left 2px solid color_blue
   }
 
   h3 {
-    border-left 4px solid color_gray_light_a
+    padding .8em
+    border-left 2px solid color_gray_light_a
   }
 
   h4, h5, h6 {
+    margin-left .8em
+    padding-bottom .2em
     border-bottom 2px dotted color_gray_light_a
+    font-size 1.1em
+    font-weight normal
   }
 
   pre {
@@ -3367,7 +3364,6 @@ a.close-icon:hover {
   }
 }
 
-
 .task_late {
   background-color color_red
   border 1px solid color_red
@@ -3418,52 +3414,52 @@ a.close-icon:hover {
 .version {
   &.task_late {
     background-color color_red
-    border 1px solid color_red
     height 2px
-    margin-top 3px
+    margin-top 5px
+    margin-left 1px
   }
 
   &.task_done {
     background-color color_green
-    border 1px solid color_green
     height 2px
-    margin-top 3px
+    margin-top 5px
+    margin-left 1px
   }
 
   &.task_todo {
-    background-color color_white
-    border 1px solid color_white
+    background-color color_gray_light_a
     height 2px
-    margin-top 3px
+    margin-top 5px
+    margin-left 1px
   }
 
-  &.marker {
-    icon( icon_circle, color_blue )
+  &.marker:before {
+    icon( icon_square, color_blue )
     border 0
-    margin-left -4px
     margin-top 1px
+    margin-left -4px
   }
 }
 
 .project {
   &.task_late {
     background-color color_red
-    border 1px solid color_red
     height 2px
-    margin-top 3px
+    margin-top 5px
+    margin-left 1px
   }
 
   &.task_done {
     background-color color_green
-    border 1px solid color_green
     height 2px
-    margin-top 3px
+    margin-top 5px
+    margin-left 1px
   }
 
   &.task_todo {
     background-color color_gray_light_a
-    height 1px
-    margin-top 6px
+    height 2px
+    margin-top 5px
     margin-left 1px
   }
 
@@ -3678,7 +3674,7 @@ h2 img {
   }
 
   .change {
-    color color_syntax_blue
+    color color_syntax_blue_light
     background: color_syntax_blue
 
     .change {
@@ -3687,15 +3683,15 @@ h2 img {
   }
 
   .head {
-    color color_syntax_purple
+    color color_syntax_base
     background color_syntax_purple
 
     .filename {
-      color color_syntax_white
+      color color_syntax_base
     }
 
     .head {
-      color #DAACDF
+      color color_syntax_base
     }
   }
 

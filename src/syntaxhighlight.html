@@ -246,6 +246,37 @@
   name
 ;
 </span></code></pre>
+
+<h2>Diff<a href="#Diff" class="wiki-anchor">¶</a></h2>
+
+
+<pre><code class="diff syntaxhl"><span class="CodeRay"><span class="line comment">diff --git a/src/stylus/App.styl b/src/stylus/App.styl</span>
+<span class="line comment">index 82aee85..9361fd5 100755</span>
+<span class="line head"><span class="head">--- </span><span class="filename">a/src/stylus/App.styl</span></span>
+<span class="line head"><span class="head">+++ </span><span class="filename">b/src/stylus/App.styl</span></span>
+<span class="change"><span class="change">@@</span> -3678,7 +3678,7 <span class="change">@@</span></span> h2 img {
+   }
+
+   .change {
+<span class="line delete"><span class="delete">-</span>    color color_syntax_blue</span>
+<span class="line insert"><span class="insert">+</span>    color color_syntax_blue<span class="eyecatcher">_light</span></span>
+     background: color_syntax_blue
+
+     .change {
+<span class="change"><span class="change">@@</span> -3691,11 +3691,11 <span class="change">@@</span></span> h2 img {
+     background color_syntax_purple
+
+     .filename {
+<span class="line delete"><span class="delete">-</span>      color color_syntax_<span class="eyecatcher">whit</span>e</span>
+<span class="line insert"><span class="insert">+</span>      color color_syntax_<span class="eyecatcher">bas</span>e</span>
+     }
+
+     .head {
+<span class="line delete"><span class="delete">-</span>      color <span class="eyecatcher">#DAACDF</span></span>
+<span class="line insert"><span class="insert">+</span>      color <span class="eyecatcher">color_syntax_base</span></span>
+     }
+   }
+</span></code></pre>
 </div>
 
 
