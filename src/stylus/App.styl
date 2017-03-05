@@ -3140,18 +3140,31 @@ button.tab-right {
     font-weight normal
   }
 
+  code {
+    padding .2em .5em
+    border-radius .2em
+    background-color color_syntax_back
+    color color_syntax_base
+    font-family "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
+    font-size .9em
+  }
+
   pre {
     overflow-x auto
     overflow-y hidden
     width auto
     margin 1em
     padding .8em
-    background-color #414141
-    border 1px solid #414141
-    border-radius .3em
-    color color_white
+    background-color color_syntax_back
+    border 1px solid color_syntax_back
+    border-radius .2em
+    color color_syntax_base
     font-family monospace
-    font-size 1.1em
+    font-size 1.2em
+
+    code {
+      padding 0
+    }
   }
 
   ul.toc {
@@ -3623,7 +3636,7 @@ h2 img {
   .line-numbers {
     padding .1em .2em
     margin 0 .2em 0 0
-    color color_syntax_base;
+    color color_syntax_base
   }
 
   .code pre {
