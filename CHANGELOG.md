@@ -1,108 +1,147 @@
 # ChangeLog
 
-# 1.2.2
+# v1.2.3
 
-* Change
-  * [Change the appearance of the page switching button](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/85)
-  * [Change the font-size of the TOC in relative value](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/84)
-  * [Bitmap image of jsToolbar buttons extension and WikiNG extension to vector image](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/78)
-  * [Fix ajax loading indication](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/80) by TheMagician1
-  * [Support for the jsToolbar buttons extension and WikiNG extension](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/73)  by TheMagician1
-  * [Fix flash message style when used with WikiNG plugin](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/79) by jintux
-* Fix
-  * [Lack of Drag and drop order configuration for statuses, trackers, roles...](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/75)
+## Changes
 
-# 1.2.1
+* Update the `normalize.css` [#99](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/99)
+* Implement CSS differences from Redmine v3.3.0 to 3.3.2 [#96](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/96)
+* Adjust the wiki's header style [#94](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/94)
+* `code` tag support [#91](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/91)
 
-* Fix
-  * [Layout problem](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/72)
+## Bug Fixes
 
-# 1.2.0
+* Diff head/change text visibility [#93](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/93) by iquiw
+* Version color visibility in gantt [#92](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/92)
 
-* Change
-  * [Redmine v3.3 support](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/70)
-* Fix
-  * [#header min-height brakes markup if menu includes count elements more than length of single line](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/69)
-  * [DMSF Icon showing multiple times](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/71)
+# v1.2.2
 
-# 1.1.5
+## Changes
 
-* Fix
-  * [Login form Not fit in mobile view](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/68)
+* Change the appearance of the page switching button [#85](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/85)
+* Change the font-size of the TOC in relative value [#84](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/84)
+* Bitmap image of jsToolbar buttons extension and WikiNG extension to vector image [#78](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/78)
+* Fix ajax loading indication [#80](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/80) by TheMagician1
+* Support for the jsToolbar buttons extension and WikiNG extension [#73](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/73) by TheMagician1
+* Fix flash message style when used with WikiNG plugin [#79](https://github.com/akabekobeko/redmine-theme-minimalflat2/pull/79) by jintux
 
-# 1.1.4
+## Bug Fixes
 
-* Fix
-  * [Missing images/loading.gif](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/65)
-  * [(Layout) - Redmine jsToolbar Images Extension](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/66)
+* Lack of Drag and drop order configuration for statuses, trackers, roles... [#75](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/75)
 
-# 1.1.3
+# v1.2.1
 
-* Fix
-  * [Strange symbols](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/61)
+## Bug Fixes
 
-# 1.1.2
+* Layout problem [#72](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/72)
 
-* Change
-  * [letter-spacing normal is better for displaying](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/59)
-  * [Responsive view](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/58)
+# v1.2.0
 
-# 1.1.1
+## Changes
 
-* Fix
-  * [Customize the appearance of the revisions screen](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/56)
+* Redmine v3.3 support [#70](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/70)
 
-## 1.1.0
+## Bug Fixes
 
-* Change
-  * [Redmine v3.2 support](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/53)
-  * [Change the content and sidebar layout](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/47)
-  * [Makes the toolbar buttons to dark color](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/46)
-  * [Make a user image to circle](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/44)
-* Fix
-  * [Button on the toolbar is default by the status change of the issue](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/52)
-  * [Label of the setting screen is not displayed part](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/50)
-  * [Progress graph does not appear part in issues list of Redmine 3.2](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/49)
-  * [Margin is displayed on the bottom of the header](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/48)
+* #header min-height brakes markup if menu includes count elements more than length of single line [#69](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/69)
+* DMSF Icon showing multiple times [#71](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/71)
 
-## 1.0.4
+# v1.1.5
 
-* Change
-  * [Redmine v3.2 support](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/39)
+## Bug Fixes
 
-## 1.0.3
+* Login form Not fit in mobile view [#68](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/68)
 
-* Change
-  * [To increase the margin of the table](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/38)
-  * [Change font-weight of priority-highest in the ticket list from bold to normal](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/37)
-  * [Extend the height of the line](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/36)
-  * [Layout an image of the wiki page in the center](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/35)
-  * [Add a line at the bottom of the Wiki page](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/34)
-* [Modify the favicon path of HTML](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/33)
-* Fix
-  * [Style has not been applied to the link of the close the ticket](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/32)
-  * [Migrate the build management from gulp in npm-scripts](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/31)
+# v1.1.4
 
-## 1.0.2
+## Bug Fixes
 
-* Change
-  * [Change the appearance of the button](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/28)
-* Fix
-  * [Fixed the left border of the display tab of Settings screen](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/29)
-  * [Fixed icon display is broken problem in the context menu of issues](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/27)
-  * [Fixed multiple selection doesn't work problem of issues](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/25)
+* Missing images/loading.gif [#65](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/65)
+* (Layout) - Redmine jsToolbar Images Extension [#66](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/66)
 
-## 1.0.1
+# v1.1.3
 
-* Change
-  * [Changed the appearance of the tab](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/24)
-  * [Added the version number to the name of the release for the ZIP file](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/22)
-  * [Added a README file of Japanese ( README.ja.md )](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/21)
-  * [Compress the release for the ZIP file in the root directory included](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/20)
-* Fix
-  * [Changed the layouts and colors](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/18)
-  * [Fixed "TD" of the repository list is centered](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/17)
+## Bug Fixes
 
-## 1.0.0
+* Strange symbols [#61](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/61)
+
+# v1.1.2
+
+## Changes
+
+* letter-spacing normal is better for displaying [#59](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/59)
+* Responsive view [#58](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/58)
+
+# v1.1.1
+
+## Bug Fixes
+
+* Customize the appearance of the revisions screen [#56](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/56)
+
+# v1.1.0
+
+## Changes
+
+* Redmine v3.2 support [#53](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/53)
+* Change the content and sidebar layout [#47](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/47)
+* Makes the toolbar buttons to dark color [#46](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/46)
+* Make a user image to circle [#44](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/44)
+
+## Bug Fixes
+
+* Button on the toolbar is default by the status change of the issue [#52](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/52)
+* Label of the setting screen is not displayed part [#50](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/50)
+* Progress graph does not appear part in issues list of Redmine 3.2 [#49](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/49)
+* Margin is displayed on the bottom of the header [#48](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/48)
+
+# v1.0.4
+
+## Changes
+
+* Redmine v3.2 support [#39](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/39)
+
+# v1.0.3
+
+## Changes
+
+* To increase the margin of the table [#38](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/38)
+* Change font-weight of priority-highest in the ticket list from bold to normal [#37](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/37)
+* Extend the height of the line [#36](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/36)
+* Layout an image of the wiki page in the center [#35](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/35)
+* Add a line at the bottom of the Wiki page [#34](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/34)
+* Modify the favicon path of HTML [#33](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/33)
+
+## Bug Fixes
+
+* Style has not been applied to the link of the close the ticket [#32](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/32)
+* Migrate the build management from gulp in npm-scripts [#31](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/31)
+
+# v1.0.2
+
+## Changes
+
+* Change the appearance of the button [#28](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/28)
+
+## Bug Fixes
+
+* Fixed the left border of the display tab of Settings screen [#29](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/29)
+* Fixed icon display is broken problem in the context menu of issues [#27](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/27)
+* Fixed multiple selection doesn't work problem of issues [#25](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/25)
+
+# v1.0.1
+
+## Changes
+
+* Changed the appearance of the tab [#24](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/24)
+* Added the version number to the name of the release for the ZIP file [#22](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/22)
+* Added a README file of Japanese ( README.ja.md ) [#21](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/21)
+* Compress the release for the ZIP file in the root directory included [#20](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/20)
+
+## Bug Fixes
+
+* Changed the layouts and colors [#18](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/18)
+* Fixed "TD" of the repository list is centered [#17](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/17)
+
+# v1.0.0
 
 * First release
