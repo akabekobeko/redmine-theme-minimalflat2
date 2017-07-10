@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "bestzip": "^1.1.4",
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.18.12",
     "cpx": "^1.5.0",
     "cross-conf-env": "^1.1.2",
     "npm-run-all": "^4.0.2",
@@ -49,6 +49,6 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
-    "normalize.css": "^6.0.0"
+    "normalize.css": "^7.0.0"
   }
 }
