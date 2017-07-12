@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>/ - Repository - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="4M4EPr6S1MkaqJz5+Z4nP1f2WFJg/PR7c9nNm8Vo/+m+2lWBdEtfVNkl7hzneO6gyCGJSS7QOLjRwC4pDckNaQ==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="javascripts/theme.js"></script>
+
+<!-- page specific tags -->
+  <script src="javascripts/repository_navigation.js"></script>
+  <script src="javascripts/raphael.js"></script>
+  <script src="javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="projects/sample/repository/revisions?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">
+  <link rel="stylesheet" media="screen" href="stylesheets/scm.css">
+<style>@media print {#ghostery-purple-box {display:none !important}}</style></head>
+<body class="theme-Minimalflat2 project-sample controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="changesets" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="repository_files/c265a1a7dadb2713ff2262025e91d133.png"></a>
+            <a class="user active" href="users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
+    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="changesets" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=repository" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=repository"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=repository">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="repository selected" href="projects/sample/repository">Repository</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+
+
+    </div>
+
+    <div id="content">
+
+
+
+<div class="contextual">
+
+
+<a class="icon icon-stats" href="projects/sample/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/sample/repository" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">  <!-- Branches Dropdown -->
+    | Branch:
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option></select>
+
+    | Tag:
+    <select name="tag" id="tag"><option value="" selected="selected">&nbsp;</option>
+<option value="v1.0.0">v1.0.0</option>
+<option value="v1.0.1">v1.0.1</option>
+<option value="v1.0.2">v1.0.2</option>
+<option value="v1.0.3">v1.0.3</option>
+<option value="v1.0.4">v1.0.4</option>
+<option value="v1.1.0">v1.1.0</option>
+<option value="v1.1.1">v1.1.1</option>
+<option value="v1.1.2">v1.1.2</option>
+<option value="v1.1.3">v1.1.3</option>
+<option value="v1.1.4">v1.1.4</option>
+<option value="v1.1.5">v1.1.5</option>
+<option value="v1.2.0">v1.2.0</option>
+<option value="v1.2.1">v1.2.1</option>
+<option value="v1.2.2">v1.2.2</option>
+<option value="v1.2.3">v1.2.3</option></select>
+
+    | Revision:
+    <input name="rev" id="rev" size="8" type="text">
+</form>
+</div>
+
+<h2><a href="projects/sample/repository/revisions/master/show">root</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+<th>Revision</th>
+<th>Age</th>
+<th>Author</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr id="25d902c24283ab8cfbac54dfa101ad31" class="entry dir open loaded">
+<td style="padding-left: 0px;" class="filename">
+<span class="expander" onclick="scmEntryClick('25d902c24283ab8cfbac54dfa101ad31', '/projects/sample/repository/revisions/master/show/src?depth=1&amp;parent_id=25d902c24283ab8cfbac54dfa101ad31');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src">src</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 3934a179" href="projects/sample/repository/revisions/3934a1796e4c9fd397dc8112fa5c480e7cec5136">3934a179</a></td>
+<td class="age">3 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#100 Redmine v3.3 support</td>
+</tr><tr id="9230fd1f7aa677417cad70590708445f" class="25d902c24283ab8cfbac54dfa101ad31 entry dir">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('9230fd1f7aa677417cad70590708445f', '/projects/sample/repository/revisions/master/show/src/debug_images?depth=2&amp;parent_id=9230fd1f7aa677417cad70590708445f');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/debug_images">debug_images</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 3037c0b7" href="projects/sample/repository/revisions/3037c0b7cf7f87f5b8328a70971cc5ae567bfaa3">3037c0b7</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#65 Fix a reference to the images</td>
+</tr>
+<tr id="6f15d20993091bb94dda14a9838cac8d" class="25d902c24283ab8cfbac54dfa101ad31 entry dir">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('6f15d20993091bb94dda14a9838cac8d', '/projects/sample/repository/revisions/master/show/src/favicon?depth=2&amp;parent_id=6f15d20993091bb94dda14a9838cac8d');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/favicon">favicon</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision ee3402c1" href="projects/sample/repository/revisions/ee3402c1a214ca6f88304da31ac1b7f4728d6f4b">ee3402c1</a></td>
+<td class="age">almost 2 years</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#8 favicon を追加した</td>
+</tr>
+<tr id="1bb6fc1d0031d43603ecf8c416959e40" class="25d902c24283ab8cfbac54dfa101ad31 entry dir">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('1bb6fc1d0031d43603ecf8c416959e40', '/projects/sample/repository/revisions/master/show/src/fonts?depth=2&amp;parent_id=1bb6fc1d0031d43603ecf8c416959e40');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/fonts">fonts</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 68776ae6" href="projects/sample/repository/revisions/68776ae6774dc7726551832fb3609808f04e2e1a">68776ae6</a></td>
+<td class="age">11 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#78 Add an icon fonts</td>
+</tr>
+<tr id="63d5c1ef86b8eb6cce6f9d4f6f0fb3de" class="25d902c24283ab8cfbac54dfa101ad31 entry dir">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('63d5c1ef86b8eb6cce6f9d4f6f0fb3de', '/projects/sample/repository/revisions/master/show/src/images?depth=2&amp;parent_id=63d5c1ef86b8eb6cce6f9d4f6f0fb3de');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/images">images</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 3037c0b7" href="projects/sample/repository/revisions/3037c0b7cf7f87f5b8328a70971cc5ae567bfaa3">3037c0b7</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#65 Fix a reference to the images</td>
+</tr>
+<tr id="beb2da056397a8960468dd85c0ac6f69" class="25d902c24283ab8cfbac54dfa101ad31 entry dir">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('beb2da056397a8960468dd85c0ac6f69', '/projects/sample/repository/revisions/master/show/src/javascripts?depth=2&amp;parent_id=beb2da056397a8960468dd85c0ac6f69');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/javascripts">javascripts</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="71f689c18becd194cb2607b82481b9ff" class="25d902c24283ab8cfbac54dfa101ad31 entry dir">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('71f689c18becd194cb2607b82481b9ff', '/projects/sample/repository/revisions/master/show/src/stylesheets?depth=2&amp;parent_id=71f689c18becd194cb2607b82481b9ff');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/stylesheets">stylesheets</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 8d6952ec" href="projects/sample/repository/revisions/8d6952ec5b28fbdcebc79f693e330492a4862abc">8d6952ec</a></td>
+<td class="age">12 months</td>
+<td class="author">Bas van Leeuwen </td>
+<td class="comments">Add stylesheets directory for release
+
+otherwis...</td>
+</tr>
+<tr id="29db4970b1d12ede096ddc9178100fa9" class="25d902c24283ab8cfbac54dfa101ad31 entry dir open loaded">
+<td style="padding-left: 18px;" class="filename">
+<span class="expander" onclick="scmEntryClick('29db4970b1d12ede096ddc9178100fa9', '/projects/sample/repository/revisions/master/show/src/stylus?depth=2&amp;parent_id=29db4970b1d12ede096ddc9178100fa9');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/stylus">stylus</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 3934a179" href="projects/sample/repository/revisions/3934a1796e4c9fd397dc8112fa5c480e7cec5136">3934a179</a></td>
+<td class="age">3 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#100 Redmine v3.3 support</td>
+</tr><tr id="5f2864e5cfee945341a8b391cdd7e758" class="29db4970b1d12ede096ddc9178100fa9 entry dir">
+<td style="padding-left: 36px;" class="filename">
+<span class="expander" onclick="scmEntryClick('5f2864e5cfee945341a8b391cdd7e758', '/projects/sample/repository/revisions/master/show/src/stylus/common?depth=3&amp;parent_id=5f2864e5cfee945341a8b391cdd7e758');">&nbsp;</span>
+<a class="icon icon-folder" href="projects/sample/repository/revisions/master/show/src/stylus/common">common</a>
+</td>
+<td class="size"></td>
+<td class="revision"><a title="Revision 4b1c2e6e" href="projects/sample/repository/revisions/4b1c2e6e9b699aaa88020158f0258147638727a8">4b1c2e6e</a></td>
+<td class="age">4 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#91 Support the code tag</td>
+</tr>
+<tr id="e453b919f5cca9577accda3054ea512c" class="29db4970b1d12ede096ddc9178100fa9 entry file">
+<td style="padding-left: 36px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/src/stylus/App.styl">App.styl</a>
+</td>
+<td class="size">57.6 KB</td>
+<td class="revision"><a title="Revision 3934a179" href="projects/sample/repository/revisions/3934a1796e4c9fd397dc8112fa5c480e7cec5136">3934a179</a></td>
+<td class="age">3 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#100 Redmine v3.3 support</td>
+</tr>
+<tr id="c5214734376b0ff4b6b43d20f85030aa" class="29db4970b1d12ede096ddc9178100fa9 entry file">
+<td style="padding-left: 36px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/src/stylus/IconFonts.styl">IconFonts.styl</a>
+</td>
+<td class="size">373 Bytes</td>
+<td class="revision"><a title="Revision fb5fc954" href="projects/sample/repository/revisions/fb5fc9544c6f8a344e2e03ad1c23b2f7b80d2f69">fb5fc954</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#39 Implement a responsive layout</td>
+</tr>
+<tr id="f3c788c09ad46aaf3ad726fc96e3b802" class="29db4970b1d12ede096ddc9178100fa9 entry file">
+<td style="padding-left: 36px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/src/stylus/Icons.styl">Icons.styl</a>
+</td>
+<td class="size">7.21 KB</td>
+<td class="revision"><a title="Revision 79521e05" href="projects/sample/repository/revisions/79521e054fbc5b1a10614d11c92c245965feb0d2">79521e05</a></td>
+<td class="age">12 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#72 Fix a layout problem</td>
+</tr>
+<tr id="780ffd4b4c7bbf837f980530fba62504" class="29db4970b1d12ede096ddc9178100fa9 entry file">
+<td style="padding-left: 36px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/src/stylus/JSToolbar.styl">JSToolbar.styl</a>
+</td>
+<td class="size">6.72 KB</td>
+<td class="revision"><a title="Revision 68776ae6" href="projects/sample/repository/revisions/68776ae6774dc7726551832fb3609808f04e2e1a">68776ae6</a></td>
+<td class="age">11 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#78 Add an icon fonts</td>
+</tr>
+<tr id="c50efb527a38550a7ab12df409ef3af4" class="29db4970b1d12ede096ddc9178100fa9 entry file">
+<td style="padding-left: 36px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/src/stylus/Responsive.styl">Responsive.styl</a>
+</td>
+<td class="size">16 KB</td>
+<td class="revision"><a title="Revision 5465579c" href="projects/sample/repository/revisions/5465579c1b7d1a2af420f81ee2ecea69beee3f8f">5465579c</a></td>
+<td class="age">3 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#96 Implement CSS differences from Redmine v3.3...</td>
+</tr>
+<tr id="654078cefc58f3ac85d2d5f29c9dea03" class="29db4970b1d12ede096ddc9178100fa9 entry file">
+<td style="padding-left: 36px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/src/stylus/Widget.styl">Widget.styl</a>
+</td>
+<td class="size">3.15 KB</td>
+<td class="revision"><a title="Revision cb1d4c7e" href="projects/sample/repository/revisions/cb1d4c7e03a20c6c13eb83bbd320fba580809362">cb1d4c7e</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#69 #70 #71 Redmine v3.3 support</td>
+</tr>
+
+<tr id="dc0fe9536044cbc85eecea6cc8df145f" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/activity.html">activity.html</a>
+</td>
+<td class="size">8.95 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="513bdc6fe6388c08c7ed5ff002c01083" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/administration.html">administration.html</a>
+</td>
+<td class="size">4.78 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="f2d9c9dbbf2a47bd13c9d3a1e853faa7" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/calendar.html">calendar.html</a>
+</td>
+<td class="size">18.4 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="313c3a6c96d5dfa5f861e3caf8c4feff" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/diff.html">diff.html</a>
+</td>
+<td class="size">20 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="63afb47a7782a563d1af7c4cf304cb26" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/gantt.html">gantt.html</a>
+</td>
+<td class="size">19.9 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="e249faefed5757034596c5096d33dab6" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/index.html">index.html</a>
+</td>
+<td class="size">5.86 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="99496810672b541f6c388546423c1f02" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/issue.html">issue.html</a>
+</td>
+<td class="size">26.5 KB</td>
+<td class="revision"><a title="Revision 63fd42e0" href="projects/sample/repository/revisions/63fd42e0868f9f65d09679c567b40a3d7f1fcae8">63fd42e0</a></td>
+<td class="age">11 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#76 Support for the toolbar extension plugin</td>
+</tr>
+<tr id="e58530485e443807f93accb65fe48e95" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/issues.html">issues.html</a>
+</td>
+<td class="size">18.9 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="6362ee2d5129260c8c888110a58ee90b" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/login.html">login.html</a>
+</td>
+<td class="size">4.47 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="1be035eeab99019170f3077cb1af337c" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/overview.html">overview.html</a>
+</td>
+<td class="size">7 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="361512d15f40faf884a0ae0b63e6f55e" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/projects.html">projects.html</a>
+</td>
+<td class="size">5.11 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="0fd517069e91fb3b7418d33d12090e6b" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/repository.html">repository.html</a>
+</td>
+<td class="size">32.1 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="d4eaf49a1cbbb927caf7d647fe24f1ce" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/revisions.html">revisions.html</a>
+</td>
+<td class="size">13.8 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="7f2c8eab20a1da116727add73e240e30" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/settings.html">settings.html</a>
+</td>
+<td class="size">46.3 KB</td>
+<td class="revision"><a title="Revision a0e2833b" href="projects/sample/repository/revisions/a0e2833b650d3be41c58d3a1baa5323d2b130506">a0e2833b</a></td>
+<td class="age">11 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#75 Add a drag-and-drop handle</td>
+</tr>
+<tr id="a08a0a3f28f3f95535f4114f5a2cd4a7" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/syntaxhighlight.html">syntaxhighlight.html</a>
+</td>
+<td class="size">18.4 KB</td>
+<td class="revision"><a title="Revision 05c42af0" href="projects/sample/repository/revisions/05c42af0b07d57b1084b8af1b42f0dbe1f3e9eac">05c42af0</a></td>
+<td class="age">4 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#93 Fixed problem where diff foreground color a...</td>
+</tr>
+<tr id="531fc39a1fbd62bff7ca2de48f1d8a45" class="25d902c24283ab8cfbac54dfa101ad31 entry file">
+<td style="padding-left: 18px;" class="filename">
+<a class="icon icon-file text-html" href="projects/sample/repository/revisions/master/entry/src/wiki.html">wiki.html</a>
+</td>
+<td class="size">13.1 KB</td>
+<td class="revision"><a title="Revision 4b1c2e6e" href="projects/sample/repository/revisions/4b1c2e6e9b699aaa88020158f0258147638727a8">4b1c2e6e</a></td>
+<td class="age">4 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#91 Support the code tag</td>
+</tr>
+
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/.gitignore">.gitignore</a>
+</td>
+<td class="size">102 Bytes</td>
+<td class="revision"><a title="Revision 61ec29aa" href="projects/sample/repository/revisions/61ec29aa7f676941e2fc581dea2d5ce2903a7e81">61ec29aa</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#61 Add a plugin css and images</td>
+</tr>
+<tr id="4ac32a78649ca5bdd8e0ba38b7006a1e" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file text-plain" href="projects/sample/repository/revisions/master/entry/CHANGELOG.md">CHANGELOG.md</a>
+</td>
+<td class="size">6.57 KB</td>
+<td class="revision"><a title="Revision 28d281b9" href="projects/sample/repository/revisions/28d281b9340f395e3091e4f405576bce0f8ef32c">28d281b9</a></td>
+<td class="age">3 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#97 Release v1.2.3</td>
+</tr>
+<tr id="61e0bdf7e1b43c5c93d9488b22e04170" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file text-plain" href="projects/sample/repository/revisions/master/entry/LICENSE.txt">LICENSE.txt</a>
+</td>
+<td class="size">17.6 KB</td>
+<td class="revision"><a title="Revision ee1119c5" href="projects/sample/repository/revisions/ee1119c5d244ecd873f72e209251ba650d4823c6">ee1119c5</a></td>
+<td class="age">almost 2 years</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#3 リリース用に README と gulpfile を更新
+コピーに際して LICENSE...</td>
+</tr>
+<tr id="5b3275674ac26beb783a8abc3aa82ff2" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file text-plain" href="projects/sample/repository/revisions/master/entry/README.ja.md">README.ja.md</a>
+</td>
+<td class="size">1.61 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="04c6e90faac2675aa89e2176d2eec7d8" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file text-plain" href="projects/sample/repository/revisions/master/entry/README.md">README.md</a>
+</td>
+<td class="size">1.49 KB</td>
+<td class="revision"><a title="Revision 6458d196" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b">6458d196</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Fix a title text</td>
+</tr>
+<tr id="23b6f443c01ea2efcb4f36eedfea9089" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file " href="projects/sample/repository/revisions/master/entry/Vagrantfile">Vagrantfile</a>
+</td>
+<td class="size">4.74 KB</td>
+<td class="revision"><a title="Revision 9ed8f33f" href="projects/sample/repository/revisions/9ed8f33f3790d8802b3701934f87b60d6cd24900">9ed8f33f</a></td>
+<td class="age">about 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#70 Update a vagrant box for Redmine v3.3</td>
+</tr>
+<tr id="b9cfc7f2cdf78a7f4b91a753d10865a2" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file application-json" href="projects/sample/repository/revisions/master/entry/package.json">package.json</a>
+</td>
+<td class="size">2.49 KB</td>
+<td class="revision"><a title="Revision 28d281b9" href="projects/sample/repository/revisions/28d281b9340f395e3091e4f405576bce0f8ef32c">28d281b9</a></td>
+<td class="age">3 months</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#97 Release v1.2.3</td>
+</tr>
+<tr id="3c63cc4a1a9ac7b8bbd031690ee80095" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file image-png" href="projects/sample/repository/revisions/master/entry/ss.png">ss.png</a>
+</td>
+<td class="size">43.7 KB</td>
+<td class="revision"><a title="Revision 993a9fa6" href="projects/sample/repository/revisions/993a9fa6bf708c71ec02ada84412a6fc15e03944">993a9fa6</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#51 Add screenshots</td>
+</tr>
+<tr id="bb368094fe7228864213758e854f8caf" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file image-png" href="projects/sample/repository/revisions/master/entry/ss2.png">ss2.png</a>
+</td>
+<td class="size">45.4 KB</td>
+<td class="revision"><a title="Revision 993a9fa6" href="projects/sample/repository/revisions/993a9fa6bf708c71ec02ada84412a6fc15e03944">993a9fa6</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#51 Add screenshots</td>
+</tr>
+<tr id="9df6a16ab9fd31040db8e42c1f03a322" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file image-png" href="projects/sample/repository/revisions/master/entry/ss3.png">ss3.png</a>
+</td>
+<td class="size">57.4 KB</td>
+<td class="revision"><a title="Revision 993a9fa6" href="projects/sample/repository/revisions/993a9fa6bf708c71ec02ada84412a6fc15e03944">993a9fa6</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#51 Add screenshots</td>
+</tr>
+<tr id="30bf50cbffb389a6d7a6e24b0d18eea1" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file image-png" href="projects/sample/repository/revisions/master/entry/ss4.png">ss4.png</a>
+</td>
+<td class="size">73.1 KB</td>
+<td class="revision"><a title="Revision 993a9fa6" href="projects/sample/repository/revisions/993a9fa6bf708c71ec02ada84412a6fc15e03944">993a9fa6</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#51 Add screenshots</td>
+</tr>
+<tr id="cb83ac4eb568a20da99c6b7d3b66e9bb" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file image-png" href="projects/sample/repository/revisions/master/entry/ss5.png">ss5.png</a>
+</td>
+<td class="size">45.8 KB</td>
+<td class="revision"><a title="Revision 993a9fa6" href="projects/sample/repository/revisions/993a9fa6bf708c71ec02ada84412a6fc15e03944">993a9fa6</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#51 Add screenshots</td>
+</tr>
+<tr id="549a768adc7014ae7188628829b6afbe" class=" entry file">
+<td style="padding-left: 0px;" class="filename">
+<a class="icon icon-file image-png" href="projects/sample/repository/revisions/master/entry/ss6.png">ss6.png</a>
+</td>
+<td class="size">40.5 KB</td>
+<td class="revision"><a title="Revision 993a9fa6" href="projects/sample/repository/revisions/993a9fa6bf708c71ec02ada84412a6fc15e03944">993a9fa6</a></td>
+<td class="age">over 1 year</td>
+<td class="author">Redmine Admin</td>
+<td class="comments">#51 Add screenshots</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"6af719296215359a5ad5db209e4edc98b0b10ac1":{"parent_scmids":["327276e21a7a3e9e9eabb2ca4e325f5d3b2f39aa"],"rdmid":0,"refs":null,"scmid":"6af719296215359a5ad5db209e4edc98b0b10ac1","href":"/projects/sample/repository/revisions/6af719296215359a5ad5db209e4edc98b0b10ac1","space":0},"8258f4322384af298252e6e81ef765bb995d6769":{"parent_scmids":["c48d7d7d1f475d0aea9f4d538a89b1fd42e089c6","6af719296215359a5ad5db209e4edc98b0b10ac1"],"rdmid":1,"refs":null,"scmid":"8258f4322384af298252e6e81ef765bb995d6769","href":"/projects/sample/repository/revisions/8258f4322384af298252e6e81ef765bb995d6769","space":0},"c204637a150621b008089d875af2bbd509a8b5ce":{"parent_scmids":["6af719296215359a5ad5db209e4edc98b0b10ac1"],"rdmid":2,"refs":null,"scmid":"c204637a150621b008089d875af2bbd509a8b5ce","href":"/projects/sample/repository/revisions/c204637a150621b008089d875af2bbd509a8b5ce","space":1},"4b1c2e6e9b699aaa88020158f0258147638727a8":{"parent_scmids":["c204637a150621b008089d875af2bbd509a8b5ce"],"rdmid":3,"refs":null,"scmid":"4b1c2e6e9b699aaa88020158f0258147638727a8","href":"/projects/sample/repository/revisions/4b1c2e6e9b699aaa88020158f0258147638727a8","space":1},"ef9b35ddb301dd5c0f7af72f2208639d9f8d3153":{"parent_scmids":["8258f4322384af298252e6e81ef765bb995d6769","4b1c2e6e9b699aaa88020158f0258147638727a8"],"rdmid":4,"refs":null,"scmid":"ef9b35ddb301dd5c0f7af72f2208639d9f8d3153","href":"/projects/sample/repository/revisions/ef9b35ddb301dd5c0f7af72f2208639d9f8d3153","space":0},"5465579c1b7d1a2af420f81ee2ecea69beee3f8f":{"parent_scmids":["4b1c2e6e9b699aaa88020158f0258147638727a8"],"rdmid":5,"refs":null,"scmid":"5465579c1b7d1a2af420f81ee2ecea69beee3f8f","href":"/projects/sample/repository/revisions/5465579c1b7d1a2af420f81ee2ecea69beee3f8f","space":1},"eb767fc95de251643a208b0ef5724150aa074890":{"parent_scmids":["5465579c1b7d1a2af420f81ee2ecea69beee3f8f"],"rdmid":6,"refs":null,"scmid":"eb767fc95de251643a208b0ef5724150aa074890","href":"/projects/sample/repository/revisions/eb767fc95de251643a208b0ef5724150aa074890","space":1},"28d281b9340f395e3091e4f405576bce0f8ef32c":{"parent_scmids":["eb767fc95de251643a208b0ef5724150aa074890"],"rdmid":7,"refs":null,"scmid":"28d281b9340f395e3091e4f405576bce0f8ef32c","href":"/projects/sample/repository/revisions/28d281b9340f395e3091e4f405576bce0f8ef32c","space":1},"3934a1796e4c9fd397dc8112fa5c480e7cec5136":{"parent_scmids":["28d281b9340f395e3091e4f405576bce0f8ef32c"],"rdmid":8,"refs":null,"scmid":"3934a1796e4c9fd397dc8112fa5c480e7cec5136","href":"/projects/sample/repository/revisions/3934a1796e4c9fd397dc8112fa5c480e7cec5136","space":1},"6a201673b2ee95e156b1fc85f3f6b00a6bee8014":{"parent_scmids":["ef9b35ddb301dd5c0f7af72f2208639d9f8d3153","3934a1796e4c9fd397dc8112fa5c480e7cec5136"],"rdmid":9,"refs":"master","scmid":"6a201673b2ee95e156b1fc85f3f6b00a6bee8014","href":"/projects/sample/repository/revisions/6a201673b2ee95e156b1fc85f3f6b00a6bee8014","space":0}},
+    1
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"><svg height="428.9000244140625" version="1.1" width="41" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; top: -0.133362px;"><path style="" fill="none" stroke="#bf0000" d="M11,60.20001220703125C11,60.20001220703125,11,79.60000610351562,21,79.60000610351562C21,79.60000610351562,31,79.60000610351562,31,99" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf0000" d="M11,60.20001220703125V254.2000732421875" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf5600" d="M31,99V137.800048828125" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf5600" d="M31,137.800048828125V176.60003662109375" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf5600" d="M31,176.60003662109375V215.4000244140625" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf5600" d="M31,215.4000244140625V293" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf0000" d="M11,254.2000732421875C11,254.2000732421875,11,273.60003662109375,21,273.60003662109375C21,273.60003662109375,31,273.60003662109375,31,293" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf0000" d="M11,254.2000732421875V370.60009765625" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf5600" d="M31,293V331.800048828125" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf5600" d="M31,331.800048828125C31,331.800048828125,31,370.60003662109375,21,370.60003662109375C21,370.60003662109375,11,370.60003662109375,11,409.4000244140625" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf0000" d="M11,370.60009765625V409.4000244140625" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf0000" d="M11,370.60009765625V428.9000244140625" stroke-width="1.5"></path><path style="" fill="none" stroke="#bf0000" d="M11,409.4000244140625V428.9000244140625" stroke-width="1.5"></path><desc>Created with Raphaël 2.1.0</desc><defs></defs><circle cx="11" cy="409.4000244140625" r="3" fill="#bf0000" stroke="none" style=""></circle><circle cx="11" cy="370.60009765625" r="3" fill="#bf0000" stroke="none" style=""></circle><circle cx="31" cy="331.800048828125" r="3" fill="#bf5600" stroke="none" style=""></circle><circle cx="31" cy="293" r="3" fill="#bf5600" stroke="none" style=""></circle><circle cx="11" cy="254.2000732421875" r="3" fill="#bf0000" stroke="none" style=""></circle><circle cx="31" cy="215.4000244140625" r="3" fill="#bf5600" stroke="none" style=""></circle><circle cx="31" cy="176.60003662109375" r="3" fill="#bf5600" stroke="none" style=""></circle><circle cx="31" cy="137.800048828125" r="3" fill="#bf5600" stroke="none" style=""></circle><circle cx="31" cy="99" r="3" fill="#bf5600" stroke="none" style=""></circle><circle cx="11" cy="60.20001220703125" r="3" fill="#bf0000" stroke="none" style=""></circle><a xlink:href="/projects/sample/repository/revisions/6af719296215359a5ad5db209e4edc98b0b10ac1"><circle cx="11" cy="409.4000244140625" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/8258f4322384af298252e6e81ef765bb995d6769"><circle cx="11" cy="370.60009765625" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/c204637a150621b008089d875af2bbd509a8b5ce"><circle cx="31" cy="331.800048828125" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/4b1c2e6e9b699aaa88020158f0258147638727a8"><circle cx="31" cy="293" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/ef9b35ddb301dd5c0f7af72f2208639d9f8d3153"><circle cx="11" cy="254.2000732421875" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/5465579c1b7d1a2af420f81ee2ecea69beee3f8f"><circle cx="31" cy="215.4000244140625" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/eb767fc95de251643a208b0ef5724150aa074890"><circle cx="31" cy="176.60003662109375" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/28d281b9340f395e3091e4f405576bce0f8ef32c"><circle cx="31" cy="137.800048828125" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/3934a1796e4c9fd397dc8112fa5c480e7cec5136"><circle cx="31" cy="99" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"></circle></a><a xlink:href="/projects/sample/repository/revisions/6a201673b2ee95e156b1fc85f3f6b00a6bee8014"><circle cx="11" cy="60.20001220703125" r="10" fill="#000000" stroke="#000" style="opacity: 0; cursor: pointer;" opacity="0"><title>master</title></circle></a></svg></div>
+
+
+<form action="/projects/sample/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 6a201673" href="projects/sample/repository/revisions/6a201673b2ee95e156b1fc85f3f6b00a6bee8014">6a201673</a>
+</td><td class="checkbox"><input name="rev" id="cb-1" value="6a201673b2ee95e156b1fc85f3f6b00a6bee8014" onclick="$('#cbto-2').prop('checked',true);" checked="checked" type="radio"></td>
+<td class="checkbox"></td>
+<td class="committed_on">04/25/2017 11:53 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>Merge branch 'develop'</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 3934a179" href="projects/sample/repository/revisions/3934a1796e4c9fd397dc8112fa5c480e7cec5136">3934a179</a>
+</td><td class="checkbox"><input name="rev" id="cb-2" value="3934a1796e4c9fd397dc8112fa5c480e7cec5136" onclick="$('#cbto-3').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-2" value="3934a1796e4c9fd397dc8112fa5c480e7cec5136" onclick="if ($('#cb-2').prop('checked')) {$('#cb-1').prop('checked',true);}" checked="checked" type="radio"></td>
+<td class="committed_on">04/18/2017 11:50 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#100 Redmine v3.3 support</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 28d281b9" href="projects/sample/repository/revisions/28d281b9340f395e3091e4f405576bce0f8ef32c">28d281b9</a>
+</td><td class="checkbox"><input name="rev" id="cb-3" value="28d281b9340f395e3091e4f405576bce0f8ef32c" onclick="$('#cbto-4').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-3" value="28d281b9340f395e3091e4f405576bce0f8ef32c" onclick="if ($('#cb-3').prop('checked')) {$('#cb-2').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">04/05/2017 10:47 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#97 Release v1.2.3</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision eb767fc9" href="projects/sample/repository/revisions/eb767fc95de251643a208b0ef5724150aa074890">eb767fc9</a>
+</td><td class="checkbox"><input name="rev" id="cb-4" value="eb767fc95de251643a208b0ef5724150aa074890" onclick="$('#cbto-5').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-4" value="eb767fc95de251643a208b0ef5724150aa074890" onclick="if ($('#cb-4').prop('checked')) {$('#cb-3').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">04/05/2017 10:46 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#99 Update the normalize.css</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 5465579c" href="projects/sample/repository/revisions/5465579c1b7d1a2af420f81ee2ecea69beee3f8f">5465579c</a>
+</td><td class="checkbox"><input name="rev" id="cb-5" value="5465579c1b7d1a2af420f81ee2ecea69beee3f8f" onclick="$('#cbto-6').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-5" value="5465579c1b7d1a2af420f81ee2ecea69beee3f8f" onclick="if ($('#cb-5').prop('checked')) {$('#cb-4').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">04/05/2017 10:45 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#96 Implement CSS differences from Redmine v3.3.0 to 3.3.2</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision ef9b35dd" href="projects/sample/repository/revisions/ef9b35ddb301dd5c0f7af72f2208639d9f8d3153">ef9b35dd</a>
+</td><td class="checkbox"><input name="rev" id="cb-6" value="ef9b35ddb301dd5c0f7af72f2208639d9f8d3153" onclick="$('#cbto-7').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-6" value="ef9b35ddb301dd5c0f7af72f2208639d9f8d3153" onclick="if ($('#cb-6').prop('checked')) {$('#cb-5').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">03/05/2017 09:15 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>Merge branch 'develop'</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 4b1c2e6e" href="projects/sample/repository/revisions/4b1c2e6e9b699aaa88020158f0258147638727a8">4b1c2e6e</a>
+</td><td class="checkbox"><input name="rev" id="cb-7" value="4b1c2e6e9b699aaa88020158f0258147638727a8" onclick="$('#cbto-8').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-7" value="4b1c2e6e9b699aaa88020158f0258147638727a8" onclick="if ($('#cb-7').prop('checked')) {$('#cb-6').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">03/05/2017 09:14 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#91 Support the code tag</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision c204637a" href="projects/sample/repository/revisions/c204637a150621b008089d875af2bbd509a8b5ce">c204637a</a>
+</td><td class="checkbox"><input name="rev" id="cb-8" value="c204637a150621b008089d875af2bbd509a8b5ce" onclick="$('#cbto-9').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-8" value="c204637a150621b008089d875af2bbd509a8b5ce" onclick="if ($('#cb-8').prop('checked')) {$('#cb-7').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">03/05/2017 08:45 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#95 Update the npm</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 8258f432" href="projects/sample/repository/revisions/8258f4322384af298252e6e81ef765bb995d6769">8258f432</a>
+</td><td class="checkbox"><input name="rev" id="cb-9" value="8258f4322384af298252e6e81ef765bb995d6769" onclick="$('#cbto-10').prop('checked',true);" type="radio"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-9" value="8258f4322384af298252e6e81ef765bb995d6769" onclick="if ($('#cb-9').prop('checked')) {$('#cb-8').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">03/04/2017 05:33 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>Merge branch 'develop'</p></td>
+</tr>
+<tr class="changeset">
+<td class="id" style="padding-left:40px">
+  <a title="Revision 6af71929" href="projects/sample/repository/revisions/6af719296215359a5ad5db209e4edc98b0b10ac1">6af71929</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input name="rev_to" id="cbto-10" value="6af719296215359a5ad5db209e4edc98b0b10ac1" onclick="if ($('#cb-10').prop('checked')) {$('#cb-9').prop('checked',true);}" type="radio"></td>
+<td class="committed_on">03/04/2017 05:31 AM</td>
+<td class="author"><a class="user active" href="users/1">Redmine Admin</a></td>
+<td class="comments"><p>#92 Fix a version color visibility in gantt</p></td>
+</tr>
+</tbody>
+</table>
+<input value="View differences" type="submit">
+</form></div>
+
+  <p>
+    <a href="projects/sample/repository/revisions">View all revisions</a>
+    |
+    <a href="projects/sample/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="projects/sample/repository/revisions.atom?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">Atom</a></span>
+</p>
+
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display: none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>

@@ -134,7 +134,7 @@ li {
   position relative
 }
 #header a {
-  color color_gray_lightness
+  color color_gray_light_c
 }
 #header h1 {
   overflow hidden
@@ -161,6 +161,10 @@ li {
       color color_red
     }
   }
+}
+
+#header h1 .current-project {
+  margin-left .2em
 }
 
 #quick-search {
@@ -193,8 +197,6 @@ li {
   height 24px
   box-sizing border-box
   vertical-align middle
-  border 1px solid color_gray
-  border-radius 3px
 }
 
 #main-menu {
@@ -380,7 +382,8 @@ html > body #content {
 #login-form {
   margin 5em auto 2em auto
   padding 20px
-  width 340px
+  width 100%
+  max-width 480px
   border 1px solid color_orange
   background-color color_orange_light
   border-radius 4px
@@ -478,8 +481,8 @@ a.user.locked, a.user.locked:link, a.user.locked:visited {
 
 #sidebar a.selected {
   line-height 1.7em
-  padding .1em .3em .2em .2em
-  background-color color_blue
+  padding .2em 1em
+  background-color color_indigo
   color color_white
   border-radius .2em
 }
@@ -490,8 +493,8 @@ a.user.locked, a.user.locked:link, a.user.locked:visited {
   line-height 1.7em
 }
 #admin-menu a.selected {
-  padding-left 20px !important
-  background-position 2px 40%
+  //padding-left 20px !important
+  //background-position 2px 40%
 }
 
 a.collapsible:before {
@@ -526,6 +529,7 @@ a.toggle-checkboxes:before {
   user-select none
   -moz-user-select none
   -webkit-user-select none
+  font-size .8em
 }
 .drdn-content {
   display none
@@ -534,8 +538,7 @@ a.toggle-checkboxes:before {
   top 25px
   min-width 100px
   background-color color_white
-  border 1px solid color_gray
-  border-radius 4px
+  border 1px solid color_indigo
   color color_gray_dark
   z-index 99
 }
@@ -562,7 +565,7 @@ a.toggle-checkboxes:before {
   overflow auto
 }
 div + .drdn-items {
-  border-top 1px solid color_gray
+  border-top 1px solid color_gray_dark
 }
 .drdn-items > * {
   display block
@@ -607,11 +610,9 @@ div + .drdn-items {
 }
 #project-jump .drdn-trigger {
   display inline-block
-  border-radius 3px
-  border 1px solid color_gray
   margin 0 !important
   vertical-align middle
-  color color_gray_darkness
+  color color_gray_dark
 }
 #project-jump .drdn-content {
   width 280px
@@ -628,14 +629,14 @@ table.list, .table-list {
 table.list th, .table-list-header {
   border 1px solid color_gray_light_a
   background-color color_gray_light_b
-  padding .5em
+  padding .3em .5em
   white-space nowrap
   font-weight normal
 }
 table.list td {
   border 1px solid color_gray_light_a
   text-align center
-  padding .3em
+  padding .3em .5em
 }
 table.list td.id {
   width 2%
@@ -696,10 +697,10 @@ tr.project td.name a {
   white-space nowrap
 }
 tr.project.closed, tr.project.archived {
-  color color_gray_light
+  color color_gray_light_a
 }
 tr.project.closed a, tr.project.archived a {
-  color color_gray_light
+  color color_gray_light_a
 }
 
 tr.project.idnt td.name span:before {
@@ -952,7 +953,7 @@ tr.changeset ul, ol {
 }
 tr.changeset td.revision_graph {
   width 15%
-  background-color color_gray_lightness
+  background-color color_gray_light_c
 }
 tr.changeset td.author {
   text-align center
@@ -1141,7 +1142,7 @@ table.list tbody tr.group:hover {
   background-color inherit
 }
 table td {
-  padding .3em
+  padding 2px
 }
 table p {
   margin 0
@@ -1160,9 +1161,11 @@ tr.builtin td.name {
 
 a.sort.asc:after  {
   icon(icon_chevron_up, color_gray_dark)
+  margin-left .2em
 }
 a.sort.desc:after {
   icon(icon_chevron_down, color_gray_dark)
+  margin-left .2em
 }
 
 table.boards a.board, h3.comments {
@@ -1332,7 +1335,7 @@ fieldset {
   margin 0
 }
 legend {
-  color color_gray_darkness
+  color color_gray_dark
 }
 hr {
   width 100%
@@ -1341,17 +1344,16 @@ hr {
   border 0
 }
 blockquote {
-  font-style italic
-  background-color color_gray_light
-  border-left 2px solid color_green
+  border-left 2px solid color_gray
   padding 0 .5em
   margin 1em
+  color color_gray
 }
 blockquote blockquote {
   margin-left 0
 }
 abbr, span[title] {
-  border-bottom 1px dotted color_gray_light
+  border-bottom 1px dotted color_gray_light_a
   cursor help
 }
 textarea.wiki-edit {
@@ -1548,7 +1550,7 @@ div#issue-changesets {
 }
 div#issue-changesets div.changeset {
   padding 4px
-  border-bottom 1px solid color_gray_light
+  border-bottom 1px solid color_gray_light_a
 }
 div#issue-changesets p {
   margin-top 0
@@ -1680,7 +1682,7 @@ table#time-report tbody tr.subtotal td.hours {
 }
 table#time-report tbody tr.total {
   font-weight bold
-  background-color color_gray_light
+  background-color color_gray_light_a
   border-top 1px solid color_gray
 }
 table#time-report .hours-dec {
@@ -1878,7 +1880,7 @@ table.transitions td.enabled {
   max-width 100px
 }
 table.fields_permissions td.readonly {
-  background color_gray_light
+  background color_gray_light_a
 }
 table.fields_permissions td.required {
   background color_orange_dark
@@ -2381,7 +2383,7 @@ div.flash.tip:before {
 /***** Ajax indicator ******/
 #ajax-indicator {
   position absolute // fixed not supported by IE
-  background-color color_gray_lightness
+  background-color color_gray_light_c
   border 1px solid color_gray
   top 35%
   left 40%
@@ -2801,13 +2803,13 @@ a.wiki-anchor {
   text-decoration none
 }
 a.wiki-anchor:hover {
-  color color_gray_light !important
+  color color_gray_light_a !important
   text-decoration none
 }
 
 h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor {
   display inline
-  color color_gray_lightness
+  color color_gray_light_c
 }
 
 div.wiki img {
@@ -2817,10 +2819,6 @@ div.wiki img {
 
 .wiki {
   padding 0 .5em 1em
-
-  &.wiki-page {
-    border-bottom solid 1px color_gray_light_a
-  }
 
   &.description {
     padding 0
@@ -2853,10 +2851,15 @@ div.wiki img {
   code {
     padding .2em .5em
     border-radius .2em
-    background-color color_syntax_back
-    color color_syntax_base
+    background-color color_gray_light_b
+    color color_indigo
     font-family "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
     font-size .9em
+
+    .CodeRay {
+      background-color color_syntax_back
+      color color_syntax_base
+    }
   }
 
   p {
@@ -2867,7 +2870,6 @@ div.wiki img {
 #attach_files_link:before {
   icon(icon_add, color_green)
 }
-
 
 /***** My page layout *****/
 .block-receiver {
@@ -2882,7 +2884,7 @@ div.wiki img {
   border 1px solid color_gray
   padding 8px
   margin 0 0 20px 0
-  color color_gray_darkness
+  color color_gray_dark
   line-height 1.5em
 }
 
@@ -2923,6 +2925,7 @@ a.close-icon:hover {
   border-right 1px solid color_gray_light_a
   text-align center
   overflow hidden
+  font-size .8em
 }
 
 .gantt_hdr.nwday {
@@ -2953,9 +2956,10 @@ a.close-icon:hover {
 
 .task.label {
   width 100%
+  margin-top -2px
 }
 .task.label.project, .task.label.version {
-  font-weight bold
+  margin-left .3em
 }
 
 .task_late {
@@ -3102,7 +3106,7 @@ a.icon-only {
   background-image url(../images/loading.gif)
 }
 tr.ui-sortable-helper {
-  border 1px solid color_gray_light
+  border 1px solid color_gray_light_a
 }
 
 .contextual > *:not(:first-child), .buttons > .icon:not(:first-child) {
@@ -3127,18 +3131,20 @@ div.gravatar-with-child > img.gravatar:nth-child(2) {
   position absolute
   top 30px
   left 30px
-  border-radius 20%
-  border 2px solid rgba(255, 255, 255, 0.9)
+  border-radius 50%
+  border 1px solid color_white
+  background-color color_white
+  padding 2px
 }
 
 h2 img.gravatar {
-  margin -2px 4px -4px 0
+  margin .3em 0
 }
 h3 img.gravatar {
-  margin -4px 4px -4px 0
+  margin .3em 0
 }
 h4 img.gravatar {
-  margin -2px 4px -4px 0
+  margin .3em 0
 }
 td.username img.gravatar {
   margin 0 .5em 0 0

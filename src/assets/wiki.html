@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Sample - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="raPjnqZWzNMVlf6ejqUGkOm4ZMie8Spiv59bcyvxJaTzt7IhbI9HTtYYjHuQQ88Pdm+109Dd5qEdhrjB41DXJA==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="wiki_files/theme.js"></script>
+
+<!-- page specific tags -->
+  <script src="wiki_files/attachments.js"></script>
+</head>
+<body class="theme-Minimalflat2 project-sample controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="wiki_pages" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="wiki_files/c265a1a7dadb2713ff2262025e91d133.png"></a>
+            <a class="user active" href="users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
+    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="wiki_pages" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=wiki" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=wiki"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=wiki">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki selected" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="repository" href="projects/sample/repository">Repository</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="projects/sample/wiki">Start page</a></li>
+  <li><a href="projects/sample/wiki/index">Index by title</a></li>
+  <li><a href="projects/sample/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+
+    </div>
+
+    <div id="content">
+
+        <div class="contextual">
+<a class="icon icon-add" data-remote="true" href="projects/sample/wiki/new">New wiki page</a>
+  <a class="icon icon-edit" accesskey="e" href="projects/sample/wiki/Sample/edit">Edit</a>
+  <a class="wiki_page-3-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="watchers/watch?object_id=3&amp;object_type=wiki_page">Watch</a>
+  <a class="icon icon-lock" rel="nofollow" data-method="post" href="projects/sample/wiki/Sample/protect?protected=1">Lock</a>
+
+  <a class="icon icon-move" href="projects/sample/wiki/Sample/rename">Rename</a>
+  <a data-confirm="Are you sure?" class="icon icon-del" rel="nofollow" data-method="delete" href="projects/sample/wiki/Sample">Delete</a>
+<a class="icon icon-history" href="projects/sample/wiki/Sample/history">History</a>
+</div>
+
+<p class="breadcrumb"><a href="projects/sample/wiki/Wiki">Wiki</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Wiki"></a>
+<h1>Wiki<a href="#Wiki" class="wiki-anchor">¶</a></h1>
+
+<ul class="toc right"><li><strong>Table of contents</strong></li><li><a href="#Wiki">Wiki</a><ul><li><a href="#Header-2">Header 2</a><ul><li><a href="#Header-3">Header 3</a><ul><li><a href="#Header-4">Header 4</a></li></ul>
+</li></ul>
+</li><li><a href="#Normal-List">Normal List</a></li><li><a href="#Order-List">Order List</a></li><li><a href="#Table">Table</a></li><li><a href="#Code">Code</a></li><li><a href="#Article">Article</a></li><li><a href="#Misc">Misc</a></li></ul></li></ul>
+
+<p>Wiki sample and other.</p>
+
+<div class="contextual heading-2" title="Edit this section" id="section-2"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=2">Edit this section</a></div><a name="Header-2"></a>
+<h2>Header 2<a href="#Header-2" class="wiki-anchor">¶</a></h2>
+
+<div class="contextual heading-3" title="Edit this section" id="section-3"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=3">Edit this section</a></div><a name="Header-3"></a>
+<h3>Header 3<a href="#Header-3" class="wiki-anchor">¶</a></h3>
+
+<div class="contextual heading-4" title="Edit this section" id="section-4"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=4">Edit this section</a></div><a name="Header-4"></a>
+<h4>Header 4<a href="#Header-4" class="wiki-anchor">¶</a></h4>
+
+<div class="contextual heading-5" title="Edit this section" id="section-5"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=5">Edit this section</a></div><a name="Header-5"></a>
+<h5>Header 5<a href="#Header-5" class="wiki-anchor">¶</a></h5>
+
+<div class="contextual heading-6" title="Edit this section" id="section-6"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=6">Edit this section</a></div><a name="Header-6"></a>
+<h6>Header 6<a href="#Header-6" class="wiki-anchor">¶</a></h6>
+
+<div class="contextual heading-2" title="Edit this section" id="section-7"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=7">Edit this section</a></div><a name="Normal-List"></a>
+<h2>Normal List<a href="#Normal-List" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>Value
+
+<ul>
+<li>Value</li>
+<li>Value</li>
+</ul></li>
+<li>Value
+
+<ul>
+<li>Value</li>
+<li>Value</li>
+<li>Value</li>
+<li>Value</li>
+</ul></li>
+<li>Value</li>
+</ul>
+
+<div class="contextual heading-2" title="Edit this section" id="section-8"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=8">Edit this section</a></div><a name="Order-List"></a>
+<h2>Order List<a href="#Order-List" class="wiki-anchor">¶</a></h2>
+
+<ol>
+<li>Step</li>
+<li>Step</li>
+<li><p>Step</p></li>
+<li><p>Step</p>
+
+<ul>
+<li>Value</li>
+<li>Value</li>
+</ul></li>
+<li><p>Step</p>
+
+<ul>
+<li>Value</li>
+</ul></li>
+<li><p>Step</p>
+
+<ul>
+<li>Value</li>
+</ul></li>
+</ol>
+
+<div class="contextual heading-2" title="Edit this section" id="section-9"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=9">Edit this section</a></div><a name="Table"></a>
+<h2>Table<a href="#Table" class="wiki-anchor">¶</a></h2>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th style="text-align: center">Header</th>
+<th style="text-align: left">Header</th>
+<th style="text-align: right">Header</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Value</td>
+<td style="text-align: center">Value</td>
+<td style="text-align: left">Value</td>
+<td style="text-align: right">Value</td>
+</tr>
+<tr>
+<td>Value</td>
+<td style="text-align: center">Value</td>
+<td style="text-align: left">Value</td>
+<td style="text-align: right">Value</td>
+</tr>
+<tr>
+<td>Value</td>
+<td style="text-align: center">Value</td>
+<td style="text-align: left">Value</td>
+<td style="text-align: right">Value</td>
+</tr>
+<tr>
+<td>Value</td>
+<td style="text-align: center">Value</td>
+<td style="text-align: left">Value</td>
+<td style="text-align: right">Value</td>
+</tr>
+</tbody></table>
+
+<div class="contextual heading-2" title="Edit this section" id="section-10"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=10">Edit this section</a></div><a name="Code"></a>
+<h2>Code<a href="#Code" class="wiki-anchor">¶</a></h2>
+<pre>pre text
+</pre><pre><code class="js syntaxhl"><span class="CodeRay"><span class="keyword">function</span> <span class="function">sample</span> (isSample) {
+  <span class="keyword">if</span> (isSample) {
+    console.log(<span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>);
+  }
+}
+</span></code></pre>
+<p>Inline <code>code</code> text.</p>
+
+<div class="contextual heading-2" title="Edit this section" id="section-11"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=11">Edit this section</a></div><a name="Article"></a>
+<h2>Article<a href="#Article" class="wiki-anchor">¶</a></h2>
+
+<p>Soon Lara spotted other landmarks—an outcropping of limestone beside
+the path that had a silhouette like a man’s face, a marshy spot beside
+the river where the waterfowl were easily startled, a tall tree that
+looked like a man with his arms upraised. They were drawing near to the
+place where there was an island in the river. The island was a good spot
+ to make camp. They would sleep on the island tonight.</p>
+
+<p>Lara had been back and forth along the river path many times in her
+short life. Her people had not created the path—it had always been
+there, like the river—but their deerskin-shod feet and the wooden wheels
+ of their handcarts kept the path well worn. Lara’s people were salt
+traders, and their livelihood took them on a continual journey.</p>
+
+<blockquote>
+<p>Soon Lara spotted other landmarks—an outcropping of limestone beside
+the path that had a silhouette like a man’s face, a marshy spot beside
+the river where the waterfowl were easily startled, a tall tree that
+looked like a man with his arms upraised. They were drawing near to the
+place where there was an island in the river. The island was a good spot
+ to make camp. They would sleep on the island tonight.</p>
+
+<p>Lara had been back and forth along the river path many times in her
+short life. Her people had not created the path—it had always been
+there, like the river—but their deerskin-shod feet and the wooden wheels
+ of their handcarts kept the path well worn. Lara’s people were salt
+traders, and their livelihood took them on a continual journey.</p>
+</blockquote>
+
+<p>Issue <a class="issue tracker-1 status-2 priority-2 priority-default created-by-me assigned-to-me" title="Bug: Normal (In Progress)" href="issues/1">#1</a> <a class="issue tracker-1 status-1 priority-1 priority-lowest overdue created-by-me assigned-to-me" title="Bug: Low (New)" href="issues/2">#2</a></p>
+
+<div class="contextual heading-2" title="Edit this section" id="section-12"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=12">Edit this section</a></div><a name="Misc"></a>
+<h2>Misc<a href="#Misc" class="wiki-anchor">¶</a></h2>
+
+<p><a href="http://example.com/" class="external">Link Text</a></p>
+
+<hr>
+
+</div>
+
+
+<fieldset class="collapsible collapsed">
+  <legend onclick="toggleFieldset(this);">Files</legend>
+  <div style="display: none;">
+
+
+
+  <div id="wiki_add_attachment">
+    <form id="add_attachment_form" enctype="multipart/form-data" action="/projects/sample/wiki/Sample/add_attachment" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="raPjnqZWzNMVlf6ejqUGkOm4ZMie8Spiv59bcyvxJaTzt7IhbI9HTtYYjHuQQ88Pdm+109Dd5qEdhrjB41DXJA==" type="hidden">
+      <div class="box filedroplistner">
+      <p>
+<span class="attachments_form">
+  <span class="attachments_fields">
+  </span>
+  <span class="add_attachment" style="">
+    <input name="attachments[dummy][file]" class="file_selector filedrop" multiple="multiple" onchange="addInputFiles(this);" data-max-file-size="5242880" data-max-file-size-message="This file cannot be uploaded because it exceeds the maximum allowed file size (5 MB)" data-max-concurrent-uploads="2" data-upload-path="/uploads.js" data-param="attachments" data-description="true" data-description-placeholder="Optional description" type="file">
+    (Maximum size: 5 MB)
+  </span>
+</span>
+
+</p>
+      </div>
+      <input name="commit" value="Add" type="submit">
+</form>  </div>
+</div>
+</fieldset>
+
+<p class="other-formats">Also available in:  <span><a class="pdf" rel="nofollow" href="projects/sample/wiki/Sample.pdf">PDF</a></span>
+  <span><a class="html" rel="nofollow" href="projects/sample/wiki/Sample.html">HTML</a></span>
+  <span><a class="txt" rel="nofollow" href="projects/sample/wiki/Sample.txt">TXT</a></span>
+</p>
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>
