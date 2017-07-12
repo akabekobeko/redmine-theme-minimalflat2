@@ -30,7 +30,7 @@
   add first breakpoint here and start adding responsiveness
 */
 
-@media screen and ( max-width: 899px ) {
+@media screen and (max-width: 899px) {
   /*----------------------------------------*\
     A) BASIC MOBILE RESETS
   \*----------------------------------------*/
@@ -64,6 +64,15 @@
     -webkit-overflow-scrolling touch
   }
 
+  // Font follows user environment
+  // body,
+  // input,
+  // select,
+  // textarea,
+  // button {
+  //   font-size 14px // Set font-size for standard elements to 14px
+  // }
+
   select {
     max-width 100%  // prevent long names within select menues from breaking content
   }
@@ -74,7 +83,8 @@
     max-width 100%
   }
 
-  #wrapper, #wrapper2 {
+  #wrapper,
+  #wrapper2 {
     margin 0
   }
 
@@ -101,7 +111,7 @@
 
   // reset #header a color for mobile toggle button
   #header a.mobile-toggle-button {
-    color #f8f8f8
+    color color_gray_light_c
   }
 
 
@@ -120,17 +130,40 @@
     background inherit
   }
 
-  // this represents the dropdown arrow to left of the mobile project menu
+  // styles for combobox within quick-search (#project_quick_jump_box) */
+  #project-jump.drdn {
+    position absolute
+    top 0
+    left 0
+
+    width 100%
+    max-width 100%
+    height 2em
+    height 64px
+    padding 5px
+    padding-right 72px
+    padding-left 20px
+  }
+  #project-jump .drdn-trigger {
+    font-size 1.5em
+    font-weight bold
+    display block
+    width 100%
+    color color_white
+    padding-left 24px
+    background transparent
+    height 50px
+    line-height 40px
+    border 0
+  }
+
   #header .jump-box-arrow:before {
     // set a font-size in order to achive same result in different themes
     font-family Verdana, sans-serif
-    font-size 2em
-    line-height 64px
+    font-size 1.5em
 
     position absolute
     left 0
-
-    width 2em
     padding 0 .5em
     // achieve dropdwon arrow by scaling a caret character
     content '^'
@@ -139,41 +172,31 @@
     transform scale(1,-.8)
     text-align right
     pointer-events none
+
     opacity .6
   }
 
-  // styles for combobox within quick-search (#project_quick_jump_box)
-  #header #quick-search select {
-    font-size 1.5em
-    font-weight bold
-    line-height 1.2
+  #project-jump.expanded .drdn-trigger:before {
+    -webkit-transform scale(1,.8)
+    -ms-transform scale(1,.8)
+    transform scale(1,.8)
+    padding-top 8px
+  }
 
+  #project-jump .drdn-content {
     position absolute
-    top 15px
     left 0
-
-    float left
-
+    top 64px
     width 100%
-    max-width 100%
-    height 2em
-    height 35px
-    padding 5px
-    padding-right 72px
-    padding-left 50px
-
-    text-indent .01px
-
-    color inherit
-    border 0
-    -webkit-border-radius 0
-    border-radius 0
-    background none
-    -webkit-box-shadow none
-    box-shadow none
-    // hide default browser arrow
-    -webkit-appearance none
-    -moz-appearance none
+    font-size 15px
+    font-weight normal
+  }
+  #project-jump .drdn-content .autocomplete {
+    height 40px
+    font-size 20px
+  }
+  #project-jump .drdn-content a {
+    padding 8px
   }
 
   #header #quick-search form {
@@ -185,7 +208,7 @@
   \*----------------------------------------*/
 
   #main {
-    padding 0
+    padding 64px 0 0 // padding-top equals header height
   }
 
   #main.nosidebar #content,
@@ -216,334 +239,347 @@
   .mobile-toggle-button {
     font-size 42px
     line-height 64px
+
     position relative
     z-index 10
+
     display block // remove display none of non-mobile version
     float right
+
     width 60px
     height 64px
     margin-top 0
+
     text-align center
-    border-left 1px solid #ddd
 
-    &:hover, &:active {
-      text-decoration none
-    }
+    border-left 1px solid color_gray_light_a
+  }
 
-    &:after {
-      font-family Verdana, sans-serif
-      display block
-      margin-top -3px
-      content '\2261'
-    }
+  .mobile-toggle-button:hover,
+  .mobile-toggle-button:active {
+    text-decoration none
+  }
+
+  .mobile-toggle-button:after {
+    font-family Verdana, sans-serif
+    display block
+    margin-top -3px
+    content '\2261'
   }
 
   // search magnifier icon
   .search-magnifier {
     font-family Verdana
-    color #bbb
+    color color_gray_dark
 
     cursor pointer
     -webkit-transform rotate(-45deg)
     -moz-transform rotate(45deg)
     -o-transform rotate(45deg)
+  }
 
-    &--flyout {
-      font-size 25px
-      line-height 54px
+  .search-magnifier--flyout {
+    font-size 25px
+    line-height 54px
 
-      position absolute
-      z-index 1
-      left 12px
-    }
+    position absolute
+    z-index 1
+    left 12px
   }
 
   // Flyout Menu
+
   .flyout-menu {
     position absolute
     right -250px
+
     display block // remove display none of non-mobile version
     overflow-x hidden
+
     width 250px
     height 100%
     margin 0 // reset margin for themes that define it
     padding 0 // reset padding for themes that define it
+
     color color_white
     background-color color_indigo
-    font-size .8em
+  }
 
-    // avoid zoom on search input focus for ios devices
-    input[type='text'] {
-      font-size 16px
+  // avoid zoom on search input focus for ios devices
+  .flyout-menu input[type='text'] {
+    font-size 16px
+  }
+
+  .flyout-menu h3 {
+    font-size 11px
+    line-height 19px
+
+    height 20px
+    margin 0
+    padding 0
+
+    letter-spacing .1em
+    text-transform uppercase
+
+    color white
+    border-top 1px solid color_indigo_light
+    border-bottom 1px solid color_indigo_light
+    background-color color_indigo_dark
+  }
+
+  .flyout-menu h4 {
+    color white
+  }
+
+  .flyout-menu h3,
+  .flyout-menu h4,
+  .flyout-menu > p,
+  .flyout-menu > a,
+  .flyout-menu ul li a,
+  .flyout-menu__search,
+  .flyout-menu__sidebar > div,
+  .flyout-menu__sidebar > p,
+  .flyout-menu__sidebar > a,
+  .flyout-menu__sidebar > form,
+  .flyout-menu > div,
+  .flyout-menu > form {
+    padding-left 8px
+  }
+
+  .flyout-menu .flyout-menu__avatar {
+    margin-top -1px // move avatar up 1px
+    padding-left 0
+  }
+
+  .flyout-menu__sidebar > form {
+    display block
+  }
+
+  .flyout-menu__sidebar > form h3 {
+    margin-left -8px
+  }
+
+  .flyout-menu__sidebar > form label {
+    display inline-block
+    margin 8px 0
+  }
+
+  .flyout-menu__sidebar > form br br {
+    display none
+  }
+
+  // Targets list containing checkboxes (e.g. activities sidebar) in flyout menu
+  .flyout-menu__sidebar  form > ul {
+    margin-left -8px
+    padding-left 0
+  }
+
+  .flyout-menu__sidebar form > ul li {
+    line-height 39px
+    display block
+    padding-left 8px
+    border-top 1px solid rgba(255,255,255,.1)
+  }
+
+  .flyout-menu__sidebar form > ul li:first-child {
+    border-top none
+  }
+
+  .flyout-menu__sidebar form > ul li label {
+    margin 0
+  }
+
+  .flyout-menu__sidebar form > ul li label a {
+    line-height 1
+    display inline
+    padding-left 0
+    border none
+  }
+
+  .flyout-menu ul {
+    margin 0
+    padding 0
+    list-style none
+
+    li:hover {
+      background-color color_indigo_light
     }
+  }
 
-    h3 {
-      font-size 11px
-      line-height 19px
+  .flyout-menu #watchers {
+    display -webkit-flex
+    display -ms-flexbox
+    display -webkit-box
+    display flex
+    flex-direction column
 
-      height 20px
-      margin 0
-      padding 0
+    -webkit-flex-direction column
+    -ms-flex-direction column
+    -webkit-box-orient vertical
+    -webkit-box-direction normal
+  }
 
-      letter-spacing .1em
-      text-transform uppercase
+  .flyout-menu #watchers .contextual {
+    -webkit-box-ordinal-group 4
+    -webkit-order 3
+    -ms-flex-order 3
+    order 3
+  }
 
-      color white
-      border-top 1px solid color_indigo_light
-      border-bottom 1px solid color_indigo_light
-      background-color color_indigo_dark
-    }
+  .flyout-menu #watchers h3 {
+    margin-left -8px
+  }
 
-    h4 {
-      color white
-    }
+  .flyout-menu #watchers ul li {
+    display -webkit-flex
+    display -ms-flexbox
+    display -webkit-box
+    display flex
+    flex-direction row
 
-    h3,
-    h4,
-    > p,
-    > a,
-    ul li a,
-    &__search,
-    &__sidebar > div,
-    &__sidebar > p,
-    &__sidebar > a,
-    &__sidebar > form,
-    > div,
-    > form {
-      padding-left 8px
-    }
+    -webkit-flex-direction row
+    -ms-flex-direction row
+    -webkit-box-orient horizontal
+    -webkit-box-direction normal
+    -webkit-align-items center
+    -ms-flex-align center
+    -webkit-box-align center
+    align-items center
+  }
 
-    &__avatar {
-      margin-top -1px // move avatar up 1px
-      padding-left 0
-    }
+  .flyout-menu ul li a {
+    line-height 40px
+    display block
+    overflow hidden
+    height 40px
+    white-space nowrap
+    text-overflow ellipsis
+    border-top 1px solid rgba(255,255,255,.1)
+  }
 
-    &__sidebar > form {
-      display block
-    }
+  .flyout-menu ul li:first-child a {
+    line-height 39px
+    height 39px
+    border-top none
+  }
 
-    &__sidebar > form h3 {
-      margin-left -8px
-    }
+  .flyout-menu a {
+    color white
+  }
 
-    &__sidebar > form label {
-      display inline-block
-      margin 8px 0
-    }
+  .flyout-menu ul li a:hover {
+    text-decoration none
+  }
 
-    &__sidebar > form br br {
-      display none
-    }
+  .flyout-menu ul li a.new-object,
+  .new-object ~ .menu-children {
+    display none
+  }
 
-    // Targets list containing checkboxes (e.g. activities sidebar) in flyout menu
-    form > ul {
-      margin-left -8px
-      padding-left 0
-    }
+  // Left flyout search container
+  .flyout-menu__search {
+    line-height 54px
+    height 64px
+    padding-top 3px
+    padding-right 8px
+  }
 
-    &__sidebar form > ul li {
-      line-height 39px
-      display block
-      padding-left 8px
-      border-top 1px solid rgba(255,255,255,.1)
+  .flyout-menu__search input[type='text'] {
+    line-height 2
 
-      &:first-child {
-        border-top none
-      }
+    width 100%
+    height 38px
+    padding-left 27px
 
-      label {
-        margin 0
+    vertical-align middle
 
-        a {
-          line-height 1
-          display inline
-          padding-left 0
-          border none
-        }
-      }
-    }
+    border none
+    -webkit-border-radius 3px
+    border-radius 3px
+    background-color color_white
+  }
 
-    ul {
-      margin 0
-      padding 0
-      list-style none
+  .flyout-menu__avatar {
+    display -webkit-box
+    display -webkit-flex
+    display -ms-flexbox
+    display flex
+    width 100%
+    border-top 1px solid rgba(255,255,255,.1)
+  }
 
-      li {
-        &:hover {
-          background-color color_indigo_light
-        }
+  .flyout-menu__avatar img.gravatar {
+    width 40px
+    height 40px
+    padding 0
+    vertical-align top
+    border-width 0
+  }
 
-        a {
-          line-height 40px
-          display block
-          overflow hidden
-          height 40px
-          white-space nowrap
-          text-overflow ellipsis
-          border-top 1px solid rgba(255,255,255,.1)
+  .flyout-menu__avatar a {
+    line-height 40px
+    height auto
+    height 40px
+    text-decoration none
+    color white
+  }
 
-          &:hover {
-            text-decoration none
-          }
+  // avatar
+  .flyout-menu__avatar a:first-child {
+    line-height 0
+    width 40px
+    padding 0
+  }
 
-          &.new-object,
-          .new-object ~ .menu-children {
-            display none
-          }
-        }
+  .flyout-menu__avatar .user {
+    padding-left 15px
+    padding-right 15px
+    text-overflow ellipsis
+    overflow hidden
+    white-space nowrap
+    -webkit-flex-grow 1
+    -ms-flex-grow 1
+    flex-grow 1
+  }
 
-        &:first-child a {
-          line-height 39px
-          height 39px
-          border-top none
-        }
-      }
-    }
+  // user link when no avatar is present
+  .flyout-menu__avatar--no-avatar a.user {
+    line-height 40px
+    padding-left 8px
+  }
 
-    a {
-      color white
-    }
-
-    #watchers {
-      display -webkit-flex
-      display -ms-flexbox
-      display -webkit-box
-      display flex
-      flex-direction column
-
-      -webkit-flex-direction column
-      -ms-flex-direction column
-      -webkit-box-orient vertical
-      -webkit-box-direction normal
-
-      h3 {
-        margin-left -8px
-      }
-
-      ul li {
-        display -webkit-flex
-        display -ms-flexbox
-        display -webkit-box
-        display flex
-        flex-direction row
-
-        -webkit-flex-direction row
-        -ms-flex-direction row
-        -webkit-box-orient horizontal
-        -webkit-box-direction normal
-        -webkit-align-items center
-        -ms-flex-align center
-        -webkit-box-align center
-        align-items center
-      }
-
-      .contextual {
-        -webkit-box-ordinal-group 4
-        -webkit-order 3
-        -ms-flex-order 3
-        order 3
-      }
-    }
-
-    // Left flyout search container
-    &__search {
-      line-height 54px
-      height 64px
-      padding-top 3px
-      padding-right 8px
-
-      input[type='text'] {
-        line-height 2
-        width 100%
-        height 38px
-        padding-left 27px
-        vertical-align middle
-        border none
-        -webkit-border-radius 3px
-        border-radius 3px
-        background-color color_white
-      }
-    }
-
-    // avatar
-    &__avatar {
-      display -webkit-box
-      display -webkit-flex
-      display -ms-flexbox
-      display flex
-      width 100%
-      border-top 1px solid rgba(255,255,255,.1)
-
-      img.gravatar {
-        width 40px
-        height 40px
-        padding 0
-        vertical-align top
-        border-width 0
-      }
-
-      a {
-        line-height 40px
-        height auto
-        height 40px
-        text-decoration none
-        color white
-
-        &:first-child {
-          line-height 0
-          width 40px
-          padding 0
-        }
-      }
-
-      .user {
-        padding-left 15px
-        padding-right 15px
-        text-overflow ellipsis
-        overflow hidden
-        white-space nowrap
-        -webkit-flex-grow 1
-        -ms-flex-grow 1
-        flex-grow 1
-      }
-
-      // user link when no avatar is present
-      &--no-avatar a.user {
-        line-height 40px
-        padding-left 8px
-      }
-    }
-
+  // minimalflat2 icons
+  .flyout-menu {
     .home:before {
-      icon( icon_home, color_yellow )
+      icon(icon_home, color_yellow)
     }
 
     .my-page:before {
-      icon( icon_user, color_yellow )
+      icon(icon_user, color_yellow)
     }
 
     .projects:before {
-      icon( icon_app, color_yellow )
+      icon(icon_app, color_yellow)
     }
 
     .administration:before {
-      icon( icon_config, color_yellow )
+      icon(icon_config, color_yellow)
     }
 
     .help:before {
-      icon( icon_help_2, color_yellow )
+      icon(icon_help_2, color_yellow)
     }
 
     .my-account:before {
-      icon( icon_config, color_yellow )
+      icon(icon_config, color_yellow)
     }
 
     .login:before {
-      icon( icon_arrow_right, color_yellow )
+      icon(icon_arrow_right, color_yellow)
     }
 
     .logout:before {
-      icon( icon_arrow_left, color_yellow )
+      icon(icon_arrow_left, color_yellow)
     }
   }
 
@@ -605,21 +641,29 @@
   }
 
   // Contextual Buttons
+
   #content >.contextual {
     width 100%
     margin-bottom .5em
     padding-left 0 // reset left padding in order to use whole space
     white-space normal
-    color transparent
   }
 
   #content > .contextual a,
   p.buttons a {
+    font-weight normal
+
     display inline-block
+
     margin .5em 0
     padding .5em
+
+    border 1px solid color_indigo
+    -webkit-border-radius .2em
     border-radius .2em
     background-color color_indigo
+    // background-position-x 4px
+
     color color_white
     font-size .9em
 
@@ -627,6 +671,11 @@
       opacity .8
     }
   }
+
+  // #content>.contextual a.icon,
+  // p.buttons a.icon {
+  //   padding-left 25px
+  // }
 
   .flyout-menu .contextual {
     float none
@@ -666,17 +715,16 @@
   \*----------------------------------------*/
 
   // page /login
-  #login-form {
-    table {
-      width 100%
-    }
 
-    input {
-      #username, #password, #openid_url {
-        width 100%
-        height auto
-      }
-    }
+  #login-form table {
+    width 100%
+  }
+
+  #login-form input#username,
+  #login-form input#password,
+  #login-form input#openid_url {
+    width 100%
+    height auto
   }
 
   // some themes add a margin to login page, remove it on mobile
@@ -691,13 +739,11 @@
   .version-overview table.progress {
     width 75%
   }
-
   div#version-summary {
     float none
     width 100%
     margin-left 0
   }
-
   body.controller-versions.action-show div#roadmap .related-issues {
     width 100%
   }
@@ -715,6 +761,33 @@
     padding-top 1em
   }
 
+  /* Gantt charts */
+  /*
+   * [1] override inline styles with important
+   * [2] keep border between subjects and gantt area
+   * [3] remove whitespace between subjects and gantt area
+   * [4] maintain width due to [3]
+   */
+  .gantt_subjects_column {
+    width 60% !important // [1]
+  }
+
+  .gantt_subjects_container {
+    width 100% !important
+    overflow hidden
+  }
+
+  .gantt_subjects_column .gantt_hdr {
+    width 100% !important
+    border-right 1px solid color_gray_dark // [2]
+    right 0 !important //[2]
+  }
+
+  #gantt_area {
+    left -2px // [3]
+    margin-right -2px // [4]
+  }
+
   /*----------------------------------------*\
     G) FORMS
   \*----------------------------------------*/
@@ -724,27 +797,25 @@
   }
 
   // tabular forms resets for mobile
-  .tabular {
-    p, &.settings p {
-      padding-left 0
-    }
+  .tabular p, .tabular.settings p {
+    padding-left 0
+  }
 
-    label, &.settings label {
-      display block
-      width 100%
-      margin-left 0
-      text-align left
-    }
+  .tabular label, .tabular.settings label {
+    display block
+    width 100%
+    margin-left 0
+    text-align left
+  }
 
-    input, select, textarea {
-      width 100%
-      max-width 100%
-    }
+  .tabular input, .tabular select, .tabular textarea {
+    width 100%
+    max-width 100%
+  }
 
-    input[type="checkbox"], input.date {
-      width auto
-      max-width 95%
-    }
+  .tabular input[type="checkbox"], .tabular input.date {
+    width auto
+    max-width 95%
   }
 
   // new issue form
@@ -758,6 +829,11 @@
 
   span#watchers_inputs {
     width 100%
+  }
+
+  /* issue edit form */
+  label[for='issue_description'] ~ a .icon-edit {
+    word-wrap normal
   }
 
   /* issues page */
@@ -810,47 +886,51 @@
     padding-right 0
   }
 
-  #relations .issue {
-    .buttons a {
-      vertical-align middle
-      padding-right 5px
-    }
+  #relations .issue .buttons a {
+    vertical-align middle
+    padding-right 5px
+  }
 
-    > td.subject {
-      padding-right 25px // this is the spaces that .buttons uses next to subject */
-    }
+  #relations .issue > td.subject {
+      padding-right 25px // this is the spaces that .buttons uses next to subject
   }
 
   /* attachment upload form */
-  #attachments_fields {
-    span {
-      position relative
-      clear both
-      margin-bottom 1em
-      white-space normal
+  #attachments_fields span {
+    position relative
+    clear both
+    margin-bottom 1em
+    white-space normal
+  }
+  #attachments_fields span a.remove-upload {
+    position absolute
+    top 0
+    right 0
+  }
 
-      a.remove-upload {
-        position absolute
-        top 0
-        right 0
-      }
-    }
-
-    input.description {
-      margin-left 0
-      width 100%
-    }
+  #attachments_fields input.description {
+    margin-left 0
+    width 100%
   }
 }
 
 @media all and (max-width: 599px) {
+  span.pagination {
+    text-align center
+  }
   .pagination ul.pages li {
     display none
+  }
+  .pagination ul.pages li.current,
+  .pagination ul.pages li.previous,
+  .pagination ul.pages li.next {
+    display inline-block
+    width 32%
+    overflow hidden
+  }
 
-    &.current, &.previous, &.next {
-      display inline-block
-      width 32%
-      overflow hidden
-    }
+  #login-form {
+    width 100%
+    margin-top 2em
   }
 }

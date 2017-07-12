@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Syntax Highlighter - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="CTIfOcMNILyTdT3SiXlgNDkFZH0oLNAguNM5wlZJmBBXJk6GCdSrIVD4TzeXn6mrptK1ZmYAHOMaytpwnuhqkA==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="syntaxhighlighter_files/theme.js"></script>
+
+<!-- page specific tags -->
+  <script src="syntaxhighlighter_files/attachments.js"></script>
+<style>@media print {#ghostery-purple-box {display:none !important}}</style></head>
+<body class="theme-Minimalflat2 project-sample controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="wiki_pages" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="syntaxhighlighter_files/c265a1a7dadb2713ff2262025e91d133.png"></a>
+            <a class="user active" href="users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
+    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="wiki_pages" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=wiki" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=wiki"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=wiki">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki selected" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="repository" href="projects/sample/repository">Repository</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="projects/sample/wiki">Start page</a></li>
+  <li><a href="projects/sample/wiki/index">Index by title</a></li>
+  <li><a href="projects/sample/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+
+    </div>
+
+    <div id="content">
+
+        <div class="contextual">
+<a class="icon icon-add" data-remote="true" href="projects/sample/wiki/new">New wiki page</a>
+  <a class="icon icon-edit" accesskey="e" href="projects/sample/wiki/Syntax_Highlighter/edit">Edit</a>
+  <a class="wiki_page-2-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="watchers/watch?object_id=2&amp;object_type=wiki_page">Watch</a>
+  <a class="icon icon-lock" rel="nofollow" data-method="post" href="projects/sample/wiki/Syntax_Highlighter/protect?protected=1">Lock</a>
+
+  <a class="icon icon-move" href="projects/sample/wiki/Syntax_Highlighter/rename">Rename</a>
+  <a data-confirm="Are you sure?" class="icon icon-del" rel="nofollow" data-method="delete" href="projects/sample/wiki/Syntax_Highlighter">Delete</a>
+<a class="icon icon-history" href="projects/sample/wiki/Syntax_Highlighter/history">History</a>
+</div>
+
+<p class="breadcrumb"><a href="projects/sample/wiki/Wiki">Wiki</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Syntax-Highlighter"></a>
+<h1>Syntax Highlighter<a href="#Syntax-Highlighter" class="wiki-anchor">¶</a></h1>
+
+<div class="contextual heading-2" title="Edit this section" id="section-2"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=2">Edit this section</a></div><a name="JavaScript"></a>
+<h2>JavaScript<a href="#JavaScript" class="wiki-anchor">¶</a></h2>
+<pre><code class="js syntaxhl"><span class="CodeRay"><span class="comment">/**
+ * Sample object.
+ */</span>
+<span class="keyword">var</span> <span class="function">Sample</span> = <span class="keyword">function</span>( item ) {
+  <span class="local-variable">this</span>.<span class="function">getItem</span> = <span class="keyword">function</span>() {
+    <span class="keyword">return</span> item;
+  }
+}
+
+<span class="keyword">var</span> data = {
+  <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">sample</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">items</span><span class="delimiter">"</span></span>: [
+    { <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="integer">1</span>, <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">item1</span><span class="delimiter">"</span></span> },
+    { <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="integer">1</span>, <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">item2</span><span class="delimiter">"</span></span> }
+  ]
+};
+
+<span class="keyword">var</span> sample = <span class="keyword">new</span> Sample( data );
+<span class="keyword">var</span> item   = sample.getItem();
+<span class="keyword">if</span>( data.name === <span class="string"><span class="delimiter">'</span><span class="content">sample</span><span class="delimiter">'</span></span> ) {
+  console.log( <span class="string"><span class="delimiter">'</span><span class="content">Enable</span><span class="delimiter">'</span></span> );
+}
+</span></code></pre>
+<div class="contextual heading-2" title="Edit this section" id="section-3"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=3">Edit this section</a></div><a name="JSON"></a>
+<h2>JSON<a href="#JSON" class="wiki-anchor">¶</a></h2>
+<pre><code class="json syntaxhl"><span class="CodeRay">{
+  <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">sample</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">items</span><span class="delimiter">"</span></span>: [
+    { <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="integer">1</span>, <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">item1</span><span class="delimiter">"</span></span> },
+    { <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="integer">1</span>, <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">item2</span><span class="delimiter">"</span></span> }
+  ]
+}
+</span></code></pre>
+<div class="contextual heading-2" title="Edit this section" id="section-4"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=4">Edit this section</a></div><a name="HTML"></a>
+<h2>HTML<a href="#HTML" class="wiki-anchor">¶</a></h2>
+<pre><code class="html syntaxhl"><span class="CodeRay"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute-name">lang</span>=<span class="string"><span class="delimiter">"</span><span class="content">en</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attribute-name">charset</span>=<span class="string"><span class="delimiter">"</span><span class="content">UTF-8</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Sample<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Sample<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</span></code></pre>
+<div class="contextual heading-2" title="Edit this section" id="section-5"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=5">Edit this section</a></div><a name="CSS"></a>
+<h2>CSS<a href="#CSS" class="wiki-anchor">¶</a></h2>
+<pre><code class="css syntaxhl"><span class="CodeRay"><span class="tag">h1</span> {
+  <span class="key">textalign</span>: <span class="value">center</span>;
+}
+
+<span class="comment">/**
+ * Page container.
+ */</span>
+<span class="id">#page</span> {
+  <span class="key">max-width</span>: <span class="float">1024px</span>;
+  <span class="key">margin</span>: <span class="value">auto</span>;
+}
+
+<span class="class">.toolbar</span> {
+  <span class="key">width</span>: <span class="float">100%</span>;
+}
+</span></code></pre>
+<div class="contextual heading-2" title="Edit this section" id="section-6"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=6">Edit this section</a></div><a name="C"></a>
+<h2>C++<a href="#C" class="wiki-anchor">¶</a></h2>
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="preprocessor">#inclide</span> &lt;<span class="predefined-type">string</span>&gt;
+<span class="preprocessor">#include</span> <span class="include">"SampleBase.h"</span>
+
+<span class="comment">/**
+ * Test class.
+ */</span>
+<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<span class="keyword">class</span> <span class="class">Sample</span> : SampleBase
+{
+<span class="directive">public</span>:
+  Test( T data );
+  ~Test();
+
+<span class="directive">private</span>:
+  T&amp; GetItem() cont;
+}
+
+<span class="directive">void</span> test()
+{
+  <span class="directive">auto</span> sample = <span class="keyword">new</span> Sample&lt; <span class="predefined-type">string</span> &gt;();
+  <span class="directive">auto</span> item   = sample.getItem();
+  <span class="keyword">if</span>( <span class="integer">0</span> == item.length() ) {
+    <span class="comment">// Empty</span>
+  }
+}
+</span></code></pre>
+<div class="contextual heading-2" title="Edit this section" id="section-7"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=7">Edit this section</a></div><a name="SQL"></a>
+<h2>SQL<a href="#SQL" class="wiki-anchor">¶</a></h2>
+<pre><code class="sql syntaxhl"><span class="CodeRay"><span class="class">SELECT</span>
+  id
+<span class="keyword">FROM</span>
+  sample
+<span class="keyword">WHERE</span>
+  name = <span class="string"><span class="delimiter">'</span><span class="content">sample</span><span class="delimiter">'</span></span>
+<span class="keyword">ORDER</span> <span class="keyword">BY</span>
+  name
+;
+</span></code></pre>
+<div class="contextual heading-3" title="Edit this section" id="section-8"><a class="icon-only icon-edit" href="projects/sample/wiki/Syntax_Highlighter/edit?section=8">Edit this section</a></div><a name="Diff"></a>
+<h3>Diff<a href="#Diff" class="wiki-anchor">¶</a></h3>
+<pre><code class="diff syntaxhl"><span class="CodeRay"><span class="line comment">diff --git a/src/stylus/App.styl b/src/stylus/App.styl</span>
+<span class="line comment">index 82aee85..9361fd5 100755</span>
+<span class="line head"><span class="head">--- </span><span class="filename">a/src/stylus/App.styl</span></span>
+<span class="line head"><span class="head">+++ </span><span class="filename">b/src/stylus/App.styl</span></span>
+<span class="change"><span class="change">@@</span> -3678,7 +3678,7 <span class="change">@@</span></span> h2 img {
+   }
+
+   .change {
+<span class="line delete"><span class="delete">-</span>    color color_syntax_blue</span>
+<span class="line insert"><span class="insert">+</span>    color color_syntax_blue<span class="eyecatcher">_light</span></span>
+     background: color_syntax_blue
+
+     .change {
+<span class="change"><span class="change">@@</span> -3691,11 +3691,11 <span class="change">@@</span></span> h2 img {
+     background color_syntax_purple
+
+     .filename {
+<span class="line delete"><span class="delete">-</span>      color color_syntax_<span class="eyecatcher">whit</span>e</span>
+<span class="line insert"><span class="insert">+</span>      color color_syntax_<span class="eyecatcher">bas</span>e</span>
+     }
+
+     .head {
+<span class="line delete"><span class="delete">-</span>      color <span class="eyecatcher">#DAACDF</span></span>
+<span class="line insert"><span class="insert">+</span>      color <span class="eyecatcher">color_syntax_base</span></span>
+     }
+   }
+</span></code></pre>
+</div>
+
+
+<fieldset class="collapsible">
+  <legend onclick="toggleFieldset(this);">Files</legend>
+  <div style="">
+
+
+
+  <div id="wiki_add_attachment">
+    <form id="add_attachment_form" enctype="multipart/form-data" action="/projects/sample/wiki/Syntax_Highlighter/add_attachment" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="CTIfOcMNILyTdT3SiXlgNDkFZH0oLNAguNM5wlZJmBBXJk6GCdSrIVD4TzeXn6mrptK1ZmYAHOMaytpwnuhqkA==" type="hidden">
+      <div class="box filedroplistner">
+      <p>
+<span class="attachments_form">
+  <span class="attachments_fields">
+  </span>
+  <span class="add_attachment" style="">
+    <input name="attachments[dummy][file]" class="file_selector filedrop" multiple="multiple" onchange="addInputFiles(this);" data-max-file-size="5242880" data-max-file-size-message="This file cannot be uploaded because it exceeds the maximum allowed file size (5 MB)" data-max-concurrent-uploads="2" data-upload-path="/uploads.js" data-param="attachments" data-description="true" data-description-placeholder="Optional description" type="file">
+    (Maximum size: 5 MB)
+  </span>
+</span>
+
+</p>
+      </div>
+      <input name="commit" value="Add" type="submit">
+</form>  </div>
+</div>
+</fieldset>
+
+<p class="other-formats">Also available in:  <span><a class="pdf" rel="nofollow" href="projects/sample/wiki/Syntax_Highlighter.pdf">PDF</a></span>
+  <span><a class="html" rel="nofollow" href="projects/sample/wiki/Syntax_Highlighter.html">HTML</a></span>
+  <span><a class="txt" rel="nofollow" href="projects/sample/wiki/Syntax_Highlighter.txt">TXT</a></span>
+</p>
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>

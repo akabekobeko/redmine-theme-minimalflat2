@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Revision 6458d196 - #70 Fix a title text - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Od+ZT4opJhmiK+5HdSLESZTOKOjWaayG4XCLcKaH4R5ny8jwQPCthGGmnKJrxA3WCxn585hFYEVDaWjCbiYTng==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="javascripts/theme.js"></script>
+
+<!-- page specific tags -->
+<link rel="stylesheet" media="screen" href="stylesheets/scm.css">
+<style>@media print {#ghostery-purple-box {display:none !important}}</style></head>
+<body class="theme-Minimalflat2 project-sample controller-repositories action-revision">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="changesets" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=48&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=24&amp;default=wavatar"></a>
+            <a class="user active" href="users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
+    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="changesets" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=repository" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=repository"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=repository">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="repository selected" href="projects/sample/repository">Repository</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+
+
+    </div>
+
+    <div id="content">
+
+        <div class="contextual">
+  «
+    <a title="Revision cb1d4c7e" accesskey="p" href="projects/sample/repository/revisions/cb1d4c7e03a20c6c13eb83bbd320fba580809362">Previous</a>
+|
+    <a title="Revision c66caf14" accesskey="n" href="projects/sample/repository/revisions/c66caf14a3f8d182a6704ee1f5abc206bd54bfc1">Next</a>
+  »&nbsp;
+
+  <form action="/projects/sample/repository/revision" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+    <input name="rev" id="rev" value="6458d196493efb654fac66486db246dcc1eae47b" size="8" type="text">
+    <input value="OK" type="submit">
+</form></div>
+
+<h2>Revision 6458d196</h2>
+
+<div class="details">
+  <h4>
+    <img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=48&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=24&amp;default=wavatar">
+    Added by <a class="user active" href="users/1">Redmine Admin</a> <a title="07/05/2016 11:57 AM" href="projects/sample/activity?from=2016-07-05">about 1 year</a> ago
+  </h4>
+  <ul class="revision-info">
+      <li>
+        <strong>ID </strong>6458d196493efb654fac66486db246dcc1eae47b
+      </li>
+      <li>
+        <strong>Parent</strong>
+          <a title="Revision cb1d4c7e" href="projects/sample/repository/revisions/cb1d4c7e03a20c6c13eb83bbd320fba580809362">cb1d4c7e</a>
+      </li>
+      <li>
+        <strong>Child</strong>
+         <a title="Revision c66caf14" href="projects/sample/repository/revisions/c66caf14a3f8d182a6704ee1f5abc206bd54bfc1">c66caf14</a>, <a title="Revision 79521e05" href="projects/sample/repository/revisions/79521e054fbc5b1a10614d11c92c245965feb0d2">79521e05</a>, <a title="Revision b4a7d6d8" href="projects/sample/repository/revisions/b4a7d6d8d3ed7bf2b85310adf364c8d2b16e5ddb">b4a7d6d8</a>
+      </li>
+  </ul>
+
+</div>
+
+<div class="wiki changeset-comments">
+  <p>#70 Fix a title text</p>
+</div>
+
+
+<div id="related-issues">
+  <div class="contextual">
+    <a onclick="$('#new-relation-form').toggle(); $('#issue_id').focus(); return false;" href="#">Add</a>
+  </div>
+
+<h3>Related issues</h3>
+<ul>
+</ul>
+
+  <form id="new-relation-form" style="display: none;" action="/projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/issues" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden">
+  Issue #<input name="issue_id" id="issue_id" size="10" class="ui-autocomplete-input autocomplete" autocomplete="off" type="text">
+  <input name="commit" value="Add" type="submit">
+  <a onclick="$('#new-relation-form').toggle(); this.blur(); return false;" href="#">Cancel</a>
+</form></div>
+
+<script>
+//<![CDATA[
+observeAutocompleteField('issue_id', '/issues/auto_complete?project_id=sample&scope=all')
+//]]>
+</script>
+
+
+
+<h3>Files</h3>
+<ul id="changes-legend">
+<li class="change change-A">added</li>
+<li class="change change-M">modified</li>
+<li class="change change-C">copied</li>
+<li class="change change-R">renamed</li>
+<li class="change change-D">deleted</li>
+</ul>
+
+<p><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff">View differences</a></p>
+
+<div class="changeset-changes">
+<ul><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/README.ja.md">README.ja.md</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/README.ja.md">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/README.md">README.md</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/README.md">diff</a>) </li><li class="change folder"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/show/src">src</a><ul><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/activity.html">activity.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/activity.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/administration.html">administration.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/administration.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/calendar.html">calendar.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/calendar.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/diff.html">diff.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/diff.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/gantt.html">gantt.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/gantt.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/index.html">index.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/index.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/issue.html">issue.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/issue.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/issues.html">issues.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/issues.html">diff</a>) </li><li class="change folder"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/show/src/javascripts">javascripts</a><ul><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/javascripts/theme.js">theme.js</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/javascripts/theme.js">diff</a>) </li></ul></li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/login.html">login.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/login.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/overview.html">overview.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/overview.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/projects.html">projects.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/projects.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/repository.html">repository.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/repository.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/revisions.html">revisions.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/revisions.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/settings.html">settings.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/settings.html">diff</a>) </li><li class="change folder"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/show/src/stylus">stylus</a><ul><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/stylus/App.styl">App.styl</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/stylus/App.styl">diff</a>) </li></ul></li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/syntaxhighlight.html">syntaxhighlight.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/syntaxhighlight.html">diff</a>) </li><li class="change change-M"><a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/entry/src/wiki.html">wiki.html</a> (<a href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff/src/wiki.html">diff</a>) </li></ul></li></ul>
+</div>
+
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span></body></html>

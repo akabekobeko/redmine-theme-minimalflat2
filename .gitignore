@@ -1,12 +1,11 @@
 node_modules/
 minimalflat2/
-src/stylesheets
 samples/
 
+application.css
+responsive.css
 .*
 *.map
 *.log
 *.zip
-*.js
-!theme.js
 !.gitignore

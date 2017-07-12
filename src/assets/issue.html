@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Bug #1: Normal - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="wr+UWpuyjce/jCYY1S1d5uIaQ3E3wDCaZ0XMhFBgx9Kcq8XlUWsGWnwBVP3Ly5R5fc2Sanns/FnFXC82mME1Ug==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="javascripts/theme.js"></script>
+
+<!-- page specific tags -->
+<script src="javascripts/jstoolbar-textile.js"></script><script src="javascripts/jstoolbar-en.js"></script><script>
+//<![CDATA[
+var wikiImageMimeTypes = ["image/gif","image/jpeg","image/png","image/tiff","image/x-ms-bmp"];
+//]]>
+</script><link rel="stylesheet" media="screen" href="javascripts/jstoolbar.css"><script>
+//<![CDATA[
+var datepickerOptions={dateFormat: 'yy-mm-dd', firstDay: 0, showOn: 'button', buttonImageOnly: true, buttonImage: '/images/calendar.png?1499609814', showButtonPanel: true, showWeek: true, showOtherMonths: true, selectOtherMonths: true, changeMonth: true, changeYear: true, beforeShow: beforeShowDatePicker};
+//]]>
+</script><style>@media print {#ghostery-purple-box {display:none !important}}</style>  <script src="javascripts/attachments.js"></script>
+    <link rel="alternate" type="application/atom+xml" title="Sample - Bug #1: Normal" href="issues/1.atom?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">
+<script src="javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="stylesheets/context_menu.css"></head>
+<body class="theme-Minimalflat2 project-sample controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="issues" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133"></a>
+            <a class="user active" href="users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
+    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="issues" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=issues" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=issues"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=issues">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues selected" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="projects/sample/issues?set_filter=1">View all issues</a></li>
+<li><a href="projects/sample/issues/report">Summary</a></li>
+
+<li><a href="issues/imports/new">Import</a></li>
+</ul>
+
+
+
+
+<h3>My custom queries</h3>
+<ul class="queries"><li><a class="query selected" href="projects/sample/issues?query_id=1">Sample</a></li></ul>
+
+
+
+
+    <div id="watchers">
+      <div class="contextual">
+<a data-remote="true" data-method="get" href="watchers/new?object_id=1&amp;object_type=issue">Add</a>
+</div>
+
+<h3>Watchers (0)</h3>
+
+
+
+    </div>
+
+
+    </div>
+
+    <div id="content">
+
+        <div class="contextual">
+<a onclick="showAndScrollTo('update', 'issue_notes'); return false;" class="icon icon-edit" accesskey="e" href="issues/1/edit">Edit</a>
+<a class="icon icon-time-add" href="issues/1/time_entries/new">Log time</a>
+<a class="issue-1-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="watchers/watch?object_id=1&amp;object_type=issue">Watch</a>
+<a class="icon icon-copy" href="projects/sample/issues/1/copy">Copy</a>
+<a data-confirm="Are you sure you want to delete the selected issue(s)?" class="icon icon-del" rel="nofollow" data-method="delete" href="issues/1">Delete</a>
+</div>
+
+
+<h2>Bug #1</h2>
+
+<div class="issue tracker-1 status-1 priority-2 priority-default created-by-me assigned-to-me details">
+    <div class="next-prev-links contextual">
+      <a title="#3" accesskey="p" href="issues/3">« Previous</a> |
+        <span class="position">
+          <a href="projects/sample/issues?page=1&amp;per_page=25&amp;query_id=1">4 of 5</a>
+        </span> |
+      <a title="#2" accesskey="n" href="issues/2">Next »</a>
+    </div>
+
+  <div class="gravatar-with-child">
+    <img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=100&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=50&amp;default=wavatar">
+    <img alt="" title="" class="gravatar gravatar-child" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=44&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=22&amp;default=wavatar">
+  </div>
+
+<div class="subject">
+<div><h3>Normal</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="users/1">Redmine Admin</a> <a title="07/11/2017 05:34 AM" href="projects/sample/activity?from=2017-07-11">11 minutes</a> ago.
+        Updated <a title="07/11/2017 05:42 AM" href="projects/sample/activity?from=2017-07-11">2 minutes</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">New</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="users/1">Redmine Admin</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">07/11/2017</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-30"><tbody><tr><td style="width: 30%;" class="closed" title="30%"></td><td style="width: 70%;" class="todo"></td></tr></tbody></table><p class="percent">30%</p></div></div><div class="estimated-hours attribute"><div class="label">Estimated time:</div><div class="value"></div></div></div></div>
+
+
+</div>
+
+<hr>
+<div class="description">
+  <div class="contextual">
+  <a class="icon icon-comment" data-remote="true" rel="nofollow" data-method="post" href="issues/1/quoted">Quote</a>
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Description</p>
+  </div>
+</div>
+
+
+
+
+
+
+<hr>
+<div id="issue_tree">
+<div class="contextual">
+  <a href="projects/sample/issues/new?back_url=%2Fissues%2F1&amp;issue%5Bparent_issue_id%5D=1&amp;issue%5Btracker_id%5D=1">Add</a>
+</div>
+<p><strong>Subtasks</strong></p>
+<form data-cm-url="/issues/context_menu" action="/issues/1" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="wr+UWpuyjce/jCYY1S1d5uIaQ3E3wDCaZ0XMhFBgx9Kcq8XlUWsGWnwBVP3Ly5R5fc2Sanns/FnFXC82mME1Ug==" type="hidden">
+</form></div>
+
+<hr>
+<div id="relations">
+<div class="contextual">
+  <a onclick="$('#new-relation-form').toggle(); $('#relation_issue_to_id').focus(); return false;" href="#">Add</a>
+</div>
+
+<p><strong>Related issues</strong></p>
+
+
+<form id="new-relation-form" style="display: none;" class="new_relation" action="/issues/1/relations" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden">
+
+
+<p><select onchange="setPredecessorFieldsVisibility();" name="relation[relation_type]" id="relation_relation_type"><option selected="selected" value="relates">Related to</option>
+<option value="duplicates">Is duplicate of</option>
+<option value="duplicated">Has duplicate</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option></select>
+Issue #<input size="10" name="relation[issue_to_id]" id="relation_issue_to_id" class="ui-autocomplete-input autocomplete" autocomplete="off" type="text">
+<span id="predecessor_fields" style="display:none;">
+Delay: <input size="3" name="relation[delay]" id="relation_delay" type="text"> days
+</span>
+<input name="commit" value="Add" type="submit">
+<a href="#" onclick="$('#new-relation-form').hide(); return false;">Cancel</a>
+</p>
+
+<script>
+//<![CDATA[
+observeAutocompleteField('relation_issue_to_id', '/issues/auto_complete?issue_id=1&project_id=sample')
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+setPredecessorFieldsVisibility();
+//]]>
+</script>
+
+</form>
+</div>
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-1" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    <img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=48&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=24&amp;default=wavatar">
+    Updated by <a class="user active" href="users/1">Redmine Admin</a> <a title="07/11/2017 05:35 AM" href="projects/sample/activity?from=2017-07-11">10 minutes</a> ago
+    <span id="journal-1-private_notes" class=""></span></h4>
+
+    <ul class="details">
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>30</i></li>
+    </ul>
+    <div id="journal-1-notes" class="wiki editable"><div class="contextual"><a title="Quote" class="icon-only icon-comment" data-remote="true" rel="nofollow" data-method="post" href="issues/1/quoted?journal_id=1">Quote</a> <a title="Edit" class="icon-only icon-edit" data-remote="true" data-method="get" href="journals/1/edit">Edit</a> <a data-confirm="Are you sure?" title="Delete" class="icon-only icon-del" data-remote="true" rel="nofollow" data-method="put" href="journals/1?journal%5Bnotes%5D=">Delete</a></div><p>comment</p></div>
+    </div>
+  </div>
+
+  <div id="change-2" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    <img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=48&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=24&amp;default=wavatar">
+    Updated by <a class="user active" href="users/1">Redmine Admin</a> <a title="07/11/2017 05:36 AM" href="projects/sample/activity?from=2017-07-11">8 minutes</a> ago
+    <span id="journal-2-private_notes" class=""></span></h4>
+
+    <ul class="details">
+       <li><strong>Subject</strong> changed from <i>Sample issue</i> to <i>Normal</i></li>
+    </ul>
+
+    </div>
+  </div>
+
+  <div id="change-4" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    <img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=48&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=24&amp;default=wavatar">
+    Updated by <a class="user active" href="users/1">Redmine Admin</a> <a title="07/11/2017 05:42 AM" href="projects/sample/activity?from=2017-07-11">2 minutes</a> ago
+    <span id="journal-4-private_notes" class=""></span></h4>
+
+    <ul class="details">
+       <li><strong>Assignee</strong> set to <i>Redmine Admin</i></li>
+    </ul>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+<a onclick="showAndScrollTo('update', 'issue_notes'); return false;" class="icon icon-edit" href="issues/1/edit">Edit</a>
+<a class="icon icon-time-add" href="issues/1/time_entries/new">Log time</a>
+<a class="issue-1-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="watchers/watch?object_id=1&amp;object_type=issue">Watch</a>
+<a class="icon icon-copy" href="projects/sample/issues/1/copy">Copy</a>
+<a data-confirm="Are you sure you want to delete the selected issue(s)?" class="icon icon-del" rel="nofollow" data-method="delete" href="issues/1">Delete</a>
+</div>
+
+
+<div style="clear: both;"></div>
+  <div id="update" style="">
+  <h3>Edit</h3>
+  <form id="issue-form" class="edit_issue" enctype="multipart/form-data" action="/issues/1" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="patch" type="hidden"><input name="authenticity_token" value="wr+UWpuyjce/jCYY1S1d5uIaQ3E3wDCaZ0XMhFBgx9Kcq8XlUWsGWnwBVP3Ly5R5fc2Sanns/FnFXC82mME1Ug==" type="hidden">
+
+
+    <div class="box filedroplistner">
+        <fieldset class="tabular"><legend>Change properties</legend>
+        <div id="all_attributes">
+
+
+<input name="form_update_triggered_by" id="form_update_triggered_by" value="" type="hidden">
+
+
+<p id="issue_is_private_wrap">
+  <input name="issue[is_private]" value="0" type="hidden"><input value="1" name="issue[is_private]" id="issue_is_private" type="checkbox"><label class="inline" for="issue_is_private" id="issue_is_private_label">Private</label>
+</p>
+
+<p><label for="issue_project_id">Project<span class="required"> *</span></label><select onchange="updateIssueFrom('/issues/1/edit.js', this)" name="issue[project_id]" id="issue_project_id"><option value="1" selected="selected">Sample</option><option value="2">&nbsp;&nbsp;» Sub Project</option><option value="4">&nbsp;&nbsp;» minimalflat</option><option value="3">Sample 2</option><option value="5">&nbsp;&nbsp;» minimalflat2</option></select></p>
+
+<p><label for="issue_tracker_id">Tracker<span class="required"> *</span></label><select onchange="updateIssueFrom('/issues/1/edit.js', this)" name="issue[tracker_id]" id="issue_tracker_id"><option selected="selected" value="1">Bug</option>
+<option value="2">Feature</option>
+<option value="3">Support</option></select></p>
+
+<p><label for="issue_subject">Subject<span class="required"> *</span></label><input size="80" maxlength="255" value="Normal" name="issue[subject]" id="issue_subject" type="text"></p>
+
+<p>
+  <label for="issue_description">Description</label>
+  <a href="#" onclick="$(this).hide(); $('#issue_description_and_toolbar').show(); return false;" style="display: none;"><span class="icon icon-edit">Edit</span></a>
+  <span id="issue_description_and_toolbar" style="">
+    <div class="jstElements"><button type="button" tabindex="200" class="jstb_strong" title="Strong"><span>Strong</span></button><button type="button" tabindex="200" class="jstb_em" title="Italic"><span>Italic</span></button><button type="button" tabindex="200" class="jstb_ins" title="Underline"><span>Underline</span></button><button type="button" tabindex="200" class="jstb_del" title="Deleted"><span>Deleted</span></button><button type="button" tabindex="200" class="jstb_code" title="Inline Code"><span>Inline Code</span></button><span id="space1" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_h1" title="Heading 1"><span>Heading 1</span></button><button type="button" tabindex="200" class="jstb_h2" title="Heading 2"><span>Heading 2</span></button><button type="button" tabindex="200" class="jstb_h3" title="Heading 3"><span>Heading 3</span></button><span id="space2" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_ul" title="Unordered list"><span>Unordered list</span></button><button type="button" tabindex="200" class="jstb_ol" title="Ordered list"><span>Ordered list</span></button><span id="space3" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_bq" title="Quote"><span>Quote</span></button><button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote"><span>Remove Quote</span></button><button type="button" tabindex="200" class="jstb_pre" title="Preformatted text"><span>Preformatted text</span></button><button type="button" tabindex="200" class="jstb_precode" title="Highlighted code"><span>Highlighted code</span></button><span id="space4" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page"><span>Link to a Wiki page</span></button><button type="button" tabindex="200" class="jstb_img" title="Image"><span>Image</span></button><span id="space5" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_help" title="Help"><span>Help</span></button></div><div class="jstEditor"><textarea cols="60" rows="10" class="wiki-edit" name="issue[description]" id="issue_description">Description</textarea></div>
+</span></p>
+<script>
+//<![CDATA[
+var wikiToolbar = new
+jsToolBar(document.getElementById('issue_description'));
+wikiToolbar.setHelpLink('/help/en/wiki_syntax_textile.html');
+wikiToolbar.draw();
+//]]>
+</script>
+
+<div id="attributes" class="attributes">
+
+
+<div class="splitcontent">
+<div class="splitcontentleft">
+<p><label for="issue_status_id">Status<span class="required"> *</span></label><select onchange="updateIssueFrom('/issues/1/edit.js', this)" name="issue[status_id]" id="issue_status_id"><option selected="selected" value="1">New</option>
+<option value="2">In Progress</option>
+<option value="3">Resolved</option>
+<option value="4">Feedback</option>
+<option value="5">Closed</option>
+<option value="6">Rejected</option></select></p>
+<input name="was_default_status" value="1" type="hidden">
+
+<p><label for="issue_priority_id">Priority<span class="required"> *</span></label><select name="issue[priority_id]" id="issue_priority_id"><option value="1">Low</option>
+<option selected="selected" value="2">Normal</option>
+<option value="3">High</option>
+<option value="4">Urgent</option>
+<option value="5">Immediate</option></select></p>
+
+<p><label for="issue_assigned_to_id">Assignee</label><select name="issue[assigned_to_id]" id="issue_assigned_to_id"><option value="">&nbsp;</option>
+<option value="1">&lt;&lt; me &gt;&gt;</option><option value="1" selected="selected">Redmine Admin</option></select></p>
+
+
+</div>
+
+<div class="splitcontentright">
+<p id="parent_issue"><label for="issue_parent_issue_id">Parent task</label><input size="10" name="issue[parent_issue_id]" id="issue_parent_issue_id" class="ui-autocomplete-input autocomplete" autocomplete="off" type="text"></p>
+<script>
+//<![CDATA[
+observeAutocompleteField('issue_parent_issue_id', '/issues/auto_complete?issue_id=1&project_id=sample&scope=tree&status=o')
+//]]>
+</script>
+
+<p id="start_date_area">
+  <label for="issue_start_date">Start date</label><input size="10" value="2017-07-11" name="issue[start_date]" id="issue_start_date" class="date hasDatepicker" type="date"><img class="ui-datepicker-trigger" src="debug_images/calendar.png" alt="..." title="...">
+  <script>
+//<![CDATA[
+$(function() { $('#issue_start_date').addClass('date').datepickerFallback(datepickerOptions); });
+//]]>
+</script>
+</p>
+
+<p id="due_date_area">
+  <label for="issue_due_date">Due date</label><input size="10" name="issue[due_date]" id="issue_due_date" class="date hasDatepicker" type="date"><img class="ui-datepicker-trigger" src="debug_images/calendar.png" alt="..." title="...">
+  <script>
+//<![CDATA[
+$(function() { $('#issue_due_date').addClass('date').datepickerFallback(datepickerOptions); });
+//]]>
+</script>
+</p>
+
+<p><label for="issue_estimated_hours">Estimated time</label><input size="3" name="issue[estimated_hours]" id="issue_estimated_hours" type="text"> Hours</p>
+
+<p><label for="issue_done_ratio">% Done</label><select name="issue[done_ratio]" id="issue_done_ratio"><option value="0">0 %</option>
+<option value="10">10 %</option>
+<option value="20">20 %</option>
+<option selected="selected" value="30">30 %</option>
+<option value="40">40 %</option>
+<option value="50">50 %</option>
+<option value="60">60 %</option>
+<option value="70">70 %</option>
+<option value="80">80 %</option>
+<option value="90">90 %</option>
+<option value="100">100 %</option></select></p>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<script>
+//<![CDATA[
+
+$(document).ready(function(){
+  $("#issue_tracker_id, #issue_status_id").each(function(){
+    $(this).val($(this).find("option[selected=selected]").val());
+  });
+});
+
+//]]>
+</script>
+        </div>
+        </fieldset>
+        <fieldset class="tabular"><legend>Log time</legend>
+
+        <div class="splitcontent">
+        <div class="splitcontentleft">
+        <p><label for="time_entry_hours">Spent time</label><input size="6" name="time_entry[hours]" id="time_entry_hours" type="text"> Hours</p>
+        </div>
+        <div class="splitcontentright">
+        <p><label for="time_entry_activity_id">Activity</label><select name="time_entry[activity_id]" id="time_entry_activity_id"><option value="" selected="selected">--- Please select ---</option>
+<option value="8">Design</option>
+<option value="9">Development</option></select></p>
+        </div>
+        </div>
+        <p><label for="time_entry_comments">Comment</label><input size="60" name="time_entry[comments]" id="time_entry_comments" type="text"></p>
+    </fieldset>
+      <fieldset><legend>Notes</legend>
+      <div class="jstElements"><button type="button" tabindex="200" class="jstb_strong" title="Strong"><span>Strong</span></button><button type="button" tabindex="200" class="jstb_em" title="Italic"><span>Italic</span></button><button type="button" tabindex="200" class="jstb_ins" title="Underline"><span>Underline</span></button><button type="button" tabindex="200" class="jstb_del" title="Deleted"><span>Deleted</span></button><button type="button" tabindex="200" class="jstb_code" title="Inline Code"><span>Inline Code</span></button><span id="space1" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_h1" title="Heading 1"><span>Heading 1</span></button><button type="button" tabindex="200" class="jstb_h2" title="Heading 2"><span>Heading 2</span></button><button type="button" tabindex="200" class="jstb_h3" title="Heading 3"><span>Heading 3</span></button><span id="space2" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_ul" title="Unordered list"><span>Unordered list</span></button><button type="button" tabindex="200" class="jstb_ol" title="Ordered list"><span>Ordered list</span></button><span id="space3" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_bq" title="Quote"><span>Quote</span></button><button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote"><span>Remove Quote</span></button><button type="button" tabindex="200" class="jstb_pre" title="Preformatted text"><span>Preformatted text</span></button><button type="button" tabindex="200" class="jstb_precode" title="Highlighted code"><span>Highlighted code</span></button><span id="space4" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page"><span>Link to a Wiki page</span></button><button type="button" tabindex="200" class="jstb_img" title="Image"><span>Image</span></button><span id="space5" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_help" title="Help"><span>Help</span></button></div><div class="jstEditor"><textarea cols="60" rows="10" class="wiki-edit" name="issue[notes]" id="issue_notes"></textarea></div>
+      <script>
+//<![CDATA[
+var wikiToolbar = new jsToolBar(document.getElementById('issue_notes'));
+ wikiToolbar.setHelpLink('/help/en/wiki_syntax_textile.html');
+wikiToolbar.draw();
+//]]>
+</script>
+
+      <input name="issue[private_notes]" value="0" type="hidden"><input value="1" name="issue[private_notes]" id="issue_private_notes" type="checkbox"> <label for="issue_private_notes">Private notes</label>
+
+
+      </fieldset>
+
+      <fieldset><legend>Files</legend>
+
+        <div id="new-attachments" style="display:inline-block;">
+
+<span class="attachments_form">
+  <span class="attachments_fields">
+  </span>
+  <span class="add_attachment" style="">
+    <input name="attachments[dummy][file]" class="file_selector filedrop" multiple="multiple" onchange="addInputFiles(this);" data-max-file-size="5242880" data-max-file-size-message="This file cannot be uploaded because it exceeds the maximum allowed file size (5 MB)" data-max-concurrent-uploads="2" data-upload-path="/uploads.js" data-param="attachments" data-description="true" data-description-placeholder="Optional description" type="file">
+    (Maximum size: 5 MB)
+  </span>
+</span>
+
+
+        </div>
+      </fieldset>
+    </div>
+
+    <input value="3" name="issue[lock_version]" id="issue_lock_version" type="hidden">
+    <input name="last_journal_id" id="last_journal_id" value="4" type="hidden">
+    <input name="commit" value="Submit" type="submit">
+    <a href="#" onclick="submitPreview('/issues/preview/edit/1?project_id=sample', 'issue-form', 'preview'); return false;" accesskey="r">Preview</a>
+    | <a onclick="$('#update').hide(); return false;" href="issues/1">Cancel</a>
+
+    <input name="prev_issue_id" id="prev_issue_id" value="3" type="hidden">
+    <input name="next_issue_id" id="next_issue_id" value="2" type="hidden">
+    <input name="issue_position" id="issue_position" value="4" type="hidden">
+    <input name="issue_count" id="issue_count" value="5" type="hidden">
+</form>
+<div id="preview" class="wiki"></div>
+
+  </div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="issues/1.atom?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="issues/1.pdf">PDF</a></span>
+</p>
+
+
+
+
+
+
+        <div style="clear:both;"></div>
+    <div id="context-menu" style="display:none;"></div></div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

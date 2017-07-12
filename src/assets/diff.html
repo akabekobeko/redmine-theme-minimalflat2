@@ -1,0 +1,4087 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>/ - Diff - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="P/ni3+T9mkIplqDcSKazz6TnT0PmLMEKcyYAQk7sVWZh7bNgLiQR3+ob0jlWQHpQOzCeWKgADcnRP+Pwhk2n5g==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+<link rel="stylesheet" media="all" href="stylesheets/scm.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+<script src="diff_files/theme.js"></script>
+
+<!-- page specific tags -->
+<link rel="stylesheet" media="screen" href="diff_files/scm.css">
+<style>@media print {#ghostery-purple-box {display:none !important}}</style></head>
+<body class="theme-Minimalflat2 project-sample controller-repositories action-diff">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="changesets" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="diff_files/c265a1a7dadb2713ff2262025e91d133_002.png"></a>
+            <a class="user active" href="users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
+    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="changesets" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=repository" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=repository"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=repository">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="repository selected" href="projects/sample/repository">Repository</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+
+
+    </div>
+
+    <div id="content">
+
+        <h2>Revision 6458d196</h2>
+
+<div class="details">
+  <h4>
+    <img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=48&amp;default=wavatar 2x" src="diff_files/c265a1a7dadb2713ff2262025e91d133.png">
+    Added by <a class="user active" href="users/1">Redmine Admin</a> <a title="07/05/2016 11:57 AM" href="projects/sample/activity?from=2016-07-05">about 1 year</a> ago
+  </h4>
+  <ul class="revision-info">
+      <li>
+        <strong>ID </strong>6458d196493efb654fac66486db246dcc1eae47b
+      </li>
+      <li>
+        <strong>Parent</strong>
+          <a title="Revision cb1d4c7e" href="projects/sample/repository/revisions/cb1d4c7e03a20c6c13eb83bbd320fba580809362">cb1d4c7e</a>
+      </li>
+      <li>
+        <strong>Child</strong>
+         <a title="Revision c66caf14" href="projects/sample/repository/revisions/c66caf14a3f8d182a6704ee1f5abc206bd54bfc1">c66caf14</a>, <a title="Revision 79521e05" href="projects/sample/repository/revisions/79521e054fbc5b1a10614d11c92c245965feb0d2">79521e05</a>, <a title="Revision b4a7d6d8" href="projects/sample/repository/revisions/b4a7d6d8d3ed7bf2b85310adf364c8d2b16e5ddb">b4a7d6d8</a>
+      </li>
+  </ul>
+
+</div>
+
+<div class="wiki changeset-comments">
+  <p>#70 Fix a title text</p>
+</div>
+
+
+<div id="related-issues">
+  <div class="contextual">
+    <a onclick="$('#new-relation-form').toggle(); $('#issue_id').focus(); return false;" href="#">Add</a>
+  </div>
+
+<h3>Related issues</h3>
+<ul>
+</ul>
+
+  <form id="new-relation-form" style="display: none;" action="/projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/issues" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden">
+  Issue #<input name="issue_id" id="issue_id" size="10" class="ui-autocomplete-input autocomplete" autocomplete="off" type="text">
+  <input name="commit" value="Add" type="submit">
+  <a onclick="$('#new-relation-form').toggle(); this.blur(); return false;" href="#">Cancel</a>
+</form></div>
+
+<script>
+//<![CDATA[
+observeAutocompleteField('issue_id', '/issues/auto_complete?project_id=sample&scope=all')
+//]]>
+</script>
+
+
+
+<!-- Choose view type -->
+<form action="/projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+
+  <p>
+    View differences:
+    <label><input name="type" id="type_inline" value="inline" onchange="this.form.submit()" type="radio"> inline</label>
+    <label><input name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" checked="checked" type="radio"> side by side</label>
+  </p>
+</form>
+
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    README.ja.md
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre># minimalflat2
+</pre>
+  </td>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre># minimalflat2
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre>![Redmine](https://img.shields.io/badge/Redmine-3.3-red.svg)
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre>簡素でフラットな外観の Redmine テーマです。
+</pre>
+  </td>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre>簡素でフラットな外観の Redmine テーマです。
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre>## スクリーンショット
+</pre>
+  </td>
+  <th class="line-num">7</th>
+  <td class="line-code ">
+    <pre>## スクリーンショット
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    README.md
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre># minimalflat2
+</pre>
+  </td>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre># minimalflat2
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre>![Redmine](https://img.shields.io/badge/Redmine-3.3-red.svg)
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre>Minimal and flat design theme for Redmine.
+</pre>
+  </td>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre>Minimal and flat design theme for Redmine.
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre>## Screenshot
+</pre>
+  </td>
+  <th class="line-num">7</th>
+  <td class="line-code ">
+    <pre>## Screenshot
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/activity.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/administration.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>Redmine</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">71</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">71</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">72</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">72</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">73</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">73</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/calendar.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/diff.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>Redmine</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/gantt.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/index.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">61</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">61</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/issue.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">71</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">71</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">72</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">72</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/issues.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/javascripts/theme.js
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre>( function( $ ) {
+</pre>
+  </td>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre>( function( $ ) {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre>  if( !( $ ) ) { return; }
+</pre>
+  </td>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre>  if( !( $ ) ) { return; }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <td class="line-code diff_out">
+    <pre>  // Setup icon
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <td class="line-code diff_out">
+    <pre>  function setupIcon() {
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <td class="line-code diff_out">
+    <pre>    function imageToIcon( target, icon ) {
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <td class="line-code diff_out">
+    <pre>      $( target ).each( function() {
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <td class="line-code diff_out">
+    <pre>        var title = $( this ).attr( 'alt' );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">9</th>
+  <td class="line-code diff_out">
+    <pre>        $( this ).replaceWith( $( '&lt;i&gt;' ).addClass( icon ).attr( 'title', title ).on( 'click', function() {
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <td class="line-code diff_out">
+    <pre>          if( target === 'img[src*="toggle_check.png"]' &amp;&amp; typeof toggleIssuesSelection === 'function' ) {
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">11</th>
+  <td class="line-code diff_out">
+    <pre>            toggleIssuesSelection( $( this ).parent() );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">12</th>
+  <td class="line-code diff_out">
+    <pre>            return false;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">13</th>
+  <td class="line-code diff_out">
+    <pre>          }
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">14</th>
+  <td class="line-code diff_out">
+    <pre>        } ) );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">15</th>
+  <td class="line-code diff_out">
+    <pre>      } );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">16</th>
+  <td class="line-code diff_out">
+    <pre>    }
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">17</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">18</th>
+  <td class="line-code diff_out">
+    <pre>    // img
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">19</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="toggle_check.png"]',       'js-replace-icon-check'          );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">20</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="true.png"]',               'js-replace-icon-check'          );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">21</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="false.png"]',              'js-replace-icon-cross'          );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">22</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="exclamation.png"]',        'js-replace-icon-warning'        );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">23</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="delete.png"]',             'js-replace-icon-trash'          );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">24</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="add.png"]',                'js-replace-icon-add'            );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">25</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="edit.png"]',               'js-replace-icon-edit'           );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">26</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="comment.png"]',            'js-replace-icon-comment'        );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="bullet_toggle_plus.png"]', 'js-replace-icon-toggle-plus'    );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="link_break.png"]',         'js-replace-icon-trash'          );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="2uparrow.png"]',           'js-replace-icon-chevron-top'    );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="1uparrow.png"]',           'js-replace-icon-chevron-up'     );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="1downarrow.png"]',         'js-replace-icon-chevron-down'   );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">32</th>
+  <td class="line-code diff_out">
+    <pre>    imageToIcon( 'img[src*="2downarrow.png"]',         'js-replace-icon-chevron-bottom' );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <td class="line-code diff_out">
+    <pre>    // Pending because there is a jQuery UI problems
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <td class="line-code diff_out">
+    <pre>    //imageToIcon( 'img[src*="calendar.png"]', 'js-replace-icon-calendar' );
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <td class="line-code diff_out">
+    <pre>  }
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <td class="line-code ">
+    <pre>  // Tree view ( only projects page )
+</pre>
+  </td>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre>  // Tree view ( only projects page )
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <td class="line-code ">
+    <pre>  function setupProjectTreeView() {
+</pre>
+  </td>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre>  function setupProjectTreeView() {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <td class="line-code ">
+    <pre>    function toggleExpandSymbol( area ) {
+</pre>
+  </td>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre>    function toggleExpandSymbol( area ) {
+</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><td></td><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>  }
+</pre>
+  </td>
+  <th class="line-num">33</th>
+  <td class="line-code ">
+    <pre>  }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">34</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>  $( document ).ready( function() {
+</pre>
+  </td>
+  <th class="line-num">35</th>
+  <td class="line-code ">
+    <pre>  $( document ).ready( function() {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <td class="line-code diff_out">
+    <pre>    setupIcon();
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">71</th>
+  <td class="line-code ">
+    <pre>    setupProjectTreeView();
+</pre>
+  </td>
+  <th class="line-num">36</th>
+  <td class="line-code ">
+    <pre>    setupProjectTreeView();
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">72</th>
+  <td class="line-code ">
+    <pre>  } );
+</pre>
+  </td>
+  <th class="line-num">37</th>
+  <td class="line-code ">
+    <pre>  } );
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">73</th>
+  <td class="line-code ">
+    <pre>} )( window.jQuery );
+</pre>
+  </td>
+  <th class="line-num">38</th>
+  <td class="line-code ">
+    <pre>} )( window.jQuery );
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/login.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>Redmine</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/overview.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/projects.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>Redmine</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/repository.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>Redmine</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/revisions.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">30</th>
+  <td class="line-code ">
+    <pre>&lt;li&gt;&lt;a href="http://www.redmine.org/guide" class="help"&gt;Help&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">30</th>
+  <td class="line-code ">
+    <pre>&lt;li&gt;&lt;a href="http://www.redmine.org/guide" class="help"&gt;Help&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">31</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">32</th>
+  <td class="line-code ">
+    <pre>&lt;div id="header"&gt;
+</pre>
+  </td>
+  <th class="line-num">32</th>
+  <td class="line-code ">
+    <pre>&lt;div id="header"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;form accept-charset="UTF-8"
+action="/projects/redmine/search" method="get"&gt;&lt;div
+style="margin:0;padding:0;display:inline"&gt;&lt;input name="utf8"
+value="✓" type="hidden"&gt;&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;input name="changesets" value="1" type="hidden"&gt;
+</pre>
+  </td>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;form
+action="/projects/redmine-theme-minimalflat2/search"
+accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓"
+type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;label for="q"&gt;
+</pre>
+  </td>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;input name="wiki_pages" value="1" type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;a href="http://www.redmine.org/projects/redmine/search" accesskey="4"&gt;Search&lt;/a&gt;:
+</pre>
+  </td>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;label for="q"&gt;&lt;a accesskey="4"
+href="./projects/redmine-theme-minimalflat2/search"&gt;Search&lt;/a&gt;:&lt;/label&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;/label&gt;
+</pre>
+  </td>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;input accesskey="f" class="small" id="q" name="q" size="20" type="text"&gt;
+</pre>
+  </td>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <td class="line-code diff_out">
+    <pre>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">41</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">42</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;h1&gt;&lt;span class="breadcrumbs"&gt;&lt;a class="root"
+href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span
+class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor"
+href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span
+ class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span
+class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">43</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;Redmine&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">43</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">44</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num">44</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">45</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">45</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">46</th>
+  <td class="line-code diff_out">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">46</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;li&gt;&lt;a id="new-object"
+onclick="toggleNewObjectDropdown(); return false;" class="new-object"
+href="#"&gt; + &lt;/a&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">47</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;li&gt;&lt;a id="new-object"
+onclick="toggleNewObjectDropdown(); return false;" class="new-object"
+href="#"&gt; + &lt;/a&gt;
+</pre>
+  </td>
+  <th class="line-num">47</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;ul class="menu-children"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">48</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;ul class="menu-children"&gt;
+</pre>
+  </td>
+  <th class="line-num">48</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a accesskey="7" class="new-issue-sub"
+href="/projects/sample/issues/new"&gt;New issue&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">49</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a accesskey="7" class="new-issue-sub"
+ href="/projects/sample/issues/new"&gt;New issue&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">49</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a class="new-issue-category"
+href="/projects/sample/issue_categories/new"&gt;New
+category&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">50</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a class="new-issue-category"
+href="/projects/sample/issue_categories/new"&gt;New
+category&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">50</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a class="new-version" href="/projects/sample/versions/new"&gt;New version&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">51</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a class="new-version" href="/projects/sample/versions/new"&gt;New version&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">51</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a class="new-news" href="/projects/sample/news/new"&gt;Add news&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a class="new-news" href="/projects/sample/news/new"&gt;Add news&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">52</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a class="new-document" href="/projects/sample/documents/new"&gt;New document&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a class="new-document" href="/projects/sample/documents/new"&gt;New document&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">53</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a class="new-wiki-page" href="/projects/sample/wiki/new"&gt;New wiki page&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a class="new-wiki-page" href="/projects/sample/wiki/new"&gt;New wiki page&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;li&gt;&lt;a class="new-file" href="/projects/sample/files/new"&gt;New file&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">55</th>
+  <td class="line-code diff_out">
+    <pre>            &lt;li&gt;&lt;a class="new-file" href="/projects/sample/files/new"&gt;New file&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;/ul&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">56</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;/ul&gt;
+</pre>
+  </td>
+  <th class="line-num">56</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;/li&gt;&lt;li&gt;&lt;a class="overview selected"
+href="/projects/sample"&gt;Overview&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+class="activity"
+href="/projects/sample/activity"&gt;Activity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="issues"
+href="/projects/sample/issues"&gt;Issues&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="gantt"
+href="/projects/sample/issues/gantt"&gt;Gantt&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="calendar"
+href="/projects/sample/issues/calendar"&gt;Calendar&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="news"
+href="/projects/sample/news"&gt;News&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="documents"
+href="/projects/sample/documents"&gt;Documents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="wiki"
+href="/projects/sample/wiki"&gt;Wiki&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="boards"
+href="/projects/sample/boards"&gt;Forums&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="files"
+href="/projects/sample/files"&gt;Files&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="settings"
+href="/projects/sample/settings"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">57</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;/li&gt;&lt;li&gt;&lt;a class="overview selected"
+href="/projects/sample"&gt;Overview&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+class="activity"
+href="/projects/sample/activity"&gt;Activity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="issues"
+href="/projects/sample/issues"&gt;Issues&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="gantt"
+href="/projects/sample/issues/gantt"&gt;Gantt&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="calendar"
+href="/projects/sample/issues/calendar"&gt;Calendar&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="news"
+href="/projects/sample/news"&gt;News&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="documents"
+href="/projects/sample/documents"&gt;Documents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="wiki"
+href="/projects/sample/wiki"&gt;Wiki&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="boards"
+href="/projects/sample/boards"&gt;Forums&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="files"
+href="/projects/sample/files"&gt;Files&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="settings"
+href="/projects/sample/settings"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/ul&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">58</th>
+  <td class="line-code diff_out">
+    <pre>      &lt;/ul&gt;
+</pre>
+  </td>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;div class="tabs-buttons" style=""&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <td class="line-code diff_out">
+    <pre>      &lt;div class="tabs-buttons" style=""&gt;
+</pre>
+  </td>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;button class="tab-left" onclick="moveTabLeft(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">60</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;button class="tab-left" onclick="moveTabLeft(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+  <th class="line-num">60</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">61</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">62</th>
+  <td class="line-code diff_out">
+    <pre>      &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">61</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">62</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/settings.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">51</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="loggedas"&gt;Logged in as &lt;a class="user active" href="./users/1"&gt;admin&lt;/a&gt;&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">51</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="loggedas"&gt;Logged in as &lt;a class="user active" href="./users/1"&gt;admin&lt;/a&gt;&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">53</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;div id="header"&gt;
+</pre>
+  </td>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre><span>  </span>&lt;div id="header"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">55</th>
+  <td class="line-code diff_out">
+    <pre>  <span></span>&lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre>  <span>  </span>&lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">56</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+  <th class="line-num">56</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">57</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;form action="/search" accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓" type="hidden"&gt;
+</pre>
+  </td>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;form
+action="/projects/redmine-theme-minimalflat2/search"
+accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓"
+type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">58</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;input name="wiki_pages" value="1" type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;label for="q"&gt;
+</pre>
+  </td>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;label for="q"&gt;&lt;a accesskey="4"
+href="./projects/redmine-theme-minimalflat2/search"&gt;Search&lt;/a&gt;:&lt;/label&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">60</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;a accesskey="4" href="./search"&gt;Search&lt;/a&gt;:
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">61</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;/label&gt;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+  <th class="line-num">60</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre><span>      </span>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;Redmine&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;&lt;span class="breadcrumbs"&gt;&lt;a
+class="root"
+href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span
+class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor"
+href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span
+ class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span
+class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code diff_out">
+    <pre>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">68</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;li&gt;&lt;a id="new-object"
+onclick="toggleNewObjectDropdown(); return false;" class="new-object"
+href="#"&gt; + &lt;/a&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;ul class="menu-children"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a accesskey="7" class="new-issue-sub"
+ href="/projects/sample/issues/new"&gt;New issue&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a class="new-issue-category"
+href="/projects/sample/issue_categories/new"&gt;New
+category&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">72</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a class="new-version" href="/projects/sample/versions/new"&gt;New version&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">73</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a class="new-news" href="/projects/sample/news/new"&gt;Add news&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">74</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a class="new-document" href="/projects/sample/documents/new"&gt;New document&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">75</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a class="new-wiki-page" href="/projects/sample/wiki/new"&gt;New wiki page&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">76</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;li&gt;&lt;a class="new-file" href="/projects/sample/files/new"&gt;New file&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">77</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;/ul&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">78</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;/li&gt;&lt;li&gt;&lt;a class="overview selected"
+href="/projects/sample"&gt;Overview&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+class="activity"
+href="/projects/sample/activity"&gt;Activity&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="issues"
+href="/projects/sample/issues"&gt;Issues&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="gantt"
+href="/projects/sample/issues/gantt"&gt;Gantt&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="calendar"
+href="/projects/sample/issues/calendar"&gt;Calendar&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="news"
+href="/projects/sample/news"&gt;News&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="documents"
+href="/projects/sample/documents"&gt;Documents&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="wiki"
+href="/projects/sample/wiki"&gt;Wiki&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="boards"
+href="/projects/sample/boards"&gt;Forums&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="files"
+href="/projects/sample/files"&gt;Files&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a
+ class="settings"
+href="/projects/sample/settings"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">79</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;/ul&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;div class="tabs-buttons" style=""&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;button class="tab-left" onclick="moveTabLeft(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">82</th>
+  <td class="line-code diff_in">
+    <pre>          &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">83</th>
+  <td class="line-code diff_in">
+    <pre>      &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">84</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">86</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+  <th class="line-num">87</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">71</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="sidebar"&gt;
+</pre>
+  </td>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="sidebar"&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/stylus/App.styl
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">158</th>
+  <td class="line-code ">
+    <pre>    }
+</pre>
+  </td>
+  <th class="line-num">158</th>
+  <td class="line-code ">
+    <pre>    }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">159</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">159</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">160</th>
+  <td class="line-code ">
+    <pre>    .breadcrumbs {
+</pre>
+  </td>
+  <th class="line-num">160</th>
+  <td class="line-code ">
+    <pre>    .breadcrumbs {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">161</th>
+  <td class="line-code diff_out">
+    <pre>      display <span></span>block
+</pre>
+  </td>
+  <th class="line-num">161</th>
+  <td class="line-code diff_in">
+    <pre>      display <span>inline-</span>block
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">162</th>
+  <td class="line-code ">
+    <pre>      font-size .6em
+</pre>
+  </td>
+  <th class="line-num">162</th>
+  <td class="line-code ">
+    <pre>      font-size .6em
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">163</th>
+  <td class="line-code ">
+    <pre>      font-weight normal
+</pre>
+  </td>
+  <th class="line-num">163</th>
+  <td class="line-code ">
+    <pre>      font-weight normal
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">164</th>
+  <td class="line-code ">
+    <pre>    }
+</pre>
+  </td>
+  <th class="line-num">164</th>
+  <td class="line-code ">
+    <pre>    }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">165</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">166</th>
+  <td class="line-code diff_in">
+    <pre>    .current-project {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">167</th>
+  <td class="line-code diff_in">
+    <pre>      padding-left .2em
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">168</th>
+  <td class="line-code diff_in">
+    <pre>    }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">165</th>
+  <td class="line-code ">
+    <pre>  }
+</pre>
+  </td>
+  <th class="line-num">169</th>
+  <td class="line-code ">
+    <pre>  }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">166</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">170</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">167</th>
+  <td class="line-code ">
+    <pre>  a {
+</pre>
+  </td>
+  <th class="line-num">171</th>
+  <td class="line-code ">
+    <pre>  a {
+</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><td></td><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">651</th>
+  <td class="line-code ">
+    <pre>  th, .table-list-header {
+</pre>
+  </td>
+  <th class="line-num">655</th>
+  <td class="line-code ">
+    <pre>  th, .table-list-header {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">652</th>
+  <td class="line-code ">
+    <pre>    border 1px solid color_gray_light_a
+</pre>
+  </td>
+  <th class="line-num">656</th>
+  <td class="line-code ">
+    <pre>    border 1px solid color_gray_light_a
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">653</th>
+  <td class="line-code ">
+    <pre>    background-color color_gray_light_b
+</pre>
+  </td>
+  <th class="line-num">657</th>
+  <td class="line-code ">
+    <pre>    background-color color_gray_light_b
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">654</th>
+  <td class="line-code diff_out">
+    <pre>    padding <span>4px</span>
+</pre>
+  </td>
+  <th class="line-num">658</th>
+  <td class="line-code diff_in">
+    <pre>    padding <span>.5em</span>
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">655</th>
+  <td class="line-code ">
+    <pre>    white-space nowrap
+</pre>
+  </td>
+  <th class="line-num">659</th>
+  <td class="line-code ">
+    <pre>    white-space nowrap
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">656</th>
+  <td class="line-code ">
+    <pre>    font-weight normal
+</pre>
+  </td>
+  <th class="line-num">660</th>
+  <td class="line-code ">
+    <pre>    font-weight normal
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">657</th>
+  <td class="line-code ">
+    <pre>    vertical-align middle
+</pre>
+  </td>
+  <th class="line-num">661</th>
+  <td class="line-code ">
+    <pre>    vertical-align middle
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">658</th>
+  <td class="line-code ">
+    <pre>  }
+</pre>
+  </td>
+  <th class="line-num">662</th>
+  <td class="line-code ">
+    <pre>  }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">659</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">663</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">664</th>
+  <td class="line-code diff_in">
+    <pre>  .table-list-row {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">665</th>
+  <td class="line-code diff_in">
+    <pre>    padding .5em
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">666</th>
+  <td class="line-code diff_in">
+    <pre>  }
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">667</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">660</th>
+  <td class="line-code ">
+    <pre>  td {
+</pre>
+  </td>
+  <th class="line-num">668</th>
+  <td class="line-code ">
+    <pre>  td {
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">661</th>
+  <td class="line-code ">
+    <pre>    border 1px solid color_gray_light_a
+</pre>
+  </td>
+  <th class="line-num">669</th>
+  <td class="line-code ">
+    <pre>    border 1px solid color_gray_light_a
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">662</th>
+  <td class="line-code ">
+    <pre>    text-align center
+</pre>
+  </td>
+  <th class="line-num">670</th>
+  <td class="line-code ">
+    <pre>    text-align center
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/syntaxhighlight.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">51</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="loggedas"&gt;Logged in as &lt;a class="user active" href="./users/1"&gt;admin&lt;/a&gt;&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">51</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="loggedas"&gt;Logged in as &lt;a class="user active" href="./users/1"&gt;admin&lt;/a&gt;&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">53</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;div id="header"&gt;
+</pre>
+  </td>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre><span>  </span>&lt;div id="header"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">55</th>
+  <td class="line-code diff_out">
+    <pre>  <span></span>&lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre>  <span>  </span>&lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">56</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+  <th class="line-num">56</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">57</th>
+  <td class="line-code diff_out">
+    <pre>      <span>  </span>&lt;form
+action="/projects/redmine-theme-minimalflat2/search"
+accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓"
+type="hidden"&gt;
+</pre>
+  </td>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>      <span></span>&lt;form
+action="/projects/redmine-theme-minimalflat2/search"
+accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓"
+type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">58</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="wiki_pages" value="1" type="hidden"&gt;
+</pre>
+  </td>
+  <th class="line-num">58</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="wiki_pages" value="1" type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;label for="q"&gt;
+</pre>
+  </td>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;label for="q"&gt;&lt;a accesskey="4"
+href="./projects/redmine-theme-minimalflat2/search"&gt;Search&lt;/a&gt;:&lt;/label&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">60</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;a accesskey="4" href="./projects/redmine-theme-minimalflat2/search"&gt;Search&lt;/a&gt;:
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">61</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;/label&gt;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+  <th class="line-num">60</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre><span>      </span>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><td></td><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre>          &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+  <th class="line-num">82</th>
+  <td class="line-code ">
+    <pre>          &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">85</th>
+  <td class="line-code ">
+    <pre>      &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre>      &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre><span>  </span>&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">86</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+  <th class="line-num">87</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="sidebar"&gt;
+</pre>
+  </td>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="sidebar"&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+<tr>
+  <th colspan="4" class="filename">
+    src/wiki.html
+  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">50</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">50</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">51</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="loggedas"&gt;Logged in as &lt;a class="user active" href="./users/1"&gt;admin&lt;/a&gt;&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">51</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="loggedas"&gt;Logged in as &lt;a class="user active" href="./users/1"&gt;admin&lt;/a&gt;&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre>  &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+  <th class="line-num">53</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;div id="header"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <td class="line-code diff_out">
+    <pre>&lt;div id="header"&gt;
+</pre>
+  </td>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">55</th>
+  <td class="line-code diff_out">
+    <pre>  &lt;a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"&gt;&lt;/a&gt;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">56</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+  <th class="line-num">55</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="quick-search"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">57</th>
+  <td class="line-code diff_out">
+    <pre>      <span>  </span>&lt;form
+action="/projects/redmine-theme-minimalflat2/search"
+accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓"
+type="hidden"&gt;
+</pre>
+  </td>
+  <th class="line-num">56</th>
+  <td class="line-code diff_in">
+    <pre>      <span></span>&lt;form
+action="/projects/redmine-theme-minimalflat2/search"
+accept-charset="UTF-8" method="get"&gt;&lt;input name="utf8" value="✓"
+type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">58</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="wiki_pages" value="1" type="hidden"&gt;
+</pre>
+  </td>
+  <th class="line-num">57</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="wiki_pages" value="1" type="hidden"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;label for="q"&gt;
+</pre>
+  </td>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;label for="q"&gt;&lt;a accesskey="4"
+href="./projects/redmine-theme-minimalflat2/search"&gt;Search&lt;/a&gt;:&lt;/label&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">60</th>
+  <td class="line-code diff_out">
+    <pre>          &lt;a accesskey="4" href="./projects/redmine-theme-minimalflat2/search"&gt;Search&lt;/a&gt;:
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">61</th>
+  <td class="line-code diff_out">
+    <pre>        &lt;/label&gt;
+</pre>
+  </td>
+  <th class="line-num"></th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+  <th class="line-num">59</th>
+  <td class="line-code ">
+    <pre>        &lt;input name="q" id="q" size="20" class="small" accesskey="f" type="text"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">63</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;/form&gt;
+</pre>
+  </td>
+  <th class="line-num">60</th>
+  <td class="line-code diff_in">
+    <pre><span>      </span>&lt;/form&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">61</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">62</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <td class="line-code diff_out">
+    <pre>    &lt;h1&gt;<span>redmine-theme-minimalflat2</span>&lt;/h1&gt;
+</pre>
+  </td>
+  <th class="line-num">63</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;h1&gt;<span>&lt;span class="breadcrumbs"&gt;&lt;a class="root" href="/projects/root?jump=overview"&gt;Root&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;a class="ancestor" href="/projects/parent-project?jump=overview"&gt;Parent&lt;/a&gt;&lt;span class="separator"&gt; » &lt;/span&gt;&lt;/span&gt;&lt;span class="current-project"&gt;redmine-theme-minimalflat2&lt;/span&gt;</span>&lt;/h1&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">64</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+  <th class="line-num">65</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="main-menu" class="tabs"&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+  <th class="line-num">66</th>
+  <td class="line-code ">
+    <pre>      &lt;ul&gt;
+</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><td></td><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre>          &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+  <th class="line-num">81</th>
+  <td class="line-code ">
+    <pre>          &lt;button class="tab-right" onclick="moveTabRight(this); return false;"&gt;&lt;/button&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">85</th>
+  <td class="line-code ">
+    <pre>      &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">82</th>
+  <td class="line-code ">
+    <pre>      &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre>    &lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <td class="line-code diff_out">
+    <pre><span></span>&lt;/div&gt;
+</pre>
+  </td>
+  <th class="line-num">84</th>
+  <td class="line-code diff_in">
+    <pre><span>  </span>&lt;/div&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+  <th class="line-num">85</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+  <th class="line-num">86</th>
+  <td class="line-code ">
+    <pre>&lt;div id="main" class=""&gt;
+</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="sidebar"&gt;
+</pre>
+  </td>
+  <th class="line-num">87</th>
+  <td class="line-code ">
+    <pre>    &lt;div id="sidebar"&gt;
+</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+
+<p class="other-formats">Also available in:  <span><a class="diff" rel="nofollow" href="projects/sample/repository/revisions/6458d196493efb654fac66486db246dcc1eae47b/diff?format=diff&amp;type=sbs&amp;utf8=%E2%9C%93">Unified diff</a></span>
+</p>
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span></body></html>
