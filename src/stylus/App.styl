@@ -482,8 +482,7 @@ a.user.locked, a.user.locked:link, a.user.locked:visited {
 #sidebar a.selected {
   line-height 1.7em
   padding .2em 1em
-  background-color color_indigo
-  color color_white
+  color color_red
   border-radius .2em
 }
 #sidebar a.selected:hover {
@@ -491,6 +490,30 @@ a.user.locked, a.user.locked:link, a.user.locked:visited {
 }
 #admin-menu a {
   line-height 1.7em
+
+  // Redmine default ( for plugin menu )
+  background-position 0% 40%
+  background-repeat no-repeat
+  padding-left 24px
+  padding-top 2px
+  padding-bottom 3px
+
+  // Override icon fonts, disable left padding.
+  &.icon-projects,
+  &.icon-user,
+  &.icon-group
+  &.icon-roles
+  &.icon-issue
+  &.icon-issue-edit
+  &.icon-workflows
+  &.icon-custom-fields,
+  &.icon-list,
+  &.icon-settings,
+  &.icon-server-authentication
+  &.icon-plugins,
+  &.icon-help {
+    padding 0
+  }
 }
 #admin-menu a.selected {
   //padding-left 20px !important
@@ -569,7 +592,6 @@ div + .drdn-items {
 }
 .drdn-items > * {
   display block
-  border 1px solid color_white
   color color_gray_dark !important
   overflow hidden
   text-overflow ellipsis
@@ -616,6 +638,7 @@ div + .drdn-items {
 }
 #project-jump .drdn-content {
   width 280px
+  background-color color_gray_light_b
 }
 
 /***** Tables *****/
@@ -1331,16 +1354,17 @@ input[type="submit"] {
   -webkit-appearance button
 }
 fieldset {
-  border 1px solid color_gray_dark
+  border 1px solid color_gray
   margin 0
 }
 legend {
   color color_gray_dark
+  padding 0 .2em
 }
 hr {
   width 100%
   height 1px
-  background color_gray_dark
+  background color_gray
   border 0
 }
 blockquote {
@@ -1471,7 +1495,7 @@ fieldset.collapsible {
 }
 fieldset.collapsible > legend {
   cursor pointer
-  font-weight bold
+  padding 0 .2em
 
   &:before {
     icon(icon_chevron_down, color_gray)
@@ -1726,14 +1750,15 @@ ul.projects li {
 }
 
 #projects-index {
-  column-count auto
-  column-width 400px
-  -webkit-column-count auto
-  -webkit-column-width 400px
-  -webkit-column-gap .5rem
-  -moz-column-count auto
-  -moz-column-width 400px
-  -moz-column-gap 0.5rem
+  // Disable multi columns, always single columnn (old style).
+  // column-count auto
+  // column-width 400px
+  // -webkit-column-count auto
+  // -webkit-column-width 400px
+  // -webkit-column-gap .5rem
+  // -moz-column-count auto
+  // -moz-column-width 400px
+  // -moz-column-gap 0.5rem
 }
 #projects-index ul.projects li.root > ul.projects {
   border-left 3px solid color_gray_light
@@ -2285,7 +2310,6 @@ input.autocomplete.ajax-loading {
   background-repeat no-repeat
   background-position right center
 }
-
 
 .role-visibility {
   padding-left 2em

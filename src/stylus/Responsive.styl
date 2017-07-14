@@ -150,11 +150,15 @@
     display block
     width 100%
     color color_white
-    padding-left 24px
-    background transparent
+    padding .3em
+    background none
     height 50px
     line-height 40px
     border 0
+
+    &:before {
+      icon(icon_chevron_down, color_white)
+    }
   }
 
   #header .jump-box-arrow:before {
@@ -451,7 +455,7 @@
     line-height 40px
     display block
     overflow hidden
-    height 40px
+    //height 40px
     white-space nowrap
     text-overflow ellipsis
     border-top 1px solid rgba(255,255,255,.1)
@@ -550,16 +554,78 @@
 
   // minimalflat2 icons
   .flyout-menu {
+    .projects:before {
+      icon(icon_app, color_yellow)
+    }
+
+    .activity:before {
+      icon(icon_stats, color_yellow)
+    }
+
+    .issues:before {
+      icon(icon_ticket, color_yellow)
+    }
+
+    .time-entries:before {
+      icon(icon_time, color_yellow)
+    }
+
+    .gantt:before {
+      icon(icon_unbq, color_yellow)
+    }
+
+    .calendar:before {
+      icon(icon_calendar, color_yellow)
+    }
+
+    .overview:before {
+      icon(icon_list, color_yellow)
+    }
+
+    .news:before {
+      icon(icon_news, color_yellow)
+    }
+
+    .documents:before {
+      icon(icon_textfield, color_yellow)
+    }
+
+    .wiki {
+      // Override the padding of `.wiki` page.
+      padding 0 .3em
+
+      &:before {
+        icon(icon_wiki_edit, color_yellow)
+      }
+    }
+
+
+    .files:before {
+      icon(icon_file_copy, color_yellow)
+    }
+
+    .repository:before {
+      icon(icon_server_key, color_yellow)
+    }
+
+    .settings:before {
+      icon(icon_config, color_yellow)
+    }
+
+    .query:before {
+      icon(icon_search, color_yellow)
+    }
+
+    .register:before {
+      icon(icon_add, color_yellow)
+    }
+
     .home:before {
       icon(icon_home, color_yellow)
     }
 
     .my-page:before {
       icon(icon_user, color_yellow)
-    }
-
-    .projects:before {
-      icon(icon_app, color_yellow)
     }
 
     .administration:before {
@@ -623,9 +689,25 @@
   #admin-menu a,
   #admin-menu a.selected {
     line-height 40px
-    padding 0
     padding-left 32px !important
     background-position 8px 50%
+
+    // Override icon fonts, disable left padding.
+    &.icon-projects,
+    &.icon-user,
+    &.icon-group
+    &.icon-roles
+    &.icon-issue
+    &.icon-issue-edit
+    &.icon-workflows
+    &.icon-custom-fields,
+    &.icon-list,
+    &.icon-settings,
+    &.icon-server-authentication
+    &.icon-plugins,
+    &.icon-help {
+      padding .3em !important
+    }
   }
 
   /*----------------------------------------*\
@@ -656,7 +738,7 @@
     display inline-block
 
     margin .5em 0
-    padding .5em
+    padding .3em !important
 
     border 1px solid color_indigo
     -webkit-border-radius .2em

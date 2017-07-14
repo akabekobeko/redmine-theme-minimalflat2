@@ -14,6 +14,12 @@
 <link rel="stylesheet" media="all" href="stylesheets/application.css">
 <link rel="stylesheet" media="all" href="stylesheets/responsive.css">
 
+<!-- Menu for plugins (test) -->
+<style>
+#admin-menu a.redmine-git-hosting     { background-image: url( './debug_images/git_icon.png' ); }
+#admin-menu a.redmine-issue-templates { background-image: url( './debug_images/issue_templates.png' ); }
+</style>
+
 <script src="javascripts/jquery-1.js"></script>
 <script src="javascripts/application.js"></script>
 <script src="javascripts/responsive.js"></script>
@@ -109,6 +115,8 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
     <li><a class="icon icon-server-authentication ldap-authentication" href="auth_sources">LDAP authentication</a></li>
     <li><a class="icon icon-plugins plugins" href="admin/plugins">Plugins</a></li>
     <li><a class="icon icon-help info" href="admin/info">Information</a></li>
+    <li><a class="redmine-git-hosting" href="file:///settings/plugin/redmine_git_hosting">Redmine Git Hosting</a></li>
+    <li><a class="redmine-issue-templates" href="file:///global_issue_templates">Global Issue Templates</a></li>
   </ul>
 </div>
 
