@@ -22,7 +22,7 @@
 $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
 //]]>
 </script>
-<script src="projects_files/theme.js"></script>
+<script src="javascripts/theme.js"></script>
 
 <!-- page specific tags -->
     <link rel="alternate" type="application/atom+xml" title="ATOM" href="projects.atom?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">
@@ -41,8 +41,9 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
             <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
 </form>        </div>
 
-        <div class="flyout-menu__avatar flyout-menu__avatar--no-avatar">
-            <a class="user active" href="users/1">admin</a>
+        <div class="flyout-menu__avatar ">
+                <a href="/users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=80&amp;default=wavatar"></a>
+            <a class="user active" href="/users/1">admin</a>
         </div>
 
         <h3>Project</h3>
@@ -114,14 +115,19 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 
 <div id="projects-index">
 <ul class="projects root">
-<li class="root"><div class="root"><div class="header"><i class="expander"></i><a class="project root parent icon icon-fav my-project" href="projects/sample">Sample</a></div><div class="wiki description"><p>Sample Project.</p></div></div>
-<ul class="projects " style="display: none;">
-<li class="child"><div class="child"><div class="header"><a class="project child leaf " href="projects/sub-project">Sub Project</a></div><div class="wiki description"><p>Description text.</p></div></div>
-</li><li class="child"><div class="child"><div class="header"><a class="project child leaf " href="projects/minimalflat">minimalflat</a></div><div class="wiki description"><p>Redmine theme minimalflat.</p></div></div>
+<li class="root"><div class="root"><a class="project root parent icon icon-fav my-project" href="/projects/sample">Sample</a><div class="wiki description"><p>Sample Project.</p>
+</div></div>
+<ul class="projects ">
+<li class="child"><div class="child"><a class="project child leaf " href="/projects/sub-project">Sub Project</a><div class="wiki description"><p>Description text.</p>
+</div></div>
+</li><li class="child"><div class="child"><a class="project child leaf " href="/projects/minimalflat">minimalflat</a><div class="wiki description"><p>Redmine theme minimalflat.</p>
+</div></div>
 </li></ul></li>
-<li class="root"><div class="root"><div class="header"><i class="expander"></i><a class="project root parent " href="projects/sample-2">Sample 2</a></div><div class="wiki description"><p>Sample project part.2.</p></div></div>
-<ul class="projects " style="display: none;">
-<li class="child"><div class="child"><div class="header"><a class="project child leaf " href="projects/minimalflat2">minimalflat2</a></div><div class="wiki description"><p>Redmine them minimalflat2.</p></div></div>
+<li class="root"><div class="root"><a class="project root parent " href="/projects/sample-2">Sample 2</a><div class="wiki description"><p>Sample project part.2.</p>
+</div></div>
+<ul class="projects ">
+<li class="child"><div class="child"><a class="project child leaf " href="/projects/minimalflat2">minimalflat2</a><div class="wiki description"><p>Redmine them minimalflat2.</p>
+</div></div>
 </li></ul>
 </li></ul>
 
