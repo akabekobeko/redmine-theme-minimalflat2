@@ -42,6 +42,12 @@ Minimal and flat design theme for Redmine.
 |[Entypo](http://www.entypo.com/)|[Daniel Bruce](http://danielbruce.se/)|CC BY-SA 4.0|
 |[bymathias/normalize.styl](https://github.com/bymathias/normalize.styl)|[Mathias Brouilly](http://mathias.brouilly.fr/)|MIT|
 
+## Support policy
+
+This theme supports only to the latest version of Redmine. For Redmine, the composition of HTML and CSS is big changed for each minor version. Therefore it is difficult to support to multiple versions at the same time.
+
+Please use the old version when you need past Redmine support.
+
 ## ChangeLog
 
 * [CHANGELOG](CHANGELOG.md)
