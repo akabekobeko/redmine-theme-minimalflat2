@@ -45,6 +45,12 @@
 |[Entypo](http://www.entypo.com/)|[Daniel Bruce](http://danielbruce.se/)|CC BY-SA 4.0|
 |[bymathias/normalize.styl](https://github.com/bymathias/normalize.styl)|[Mathias Brouilly](http://mathias.brouilly.fr/)|MIT|
 
+## サポート方針
+
+このテーマは Redmine 最新版のみに対応します。Redmine は minor バージョンごとに HTML や CSS の構成が大きく変更されます。そのため複数のバージョンへ同時に対応するのが難しいのです。
+
+過去の Redmine 対応が必要な場合は旧バージョンを利用してください。
+
 ## 更新履歴
 
 * [CHANGELOG](CHANGELOG.md)
