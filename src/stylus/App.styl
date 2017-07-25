@@ -660,6 +660,11 @@ table.list td {
   border 1px solid color_gray_light_a
   text-align center
   padding .3em .5em
+
+  // Override style of the Icons.styl
+  &[class*="icon-"] {
+    padding .3em .5em
+  }
 }
 table.list td.id {
   width 2%
@@ -1034,7 +1039,8 @@ tr.version.closed, tr.version.closed a {
   color color_gray
 }
 tr.version td.name {
-  padding-left 20px
+  // No icon margin is required to display the icon font.
+  //padding-left 20px
 }
 tr.version td.date, tr.version td.status, tr.version td.sharing {
   text-align center
@@ -1193,7 +1199,7 @@ a.sort.desc:after {
 
 table.boards a.board, h3.comments {
   &:before {
-    icon(icon_comment, color_blue)
+    icon(icon_message, color_blue)
   }
 }
 table.boards td.last-message {
@@ -1302,7 +1308,9 @@ span.add_attachment a:before {
   word-wrap break-word
   font-size .9em
 }
-
+#content .box h3 {
+  margin .2em 0 .5em 0
+}
 div.square {
   border 1px solid color_gray_dark
   float left
@@ -2188,7 +2196,6 @@ div.attachments img {
   vertical-align middle
 }
 div.attachments span.author {
-  font-size .9em
   color color_gray
 }
 

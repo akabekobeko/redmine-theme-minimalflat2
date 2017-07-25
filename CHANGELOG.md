@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.3.1
+
+### Bug Fixes
+
+* Missing icons for Redmine v3.4 [#108](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/108)
+
 ## v1.3.0
 
 ### Changes
