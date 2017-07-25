@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>minimalflat2 - Sample - Redmine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="4sETqN2Aa5G6Ivg7y1j0c++myHfywRpbNKdC580+VrlQ7/k+Cnj9r4DCGURTjDtxKbzV464YZV9ZyW06iVwCXQ==">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="stylesheet" media="all" href="stylesheets/jquery-ui-1.css">
+<link rel="stylesheet" media="all" href="stylesheets/application.css">
+<link rel="stylesheet" media="all" href="stylesheets/responsive.css">
+
+<script src="javascripts/jquery-1.js"></script>
+<script src="javascripts/application.js"></script>
+<script src="javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+<!-- page specific tags -->
+<script src="javascripts/jstoolbar.js"></script><script src="javascripts/markdown.js"></script><script src="javascripts/jstoolbar-en.js"></script><script>
+//<![CDATA[
+var wikiImageMimeTypes = ["image/gif","image/jpeg","image/png","image/tiff","image/x-ms-bmp"];
+//]]>
+</script><link rel="stylesheet" media="screen" href="javascripts/jstoolbar.css">  <script src="javascripts/attachments.js"></script><style>@media print {#ghostery-purple-box {display:none !important}}</style>
+    <link rel="alternate" type="application/atom+xml" title="Sample: minimalflat2" href="http://192.168.33.10/projects/sample/boards/1.atom?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">
+</head>
+<body class="project-sample controller-boards action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+            <input name="messages" value="1" type="hidden">
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
+</form>        </div>
+
+        <div class="flyout-menu__avatar ">
+                <a href="http://192.168.33.10/users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="forums_files/c265a1a7dadb2713ff2262025e91d133.png"></a>
+            <a class="user active" href="http://192.168.33.10/users/1">admin</a>
+        </div>
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="my-account" href="http://192.168.33.10/my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="http://192.168.33.10/logout">Sign out</a></li></ul>    </div>
+    <div id="loggedas">Logged in as <a class="user active" href="http://192.168.33.10/users/1">admin</a></div>
+    <ul><li><a class="home" href="http://192.168.33.10/">Home</a></li><li><a class="my-page" href="http://192.168.33.10/my/page">My page</a></li><li><a class="projects" href="http://192.168.33.10/projects">Projects</a></li><li><a class="administration" href="http://192.168.33.10/admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <input name="scope" value="subprojects" type="hidden">
+        <input name="messages" value="1" type="hidden">
+        <label for="q">
+          <a accesskey="4" href="http://192.168.33.10/projects/sample/search">Search</a>:
+        </label>
+        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
+</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=boards" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="http://192.168.33.10/projects/sample?jump=boards"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="http://192.168.33.10/projects?jump=boards">All Projects</a></div></div></div>
+    </div>
+
+    <h1><span class="current-project">Sample</span></h1>
+
+    <div id="main-menu" class="tabs">
+        <ul><li>
+<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
+<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="http://192.168.33.10/projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="http://192.168.33.10/projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="http://192.168.33.10/projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="http://192.168.33.10/projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="http://192.168.33.10/projects/sample/news/new">Add news</a></li><li><a class="new-document" href="http://192.168.33.10/projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="http://192.168.33.10/projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="http://192.168.33.10/projects/sample/files/new">New file</a></li></ul>
+</li><li><a class="overview" href="http://192.168.33.10/projects/sample">Overview</a></li><li><a class="activity" href="http://192.168.33.10/projects/sample/activity">Activity</a></li><li><a class="issues" href="http://192.168.33.10/projects/sample/issues">Issues</a></li><li><a class="time-entries" href="http://192.168.33.10/projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="http://192.168.33.10/projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="http://192.168.33.10/projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="http://192.168.33.10/projects/sample/news">News</a></li><li><a class="documents" href="http://192.168.33.10/projects/sample/documents">Documents</a></li><li><a class="wiki" href="http://192.168.33.10/projects/sample/wiki">Wiki</a></li><li><a class="boards selected" href="http://192.168.33.10/projects/sample/boards">Forums</a></li><li><a class="files" href="http://192.168.33.10/projects/sample/files">Files</a></li><li><a class="repository" href="http://192.168.33.10/projects/sample/repository">Repository</a></li><li><a class="settings" href="http://192.168.33.10/projects/sample/settings">Settings</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+
+
+    </div>
+
+    <div id="content">
+
+        <p class="breadcrumb"><a href="http://192.168.33.10/projects/sample/boards">Forums</a> » </p>
+
+<div class="contextual">
+<a class="icon icon-add" onclick='showAndScrollTo("add-message", "message_subject"); return false;' href="http://192.168.33.10/boards/1/topics/new">New message</a>
+<a class="board-1-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="http://192.168.33.10/watchers/watch?object_id=1&amp;object_type=board">Watch</a>
+</div>
+
+<div id="add-message" style="display:none;">
+<h2><a href="http://192.168.33.10/projects/sample/boards/1">minimalflat2</a> » New message</h2>
+<form id="message-form" class="new_message" enctype="multipart/form-data" action="/boards/1/topics/new" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="4sETqN2Aa5G6Ivg7y1j0c++myHfywRpbNKdC580+VrlQ7/k+Cnj9r4DCGURTjDtxKbzV464YZV9ZyW06iVwCXQ==" type="hidden">
+
+
+<div class="box filedroplistner">
+<!--[form:message]-->
+<p><label for="message_subject">Subject</label><br>
+<input size="120" id="message_subject" name="message[subject]" type="text">
+
+    <input name="message[sticky]" value="0" type="hidden"><input value="1" name="message[sticky]" id="message_sticky" type="checkbox"> <label for="message_sticky">Sticky</label>
+    <input name="message[locked]" value="0" type="hidden"><input value="1" name="message[locked]" id="message_locked" type="checkbox"> <label for="message_locked">Locked</label>
+</p>
+
+
+<p>
+<label class="hidden-for-sighted" for="message_content">Message content</label>
+<div class="jstElements"><button type="button" tabindex="200" class="jstb_strong" title="Strong"><span>Strong</span></button><button type="button" tabindex="200" class="jstb_em" title="Italic"><span>Italic</span></button><button type="button" tabindex="200" class="jstb_del" title="Deleted"><span>Deleted</span></button><button type="button" tabindex="200" class="jstb_code" title="Inline Code"><span>Inline Code</span></button><span id="space1" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_h1" title="Heading 1"><span>Heading 1</span></button><button type="button" tabindex="200" class="jstb_h2" title="Heading 2"><span>Heading 2</span></button><button type="button" tabindex="200" class="jstb_h3" title="Heading 3"><span>Heading 3</span></button><span id="space2" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_ul" title="Unordered list"><span>Unordered list</span></button><button type="button" tabindex="200" class="jstb_ol" title="Ordered list"><span>Ordered list</span></button><span id="space3" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_bq" title="Quote"><span>Quote</span></button><button type="button" tabindex="200" class="jstb_unbq" title="Remove Quote"><span>Remove Quote</span></button><button type="button" tabindex="200" class="jstb_pre" title="Preformatted text"><span>Preformatted text</span></button><button type="button" tabindex="200" class="jstb_precode" title="Highlighted code"><span>Highlighted code</span></button><span id="space4" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_link" title="Link to a Wiki page"><span>Link to a Wiki page</span></button><button type="button" tabindex="200" class="jstb_img" title="Image"><span>Image</span></button><span id="space5" class="jstSpacer">&nbsp;</span><button type="button" tabindex="200" class="jstb_help" title="Help"><span>Help</span></button></div><div class="jstEditor"><textarea cols="80" rows="15" class="wiki-edit" id="message_content" name="message[content]"></textarea></div></p>
+<script>
+//<![CDATA[
+var wikiToolbar = new jsToolBar(document.getElementById('message_content')); wikiToolbar.setHelpLink('/help/en/wiki_syntax_markdown.html'); wikiToolbar.draw();
+//]]>
+</script>
+<!--[eoform:message]-->
+
+<p>Files<br>
+
+<span class="attachments_form">
+  <span class="attachments_fields">
+  </span>
+  <span class="add_attachment" style="">
+    <input name="attachments[dummy][file]" class="file_selector filedrop" multiple="multiple" onchange="addInputFiles(this);" data-max-file-size="5242880" data-max-file-size-message="This file cannot be uploaded because it exceeds the maximum allowed file size (5 MB)" data-max-concurrent-uploads="2" data-upload-path="/uploads.js" data-param="attachments" data-description="true" data-description-placeholder="Optional description" type="file">
+    (Maximum size: 5 MB)
+  </span>
+</span>
+
+</p>
+</div>
+
+  <p><input name="commit" value="Create" type="submit">
+  <a href="#" onclick='submitPreview("/boards/1/topics/preview", "message-form", "preview"); return false;' accesskey="r">Preview</a> |
+  <a onclick='$("#add-message").hide(); return false;' href="#">Cancel</a></p>
+</form><div id="preview" class="wiki"></div>
+</div>
+
+<h2>minimalflat2</h2>
+<p class="subtitle">Forum for the minimalflat2.</p>
+
+<table class="list messages">
+  <thead><tr>
+    <th>Subject</th>
+    <th>Author</th>
+    <th title="Sort by &quot;Created&quot;"><a href="http://192.168.33.10/projects/sample/boards/1?sort=created_on%2Cupdated_on%3Adesc">Created</a></th>
+    <th title="Sort by &quot;Replies&quot;"><a href="http://192.168.33.10/projects/sample/boards/1?sort=replies%2Cupdated_on%3Adesc">Replies</a></th>
+    <th title="Sort by &quot;Last message&quot;"><a class="sort desc" href="http://192.168.33.10/projects/sample/boards/1?sort=updated_on">Last message</a></th>
+  </tr></thead>
+  <tbody>
+    <tr id="message-5" class="message sticky ">
+      <td class="subject icon icon-sticky "><a href="http://192.168.33.10/boards/1/topics/5">sticky</a></td>
+      <td class="author"><a class="user active" href="http://192.168.33.10/users/1">Redmine Admin</a></td>
+      <td class="created_on">07/25/2017 02:21 AM</td>
+      <td class="reply-count">0</td>
+      <td class="last_message">
+      </td>
+    </tr>
+    <tr id="message-3" class="message sticky locked">
+      <td class="subject icon icon-sticky icon-locked"><a href="http://192.168.33.10/boards/1/topics/3">lock &amp; sticky</a></td>
+      <td class="author"><a class="user active" href="http://192.168.33.10/users/1">Redmine Admin</a></td>
+      <td class="created_on">07/25/2017 02:12 AM</td>
+      <td class="reply-count">1</td>
+      <td class="last_message">
+        Added by <a class="user active" href="http://192.168.33.10/users/1">Redmine Admin</a> <a title="07/25/2017 02:13 AM" href="http://192.168.33.10/projects/sample/activity?from=2017-07-25">8 minutes</a> ago<br>
+        <a href="http://192.168.33.10/boards/1/topics/3?r=4#message-4">RE: lock &amp; sticky</a>
+      </td>
+    </tr>
+    <tr id="message-6" class="message  locked">
+      <td class="subject icon  icon-locked"><a href="http://192.168.33.10/boards/1/topics/6">lock</a></td>
+      <td class="author"><a class="user active" href="http://192.168.33.10/users/1">Redmine Admin</a></td>
+      <td class="created_on">07/25/2017 02:21 AM</td>
+      <td class="reply-count">0</td>
+      <td class="last_message">
+      </td>
+    </tr>
+    <tr id="message-1" class="message  ">
+      <td class="subject icon  "><a href="http://192.168.33.10/boards/1/topics/1">Test</a></td>
+      <td class="author"><a class="user active" href="http://192.168.33.10/users/1">Redmine Admin</a></td>
+      <td class="created_on">07/25/2017 01:17 AM</td>
+      <td class="reply-count">1</td>
+      <td class="last_message">
+        Added by <a class="user active" href="http://192.168.33.10/users/1">Redmine Admin</a> <a title="07/25/2017 01:18 AM" href="http://192.168.33.10/projects/sample/activity?from=2017-07-25">about 1 hour</a> ago<br>
+        <a href="http://192.168.33.10/boards/1/topics/1?r=2#message-2">RE: Test</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-4/4)</span> </span></span>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="http://192.168.33.10/projects/sample/boards/1.atom?key=f4b0cf9d9a0bbfea5c3b67a0b7c3048089f56481">Atom</a></span>
+</p>
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>
