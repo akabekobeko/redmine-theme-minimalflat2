@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v1.3.2
+
+### Changes
+
+* Change the download icon to `Entypo+` icon [#110](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/110)
+* Improve a layout of a main text [#111](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/111)
+
 ## v1.3.1
 
 ### Bug Fixes
