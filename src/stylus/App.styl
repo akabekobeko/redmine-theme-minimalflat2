@@ -1377,13 +1377,16 @@ hr {
 }
 blockquote {
   border-left 2px solid color_gray
-  padding 0 .5em
   margin 1em
   color color_gray
 }
 blockquote blockquote {
   margin-left 0
 }
+.wiki blockquote p {
+  margin-right 0
+}
+
 abbr, span[title] {
   border-bottom 1px dotted color_gray_light_a
   cursor help
@@ -2895,6 +2898,8 @@ div.wiki img {
 
   p {
     margin 1em
+    font-feature-settings "palt"
+    text-align justify
   }
 }
 
@@ -3461,7 +3466,7 @@ input[type="button"] {
   color color_white
   padding .3em 1em
   border-radius .2em
-  letter-spacing .12em
+  letter-spacing .1em
 
   &:hover {
     opacity .8
