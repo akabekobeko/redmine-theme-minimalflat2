@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.3.3
+
+### Changes
+
+* Add a style to the link of the new wiki page [#113](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/113)
+
 ## v1.3.2
 
 ### Changes
