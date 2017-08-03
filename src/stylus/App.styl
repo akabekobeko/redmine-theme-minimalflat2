@@ -2749,7 +2749,11 @@ div.wiki a {
   word-wrap break-word
 }
 div.wiki a.new {
-  ccolor color_red
+  color color_green
+
+  &:before {
+    icon(icon_add, color_green)
+  }
 }
 
 div.wiki ul, div.wiki ol {
