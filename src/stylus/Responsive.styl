@@ -155,13 +155,8 @@
     height 50px
     line-height 40px
     border 0
-
-    &:before {
-      icon(icon_chevron_down, color_white)
-    }
   }
-
-  #header .jump-box-arrow:before {
+  #project-jump .drdn-trigger:before {
     // set a font-size in order to achive same result in different themes
     font-family Verdana, sans-serif
     font-size 1.5em
@@ -179,7 +174,6 @@
 
     opacity .6
   }
-
   #project-jump.expanded .drdn-trigger:before {
     -webkit-transform scale(1,.8)
     -ms-transform scale(1,.8)
@@ -228,11 +222,11 @@
     display none
   }
 
-  .splitcontentleft {
+  .splitcontentleft, #list-left {
     width 100%
   }
 
-  .splitcontentright {
+  .splitcontentright, #list-right {
     width 100%
   }
 
@@ -671,10 +665,8 @@
   }
 
   .flyout-is-active #wrapper2 {
-    /*
-     * only relevant for devices with cursor when flyout it active, in order to show,
-     * that whole wrapper content is clickable and closes flyout menu
-     */
+     // only relevant for devices with cursor when flyout it active, in order to show,
+     // that whole wrapper content is clickable and closes flyout menu
     cursor pointer
   }
 
@@ -913,18 +905,18 @@
     width 100%
   }
 
-  /* issue edit form */
+  // issue edit form
   label[for='issue_description'] ~ a .icon-edit {
     word-wrap normal
   }
 
-  /* issues page */
+  // issues page
   body.controller-issues p.query-totals {
     margin-top 0px
     text-align left
   }
 
-  /* subtasks and related issues list on issue show */
+  // subtasks and related issues list on issue show
   #issue_tree .issues, #relations .issues {
     border-collapse separate
     border-spacing 0 1em // vertical space between tasks
@@ -959,7 +951,7 @@
     position relative // needed for .buttons positioning
   }
 
-  /* positioniong of unline button */
+  // positioniong of unline button
   #relations .issue > td.buttons {
     text-align right
     position absolute

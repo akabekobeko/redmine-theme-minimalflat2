@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.3.4
+
+### Bug Fixes
+
+* When 2+ widgets are placed on the same row on "my page", on small device the view is garbled [#115](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/115)
+
 ## v1.3.3
 
 ### Changes
