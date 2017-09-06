@@ -46,7 +46,7 @@
     "cpx": "^1.5.0",
     "cross-conf-env": "^1.1.2",
     "mkdirp": "^0.5.1",
-    "npm-run-all": "^4.0.2",
+    "npm-run-all": "^4.1.1",
     "rimraf": "^2.6.1",
     "stylus": "^0.54.5"
   },
