@@ -1,7 +1,9 @@
 (function ($) {
-  if (!($)) { return }
+  if (!($)) {
+    return
+  }
 
-  // Tree view ( only projects page )
+  // Tree view (only projects page)
   function setupProjectTreeView () {
     function toggleExpandSymbol (area) {
       area.children('i.expander').each(function () {
@@ -32,7 +34,20 @@
     })
   }
 
+  // The table can be scrolled when "My Page" is displayed in one column
+  function setupMyPageAutoScroll () {
+    $('#my-page table').each(function () {
+      var parent = $(this).parent()
+      if (parent.hasClass('autoscroll')) {
+        return
+      }
+
+      $(this).wrap($('<div class="autoscroll"></div>'))
+    })
+  }
+
   $(document).ready(function () {
     setupProjectTreeView()
+    setupMyPageAutoScroll()
   })
 })(window.jQuery)
