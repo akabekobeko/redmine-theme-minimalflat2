@@ -1,5 +1,16 @@
 # ChangeLog
 
+## v1.3.5
+
+### Changes
+
+* Support Redmine v3.4.3 [#119](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/119)
+
+### Bug Fixes
+
+* Increase width of select values in issues page [#118](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/118)
+* When "my project" is displayed in 1 column mode, the table protrudes [#117](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/117)
+
 ## v1.3.4
 
 ### Bug Fixes
