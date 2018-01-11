@@ -924,6 +924,9 @@ tr.issue.idnt-9 td.subject {
 table.issue-report {
   table-layout fixed
 }
+table.issue-report th {
+  white-space normal
+}
 
 tr.entry {
   border 1px solid color_gray_light_b
@@ -2487,17 +2490,17 @@ table.cal td.today {
 table.cal td.today p.day-num {
   font-weight bold
 }
-table.cal .starting a, p.cal.legend .starting {
+table.cal .starting a.issue, p.cal.legend .starting {
   &:before {
     icon(icon_arrow_right, color_green)
   }
 }
-table.cal .ending a, p.cal.legend .ending {
+table.cal .ending a.issue, p.cal.legend .ending {
   &:before {
     icon(icon_arrow_left, color_red)
   }
 }
-table.cal .starting.ending a, p.cal.legend .starting.ending {
+table.cal .starting.ending a.issue, p.cal.legend .starting.ending {
   &:before {
     icon(icon_circle, color_blue)
   }
@@ -2980,6 +2983,10 @@ a.close-icon:hover {
   overflow hidden
   white-space nowrap
   text-overflow ellipsis
+}
+
+.gantt_subjects .issue-subject img.icon-gravatar {
+  margin 2px 5px 0px 2px
 }
 
 .task {
