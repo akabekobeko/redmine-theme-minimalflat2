@@ -1,335 +1,350 @@
 // Icons
 
-@import "common/Color.styl"
+@import "./Variables.scss";
+
+@font-face {
+  font-family: "icon";
+  src: url("../fonts/icon.eot?bmd5h3");
+  src: url("../fonts/icon.eot?bmd5h3#iefix") format("embedded-opentype"),
+    url("../fonts/icon.ttf?bmd5h3") format("truetype"),
+    url("../fonts/icon.woff?bmd5h3") format("woff"),
+    url("../fonts/icon.svg?bmd5h3#icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="icon-"]:before {
+  @include iconbase();
+}
 
 .icon-add:before {
-  icon(icon_add, color_green)
+  @include icon($icon_add, $color_green)
 }
 
 .icon-edit:before {
-  icon(icon_edit, color_yellow_dark)
+  @include icon($icon_edit, $color_yellow_dark)
 }
 
 .icon-copy:before {
-  icon(icon_file_copy, color_gray)
+  @include icon($icon_file_copy, $color_gray)
 }
 
 .icon-duplicate:before {
-  icon(icon_file_copy, color_green)
+  @include icon($icon_file_copy, $color_green)
 }
 
 .icon-del:before {
-  icon(icon_trash, color_gray)
+  @include icon($icon_trash, $color_gray)
 }
 
 .icon-move:before {
-  icon(icon_redo, color_yellow)
+  @include icon($icon_redo, $color_yellow)
 }
 
 .icon-save:before {
-  icon(icon_save, color_blue)
+  @include icon($icon_save, $color_blue)
 }
 
 .icon-cancel:before {
-  icon(icon_undo, color_yellow)
+  @include icon($icon_undo, $color_yellow)
 }
 
 .icon-multiple:before {
-  icon(icon_table_multiple, color_blue)
+  @include icon($icon_table_multiple, $color_blue)
 }
 
 .icon-folder:before {
-  icon(icon_folder, color_blue)
+  @include icon($icon_folder, $color_blue)
 }
 .open .icon-folder:before {
-  icon(icon_folder_open, color_blue)
+  @include icon($icon_folder_open, $color_blue)
 }
 
 .icon-package:before {
-  icon(icon_package, color_orange)
+  @include icon($icon_package, $color_orange)
 }
 
 .icon-user:before {
-  icon(icon_user, color_green)
+  @include icon($icon_user, $color_green)
 }
 
 .icon-projects:before {
-  icon(icon_app, color_blue)
+  @include icon($icon_app, $color_blue)
 }
 
 .icon-settings:before {
-  icon(icon_config, color_blue)
+  @include icon($icon_config, $color_blue)
 }
 
 .icon-group:before {
-  icon(icon_group, color_green)
+  @include icon($icon_group, $color_green)
 }
 
 .icon-roles:before {
-  icon(icon_database_key, color_gray)
+  @include icon($icon_database_key, $color_gray)
 }
 
 .icon-issue-edit:before {
-  icon(icon_ticket, color_green)
+  @include icon($icon_ticket, $color_green)
 }
 
 .icon-workflows:before {
-  icon(icon_ticket, color_blue)
+  @include icon($icon_ticket, $color_blue)
 }
 
 .icon-custom-fields:before {
-  icon(icon_textfield, color_gray)
+  @include icon($icon_textfield, $color_gray)
 }
 
 .icon-plugins:before {
-  icon(icon_plugin, color_green)
+  @include icon($icon_plugin, $color_green)
 }
 
 .icon-help:before {
-  icon(icon_help, color_blue)
+  @include icon($icon_help, $color_blue)
 }
 
 .icon-attachment:before {
-  icon(icon_attachment, color_gray)
+  @include icon($icon_attachment, $color_gray)
 }
 
 .icon-history:before {
-  icon(icon_history, color_gray)
+  @include icon($icon_history, $color_gray)
 }
 
 .icon-time:before {
-  icon(icon_time, color_gray)
+  @include icon($icon_time, $color_gray)
 }
 
 .icon-time-add:before {
-  icon(icon_time, color_green)
+  @include icon($icon_time, $color_green)
 }
 
 .icon-stats:before {
-  icon(icon_stats, color_purple)
+  @include icon($icon_stats, $color_purple)
 }
 
 .icon-warning:before {
-  icon(icon_warning, color_red)
+  @include icon($icon_warning, $color_red)
 }
 
 .icon-error:before {
-  icon(icon_error, color_red)
+  @include icon($icon_error, $color_red)
 }
 
 .icon-fav:before {
-  icon(icon_fav, color_yellow)
+  @include icon($icon_fav, $color_yellow)
 }
 
 .icon-fav-off:before {
-  icon(icon_fav_off, color_gray)
+  @include icon($icon_fav_off, $color_gray)
 }
 
 .icon-reload:before {
-  icon(icon_reload, color_green)
+  @include icon($icon_reload, $color_green)
 }
 
 .icon-lock:before {
-  icon(icon_lock, color_yellow_dark)
+  @include icon($icon_lock, $color_yellow_dark)
 }
 
 .icon-locked:before {
-  icon(icon_lock, color_yellow_dark)
+  @include icon($icon_lock, $color_yellow_dark)
 }
 
 .icon-unlock:before {
-  icon(icon_unlock, color_yellow_dark)
+  @include icon($icon_unlock, $color_yellow_dark)
 }
 
 .icon-checked:before {
-  icon(icon_check, color_green)
+  @include icon($icon_check, $color_green)
 }
 
 .icon-details:before {
-  icon(icon_zoom_in, color_green)
+  @include icon($icon_zoom_in, $color_green)
 }
 
 .icon-report:before                {
-  icon(icon_report, color_blue)
+  @include icon($icon_report, $color_blue)
 }
 
 .icon-comment:before {
-  icon(icon_message, color_blue)
+  @include icon($icon_message, $color_blue)
 }
 
 .icon-comments:before {
-  icon(icon_comments, color_blue)
+  @include icon($icon_comments, $color_blue)
 }
 
 .icon-summary:before {
-  icon(icon_lightning, color_yellow)
+  @include icon($icon_lightning, $color_yellow)
 }
 
 .icon-server-authentication:before {
-  icon(icon_server_key, color_yellow)
+  @include icon($icon_server_key, $color_yellow)
 }
 
 .icon-issue:before {
-  icon(icon_ticket, color_yellow)
+  @include icon($icon_ticket, $color_yellow)
 }
 
 .icon-zoom-in:before {
-  icon(icon_zoom_in, color_green)
+  @include icon($icon_zoom_in, $color_green)
 }
 
 .icon-zoom-out:before {
-  icon(icon_zoom_out, color_red)
+  @include icon($icon_zoom_out, $color_red)
 }
 
 .icon-magnifier:before {
-  icon(icon_zoom_in, color_blue)
+  @include icon($icon_zoom_in, $color_blue)
 }
 
 .icon-passwd:before {
-  icon(icon_textfield, color_gray)
+  @include icon($icon_textfield, $color_gray)
 }
 
 .icon-test:before {
-  icon(icon_arrow_right, color_green)
+  @include icon($icon_arrow_right, $color_green)
 }
 
 .icon-email:before {
-  icon(icon_mail, color_blue)
+  @include icon($icon_mail, $color_blue)
 }
 
 .icon-email-disabled:before {
-  icon(icon_mail, color_gray)
+  @include icon($icon_mail, $color_gray)
 }
 
 .icon-email-add:before {
-  icon(icon_mail, color_green)
+  @include icon($icon_mail, $color_green)
 }
 
 .icon-move-up:before {
-  icon(icon_chevron_up, color_green)
+  @include icon($icon_chevron_up, $color_green)
 }
 
 .icon-move-top:before {
-  icon(icon_chevron_up, color_red)
+  @include icon($icon_chevron_up, $color_red)
 }
 
 .icon-move-down:before {
-  icon(icon_chevron_down, color_green)
+  @include icon($icon_chevron_down, $color_green)
 }
 .icon-move-bottom:before {
-  icon(icon_chevron_down, color_red)
+  @include icon($icon_chevron_down, $color_red)
 }
 
 .icon-ok:before {
-  icon(icon_check, color_green)
+  @include icon($icon_check, $color_green)
 }
 
 .icon-not-ok:before {
-  icon(icon_cross, color_red)
+  @include icon($icon_cross, $color_red)
 }
 
 .icon-link-break:before {
-  icon(icon_trash, color_gray)
+  @include icon($icon_trash, $color_gray)
 }
 
 .icon-list:before {
-  icon(icon_list_2, color_gray)
+  @include icon($icon_list_2, $color_gray)
 }
 
 .icon-close:before {
-  icon(icon_error, color_gray)
+  @include icon($icon_error, $color_gray)
 }
 
 .icon-add-bullet:before {
-  icon(icon_add, color_green)
+  @include icon($icon_add, $color_green)
 }
 
 .icon-download:before {
-  icon(icon_download, color_blue)
+  @include icon($icon_download, $color_blue)
 }
 
 .icon-sticky:before {
-  icon(icon_arrow_right, color_green)
+  @include icon($icon_arrow_right, $color_green)
 }
 
 .icon-news:before {
-  icon(icon_news, color_gray)
+  @include icon($icon_news, $color_gray)
 }
 
 .icon-shared:before {
-  icon(icon_link, color_gray)
+  @include icon($icon_link, $color_gray)
 }
 
 .icon-file:before {
-  icon(icon_file, color_gray)
+  @include icon($icon_file, $color_gray)
 }
 
 .icon-file.text-plain:before {
-  icon(icon_file_text, color_blue)
+  @include icon($icon_file_text, $color_blue)
 }
 
 .icon-file.text-x-c:before {
-  icon(icon_file_text, color_blue)
+  @include icon($icon_file_text, $color_blue)
 }
 
 .icon-file.text-x-csharp:before {
-  icon(icon_file_text, color_blue)
+  @include icon($icon_file_text, $color_blue)
 }
 
 .icon-file.text-x-java:before {
-  icon(icon_file_text, color_yellow_dark)
+  @include icon($icon_file_text, $color_yellow_dark)
 }
 
 .icon-file.text-x-javascript:before {
-  icon(icon_file_text, color_yellow_dark)
+  @include icon($icon_file_text, $color_yellow_dark)
 }
 
 .icon-file.text-x-php:before {
-  icon(icon_file_text, color_purple)
+  @include icon($icon_file_text, $color_purple)
 }
 
 .icon-file.text-x-ruby:before {
-  icon(icon_file_text, color_red)
+  @include icon($icon_file_text, $color_red)
 }
 
 .icon-file.text-xml:before {
-  icon(icon_file_text, color_green)
+  @include icon($icon_file_text, $color_green)
 }
 
 .icon-file.text-css:before {
-  icon(icon_file_text, color_orange)
+  @include icon($icon_file_text, $color_orange)
 }
 
 .icon-file.text-html:before {
-  icon(icon_file_text, color_green)
+  @include icon($icon_file_text, $color_green)
 }
 
 .icon-file.image-gif:before {
-  icon(icon_file_image, color_green)
+  @include icon($icon_file_image, $color_green)
 }
 
 .icon-file.image-jpeg:before {
-  icon(icon_file_image, color_green)
+  @include icon($icon_file_image, $color_green)
 }
 
 .icon-file.image-png:before {
-  icon(icon_file_image, color_green)
+  @include icon($icon_file_image, $color_green)
 }
 
 .icon-file.image-tiff:before {
-  icon(icon_file_image, color_green)
+  @include icon($icon_file_image, $color_green)
 }
 
 .icon-file.application-pdf:before {
-  icon(icon_file_pdf, color_red)
+  @include icon($icon_file_pdf, $color_red)
 }
 
 .icon-file.application-zip:before {
-  icon(icon_file_zip, color_yellow)
+  @include icon($icon_file_zip, $color_yellow)
 }
 
 .icon-file.application-x-gzip:before {
-  icon(icon_file_zip, color_green)
+  @include icon($icon_file_zip, $color_green)
 }
 
 // Override the default icon images padding
@@ -417,7 +432,7 @@
   &.icon-file.application-pdf,
   &.icon-file.application-zip,
   &.icon-file.application-x-gzip {
-    padding 0
+    padding: 0;
   }
 }
 
@@ -505,14 +520,14 @@
   &.icon-file.application-pdf,
   &.icon-file.application-zip,
   &.icon-file.application-x-gzip {
-    width 1.3em
-    height 1.3em
-    padding 0
-    font-size 1em
-    color transparent !important
+    width: 1.3em;
+    height: 1.3em;
+    padding: 0;
+    font-size: 1em;
+    color: transparent !important;
 
     &:after {
-      content ""
+      content: "";
     }
   }
 }
