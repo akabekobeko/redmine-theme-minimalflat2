@@ -534,11 +534,6 @@ a#toggle-completed-versions {
   color: $color_gray;
 }
 
-a.toggle-checkboxes:before {
-  @include iconbase();
-  @include icon($icon_check, $color_green);
-}
-
 /***** Dropdown *****/
 .drdn {
   position: relative;
@@ -1440,13 +1435,11 @@ p.footnote {
   margin-top: 0;
   margin-bottom: 0;
 }
-.ltr {
-  direction: ltr !important;
-  unicode-bidi: bidi-override;
+.wiki-class-ltr {
+  direction:ltr !important;
 }
-.rtl {
-  direction: rtl !important;
-  unicode-bidi: bidi-override;
+.wiki-class-rtl {
+  direction:rtl !important;
 }
 
 div.issue div.subject div div {
@@ -2102,8 +2095,9 @@ div.changeset-changes > ul > li {
   padding-left: 0 !important;
 }
 
-#preview fieldset {
+fieldset.preview {
   margin-top: 1em;
+  min-width: inherit;
   background: url(../images/draft.png);
 }
 
@@ -2902,10 +2896,11 @@ a.wiki-anchor:hover {
   text-decoration: none;
 }
 
-h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor {
+h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor, h4:hover a.wiki-anchor, h5:hover a.wiki-anchor, h6:hover a.wiki-anchor {
   display: inline;
   color: $color_gray_light_c;
 }
+
 
 div.wiki img {
   vertical-align: middle;
