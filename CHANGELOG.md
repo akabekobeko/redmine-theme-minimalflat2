@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.5.0
+
+### Bug Fixes
+
+* A project name overlaps with the switch button while mobile site [#131](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/131)
+
 ## v1.4.0
 
 ### Changes

@@ -37,6 +37,22 @@
 3. Redmine 上部のメニューから**管理** - **設定** - **表示**を表示
 4. **テーマ**欄から **minimalflat2** を選択して設定を保存
 
+## 開発
+
+CSS の Transpile (watch) CSS と Web ブラウザーのプレビューを実行できます。
+
+1. `git clone https://github.com/akabekobeko/redmine-theme-minimalflat2.git`
+2. `cd redmine-theme-minimalflat2`
+3. `npm i`
+4. `npm start`
+
+### docker-compose
+
+実際に Redmine を実行して動作確認する場合は以下を実行してください。
+
+1. `docker-compose up -d`
+2. Access to http://localhost:8080/ on web browser
+
 ## ライブラリ
 
 |Library|Author|License|

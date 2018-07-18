@@ -34,6 +34,20 @@ Minimal and flat design theme for Redmine.
 3. Open Redmine page, and go to **Administration > Settings > Display**
 4. Enable the **minimalflat2** from **Theme**, and **save** settings
 
+## Development
+
+Transpile (watch) CSS and preview on web browser.
+
+1. `git clone https://github.com/akabekobeko/redmine-theme-minimalflat2.git`
+2. `cd redmine-theme-minimalflat2`
+3. `npm i`
+4. `npm start`
+
+### docker-compose
+
+1. `docker-compose up -d`
+2. Access to http://localhost:8080/ on web browser
+
 ## Libraries
 
 |Library|Author|License|
