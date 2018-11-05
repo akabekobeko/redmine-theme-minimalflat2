@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v1.4.1
+
+### Bug Fixes
+
+* A project name overlaps with the switch button while mobile site [#131](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/131)
+* Attachment font size and layout [#135](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/135)
+
 ## v1.4.0
 
 ### Changes
