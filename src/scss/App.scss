@@ -2231,6 +2231,14 @@ div.attachments img {
 div.attachments span.author {
   color: $color_gray;
 }
+div.attachments table {
+  // Release the float of `.contextual` and adjust the position of edit icon.
+  clear: both;
+}
+div.attachments td {
+  // Fix a problem of non line break
+  word-break: break-all;
+}
 
 div.thumbnails {
   margin: .6em;
