@@ -672,6 +672,10 @@ table.list td.id {
 table.list td.name, table.list td.description, table.list td.subject, table.list td.comments, table.list td.roles, table.list td.attachments {
   text-align: left;
 }
+// Custom Field, Since "string" seems to be for short texts, it should be left justified by "text".
+table.list td[class^='cf_'].text, table.list td[class*=' cf_'].text {
+  text-align: left;
+}
 table.list td.attachments a {
   display: block;
 }
