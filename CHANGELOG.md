@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.4.2
+
+### Bug Fixes
+
+* Custom fields with long text are centered in the issues table - テキスト系のカスタムフィールドがテーブルで表示すると中央寄せになっている [#137](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/137)
+
 ## v1.4.1
 
 ### Bug Fixes
