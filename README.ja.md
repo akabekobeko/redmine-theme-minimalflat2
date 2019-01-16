@@ -1,6 +1,6 @@
 # minimalflat2
 
-![Redmine](https://img.shields.io/badge/Redmine-3.4-brightgreen.svg)
+![Redmine](https://img.shields.io/badge/Redmine-4.0-brightgreen.svg)
 
 簡素でフラットな外観の Redmine テーマです。
 
@@ -51,7 +51,11 @@ CSS の Transpile (watch) CSS と Web ブラウザーのプレビューを実行
 実際に Redmine を実行して動作確認する場合は以下を実行してください。
 
 1. `docker-compose up -d`
-2. Access to http://localhost:8080/ on web browser
+2. Web ブラウザーで http://localhost:8080/ にアクセス
+3. Redmine に管理者としてログイン
+4. 管理画面からテーマとして `minimalflat2` を選択
+
+停止コマンドは `docker-compose stop` です。
 
 ## ライブラリ
 
