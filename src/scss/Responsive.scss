@@ -733,6 +733,7 @@
   }
 
   #content > .contextual a,
+  #content>.contextual .drdn,
   p.buttons a {
     font-weight: normal;
 
@@ -745,7 +746,6 @@
     -webkit-border-radius: .2em;
     border-radius: .2em;
     background-color: $color_indigo;
-    // background-position-x 4px
 
     color: $color_white;
     font-size: .9em;
@@ -956,11 +956,13 @@
     width: 33.33%; // three columns for all cells that are not subject
   }
 
+  #issue_tree .issues, #issue_tree .issue,
   #relations .issues, #relations .issue {
     position: relative; // needed for .buttons positioning
   }
 
   // positioniong of unline button
+  #issue_tree .issue > td.buttons,
   #relations .issue > td.buttons {
     text-align: right;
     position: absolute;
@@ -969,11 +971,12 @@
     padding-right: 0;
   }
 
+  #issue_tree .issue .buttons a,
   #relations .issue .buttons a {
     vertical-align: middle;
-    padding-right: 5px;
   }
 
+  #issue_tree .issue > td.subject,
   #relations .issue > td.subject {
       padding-right: 25px; // this is the spaces that .buttons uses next to subject
   }

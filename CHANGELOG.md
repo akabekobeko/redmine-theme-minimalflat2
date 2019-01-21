@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v1.5.0
+
+### Changes
+
+* Support Redmine v4.0 [#134](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/134)
+
 ## v1.4.2
 
 ### Bug Fixes

@@ -1275,11 +1275,11 @@ div.table-list.boards .table-list-cell.name {
   display:block;
 }
 .query-columns .buttons input[type=button] {
-  width:35px;
+  width:3em;
   display:block;
 }
 .query-columns select {
-  width:150px;
+  width: 10em;
 }
 
 .query-totals {
@@ -1401,6 +1401,7 @@ input, select {
   margin-top: 1px;
   margin-bottom: 1px;
   padding: .3em;
+  font-size: .9em;
 }
 input[type="submit"] {
   -webkit-appearance: button;
@@ -2612,6 +2613,8 @@ table.cal td.week-number {
   padding: 4px;
   border: none;
   font-size: 1em;
+  text-align: center;
+  vertical-align: middle;
 }
 table.cal td p.day-num {
   font-size: 1.1em;
@@ -3591,8 +3594,8 @@ textarea {
 
 // Submit button
 input[type="submit"] {
-  background-color: $color_blue;
-  border: solid 1px $color_blue;
+  background-color: $color_indigo;
+  border: solid 1px $color_indigo;
   color: $color_white;
   padding: .3em 1em;
   border-radius: .2em;
