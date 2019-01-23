@@ -3025,20 +3025,21 @@ div.wiki img {
   }
 
   h2 {
-    padding: .8em;
+    padding: 1.5rem .8rem;
     border-left: 2px solid $color_blue;
   }
 
   h3 {
-    padding: .8em;
+    padding: 1.5rem .8rem;
     border-left: 2px solid $color_gray_light_a;
   }
 
   h4, h5, h6 {
-    margin-left: .8em;
-    padding-bottom: .2em;
-    border-bottom: 2px dotted $color_gray_light_a;
-    font-size: 1.1em;
+    margin-left: 2px; // from h2, h3 border
+    padding-left: .8rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px dotted $color_gray_light_a;
+    font-size: 1.2em;
     font-weight: normal;
   }
 
@@ -3048,7 +3049,6 @@ div.wiki img {
     background-color: $color_gray_light_b;
     color: $color_indigo;
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: .9em;
 
     .CodeRay {
       background-color: $color_syntax_back;
@@ -3057,7 +3057,7 @@ div.wiki img {
   }
 
   p {
-    margin: 1em;
+    margin: 2em 1em;
     font-feature-settings: "palt";
     text-align: justify;
   }
@@ -3284,23 +3284,20 @@ a.close-icon:hover {
   content: "&nbsp;";
 }
 
-// The icon is defined by Icons.styl
+// The icon is defined by Icons.scss
 
 a.icon-only {
   display: inline-block;
   width: 0;
-  height: 16px;
   overflow: hidden;
   padding-top: 0;
   padding-bottom: 0;
-  font-size: 8px;
   vertical-align: text-bottom;
 
   &::after {
     content: "&nbsp;";
   }
 }
-
 
 .sort-handle {
   border: none !important;
