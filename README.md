@@ -1,6 +1,6 @@
 # minimalflat2
 
-![Redmine](https://img.shields.io/badge/Redmine-3.4-brightgreen.svg)
+![Redmine](https://img.shields.io/badge/Redmine-4.0-brightgreen.svg)
 
 Minimal and flat design theme for Redmine.
 
@@ -47,6 +47,10 @@ Transpile (watch) CSS and preview on web browser.
 
 1. `docker-compose up -d`
 2. Access to http://localhost:8080/ on web browser
+3. Sign in to Redmine as an administrator
+4. Select `mytheme` as the theme from the administration screen.
+
+Stop is `docker-compose stop`.
 
 ## Libraries
 

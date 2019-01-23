@@ -1,23 +1,30 @@
 version: "3"
 services:
-  app:
+  redmine:
     container_name: redmine
-    image: sameersbn/redmine
-    environment:
-      - DB_HOST=db
-      - DB_NAME=redmine_production
-      - DB_USER=root
-      - DB_PASS=root
-    links:
-      - db
-    depends_on:
-      - db
+    image: redmine:4.0-passenger
+    restart: always
     ports:
-      - 8080:80
-    volumes:
-      - ./src/assets:/home/redmine/redmine/public/themes/minimalflat2/
-  db:
-    image: mysql
+      - 8080:3000
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=redmine_production
+      TZ: Asia/Tokyo
+      REDMINE_DB_MYSQL: mysql
+      REDMINE_DB_DATABASE: redmine_minimalflat2
+      REDMINE_DB_USERNAME: redmine_minimalflat2
+      REDMINE_DB_PASSWORD: redmine_minimalflat2
+      REDMINE_DB_ENCODING: utf8mb4
+    depends_on:
+      - mysql
+    volumes:
+      - ./src/assets:/usr/src/redmine/public/themes/minimalflat2
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+      MYSQL_DATABASE: redmine_minimalflat2
+      MYSQL_USER: redmine_minimalflat2
+      MYSQL_PASSWORD: redmine_minimalflat2
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin

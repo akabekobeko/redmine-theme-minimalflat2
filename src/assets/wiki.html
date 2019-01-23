@@ -27,344 +27,536 @@ $(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved
 <!-- page specific tags -->
   <script src="wiki_files/attachments.js"></script>
 </head>
-<body class="theme-Minimalflat2 project-sample controller-wiki action-show">
-
-<div id="wrapper">
-
-<div class="flyout-menu js-flyout-menu">
-
-
-        <div class="flyout-menu__search">
-            <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
-            <input name="wiki_pages" value="1" type="hidden">
-            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
-            <input name="q" id="flyout-search" class="small js-search-input" placeholder="Search" type="text">
-</form>        </div>
-
-        <div class="flyout-menu__avatar ">
-                <a href="users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/c265a1a7dadb2713ff2262025e91d133?rating=PG&amp;size=160&amp;default=wavatar 2x" src="wiki_files/c265a1a7dadb2713ff2262025e91d133.png"></a>
-            <a class="user active" href="users/1">admin</a>
-        </div>
-
-        <h3>Project</h3>
-        <span class="js-project-menu"></span>
-
-    <h3>General</h3>
-    <span class="js-general-menu"></span>
-
-    <span class="js-sidebar flyout-menu__sidebar"></span>
-
-    <h3>Profile</h3>
-    <span class="js-profile-menu"></span>
-
-</div>
-
-<div id="wrapper2">
-<div id="wrapper3">
-<div id="top-menu">
-    <div id="account">
-        <ul><li><a class="my-account" href="my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="logout">Sign out</a></li></ul>    </div>
-    <div id="loggedas">Logged in as <a class="user active" href="users/1">admin</a></div>
-    <ul><li><a class="home" href="">Home</a></li><li><a class="my-page" href="my/page">My page</a></li><li><a class="projects" href="projects">Projects</a></li><li><a class="administration" href="admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
-
-<div id="header">
-
-    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
-
-    <div id="quick-search">
-        <form action="/projects/sample/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
-        <input name="scope" value="subprojects" type="hidden">
-        <input name="wiki_pages" value="1" type="hidden">
-        <label for="q">
-          <a accesskey="4" href="projects/sample/search">Search</a>:
-        </label>
-        <input name="q" id="q" size="20" class="small" accesskey="f" type="text">
-</form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample</span><div class="drdn-content"><div class="quick-search"><input name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=wiki" autocomplete="off" data-value-was="" type="text"></div><div class="drdn-items projects selection"><a title="Sample" class="selected" href="projects/sample?jump=wiki"><span style="padding-left:0px;">Sample</span></a></div><div class="drdn-items all-projects selection"><a href="projects?jump=wiki">All Projects</a></div></div></div>
-    </div>
-
-    <h1><span class="current-project">Sample</span></h1>
-
-    <div id="main-menu" class="tabs">
-        <ul><li>
-<a id="new-object" onclick="toggleNewObjectDropdown(); return false;" class="new-object" href="#"> + </a>
-<ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="projects/sample/issues/new">New issue</a></li><li><a class="new-issue-category" href="projects/sample/issue_categories/new">New category</a></li><li><a class="new-version" href="projects/sample/versions/new">New version</a></li><li><a class="new-timelog" href="projects/sample/time_entries/new">Log time</a></li><li><a class="new-news" href="projects/sample/news/new">Add news</a></li><li><a class="new-document" href="projects/sample/documents/new">New document</a></li><li><a class="new-wiki-page" href="projects/sample/wiki/new">New wiki page</a></li><li><a class="new-file" href="projects/sample/files/new">New file</a></li></ul>
-</li><li><a class="overview" href="projects/sample">Overview</a></li><li><a class="activity" href="projects/sample/activity">Activity</a></li><li><a class="issues" href="projects/sample/issues">Issues</a></li><li><a class="time-entries" href="projects/sample/time_entries">Spent time</a></li><li><a class="gantt" href="projects/sample/issues/gantt">Gantt</a></li><li><a class="calendar" href="projects/sample/issues/calendar">Calendar</a></li><li><a class="news" href="projects/sample/news">News</a></li><li><a class="documents" href="projects/sample/documents">Documents</a></li><li><a class="wiki selected" href="projects/sample/wiki">Wiki</a></li><li><a class="files" href="projects/sample/files">Files</a></li><li><a class="repository" href="projects/sample/repository">Repository</a></li><li><a class="settings" href="projects/sample/settings">Settings</a></li></ul>
-        <div class="tabs-buttons" style="display:none;">
-            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
-            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
-        </div>
-    </div>
-</div>
-
-<div id="main" class="">
-    <div id="sidebar">
-
-<h3>Wiki</h3>
-<ul>
-  <li><a href="projects/sample/wiki">Start page</a></li>
-  <li><a href="projects/sample/wiki/index">Index by title</a></li>
-  <li><a href="projects/sample/wiki/date_index">Index by date</a></li>
-</ul>
-
-
-
-    </div>
-
-    <div id="content">
-
-        <div class="contextual">
-<a class="icon icon-add" data-remote="true" href="projects/sample/wiki/new">New wiki page</a>
-  <a class="icon icon-edit" accesskey="e" href="projects/sample/wiki/Sample/edit">Edit</a>
-  <a class="wiki_page-3-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="watchers/watch?object_id=3&amp;object_type=wiki_page">Watch</a>
-  <a class="icon icon-lock" rel="nofollow" data-method="post" href="projects/sample/wiki/Sample/protect?protected=1">Lock</a>
-
-  <a class="icon icon-move" href="projects/sample/wiki/Sample/rename">Rename</a>
-  <a data-confirm="Are you sure?" class="icon icon-del" rel="nofollow" data-method="delete" href="projects/sample/wiki/Sample">Delete</a>
-<a class="icon icon-history" href="projects/sample/wiki/Sample/history">History</a>
-</div>
-
-<p class="breadcrumb"><a href="projects/sample/wiki/Wiki">Wiki</a> » </p>
-
-
-<div class="wiki wiki-page">
-  <a name="Wiki"></a>
-<h1>Wiki<a href="#Wiki" class="wiki-anchor">¶</a></h1>
-
-<ul class="toc right"><li><strong>Table of contents</strong></li><li><a href="#Wiki">Wiki</a><ul><li><a href="#Header-2">Header 2</a><ul><li><a href="#Header-3">Header 3</a><ul><li><a href="#Header-4">Header 4</a></li></ul>
-</li></ul>
-</li><li><a href="#Normal-List">Normal List</a></li><li><a href="#Order-List">Order List</a></li><li><a href="#Table">Table</a></li><li><a href="#Code">Code</a></li><li><a href="#Article">Article</a></li><li><a href="#Misc">Misc</a></li></ul></li></ul>
-
-<p>Wiki sample and other.</p>
-
-<div class="contextual heading-2" title="Edit this section" id="section-2"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=2">Edit this section</a></div><a name="Header-2"></a>
-<h2>Header 2<a href="#Header-2" class="wiki-anchor">¶</a></h2>
-
-<div class="contextual heading-3" title="Edit this section" id="section-3"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=3">Edit this section</a></div><a name="Header-3"></a>
-<h3>Header 3<a href="#Header-3" class="wiki-anchor">¶</a></h3>
-
-<div class="contextual heading-4" title="Edit this section" id="section-4"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=4">Edit this section</a></div><a name="Header-4"></a>
-<h4>Header 4<a href="#Header-4" class="wiki-anchor">¶</a></h4>
-
-<div class="contextual heading-5" title="Edit this section" id="section-5"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=5">Edit this section</a></div><a name="Header-5"></a>
-<h5>Header 5<a href="#Header-5" class="wiki-anchor">¶</a></h5>
-
-<div class="contextual heading-6" title="Edit this section" id="section-6"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=6">Edit this section</a></div><a name="Header-6"></a>
-<h6>Header 6<a href="#Header-6" class="wiki-anchor">¶</a></h6>
-
-<div class="contextual heading-2" title="Edit this section" id="section-7"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=7">Edit this section</a></div><a name="Normal-List"></a>
-<h2>Normal List<a href="#Normal-List" class="wiki-anchor">¶</a></h2>
-
-<ul>
-<li>Value
-
-<ul>
-<li>Value</li>
-<li>Value</li>
-</ul></li>
-<li>Value
-
-<ul>
-<li>Value</li>
-<li>Value</li>
-<li>Value</li>
-<li>Value</li>
-</ul></li>
-<li>Value</li>
-</ul>
-
-<div class="contextual heading-2" title="Edit this section" id="section-8"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=8">Edit this section</a></div><a name="Order-List"></a>
-<h2>Order List<a href="#Order-List" class="wiki-anchor">¶</a></h2>
-
-<ol>
-<li>Step</li>
-<li>Step</li>
-<li><p>Step</p></li>
-<li><p>Step</p>
-
-<ul>
-<li>Value</li>
-<li>Value</li>
-</ul></li>
-<li><p>Step</p>
-
-<ul>
-<li>Value</li>
-</ul></li>
-<li><p>Step</p>
-
-<ul>
-<li>Value</li>
-</ul></li>
-</ol>
-
-<div class="contextual heading-2" title="Edit this section" id="section-9"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=9">Edit this section</a></div><a name="Table"></a>
-<h2>Table<a href="#Table" class="wiki-anchor">¶</a></h2>
-
-<table><thead>
-<tr>
-<th>Header</th>
-<th style="text-align: center">Header</th>
-<th style="text-align: left">Header</th>
-<th style="text-align: right">Header</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Value</td>
-<td style="text-align: center">Value</td>
-<td style="text-align: left">Value</td>
-<td style="text-align: right">Value</td>
-</tr>
-<tr>
-<td>Value</td>
-<td style="text-align: center">Value</td>
-<td style="text-align: left">Value</td>
-<td style="text-align: right">Value</td>
-</tr>
-<tr>
-<td>Value</td>
-<td style="text-align: center">Value</td>
-<td style="text-align: left">Value</td>
-<td style="text-align: right">Value</td>
-</tr>
-<tr>
-<td>Value</td>
-<td style="text-align: center">Value</td>
-<td style="text-align: left">Value</td>
-<td style="text-align: right">Value</td>
-</tr>
-</tbody></table>
-
-<div class="contextual heading-2" title="Edit this section" id="section-10"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=10">Edit this section</a></div><a name="Code"></a>
-<h2>Code<a href="#Code" class="wiki-anchor">¶</a></h2>
-<pre>pre text
-</pre><pre><code class="js syntaxhl"><span class="CodeRay"><span class="keyword">function</span> <span class="function">sample</span> (isSample) {
-  <span class="keyword">if</span> (isSample) {
-    console.log(<span class="string"><span class="delimiter">'</span><span class="content">Sample</span><span class="delimiter">'</span></span>);
-  }
-}
-</span></code></pre>
-<p>Inline <code>code</code> text.</p>
-
-<div class="contextual heading-2" title="Edit this section" id="section-11"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=11">Edit this section</a></div><a name="Article"></a>
-<h2>Article<a href="#Article" class="wiki-anchor">¶</a></h2>
-
-<p>Soon Lara spotted other landmarks—an outcropping of limestone beside
-the path that had a silhouette like a man’s face, a marshy spot beside
-the river where the waterfowl were easily startled, a tall tree that
-looked like a man with his arms upraised. They were drawing near to the
-place where there was an island in the river. The island was a good spot
- to make camp. They would sleep on the island tonight.</p>
-
-<p>Lara had been back and forth along the river path many times in her
-short life. Her people had not created the path—it had always been
-there, like the river—but their deerskin-shod feet and the wooden wheels
- of their handcarts kept the path well worn. Lara’s people were salt
-traders, and their livelihood took them on a continual journey.</p>
-
-<blockquote>
-<p>Soon Lara spotted other landmarks—an outcropping of limestone beside
-the path that had a silhouette like a man’s face, a marshy spot beside
-the river where the waterfowl were easily startled, a tall tree that
-looked like a man with his arms upraised. They were drawing near to the
-place where there was an island in the river. The island was a good spot
- to make camp. They would sleep on the island tonight.</p>
-
-<p>Lara had been back and forth along the river path many times in her
-short life. Her people had not created the path—it had always been
-there, like the river—but their deerskin-shod feet and the wooden wheels
- of their handcarts kept the path well worn. Lara’s people were salt
-traders, and their livelihood took them on a continual journey.</p>
-</blockquote>
-
-<p>あなたは昔ほぼあるお話らとしてものの上を稼ぎないです。</p>
-<p>とうてい前から相当院はあにその発展なないまでを思って切ったへは講義云っなますて、全くにはありうますましな。</p>
-<p>慚愧にしな方は必ずしも次第によくたたいな。どうしてもネルソンさんを賞翫国民少し謝罪にさない心持この頭私か交渉にという今仕事たございたたば、そうした今もそれか例珍がしから、大森さんの事を肉の私よりついお意見と立つとあなた主義にご立証が帰っようにもちろんご仕事を断っずたが、おそらく初めて参考にしでしからいるたものに掘りですな。しかしそうしてご模範をよし訳はそう不都合としですて、そうした内心にはありんとという学者に歩くけれどもみでです。その時羽根の中その本位はそれ上が考えるたかと木下さんがよしなます、教師の結果ごとくというご講演なけれなくありて、安否の以上へ他人が一番までの兄より事実擡げてやりながら、少しの半分を出ばそのつどによし云ったますとしませのますば、深いないずてなぜお自分来ないのですですず。それで底か窮屈か誤解をなっですて、ほか末新聞が忘れているん以上で皆周旋の前に行かたな。  </p>
-<p>偶然からはもち廻るて取り巻かましなけれでなて、どうしても無論云えて意味は少し怪しからなものます。</p>
-
-<p>サンプル テキスト : <a class="external" href="https://github.com/akabekobeko/redmine-theme-minimalflat2" target="_blank">minimalflat2</a> の CSS は Stylus で記述して <code>application.css</code> と <code>responsive.css</code> へコンパイルしている。Stylus の代表的な機能には透過的な変数参照、Mix-In、クラスのネストがあってこれまで便利に利用してきたのだけど、本バージョンからネストは控え目にした。</p>
-<p>以上の理由からアイコン フォント用の疑似要素などを除き、標準 <code>application.css</code> の定義順へならうことにした。Redmine のバージョン更新があれば、最後に対応したものと最新版の <code>application.css</code> を差分比較して部分対応すればよい。従来もそうしていたのだが、今回の変更によりこれが更に容易となった。</p>
-
-<p>Issue <a class="issue tracker-1 status-2 priority-2 priority-default created-by-me assigned-to-me" title="Bug: Normal (In Progress)" href="issues/1">#1</a> <a class="issue tracker-1 status-1 priority-1 priority-lowest overdue created-by-me assigned-to-me" title="Bug: Low (New)" href="issues/2">#2</a></p>
-
-<div class="contextual heading-2" title="Edit this section" id="section-12"><a class="icon-only icon-edit" href="projects/sample/wiki/Sample/edit?section=12">Edit this section</a></div><a name="Misc"></a>
-<h2>Misc<a href="#Misc" class="wiki-anchor">¶</a></h2>
-
-<p><a href="http://example.com/" class="external">Link Text</a></p>
-
-<p>Create <a href="http://example.com/" class="wiki-page new">New Page</a>, <a href="http://example.com/" class="wiki-page">Exists Page</a></p>
-
-<hr>
-
-</div>
-
-
-<fieldset class="collapsible collapsed">
-  <legend onclick="toggleFieldset(this);">Files</legend>
-  <div style="display: none;">
-
-    <div class="attachments">
-    <div class="contextual">
-      <a title="Edit attached files" class="icon-only icon-edit" href="/attachments/wiki_pages/1/edit">Edit attached files</a>
-    </div>
-    <table>
-    <tbody><tr>
-      <td>
-        <a class="icon icon-attachment" href="/attachments/1/sample.md">sample.md</a>    <span class="size">(6 Bytes)</span>
-        <a class="icon-only icon-download" title="Download" href="/attachments/download/1/sample.md">sample.md</a>  </td>
-      <td></td>
-      <td>
-          <span class="author">Redmine Admin, 07/25/2017 12:42 AM</span>
-      </td>
-      <td>
-          <a data-confirm="Are you sure?" class="delete icon-only icon-del" title="Delete" rel="nofollow" data-method="delete" href="/attachments/1">Delete</a>
-      </td>
-    </tr>
-    </tbody></table>
-    </div>
-
-  <div id="wiki_add_attachment">
-    <form id="add_attachment_form" enctype="multipart/form-data" action="/projects/sample/wiki/Sample/add_attachment" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="raPjnqZWzNMVlf6ejqUGkOm4ZMie8Spiv59bcyvxJaTzt7IhbI9HTtYYjHuQQ88Pdm+109Dd5qEdhrjB41DXJA==" type="hidden">
-      <div class="box filedroplistner">
-      <p>
-<span class="attachments_form">
-  <span class="attachments_fields">
-  </span>
-  <span class="add_attachment" style="">
-    <input name="attachments[dummy][file]" class="file_selector filedrop" multiple="multiple" onchange="addInputFiles(this);" data-max-file-size="5242880" data-max-file-size-message="This file cannot be uploaded because it exceeds the maximum allowed file size (5 MB)" data-max-concurrent-uploads="2" data-upload-path="/uploads.js" data-param="attachments" data-description="true" data-description-placeholder="Optional description" type="file">
-    (Maximum size: 5 MB)
-  </span>
-</span>
-
-</p>
+<body class="theme-Minimalflat2 project-sample-project has-main-menu controller-wiki action-show avatars-on">
+
+  <div id="wrapper">
+  
+  <div class="flyout-menu js-flyout-menu">
+  
+  
+          <div class="flyout-menu__search">
+              <form action="/projects/sample-project/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="hidden" name="wiki_pages" value="1">
+              <label class="search-magnifier search-magnifier--flyout" for="flyout-search">⚲</label>
+              <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search">
+  </form>        </div>
+  
+          <div class="flyout-menu__avatar ">
+                  <a href="http://localhost:8080/users/1"><img alt="" title="" class="gravatar" srcset="//www.gravatar.com/avatar/cb4f282fed12016bd18a879c1f27ff97?rating=PG&amp;size=160&amp;default=wavatar 2x" src="Wiki%20-%20Sample%20Project%20-%20Redmine_files/cb4f282fed12016bd18a879c1f27ff97.png"></a>
+              <a class="user active" href="http://localhost:8080/users/1">admin</a>
+          </div>
+  
+          <h3>Project</h3>
+          <span class="js-project-menu"></span>
+  
+      <h3>General</h3>
+      <span class="js-general-menu"></span>
+  
+      <span class="js-sidebar flyout-menu__sidebar"></span>
+  
+      <h3>Profile</h3>
+      <span class="js-profile-menu"></span>
+  
+  </div>
+  
+  <div id="wrapper2">
+  <div id="wrapper3">
+  <div id="top-menu">
+      <div id="account">
+          <ul><li><a class="my-account" href="http://localhost:8080/my/account">My account</a></li><li><a class="logout" rel="nofollow" data-method="post" href="http://localhost:8080/logout">Sign out</a></li></ul>    </div>
+      <div id="loggedas">Logged in as <a class="user active" href="http://localhost:8080/users/1">admin</a></div>
+      <ul><li><a class="home" href="http://localhost:8080/">Home</a></li><li><a class="my-page" href="http://localhost:8080/my/page">My page</a></li><li><a class="projects" href="http://localhost:8080/projects">Projects</a></li><li><a class="administration" href="http://localhost:8080/admin">Administration</a></li><li><a class="help" href="https://www.redmine.org/guide" target="_blank">Help</a></li></ul></div>
+  
+  <div id="header">
+  
+      <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+  
+      <div id="quick-search">
+          <form action="/projects/sample-project/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+          <input type="hidden" name="scope" value="subprojects">
+          <input type="hidden" name="wiki_pages" value="1">
+          <label for="q">
+            <a accesskey="4" href="http://localhost:8080/projects/sample-project/search">Search</a>:
+          </label>
+          <input type="text" name="q" id="q" size="20" class="small" accesskey="f">
+  </form>        <div id="project-jump" class="drdn"><span class="drdn-trigger">Sample Project</span><div class="drdn-content"><div class="quick-search"><input type="text" name="q" id="projects-quick-search" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=wiki" autocomplete="off" data-value-was=""></div><div class="drdn-items projects selection"></div><div class="drdn-items all-projects selection"><a href="http://localhost:8080/projects?jump=wiki">All Projects</a></div></div></div>
       </div>
-      <input name="commit" value="Add" type="submit">
-</form>  </div>
-</div>
-</fieldset>
-
-<p class="other-formats">Also available in:  <span><a class="pdf" rel="nofollow" href="projects/sample/wiki/Sample.pdf">PDF</a></span>
-  <span><a class="html" rel="nofollow" href="projects/sample/wiki/Sample.html">HTML</a></span>
-  <span><a class="txt" rel="nofollow" href="projects/sample/wiki/Sample.txt">TXT</a></span>
-</p>
-
-
-
-        <div style="clear:both;"></div>
-    </div>
-</div>
-</div>
-
-<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
-<div id="ajax-modal" style="display:none;"></div>
-
-<div id="footer">
-  <div class="bgl"><div class="bgr">
-    Powered by <a href="https://www.redmine.org/">Redmine</a> © 2006-2017 Jean-Philippe Lang
-  </div></div>
-</div>
-</div>
-</div>
-
-
-
-</body></html>
+  
+      <h1><span class="current-project">Sample Project</span></h1>
+  
+      <div id="main-menu" class="tabs">
+          <ul><li>
+  <a onclick="toggleNewObjectDropdown(); return false;" id="new-object" class="new-object" href="#"> + </a>
+  <ul class="menu-children"><li><a accesskey="7" class="new-issue-sub" href="http://localhost:8080/projects/sample-project/issues/new">New issue</a></li><li><a class="new-issue-category" href="http://localhost:8080/projects/sample-project/issue_categories/new">New category</a></li><li><a class="new-version" href="http://localhost:8080/projects/sample-project/versions/new">New version</a></li><li><a class="new-timelog" href="http://localhost:8080/projects/sample-project/time_entries/new">Log time</a></li><li><a class="new-news" href="http://localhost:8080/projects/sample-project/news/new">Add news</a></li><li><a class="new-document" href="http://localhost:8080/projects/sample-project/documents/new">New document</a></li><li><a class="new-wiki-page" href="http://localhost:8080/projects/sample-project/wiki/new">New wiki page</a></li><li><a class="new-file" href="http://localhost:8080/projects/sample-project/files/new">New file</a></li></ul>
+  </li><li><a class="overview" href="http://localhost:8080/projects/sample-project">Overview</a></li><li><a class="activity" href="http://localhost:8080/projects/sample-project/activity">Activity</a></li><li><a class="issues" href="http://localhost:8080/projects/sample-project/issues">Issues</a></li><li><a class="time-entries" href="http://localhost:8080/projects/sample-project/time_entries">Spent time</a></li><li><a class="gantt" href="http://localhost:8080/projects/sample-project/issues/gantt">Gantt</a></li><li><a class="calendar" href="http://localhost:8080/projects/sample-project/issues/calendar">Calendar</a></li><li><a class="news" href="http://localhost:8080/projects/sample-project/news">News</a></li><li><a class="documents" href="http://localhost:8080/projects/sample-project/documents">Documents</a></li><li><a class="wiki selected" href="http://localhost:8080/projects/sample-project/wiki">Wiki</a></li><li><a class="files" href="http://localhost:8080/projects/sample-project/files">Files</a></li><li><a class="settings" href="http://localhost:8080/projects/sample-project/settings">Settings</a></li></ul>
+          <div class="tabs-buttons" style="display:none;">
+              <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+              <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+          </div>
+      </div>
+  </div>
+  
+  <div id="main" class="">
+      <div id="sidebar">
+            
+  <h3>Wiki</h3>
+  <ul>
+    <li><a href="http://localhost:8080/projects/sample-project/wiki">Start page</a></li>
+    <li><a href="http://localhost:8080/projects/sample-project/wiki/index">Index by title</a></li>
+    <li><a href="http://localhost:8080/projects/sample-project/wiki/date_index">Index by date</a></li>
+  </ul>
+  
+  
+          
+      </div>
+  
+      <div id="content">
+          
+          <div class="contextual">
+  
+    <a class="icon icon-edit" accesskey="e" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit">Edit</a>
+    <a class="wiki_page-1-watcher icon icon-fav-off" data-remote="true" rel="nofollow" data-method="post" href="http://localhost:8080/watchers/watch?object_id=1&amp;object_type=wiki_page">Watch</a>
+  
+    <span class="drdn"><span class="drdn-trigger"><span class="icon-only icon-actions" title="Actions">Actions</span></span><div class="drdn-content"><div class="drdn-items">
+      <a class="icon icon-history" href="http://localhost:8080/projects/sample-project/wiki/Wiki/history">History</a>
+  
+        <a class="icon icon-lock" rel="nofollow" data-method="post" href="http://localhost:8080/projects/sample-project/wiki/Wiki/protect?protected=1">Lock</a>
+        
+        <a class="icon icon-move" href="http://localhost:8080/projects/sample-project/wiki/Wiki/rename">Rename</a>
+        <a data-confirm="Are you sure?" class="icon icon-del" rel="nofollow" data-method="delete" href="http://localhost:8080/projects/sample-project/wiki/Wiki">Delete</a>
+  
+        <a class="icon icon-add" data-remote="true" href="http://localhost:8080/projects/sample-project/wiki/new?parent=Wiki">New wiki page</a>
+  </div></div></span></div>
+  
+  
+  
+  
+  <div class="wiki wiki-page">
+    <a name="Wiki"></a>
+  <h1>Wiki<a href="#Wiki" class="wiki-anchor">¶</a></h1>
+  
+  <ul class="toc right"><li><strong>Table of contents</strong></li><li><a href="#Wiki">Wiki</a><ul><li><a href="#Header-2">Header 2</a><ul><li><a href="#Header-3">Header 3</a><ul><li><a href="#Header-4">Header 4</a></li></ul>
+  </li></ul>
+  </li><li><a href="#Normal-List">Normal List</a></li><li><a href="#Order-List">Order List</a></li><li><a href="#Table">Table</a></li><li><a href="#Article">Article</a></li><li><a href="#Syntax-Highlight">Syntax Highlight</a><ul><li><a href="#JavaScript">JavaScript</a></li><li><a href="#JSON">JSON</a></li><li><a href="#TypeScript">TypeScript</a></li><li><a href="#Java">Java</a></li><li><a href="#Swift">Swift</a></li><li><a href="#C">C++</a></li><li><a href="#C-Sharp">C-Sharp</a></li><li><a href="#Objective-C">Objective-C</a></li><li><a href="#Ruby">Ruby</a></li><li><a href="#Python">Python</a></li><li><a href="#CSS">CSS</a></li><li><a href="#XML">XML</a></li><li><a href="#SQL">SQL</a></li></ul></li></ul></li></ul>
+  
+  <p>Wiki sample and other.</p>
+  
+  <div class="contextual heading-2" title="Edit this section" id="section-2"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=2">Edit this section</a></div><a name="Header-2"></a>
+  <h2>Header 2<a href="#Header-2" class="wiki-anchor">¶</a></h2>
+  
+  <div class="contextual heading-3" title="Edit this section" id="section-3"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=3">Edit this section</a></div><a name="Header-3"></a>
+  <h3>Header 3<a href="#Header-3" class="wiki-anchor">¶</a></h3>
+  
+  <div class="contextual heading-4" title="Edit this section" id="section-4"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=4">Edit this section</a></div><a name="Header-4"></a>
+  <h4>Header 4<a href="#Header-4" class="wiki-anchor">¶</a></h4>
+  
+  <div class="contextual heading-5" title="Edit this section" id="section-5"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=5">Edit this section</a></div><a name="Header-5"></a>
+  <h5>Header 5<a href="#Header-5" class="wiki-anchor">¶</a></h5>
+  
+  <div class="contextual heading-2" title="Edit this section" id="section-6"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=6">Edit this section</a></div><a name="Normal-List"></a>
+  <h2>Normal List<a href="#Normal-List" class="wiki-anchor">¶</a></h2>
+  
+  <ul>
+  <li>Value
+  
+  <ul>
+  <li>Value
+  
+  <ul>
+  <li>Value</li>
+  </ul></li>
+  </ul></li>
+  <li>Value
+  
+  <ul>
+  <li>Value
+  
+  <ul>
+  <li>Value</li>
+  </ul></li>
+  </ul></li>
+  </ul>
+  
+  <div class="contextual heading-2" title="Edit this section" id="section-7"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=7">Edit this section</a></div><a name="Order-List"></a>
+  <h2>Order List<a href="#Order-List" class="wiki-anchor">¶</a></h2>
+  
+  <ol>
+  <li>Step</li>
+  <li>Step</li>
+  <li>Step
+  
+  <ul>
+  <li>Value</li>
+  <li>Value</li>
+  </ul></li>
+  <li>Step
+  
+  <ul>
+  <li>Value</li>
+  </ul></li>
+  <li>Step
+  
+  <ul>
+  <li>Value</li>
+  </ul></li>
+  </ol>
+  
+  <div class="contextual heading-2" title="Edit this section" id="section-8"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=8">Edit this section</a></div><a name="Table"></a>
+  <h2>Table<a href="#Table" class="wiki-anchor">¶</a></h2>
+  
+  <table><thead>
+  <tr>
+  <th>Header</th>
+  <th style="text-align: left">Header</th>
+  <th style="text-align: center">Header</th>
+  <th style="text-align: right">Header</th>
+  </tr>
+  </thead><tbody>
+  <tr>
+  <td>Value Value</td>
+  <td style="text-align: left">Value</td>
+  <td style="text-align: center">Value</td>
+  <td style="text-align: right">Value</td>
+  </tr>
+  <tr>
+  <td>Value</td>
+  <td style="text-align: left">Value Value</td>
+  <td style="text-align: center">Value</td>
+  <td style="text-align: right">Value</td>
+  </tr>
+  <tr>
+  <td>Value</td>
+  <td style="text-align: left">Value</td>
+  <td style="text-align: center">Value Value</td>
+  <td style="text-align: right">Value</td>
+  </tr>
+  <tr>
+  <td>Value</td>
+  <td style="text-align: left">Value</td>
+  <td style="text-align: center">Value</td>
+  <td style="text-align: right">Value Value</td>
+  </tr>
+  </tbody></table>
+  
+  <div class="contextual heading-2" title="Edit this section" id="section-9"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=9">Edit this section</a></div><a name="Article"></a>
+  <h2>Article<a href="#Article" class="wiki-anchor">¶</a></h2>
+  
+  <p>Soon Lara spotted other landmarks—an outcropping of limestone beside 
+  the path that had a silhouette like a man’s face, a marshy spot beside 
+  the river where the waterfowl were easily startled, a tall tree that 
+  looked like a man with his arms upraised. They were drawing near to the 
+  place where there was an island in the river. The island was a good spot
+   to make camp. They would sleep on the island tonight.</p>
+  
+  <p>Lara had been back and forth along the river path many times in her 
+  short life. Her people had not created the path—it had always been 
+  there, like the river—but their deerskin-shod feet and the wooden wheels
+   of their handcarts kept the path well worn. Lara’s people were salt 
+  traders, and their livelihood took them on a continual journey.</p>
+  
+  <blockquote>
+  <p>Soon Lara spotted other landmarks—an outcropping of limestone beside 
+  the path that had a silhouette like a man’s face, a marshy spot beside 
+  the river where the waterfowl were easily startled, a tall tree that 
+  looked like a man with his arms upraised. They were drawing near to the 
+  place where there was an island in the river. The island was a good spot
+   to make camp. They would sleep on the island tonight.</p>
+  
+  <p>Lara had been back and forth along the river path many times in her 
+  short life. Her people had not created the path—it had always been 
+  there, like the river—but their deerskin-shod feet and the wooden wheels
+   of their handcarts kept the path well worn. Lara’s people were salt 
+  traders, and their livelihood took them on a continual journey.</p>
+  </blockquote>
+  
+  <p><a href="https://github.com/akabekobeko/redmine-theme-minimalflat2" class="external" target="_blank">minimalflat2</a> の CSS は Stylus で記述して <code>application.css</code> と <code>responsive.css</code> へコンパイルしている。Stylus の代表的な機能には<strong>透過的な変数参照</strong>、<u>Mix-In</u>、<em>クラスのネスト</em>があってこれまで便利に利用してきたのだけど、本バージョンからネストは控え目にした。</p>
+  
+  <p>以上の理由からアイコン フォント用の<del>疑似要素などを除き</del>、標準 <code>application.css</code> の定義順へならうことにした。Redmine のバージョン更新があれば、最後に対応したものと最新版の <code>application.css</code> を差分比較して部分対応すればよい。従来もそうしていたのだが、今回の変更によりこれが更に容易となった。</p>
+  
+  <p>Issue <a class="issue tracker-2 status-1 priority-5 priority-highest created-by-me assigned-to-me" title="Feature: Sample issue (New)" href="http://localhost:8080/issues/1">#1</a></p>
+  
+  <div class="contextual heading-2" title="Edit this section" id="section-10"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=10">Edit this section</a></div><a name="Syntax-Highlight"></a>
+  <h2>Syntax Highlight<a href="#Syntax-Highlight" class="wiki-anchor">¶</a></h2>
+  
+  <p>Sample code from <a href="https://highlightjs.org/" class="external" target="_blank">highlight.js</a>.</p>
+  
+  <div class="contextual heading-3" title="Edit this section" id="section-11"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=11">Edit this section</a></div><a name="JavaScript"></a>
+  <h3>JavaScript<a href="#JavaScript" class="wiki-anchor">¶</a></h3>
+  <pre><code class="js syntaxhl"><span class="kd">function</span> <span class="nx">$initHighlight</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="nx">cls</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">cls</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/</span><span class="se">\b</span><span class="sr">no</span><span class="se">\-</span><span class="sr">highlight</span><span class="se">\b</span><span class="sr">/</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nx">process</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">)</span> <span class="o">+</span>
+               <span class="s2">` class="</span><span class="p">${</span><span class="nx">cls</span><span class="p">}</span><span class="s2">"`</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/* handle exception */</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">classes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">checkCondition</span><span class="p">(</span><span class="nx">classes</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'undefined'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="k">export</span>  <span class="nx">$initHighlight</span><span class="p">;</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-12"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=12">Edit this section</a></div><a name="JSON"></a>
+  <h3>JSON<a href="#JSON" class="wiki-anchor">¶</a></h3>
+  <pre><code class="json syntaxhl"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apples"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">12000</span><span class="p">,</span><span class="w"> </span><span class="mi">20000</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w"> </span><span class="s2">"sensitive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oranges"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">17500</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w"> </span><span class="s2">"sensitive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+  </span></code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-13"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=13">Edit this section</a></div><a name="TypeScript"></a>
+  <h3>TypeScript<a href="#TypeScript" class="wiki-anchor">¶</a></h3>
+  <pre><code class="ts syntaxhl"><span class="kd">class</span> <span class="nx">MyClass</span> <span class="p">{</span>
+    <span class="kr">public</span> <span class="kr">static</span> <span class="nx">myValue</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">init</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">myValue</span> <span class="o">=</span> <span class="nx">init</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">import</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+  <span class="nx">module</span> <span class="nx">MyModule</span> <span class="p">{</span>
+    <span class="k">export</span> <span class="kr">interface</span> <span class="nx">MyInterface</span> <span class="kd">extends</span> <span class="nx">Other</span> <span class="p">{</span>
+      <span class="nl">myProperty</span><span class="p">:</span> <span class="nx">any</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">declare</span> <span class="nx">magicNumber</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">myArray</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">});</span> <span class="c1">// fat arrow syntax</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-14"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=14">Edit this section</a></div><a name="Java"></a>
+  <h3>Java<a href="#Java" class="wiki-anchor">¶</a></h3>
+  <pre><code class="java syntaxhl"><span class="cm">/**
+   * @author John Smith &lt;john.smith@example.com&gt;
+  */</span>
+  <span class="kn">package</span> <span class="n">l2f</span><span class="o">.</span><span class="na">gameserver</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+  
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">L2Char</span> <span class="kd">extends</span> <span class="n">L2Object</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Short</span> <span class="n">ERROR</span> <span class="o">=</span> <span class="mh">0x0001</span><span class="o">;</span>
+  
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">moveTo</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">_ai</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+      <span class="n">log</span><span class="o">(</span><span class="s">"Should not be called"</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// wtf!?</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-15"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=15">Edit this section</a></div><a name="Swift"></a>
+  <h3>Swift<a href="#Swift" class="wiki-anchor">¶</a></h3>
+  <pre><code class="swift syntaxhl"><span class="kd">import</span> <span class="kt">Foundation</span>
+  
+  <span class="kd">@objc</span> <span class="kd">class</span> <span class="kt">Person</span><span class="p">:</span> <span class="kt">Entity</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">age</span><span class="p">:</span>  <span class="kt">Int</span><span class="o">!</span>
+  
+    <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/* /* ... */ */</span>
+    <span class="p">}</span>
+  
+    <span class="c1">// Return a descriptive string for this person</span>
+    <span class="kd">func</span> <span class="nf">description</span><span class="p">(</span><span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s"> is </span><span class="se">\(</span><span class="n">age</span> <span class="o">+</span> <span class="n">offset</span><span class="se">)</span><span class="s"> years old"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-16"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=16">Edit this section</a></div><a name="C"></a>
+  <h3>C++<a href="#C" class="wiki-anchor">¶</a></h3>
+  <pre><code class="cpp syntaxhl"><span class="cp">#include &lt;iostream&gt;
+  </span>
+  <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+  
+    <span class="cm">/* An annoying "Hello World" example */</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mh">0xFFFF</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello, World!"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'\n'</span><span class="p">;</span>
+    <span class="n">unordered_map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+    <span class="n">m</span><span class="p">[</span><span class="s">"key"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"</span><span class="se">\\\\</span><span class="s">"</span><span class="p">;</span> <span class="c1">// this is an error</span>
+  
+    <span class="k">return</span> <span class="o">-</span><span class="mf">2e3</span> <span class="o">+</span> <span class="mi">12l</span><span class="p">;</span>
+  <span class="p">}</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-17"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=17">Edit this section</a></div><a name="C-Sharp"></a>
+  <h3>C-Sharp<a href="#C-Sharp" class="wiki-anchor">¶</a></h3>
+  <pre><code class="cs syntaxhl"><span class="k">using</span> <span class="nn">System.IO.Compression</span><span class="p">;</span>
+  
+  <span class="cp">#pragma warning disable 414, 3021
+  </span>
+  <span class="k">namespace</span> <span class="nn">MyApplication</span>
+  <span class="p">{</span>
+      <span class="p">[</span><span class="nf">Obsolete</span><span class="p">(</span><span class="s">"..."</span><span class="p">)]</span>
+      <span class="k">class</span> <span class="nc">Program</span> <span class="p">:</span> <span class="n">IInterface</span>
+      <span class="p">{</span>
+          <span class="k">public</span> <span class="k">static</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="nf">JustDoIt</span><span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
+          <span class="p">{</span>
+              <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Hello </span><span class="p">{</span><span class="n">Name</span><span class="p">}</span><span class="s">!"</span><span class="p">);</span>
+              <span class="k">return</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span> <span class="p">})</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-18"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=18">Edit this section</a></div><a name="Objective-C"></a>
+  <h3>Objective-C<a href="#Objective-C" class="wiki-anchor">¶</a></h3>
+  <pre><code class="objc syntaxhl"><span class="cp">#import &lt;UIKit/UIKit.h&gt;
+  #import "Dependency.h"
+  </span>
+  <span class="k">@protocol</span> <span class="nc">WorldDataSource</span>
+  <span class="k">@optional</span>
+  <span class="o">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">worldName</span><span class="p">;</span>
+  <span class="err">@required</span>
+  <span class="o">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">allowsToLive</span><span class="p">;</span>
+  <span class="k">@end</span>
+  
+  <span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">title</span><span class="p">;</span>
+  <span class="k">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span> <span class="n">show</span><span class="p">;</span>
+  <span class="k">@end</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-19"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=19">Edit this section</a></div><a name="Ruby"></a>
+  <h3>Ruby<a href="#Ruby" class="wiki-anchor">¶</a></h3>
+  <pre><code class="ruby syntaxhl"><span class="c1"># The Greeter class</span>
+  <span class="k">class</span> <span class="nc">Greeter</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+      <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span><span class="p">.</span><span class="nf">capitalize</span>
+    <span class="k">end</span>
+  
+    <span class="k">def</span> <span class="nf">salute</span>
+      <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+  <span class="n">g</span> <span class="o">=</span> <span class="no">Greeter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"world"</span><span class="p">)</span>
+  <span class="n">g</span><span class="p">.</span><span class="nf">salute</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-20"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=20">Edit this section</a></div><a name="Python"></a>
+  <h3>Python<a href="#Python" class="wiki-anchor">¶</a></h3>
+  <pre><code class="python syntaxhl"><span class="o">@</span><span class="n">requires_authorization</span>
+  <span class="k">def</span> <span class="nf">somefunc</span><span class="p">(</span><span class="n">param1</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+      <span class="s">r'''A docstring'''</span>
+      <span class="k">if</span> <span class="n">param1</span> <span class="o">&gt;</span> <span class="n">param2</span><span class="p">:</span> <span class="c1"># interesting
+  </span>        <span class="k">print</span> <span class="s">'Gre</span><span class="se">\'</span><span class="s">ater'</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">param2</span> <span class="o">-</span> <span class="n">param1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mb">0b10</span><span class="n">l</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">None</span>
+  
+  <span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+      <span class="k">pass</span>
+  
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">message</span> <span class="o">=</span> <span class="s">'''interpreter
+  ... prompt'''</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-21"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=21">Edit this section</a></div><a name="CSS"></a>
+  <h3>CSS<a href="#CSS" class="wiki-anchor">¶</a></h3>
+  <pre><code class="css syntaxhl"><span class="k">@font-face</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Chunkfive</span><span class="p">;</span> <span class="nl">src</span><span class="p">:</span> <span class="sx">url('Chunkfive.otf')</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="nt">body</span><span class="o">,</span> <span class="nc">.usertext</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#F0F0F0</span><span class="p">;</span> <span class="nl">background</span><span class="p">:</span> <span class="m">#600</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Chunkfive</span><span class="p">,</span> <span class="n">sans</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">@import</span> <span class="sx">url(print.css)</span><span class="p">;</span>
+  <span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+    <span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="nt">http</span><span class="o">]</span><span class="nd">::after</span> <span class="p">{</span>
+      <span class="nl">content</span><span class="p">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-22"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=22">Edit this section</a></div><a name="XML"></a>
+  <h3>XML<a href="#XML" class="wiki-anchor">¶</a></h3>
+  <pre><code class="xml syntaxhl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Title<span class="nt">&lt;/title&gt;</span>
+  
+  <span class="nt">&lt;style&gt;</span>body {width: 500px;}<span class="nt">&lt;/style&gt;</span>
+  
+  <span class="nt">&lt;script</span> <span class="na">type=</span><span class="s">"application/javascript"</span><span class="nt">&gt;</span>
+    function $init() {return true;}
+  <span class="nt">&lt;/script&gt;</span>
+  
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p</span> <span class="err">checked</span> <span class="na">class=</span><span class="s">"title"</span> <span class="na">id=</span><span class="s">'title'</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/p&gt;</span>
+    <span class="c">&lt;!-- here goes the rest of the page --&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  </code></pre>
+  <div class="contextual heading-3" title="Edit this section" id="section-23"><a class="icon-only icon-edit" href="http://localhost:8080/projects/sample-project/wiki/Wiki/edit?section=23">Edit this section</a></div><a name="SQL"></a>
+  <h3>SQL<a href="#SQL" class="wiki-anchor">¶</a></h3>
+  <pre><code class="sql syntaxhl"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">"topic"</span> <span class="p">(</span>
+      <span class="nv">"id"</span> <span class="n">serial</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+      <span class="nv">"forum_id"</span> <span class="n">integer</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+      <span class="nv">"subject"</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+  <span class="p">);</span>
+  <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">"topic"</span>
+  <span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">forum_id</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">"forum_id"</span><span class="p">)</span>
+  <span class="k">REFERENCES</span> <span class="nv">"forum"</span> <span class="p">(</span><span class="nv">"id"</span><span class="p">);</span>
+  
+  <span class="c1">-- Initials</span>
+  <span class="k">insert</span> <span class="k">into</span> <span class="nv">"topic"</span> <span class="p">(</span><span class="nv">"forum_id"</span><span class="p">,</span> <span class="nv">"subject"</span><span class="p">)</span>
+  <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'D</span><span class="se">''</span><span class="s1">artagnian'</span><span class="p">);</span>
+  </code></pre>
+  </div>
+  
+  
+  <fieldset class="collapsible collapsed hide-when-print">
+    <legend onclick="toggleFieldset(this);">Files (0)</legend>
+    <div style="display: none;">
+  
+    
+  
+    <div id="wiki_add_attachment">
+      <form id="add_attachment_form" enctype="multipart/form-data" action="/projects/sample-project/wiki/Wiki/add_attachment" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="gBptJu8ZdWuK4KWBSxZP6REHRXC1mtEXadERuL1+GHCuAy+hnHfAMFtDhkAmOvke94G0fcSf6aCpEnX6MfTenw==">
+        <div class="box filedroplistner">
+        <p>
+  <span class="attachments_form">
+    <span class="attachments_fields">
+    </span>
+    <span class="add_attachment" style="">
+      <input type="file" name="attachments[dummy][file]" class="file_selector filedrop" multiple="multiple" onchange="addInputFiles(this);" data-max-file-size="5242880" data-max-file-size-message="This file cannot be uploaded because it exceeds the maximum allowed file size (5 MB)" data-max-concurrent-uploads="2" data-upload-path="/uploads.js" data-param="attachments" data-description="true" data-description-placeholder="Optional description">
+      (Maximum size: 5 MB)
+    </span>
+  </span>
+  
+  </p>
+        </div>
+        <input type="submit" name="commit" value="Add" data-disable-with="Add">
+  </form>  </div>
+  </div>
+  </fieldset>
+  
+  <p class="wiki-update-info">
+    Updated by <a class="user active" href="http://localhost:8080/users/1">Redmine Admin</a> <a title="01/21/2019 03:19 PM" href="http://localhost:8080/projects/sample-project/activity?from=2019-01-21">about 2 hours</a> ago
+   · <a href="http://localhost:8080/projects/sample-project/wiki/Wiki/history">14 revisions</a>
+  </p>
+  
+  <p class="other-formats">Also available in:  <span><a class="pdf" rel="nofollow" href="http://localhost:8080/projects/sample-project/wiki/Wiki.pdf">PDF</a></span>
+    <span><a class="html" rel="nofollow" href="http://localhost:8080/projects/sample-project/wiki/Wiki.html">HTML</a></span>
+    <span><a class="txt" rel="nofollow" href="http://localhost:8080/projects/sample-project/wiki/Wiki.txt">TXT</a></span>
+  </p>
+  
+  
+  
+          
+          <div style="clear:both;"></div>
+      </div>
+  </div>
+  </div>
+  
+  <div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+  <div id="ajax-modal" style="display:none;"></div>
+  
+  <div id="footer">
+    <div class="bgl"><div class="bgr">
+      Powered by <a href="https://www.redmine.org/" target="_blank">Redmine</a> © 2006-2018 Jean-Philippe Lang
+    </div></div>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  </body></html>
