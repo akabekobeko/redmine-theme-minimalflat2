@@ -2672,12 +2672,12 @@ div.tooltip:hover span.tip{
   display: block;
   position: absolute;
   top: 12px;
-  left: 24px;
   width: 270px;
   border: 1px solid $color_gray_dark;
   background-color: $color_white;
   padding: .5em;
   font-size: .8em;
+  color: $color_gray_dark;
 }
 
 table.cal div.tooltip:hover span.tip {
