@@ -1070,6 +1070,9 @@ tr.message.sticky td.subject {
 body.avatars-on #replies .message {
   padding-left: 32px;
 }
+#replies .reply:target h4 {
+  background-color: $color_blue_light;
+}
 #replies h4 img.gravatar {
   margin-left :-32px;
 }
@@ -1203,12 +1206,10 @@ a.toggle-all:hover {
   text-decoration: none;
 }
 
-table.list tbody tr:hover {
-  background-color: #ffffdd;
-}
 table.list tbody tr.group:hover {
   background-color: inherit;
 }
+
 table td {
   padding: 2px;
 }
@@ -1221,6 +1222,10 @@ table.list:not(.odd-even) tbody tr:nth-child(odd), .odd, #issue-changesets div.c
 }
 table.list:not(.odd-even) tbody tr:nth-child(even), .even, #issue-changesets div.changeset:nth-child(even) {
   background-color: $color_white;
+}
+table.list:not(.odd-even) tbody tr:nth-child(odd):hover, .odd:hover, #issue-changesets div.changeset:nth-child(odd):hover,
+table.list:not(.odd-even) tbody tr:nth-child(even):hover, .even:hover, #issue-changesets div.changeset:nth-child(even):hover {
+  background-color:$color_yellow_light;
 }
 
 tr.builtin td.name {
@@ -1408,8 +1413,10 @@ input[type="submit"] {
 }
 fieldset {
   border: 1px solid $color_gray;
-  margin: 0;
+  margin:0;
+  min-width: inherit;
 }
+
 legend {
   color: $color_gray_dark;
   padding: 0 .2em;
@@ -1862,6 +1869,9 @@ ul.projects div.description li {
   font-family: "Trebuchet MS", Verdana, sans-serif;
   font-weight: bold;
   margin: 0 0 10px 0;
+}
+#projects-index ul.projects div.description {
+  padding-top: 0.5em;
 }
 #projects-index a.icon-fav {
   padding-left: 0;
@@ -2668,16 +2678,21 @@ p.cal.legend span {
   color: $color_blue_dark !important;
 }
 
+.tooltip span.tip img.gravatar {
+  float: none;
+  margin: 0;
+}
+
 div.tooltip:hover span.tip{
   display: block;
   position: absolute;
   top: 12px;
-  left: 24px;
   width: 270px;
   border: 1px solid $color_gray_dark;
   background-color: $color_white;
   padding: .5em;
   font-size: .8em;
+  color: $color_gray_dark;
 }
 
 table.cal div.tooltip:hover span.tip {
