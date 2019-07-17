@@ -3142,12 +3142,17 @@ a.close-icon:hover {
   font-size: .8em;
 }
 
+.gantt_subjects_column + td {
+  padding: 0;
+}
+
 .gantt_hdr.nwday {
   background-color: $color_gray_light_b;
 }
-
 .gantt_subjects {
   font-size: .8em;
+  position: relative;
+  z-index: 1;
 }
 .gantt_subjects div {
   line-height: 16px;

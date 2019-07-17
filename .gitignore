@@ -10,3 +10,4 @@ responsive.css
 *.zip
 package-lock.json
 !.gitignore
+!.prettierignore
