@@ -1,7 +1,7 @@
 {
   "name": "minimalflat2",
   "description": "Minimal and flat design theme for Redmine.",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "author": "akabeko",
   "license": "GPL-2.0",
   "main": "index.js",
@@ -44,8 +44,8 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "bestzip": "^2.1.2",
-    "browser-sync": "^2.26.5",
+    "bestzip": "^2.1.4",
+    "browser-sync": "^2.26.7",
     "cpx": "^1.5.0",
     "cross-conf-env": "^1.1.2",
     "mkdirp": "^0.5.1",

@@ -1,5 +1,15 @@
 # ChangeLog
 
+## v1.6.1
+
+### Changes
+
+- Support Redmine v4.0.4 [#153](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/153)
+
+### Bug Fixes
+
+- Issue links on Gantt are not clickable with Redmine v4.0.4 [#152](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/152)
+
 ## v1.6.0
 
 ### Changes
