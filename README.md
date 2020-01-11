@@ -1,6 +1,6 @@
 # minimalflat2
 
-![Redmine](https://img.shields.io/badge/Redmine-4.0-brightgreen.svg)
+![Redmine](https://img.shields.io/badge/Redmine-4.1-brightgreen)
 
 Minimal and flat design theme for Redmine.
 
@@ -36,12 +36,14 @@ Minimal and flat design theme for Redmine.
 
 ## Development
 
-Transpile (watch) CSS and preview on web browser.
+The CSS Transpile (watch) CSS is executed.
 
 1. `git clone https://github.com/akabekobeko/redmine-theme-minimalflat2.git`
 2. `cd redmine-theme-minimalflat2`
 3. `npm i`
 4. `npm start`
+
+Stop is <kbd>Ctrl</kbd> + <kbd> C </kbd>.
 
 ### docker-compose
 
