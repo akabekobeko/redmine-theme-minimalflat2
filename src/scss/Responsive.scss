@@ -862,8 +862,8 @@
 
   .gantt_subjects_column .gantt_hdr {
     width: 100% !important;
-    border-right: 1px solid $color_gray_dark; // [2]
     right: 0 !important; //[2]
+    border-right: 1px solid $color_gray_dark;
   }
 
   #gantt_area {
@@ -904,6 +904,10 @@
   // new issue form
   #all_attributes p:first-child {
     float: none !important;
+  }
+
+  #all_attributes #issue_tracker_id {
+    width: 90%;
   }
 
   #issue_is_private_label {

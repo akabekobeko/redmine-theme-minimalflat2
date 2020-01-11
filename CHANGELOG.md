@@ -1,5 +1,15 @@
 # ChangeLog
 
+## v1.7.0
+
+### Changes
+
+- Support Redmine v4.1 [#156](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/156)
+
+### Bug Fixes
+
+gantt chart not work 4.1.0 [#157](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/157)
+
 ## v1.6.1
 
 ### Changes

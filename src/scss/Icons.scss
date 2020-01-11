@@ -274,8 +274,49 @@
 .icon-shared:before {
   @include icon($icon_link, $color_gray)
 }
+
 .icon-actions:before {
   @include icon($icon_actions, $color_gray)
+}
+
+.icon-sort-handle:before {
+  @include icon($icon_updown, $color_green)
+}
+
+.icon-expended:before {
+  @include icon($icon_chevron_down, $color_gray)
+}
+
+.icon-collapsed:before {
+  @include icon($icon_chevron_right, $color_gray)
+}
+
+.icon-bookmark:before {
+  @include icon($icon_bookmark, $color_blue)
+}
+
+.icon-sorted-asc:before {
+  @include icon($icon_chevron_down, $color_gray)
+}
+
+.icon-sorted-desc:before {
+  @include icon($icon_chevron_up, $color_gray)
+}
+
+.icon-toggle-plus:before {
+  @include icon($icon_toggle_plus, $color_gray)
+}
+
+.icon-toggle-minus:before {
+  @include icon($icon_toggle_minus, $color_gray)
+}
+
+.icon-clear-query:before {
+  @include icon($icon_close, $color_blue)
+}
+
+.icon-import:before {
+  @include icon($icon_database_key, $color_gray)
 }
 
 .icon-file:before {
@@ -298,7 +339,7 @@
   @include icon($icon_file_text, $color_yellow_dark)
 }
 
-.icon-file.text-x-javascript:before {
+.icon-file.application-javascript:before {
   @include icon($icon_file_text, $color_yellow_dark)
 }
 
@@ -346,7 +387,7 @@
   @include icon($icon_file_zip, $color_yellow)
 }
 
-.icon-file.application-x-gzip:before {
+.icon-file.application-gzip:before {
   @include icon($icon_file_zip, $color_green)
 }
 
@@ -419,11 +460,22 @@
   &.icon-file,
   &.icon-shared,
   &.icon_actions,
+  &.icon-sort-handle,
+  &.icon-expended,
+  &.icon-collapsed,
+  &.icon-bookmark,
+  &.icon-bookmark-off,
+  &.icon-sorted-asc,
+  &.icon-sorted-desc,
+  &.icon-toggle-plus,
+  &.icon-toggle-minus,
+  &.icon-clear-query,
+  &.icon-import,
   &.icon-file.text-plain,
   &.icon-file.text-x-c,
   &.icon-file.text-x-csharp,
   &.icon-file.text-x-java,
-  &.icon-file.text-x-javascript,
+  &.icon-file.application-javascript,
   &.icon-file.text-x-php,
   &.icon-file.text-x-ruby,
   &.icon-file.text-xml,
@@ -435,7 +487,7 @@
   &.icon-file.image-tiff,
   &.icon-file.application-pdf,
   &.icon-file.application-zip,
-  &.icon-file.application-x-gzip {
+  &.icon-file.application-gzip {
     padding: 0;
   }
 }
@@ -507,12 +559,23 @@
   &.icon-news,
   &.icon-shared,
   &.icon-actions,
+  &.icon-sort-handle,
+  &.icon-expended,
+  &.icon-collapsed,
+  &.icon-bookmark,
+  &.icon-bookmark-off,
+  &.icon-sorted-asc,
+  &.icon-sorted-desc,
+  &.icon-toggle-plus,
+  &.icon-toggle-minus,
+  &.icon-clear-query,
+  &.icon-import,
   &.icon-file,
   &.icon-file.text-plain,
   &.icon-file.text-x-c,
   &.icon-file.text-x-csharp,
   &.icon-file.text-x-java,
-  &.icon-file.text-x-javascript,
+  &.icon-file.application-javascript,
   &.icon-file.text-x-php,
   &.icon-file.text-x-ruby,
   &.icon-file.text-xml,
@@ -524,7 +587,7 @@
   &.icon-file.image-tiff,
   &.icon-file.application-pdf,
   &.icon-file.application-zip,
-  &.icon-file.application-x-gzip {
+  &.icon-file.application-gzip {
     width: 1.3em;
     height: 1.3em;
     padding: 0;

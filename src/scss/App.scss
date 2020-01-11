@@ -6,6 +6,9 @@
 @import "JSToolbar.scss";
 @import "Widget.scss";
 
+html, body {
+  min-height: 100vh;
+}
 html {
   overflow-y: scroll;
 }
@@ -31,9 +34,6 @@ h3, .wiki h2 {
 h4, .wiki h3 {
   font-size: 1.3em;
 }
-h4 {
-  border-bottom: 1px dotted $color_gray_dark;
-}
 pre, code {
   font-family: monospace;
 }
@@ -45,8 +45,15 @@ li {
 }
 
 /***** Layout *****/
+div#wrapper, div#wrapper2, div#wrapper3 {
+  min-height: inherit;
+}
 #wrapper {
   overflow: hidden;
+}
+#wrapper3 {
+  display: flex;
+  flex-direction: column;
 }
 
 #top-menu {
@@ -292,21 +299,47 @@ li {
 }
 
 #main {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row-reverse;
   background-color: $color_gray_light_b;
 }
 
 #sidebar{
-  float: right;
-  width: 25%;
-  position: relative;
-  z-index: 9;
-  padding: 0 1em;
-  margin: 0;
-  box-sizing: border-box;
-
+  flex-shrink: 0;
+  padding-left: 20px;
+  background: #EEEEEE;
+  border-left: 1px solid #ddd;
 }
-* html #sidebar {
-  width: 22%;
+@media screen and (min-width: 0px) and (max-width: 1089px) {
+  #sidebar{
+    width: 22%;
+  }
+}
+@media screen and (min-width: 1090px) and (max-width: 1279px) {
+  #sidebar{
+    width: 240px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  #sidebar{
+    width: 280px;
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+  #sidebar{
+    width: 320px;
+  }
+}
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+  #sidebar{
+    width: 360px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  #sidebar{
+    width: 380px;
+  }
 }
 #sidebar h3 {
   font-size: 1.2em;
@@ -346,15 +379,23 @@ li {
 #sidebar div.wiki ul li {
   list-style-type: inherit;
 }
+#sidebar a.icon-only {
+  opacity: 0.4;
+  margin-left: 5px;
+}
+#sidebar a.icon-only:hover {
+  opacity: 1;
+}
+#sidebar li input[type=checkbox] {
+  height: 20px;
+}
 
 #content {
-  width: 75%;
+  flex-grow: 1;
   background-color: $color_page_back;
-  margin: 0;
-  border-right: 1px solid $color_gray_light_a;
+  margin: 0px;
   padding: .5em 1em;
-  z-index: 10;
-  box-sizing: border-box;
+  overflow-x: auto;
 }
 * html #content {
   width: 75%;
@@ -371,10 +412,6 @@ html > body #content {
 
 #main.nosidebar #sidebar {
   display: none;
-}
-#main.nosidebar #content {
-  width: auto;
-  border-right: 0;
 }
 
 #footer {
@@ -397,26 +434,22 @@ html > body #content {
   box-sizing: border-box;
 }
 #login-form label {
-  display: block;
-  margin-bottom: 5px;
+  display:block;
+  margin-bottom:5px;
+  font-weight:bold;
 }
 #login-form label[for=autologin] {
-  font-weight: normal;
+  font-weight:normal;
 }
-#login-form input[type=text], #login-form input[type=password] {
-  border: 1px solid $color_gray;
-  border-radius: 3px;
-  margin-bottom: 15px;
-  padding: 7px;
+#login-form input {
+  height: 29px;
+}
+#login-form input[type=text], #login-form input[type=password], #login-form input[type=submit] {
   display: block;
   width: 100%;
-  box-sizing: border-box;
 }
-#login-form label {
-  font-weight: bold;
-}
-#login-form label[for=autologin] {
-  font-weight: normal;
+#login-form input[type=text], #login-form input[type=password] {
+  margin-bottom: 15px;
 }
 #login-form a.lost_password {
   float: right;
@@ -425,13 +458,6 @@ html > body #content {
 #login-form input#openid_url {
   background: $color_white url(../images/openid-bg.gif) no-repeat 4px 50%;
   padding-left: 24px !important;
-}
-#login-form input#login-submit {
-  margin-top: 15px;
-  padding: 7px;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 div.modal {
@@ -460,6 +486,9 @@ div.modal .box p {
 }
 
 .mobile-show {
+  display: none;
+}
+.hidden {
   display: none;
 }
 
@@ -621,6 +650,14 @@ div + .drdn-items {
 .contextual .drdn-items {
   padding: .2em;
 }
+
+.contextual .drdn-items {
+  padding: .2em;
+  min-width: 160px;
+}
+.contextual .drdn-items>a {
+  padding: .4em .6em;
+}
 .contextual .drdn-items>a:hover {
   background-color: $color_blue_light;
   color: $color_white;
@@ -662,6 +699,7 @@ table.list, .table-list {
   width: 100%;
   margin-bottom: .5em;
   font-size: .9em;
+  overflow: hidden;
 }
 table.list th, .table-list-header {
   border: 1px solid $color_gray_light_a;
@@ -684,13 +722,14 @@ table.list td.id {
   width: 2%;
   text-align: center;
 }
-table.list td.name, table.list td.description, table.list td.subject, table.list td.comments, table.list td.roles, table.list td.attachments {
+table.list td.name, table.list td.description, table.list td.subject, table.list td.comments, table.list td.roles, table.list td.attachments, table.list td.text,  table.list td.short_description {
   text-align: left;
 }
 // Custom Field, Since "string" seems to be for short texts, it should be left justified by "text".
 table.list td[class^='cf_'].text, table.list td[class*=' cf_'].text {
   text-align: left;
 }
+
 table.list td.attachments a {
   display: block;
 }
@@ -701,8 +740,9 @@ table.list td.checkbox {
   width: 1em;
   padding: .3em;
 }
-table.list td.checkbox input {
+table.list .checkbox input {
   padding: 0;
+  height: initial;
 }
 table.list td.buttons, div.buttons {
   white-space: nowrap;
@@ -759,33 +799,6 @@ tr.project.idnt td.name span:before {
   @include iconbase();
   @include icon($icon_chevron_right, $color_gray_dark);
 }
-tr.project.idnt-1 td.name {
-  padding-left: .5em;
-}
-tr.project.idnt-2 td.name {
-  padding-left: 2em;
-}
-tr.project.idnt-3 td.name {
-  padding-left: 3.5em;
-}
-tr.project.idnt-4 td.name {
-  padding-left: 5em;
-}
-tr.project.idnt-5 td.name {
-  padding-left: 6.5em;
-}
-tr.project.idnt-6 td.name {
-  padding-left: 8em;
-}
-tr.project.idnt-7 td.name {
-  padding-left: 9.5em;
-}
-tr.project.idnt-8 td.name {
-  padding-left: 11em;
-}
-tr.project.idnt-9 td.name {
-  padding-left: 12.5em;
-}
 
 tr.issue {
   text-align: center;
@@ -805,15 +818,20 @@ tr.issue td.done_ratio table.progress {
 tr.issue td.relations span {
   white-space: nowrap;
 }
-table.issues td.description, table.issues td.last_notes {
+table.issues td.block_column {
   color: $color_gray;
   font-size: .9em;
   padding: .5em .5em .5em 3em;
   text-align: left;
   white-space: normal;
 }
-table.issues td.description pre, table.issues td.last_notes pre {
-  white-space: normal;
+table.issues td.block_column span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: .2em;
+}
+table.issues td.block_column pre {
+  white-space:normal;
 }
 
 // Issue priority colors from Circle Theme (http://www.redminecrm.com/pages/circle-theme)
@@ -983,21 +1001,14 @@ tr.entry.file td.filename_no_report a {
   margin-left: 1.3em;
 }
 
-tr span.expander:before {
-  @include iconbase();
-  @include icon($icon_toggle_plus, $color_gray);
-  font-size: 12px;
-  padding-left: .2em;
-  margin-right: -.5em;
+tr span.expander:before, .gantt_subjects div > span.expander:before {
   cursor: pointer;
 }
-tr.open span.expander:before {
-  @include iconbase();
-  @include icon($icon_toggle_minus, $color_gray);
-  font-size: 12px;
-  padding-left: .2em;
-  margin-right: -.5em;
-  cursor: pointer;
+.gantt_subjects div > span.expander {
+  padding-left: 12px;
+}
+.gantt_subjects div > span .icon-gravatar {
+  float: none;
 }
 
 tr.changeset {
@@ -1067,11 +1078,11 @@ tr.message.sticky td.subject {
   font-weight: bold;
 }
 
-body.avatars-on #replies .message {
+body.avatars-on #replies .message.reply {
   padding-left: 32px;
 }
-#replies .reply:target h4 {
-  background-color: $color_blue_light;
+#replies .reply:target h4.reply-header {
+  background-color: $color_blue_light;;
 }
 #replies h4 img.gravatar {
   margin-left :-32px;
@@ -1089,7 +1100,7 @@ tr.version td.date, tr.version td.status, tr.version td.sharing {
   white-space: nowrap;
 }
 
-tr.member td.icon-user {
+tr.member td.icon-user, #principals_for_new_member .icon-user {
   background: transparent;
 }
 
@@ -1171,19 +1182,11 @@ tr.group td {
   text-align: left;
   background-color: $color_white;
 }
+tr.group span.count {
+  top:-1px;
+}
 tr.group span.name {
   font-weight: bold;
-}
-tr.group span.count {
-  font-weight: bold;
-  position: relative;
-  top: -1px;
-  color: $color_white;
-  font-size: 10px;
-  background: $color_blue;
-  padding: 0 6px 1px 6px;
-  border-radius: 3px;
-  margin-left: 4px;
 }
 tr.group span.totals {
   color: $color_gray;
@@ -1232,16 +1235,13 @@ tr.builtin td.name {
   font-style: italic;
 }
 
-a.sort.asc:after  {
-  @include iconbase();
-  @include icon($icon_chevron_up, $color_gray_dark);
-  margin-left: .2em;
+/* These settings are unnecessary because the icon font is used
+a.sort {
+  padding-right: 16px;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
 }
-a.sort.desc:after {
-  @include iconbase();
-  @include icon($icon_chevron_down, $color_gray_dark);
-  margin-left: .2em;
-}
+*/
 
 table.boards a.board, h3.comments {
   &:before {
@@ -1284,7 +1284,7 @@ div.table-list.boards .table-list-cell.name {
   display:block;
 }
 .query-columns select {
-  width: 10em;
+  min-width: 10em;
 }
 
 .query-totals {
@@ -1308,14 +1308,6 @@ td.center {
   width: 95%;
   display: block;
 }
-#watchers a.delete {
-  opacity: 0.4;
-  vertical-align: middle;
-  margin-left: .2em;
-}
-#watchers a.delete:hover {
-  opacity: 1;
-}
 #watchers img.gravatar {
   margin: 0 4px 2px 0;
 }
@@ -1333,6 +1325,11 @@ span.search_for_watchers, span.add_attachment {
 span.add_attachment a:before {
   @include iconbase();
   @include icon($icon_add, $color_green);
+}
+
+input:disabled, select:disabled, textarea:disabled {
+  cursor: not-allowed;
+  color: graytext;
 }
 
 .highlight {
@@ -1389,28 +1386,88 @@ div.square {
 
 .splitcontent {
   overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
-.splitcontentleft, #list-left {
-  float: left;
-  width: 49%;
+.splitcontentleft {
+  flex: 1;
+  margin-right: 5px;
 }
-.splitcontentright, #list-right {
-  float: right;
-  width: 49%;
+.splitcontentright {
+  flex: 1;
+  margin-left: 5px;
 }
+.splitcontenttop {
+  flex: 2;
+  flex-basis: 100%;
+}
+
 form {
   display: inline;
 }
-input, select {
+
+input, select, button {
   vertical-align: middle;
   margin-top: 1px;
   margin-bottom: 1px;
   padding: .3em;
-  font-size: .9em;
 }
-input[type="submit"] {
+input, select, textarea, button {
+  color: $color_text;
+  background-color: $color_white;
+  border:1px solid $color_gray;
+  border-radius: .2em;
+  box-sizing: border-box;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: $color_white;
+  // The select element cannot specify a pseudo element and cannot use icon fonts. Use images for Redmine default
+  background-image: url(../images/arrow_down.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 7px) 50%;
+  padding-right: 20px;
+}
+input[type="file"] {
+  border: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: initial;
+}
+input[type="submit"], button[type="submit"] {
   -webkit-appearance: button;
+  cursor: pointer;
+  background-color: $color_white;
+  height: 28px;
+  -webkit-transition: background-color 100ms linear;
+  -moz-transition: background-color 100ms linear;
+  -o-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
 }
+input[type="submit"]:hover, button[type="submit"]:hover {
+  background-color: $color_gray_light_a;
+}
+
+input[type="text"]:focus, input[type="text"]:active,
+input[type="password"]:focus, input[type="password"]:active,
+input[type="date"]:focus, input[type="date"]:active,
+input[type="number"]:focus, input[type="number"]:active,
+select:focus, select:active,
+textarea:focus, textarea:active {
+  border: 1px solid $color_blue;
+  outline: none;
+}
+
+select[multiple=multiple] {
+  background: $color_white;
+  padding-right: initial;
+  height: auto;
+}
+
 fieldset {
   border: 1px solid $color_gray;
   margin:0;
@@ -1424,7 +1481,7 @@ legend {
 hr {
   width: 100%;
   height: 1px;
-  background: $color_gray;
+  background: $color_gray_light_a;
   border: 0;
 }
 blockquote {
@@ -1460,8 +1517,10 @@ li p {
 div.issue {
   background: $color_yellow_light;
   padding: .5em;
+  //padding: 0;
   margin-bottom: .5em;
-  border: 1px solid $color_gray;
+  border-radius: .2em;
+  border: 1px solid $color_gray_light_a;
 }
 p.breadcrumb {
   font-size: .9em;
@@ -1504,16 +1563,7 @@ div.issue p.author {
   margin-top: .5em;
 }
 div.issue span.private, div.journal span.private {
-  position: relative;
-  bottom: .3em;
-  text-transform: uppercase;
-  background: $color_red;
-  color: $color_white;
-  font-weight: bold;
-  padding: 0 .3em 0 .3em;
   font-size: 60%;
-  margin-right: .3em;
-  border-radius: .3em;
 }
 div.issue .next-prev-links {
   color: $color_gray;
@@ -1552,21 +1602,24 @@ div.issue.overdue .due-date .value {
   padding: 0;
 }
 
+#trackers_description {
+  display:none;
+}
+#trackers_description dt {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#trackers_description dd {
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
 fieldset.collapsible {
   border-width: 1px 0 0 0;
 }
 fieldset.collapsible > legend {
   cursor: pointer;
   padding: 0 .2em;
-
-  &:before {
-    @include iconbase();
-    @include icon($icon_chevron_down, $color_gray);
-  }
-}
-fieldset.collapsible.collapsed > legend:before {
-  @include iconbase();
-  @include icon($icon_chevron_right, $color_gray);
 }
 
 fieldset#date-range p {
@@ -1597,9 +1650,6 @@ fieldset#filters td.values {
 fieldset#filters td.values select {
   min-width: 130px;
 }
-fieldset#filters td.values input {
-  height: 1em;
-}
 
 #filters-table {
   width: 60%;
@@ -1616,15 +1666,18 @@ fieldset#filters td.values input {
   float: right;
   margin-right: 1em;
 }
-.toggle-multiselect:before {
-  @include iconbase();
-  @include icon($icon_toggle_plus, $color_gray);
-  cursor: pointer;
+.toggle-multiselect {
+  margin-right: .2em;
+  cursor:pointer;
 }
 .buttons {
   font-size: .9em;
   margin-bottom: 1.4em;
   margin-top: 1em;
+}
+.buttons .icon {
+  padding-bottom:3px;
+  padding-top:1px;
 }
 
 div#issue-changesets {
@@ -1673,17 +1726,19 @@ div.journal h4 img.gravatar {
   margin-left: -32px;
 }
 
-#history {
-  padding: 0 6px;
-  margin-bottom: 10px;
-  border-right: 1px solid $color_gray_light_a;
-  border-bottom: 1px solid $color_gray_light_a;
-  border-left: 1px solid $color_gray_light_a;
-  border-radius: 0 0 3px 3px / 0 0 3px 3px;
+#history .tab-content {
+  padding: .5em;
+  border-radius: .2em;
+  background-color: $color_gray_light_b;
 }
-
-#history div:target h4 {
+h4.note-header {
+  margin-top: 0;
+}
+#history div:target h4.note-header {
   background-color:$color_blue_light;
+}
+#history p.nodata {
+  display: none;
 }
 
 div#activity dl, #search-results {
@@ -1745,6 +1800,15 @@ div#roadmap .related-issues {
 div#roadmap .related-issues td.checkbox {
   display: none;
 }
+div#roadmap .related-issues td.assigned_to {
+  width:1px;
+  white-space:nowrap;
+  padding: 0;
+}
+div#roadmap .related-issues td.assigned_to img {
+  padding-left: 4px;
+  padding-right: 4px;
+}
 div#roadmap .wiki h1:first-child {
   display: none;
 }
@@ -1753,6 +1817,10 @@ div#roadmap .wiki h1 {
 }
 div#roadmap .wiki h2 {
   font-size: 1.1em;
+}
+div#roadmap h2, div#roadmap h3 {
+  display: inline;
+  padding-right: 0;
 }
 body.controller-versions.action-show div#roadmap .related-issues {
   width: 70%;
@@ -1855,6 +1923,7 @@ ul.projects div.description li {
 //  -moz-column-count: auto;
 //  -moz-column-width: 400px;
 //  -moz-column-gap: 0.5rem;
+// margin-bottom: 1.2em;
 //}
 #projects-index ul.projects li.root > ul.projects {
   padding-left: 1em;
@@ -1873,7 +1942,7 @@ ul.projects div.description li {
 #projects-index ul.projects div.description {
   padding-top: 0.5em;
 }
-#projects-index a.icon-fav {
+#projects-index a.icon-user {
   padding-left: 0;
   padding-right: 20px;
   background-position: 98% 50%;
@@ -1968,6 +2037,21 @@ li.change {
 #notified-projects > ul, #tracker_project_ids > ul, #custom_field_project_ids > ul {
   max-height: 250px;
   overflow-y: auto;
+}
+
+ul.subprojects {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+ul.subprojects li {
+  float: left;
+}
+ul.subprojects li:not(:last-child)::after {
+  content: ', ';
+  white-space: pre;
+  white-space: pre;
 }
 
 #related-issues li img {
@@ -2132,6 +2216,7 @@ html > body .tabular p {
   margin-left: -180px;
   // width of labels. Should be smaller than left column to create some right margin
   width: 175px;
+  line-height: 24px;
 }
 
 .tabular label.floating {
@@ -2171,7 +2256,7 @@ input#time_entry_comments {
   width: 90%;
 }
 input#months {
-  width: 30px;
+  width: 46px;
 }
 
 .jstBlock .jstTabs, .jstBlock .wiki-preview {
@@ -2201,7 +2286,9 @@ input#months {
 }
 .tabular .wiki-preview p {
   min-height: initial;
-  padding: 1em 0 1em 0 !important;
+  padding: 0;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
   overflow: initial;
 }
 
@@ -2391,8 +2478,9 @@ a.txt:before {
 }
 
 em.info {
-  font-style: normal;
-  display: block;
+  font-style:normal;
+  display:block;
+  color: $color_gray;
 }
 em.info.error:before {
   @include iconbase();
@@ -2449,10 +2537,6 @@ input#principal_search, input#user_search {
 }
 
 input.autocomplete {
-  border: 1px solid #9EB1C2;
-  border-radius: 2px;
-  height: 1.5em;
-
   &:before {
     @include iconbase();
     @include icon($icon_search, $color_blue);
@@ -2596,6 +2680,7 @@ table.cal {
   width: 100%;
   margin: 0 0 6px 0;
   border: 1px solid $color_gray_light_a;
+  border-radius: .2em;
   font-size: .8em;
 }
 table.cal thead th {
@@ -2638,6 +2723,9 @@ table.cal td.today {
 }
 table.cal td.today p.day-num {
   font-weight: bold;
+}
+table.cal td.nwday:not(.odd) {
+  background-color: $color_gray_light_c;
 }
 table.cal .starting a.issue, p.cal.legend .starting {
   &:before {
@@ -2728,7 +2816,7 @@ table.progress td.done {
   background: $color_viridian_light none repeat scroll 0%;
 }
 table.progress td.todo {
-  background: $color_gray_light_a none repeat scroll 0%;
+  background: $color_gray_light_b none repeat scroll 0%;
 }
 p.percent {
   font-size: .8em;
@@ -2878,6 +2966,7 @@ button.tab-left.disabled, button.tab-right.disabled {
   background-color: #f6f6f6;
   color: #505050;
   border: 1px solid #e4e4e4;
+  white-space: pre-wrap;
 }
 
 /***** Wiki *****/
@@ -2951,6 +3040,12 @@ div.wiki pre {
   }
 }
 
+div.wiki *:not(pre)>code, div.wiki>code {
+  background: rgba(62, 91, 118, 0.08);
+  padding: 0.1em 0.1em;
+  border-radius: 0.1em;
+}
+
 div.wiki ul.toc {
   background-color: #ffffdd;
   border: 1px solid #e4e4e4;
@@ -3019,7 +3114,6 @@ h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor, h4:hover
   display: inline;
   color: $color_gray_light_c;
 }
-
 
 div.wiki img {
   vertical-align: middle;
@@ -3098,6 +3192,7 @@ div.wiki img {
   margin: 0 0 20px 0;
   color: $color_gray_dark;
   line-height: 1.5em;
+  border-radius: .2em;
 }
 
 .mypage-box > .contextual {
@@ -3130,16 +3225,35 @@ a.close-icon:hover {
 }
 
 /***** Gantt chart *****/
+table.gantt-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.gantt-table td {
+  padding: 0px;
+}
 .gantt_hdr {
   position: absolute;
   top: 0;
   height: 16px;
   border-top: 1px solid $color_gray_light_a;
   border-bottom: 1px solid $color_gray_light_a;
-  border-right: 1px solid $color_gray_light_a;
+  border-left: 1px solid $color_gray_light_a;
   text-align: center;
   overflow: hidden;
   font-size: .8em;
+}
+#gantt_area .gantt_hdr {
+  border-left: 0px;
+  border-right: 1px solid $color_gray_light_a;
+}
+.gantt_subjects_container:not(.draw_selected_columns) .gantt_hdr,
+.last_gantt_selected_column .gantt_hdr {
+  z-index: 10;
+  border-right: 1px solid $color_gray_light_a;
+}
+.gantt_subjects_container .gantt_subjects * {
+  z-index: 10;
 }
 
 .gantt_subjects_column + td {
@@ -3149,24 +3263,48 @@ a.close-icon:hover {
 .gantt_hdr.nwday {
   background-color: $color_gray_light_b;
 }
-.gantt_subjects {
-  font-size: .8em;
+.gantt_subjects,
+.gantt_selected_column_content.gantt_hdr {
+  font-size: 0.8em;
   position: relative;
   z-index: 1;
 }
-.gantt_subjects div {
+.gantt_subjects div,
+.gantt_selected_column_content div {
   line-height: 16px;
   height: 16px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  width: 100%;
 }
 .gantt_subjects div.issue-subject:hover {
   background-color: $color_yellow_light;
 }
-
+.gantt_selected_column_content {
+  padding-left: 3px;
+  padding-right: 3px;
+}
 .gantt_subjects .issue-subject img.icon-gravatar {
   margin: 2px 5px 0px 2px;
+}
+.gantt_hdr_selected_column_name {
+  position: absolute;
+  top: 50%;
+  width:100%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  font-size: 0.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+td.gantt_selected_column {
+  width: 50px;
+}
+td.gantt_selected_column .gantt_hdr,.gantt_selected_column_container {
+  width: 49px;
 }
 
 .task {
@@ -3286,6 +3424,49 @@ a.close-icon:hover {
   color: $color_red;
 }
 
+/***** Badges *****/
+.badge {
+  position:relative;
+  font-weight:bold;
+  font-size: 10px;
+  bottom: 2px;
+  padding: 1px 3px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.badge-private {
+  background: #d22;
+  color: $color_white;
+}
+.badge-count {
+  background:#9DB9D5;
+  color: $color_white;
+}
+.badge-status-open {
+  color: #205D86;
+  border: 1px solid #205D86;
+}
+.badge-status-locked {
+  color: #696969;
+  border: 1px solid #696969;
+}
+.badge-status-closed {
+  color: #1D781D;
+  border: 1px solid #1D781D;
+}
+/***** Tooltips *****/
+.ui-tooltip {
+  background: $color_text;
+  color: $color_white;
+  font-size: 0.9em;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: none
+}
+
 /***** Icons *****/
 .icon {
   background-position: 0% 50%;
@@ -3320,13 +3501,7 @@ a.icon-only {
 }
 
 .sort-handle {
-  border: none !important;
-  cursor: move !important;
-
-  &:before {
-    @include iconbase();
-    @include icon($icon_updown, $color_green);
-  }
+  cursor: move;
 }
 .sort-handle.ajax-loading {
   width: 16px;
@@ -3459,6 +3634,17 @@ img.filecontent.image {
   border-color: $color_blue_dark;
 }
 
+/* Custom tribute styles */
+.tribute-container ul {
+  background-color: $color_white;
+  border: 1px solid $color_gray_light_a;
+  border-radius: 2px;
+}
+.tribute-container li.highlight {
+  background-color: $color_blue_light;
+  color:$color_white;
+}
+
 /************* Rouge styles *************/
 /* generated by: pygmentize -f html -a .syntaxhl -S colorful */
 code.syntaxhl { background-color: $color_syntax_back; color: $color_white; }
@@ -3584,6 +3770,23 @@ code.syntaxhl { background-color: $color_syntax_back; color: $color_white; }
   position: absolute;
   max-height: 100%;
   max-width: 100%;
+}
+
+.filecontent-container > .filecontent.wiki {
+  position: relative;
+  padding: 1em;
+  border: 1px solid $color_gray_light_b;
+  border-radius: 3px;
+}
+
+/* Fixes for IE 11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  select::-ms-expand {
+    display: none;
+  }
+  select[multiple=multiple] {
+    padding-right: 0;
+  }
 }
 
 /***** Override Forms *****/

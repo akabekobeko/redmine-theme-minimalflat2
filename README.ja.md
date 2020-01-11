@@ -1,6 +1,6 @@
 # minimalflat2
 
-![Redmine](https://img.shields.io/badge/Redmine-4.0-brightgreen.svg)
+![Redmine](https://img.shields.io/badge/Redmine-4.1-brightgreen)
 
 簡素でフラットな外観の Redmine テーマです。
 
@@ -39,12 +39,14 @@
 
 ## 開発
 
-CSS の Transpile (watch) CSS と Web ブラウザーのプレビューを実行できます。
+CSS の Transpile (watch) CSS が実行されます。
 
 1. `git clone https://github.com/akabekobeko/redmine-theme-minimalflat2.git`
 2. `cd redmine-theme-minimalflat2`
 3. `npm i`
 4. `npm start`
+
+停止コマンドは <kbd>Ctrl</kbd> + <kbd>C</kbd> です。
 
 ### docker-compose
 
