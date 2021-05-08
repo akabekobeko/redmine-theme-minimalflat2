@@ -1,8 +1,8 @@
 version: "3"
 services:
   redmine:
-    container_name: redmine
-    image: redmine:4.1.0-passenger
+    container_name: redmine_minimalflat2
+    image: redmine:4.2.1-passenger
     restart: always
     ports:
       - 8080:3000
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./src/assets:/usr/src/redmine/public/themes/minimalflat2
   mysql:
-    container_name: mysql
+    container_name: mysql_minimalflat2
     image: mysql:5.7
     restart: always
     environment:
