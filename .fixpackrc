@@ -1,0 +1,56 @@
+{
+  "sortToTop": [
+    "name",
+    "description",
+    "version",
+    "author",
+    "license",
+    "private",
+    "engines",
+    "os",
+    "cpu",
+    "main",
+    "bin",
+    "files",
+    "keywords",
+    "repository",
+    "homepage",
+    "bugs",
+    "man",
+    "directories",
+    "config",
+    "publishConfig",
+    "types",
+    "husky",
+    "lint-staged",
+    "scripts",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "bundledDependencies",
+    "optionalDependencies"
+  ],
+  "required": [
+    "name",
+    "version"
+  ],
+  "warn": [
+    "description",
+    "keywords",
+    "homepage",
+    "bugs",
+    "license",
+    "author",
+    "main",
+    "repository"
+  ],
+  "sortedSubItems": [
+    "files",
+    "directories",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "bundledDependencies",
+    "optionalDependencies"
+  ]
+}

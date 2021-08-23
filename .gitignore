@@ -72,3 +72,4 @@ package-lock.json
 *.zip
 !.gitignore
 !.prettierignore
+!.fixpackrc
