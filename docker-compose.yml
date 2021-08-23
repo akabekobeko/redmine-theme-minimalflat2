@@ -2,7 +2,7 @@ version: "3"
 services:
   redmine:
     container_name: redmine_minimalflat2
-    image: redmine:4.2.1-passenger
+    image: redmine:4.2.2-passenger
     restart: always
     ports:
       - 8080:3000
