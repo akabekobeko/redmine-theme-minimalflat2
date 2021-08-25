@@ -391,6 +391,10 @@
   @include icon($icon_file_zip, $color_green)
 }
 
+.icon-copy-link:before {
+  @include icon($icon_file_text, $color_green)
+}
+
 // Override the default icon images padding
 .icon {
   &.icon-add,
@@ -487,7 +491,8 @@
   &.icon-file.image-tiff,
   &.icon-file.application-pdf,
   &.icon-file.application-zip,
-  &.icon-file.application-gzip {
+  &.icon-file.application-gzip,
+  &.icon-copy-link {
     padding: 0;
   }
 }
@@ -587,7 +592,8 @@
   &.icon-file.image-tiff,
   &.icon-file.application-pdf,
   &.icon-file.application-zip,
-  &.icon-file.application-gzip {
+  &.icon-file.application-gzip,
+  &.icon-copy-link {
     width: 1.3em;
     height: 1.3em;
     padding: 0;
