@@ -28,7 +28,7 @@
     "build": "npm-run-all -p build:*",
     "watch:css1": "sass ./src/scss/App.scss ./src/assets/stylesheets/application.css -w",
     "watch:css2": "sass ./src/scss/Responsive.scss ./src/assets/stylesheets/responsive.css -w",
-    "watch": "npm-run-all -s build:css1 build:css2 -p watch:*",
+    "watch": "npm-run-all -p watch:*",
     "release:clean": "cross-conf-env rimraf ./npm_package_name",
     "release:mkdir": "cross-conf-env mkdirp npm_package_name/stylesheets",
     "release:css1": "cross-conf-env sass ./src/scss/App.scss ./npm_package_name/stylesheets/application.css -s compressed --no-source-map",
