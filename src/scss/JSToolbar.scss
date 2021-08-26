@@ -30,7 +30,23 @@
   color: transparent;
 }
 
+///////////////////////////////////////////////////////////////////////////////
 // Overwrite only default buttons and menus
+///////////////////////////////////////////////////////////////////////////////
+
+#content .jstTabs.tabs ul {
+  border-bottom: none !important;
+  height: 2em;
+}
+
+#content .jstTabs.tabs li {
+  height: 1.5rem !important;
+}
+
+.jstElements button {
+  opacity: 1 !important;
+}
+
 .jstElements {
   .jstb_strong {
     @include jstb_button_style();
@@ -319,6 +335,25 @@
       }
     }
   }
+
+  .jstb_table {
+    @include jstb_button_style();
+
+   &:hover {
+     opacity: .7;
+   }
+
+   span {
+     @include jstb_button_span_style();
+
+     &:before {
+       @include iconbase();
+       @include icon($icon_calendar, $color_white);
+       margin-right: 0;
+     }
+   }
+ }
+
 
   .jstb_help {
      @include jstb_button_style();

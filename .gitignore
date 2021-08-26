@@ -63,8 +63,7 @@ typings/
 # My Settings
 minimalflat2/
 samples/
-application.css
-responsive.css
+src/assets/stylesheets/*.css
 package-lock.json
 .*
 *.map
