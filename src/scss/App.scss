@@ -1770,17 +1770,23 @@ div.journal h4 img.gravatar {
 
 #history .tab-content {
   padding: .5em;
-  border-radius: .2em;
-  background-color: $color_gray_light_b;
+  border-radius: 0 0 .2em .2em / 0 0 .2em .2em;
+  border-left: solid 1px $color_gray_light_a;
+  border-right: solid 1px $color_gray_light_a;
+  border-bottom: solid 1px $color_gray_light_a;
 }
 h4.note-header {
   margin-top: 0;
+  border-bottom: solid 1px $color_gray_light_a;
 }
 #history div:target h4.note-header {
-  background-color:$color_blue_light;
+  border-bottom: double 4px $color_gray_light_a;
 }
 #history p.nodata {
   display: none;
+}
+#content #history .tabs {
+  margin-bottom: 0;
 }
 
 div#activity dl, #search-results {
