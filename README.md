@@ -1,6 +1,6 @@
 # minimalflat2
 
-![Redmine](https://img.shields.io/badge/Redmine-4.1-brightgreen)
+![Redmine](https://img.shields.io/badge/Redmine-4.2-brightgreen)
 
 Minimal and flat design theme for Redmine.
 
