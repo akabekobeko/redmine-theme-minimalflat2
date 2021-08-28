@@ -292,7 +292,11 @@
 }
 
 .icon-bookmark:before {
-  @include icon($icon_bookmark, $color_blue)
+  @include icon($icon_fav, $color_blue)
+}
+
+.icon-bookmark-off:before {
+  @include icon($icon_fav_off, $color_blue)
 }
 
 .icon-sorted-asc:before {
