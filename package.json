@@ -39,9 +39,6 @@
     "release:archive": "cross-conf-env bestzip npm_package_name-npm_package_version.zip ./npm_package_name",
     "release": "npm-run-all -s release:clean release:mkdir release:copy-* release:css* release:archive"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
-  },
   "devDependencies": {
     "bestzip": "^2.2.0",
     "cpx": "^1.5.0",
