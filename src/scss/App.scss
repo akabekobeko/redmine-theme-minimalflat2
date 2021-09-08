@@ -3523,39 +3523,39 @@ td.gantt_selected_column .gantt_hdr,.gantt_selected_column_container {
 /***** Badges *****/
 .badge {
   position:relative;
-  font-weight:bold;
-  font-size: 10px;
-  bottom: 2px;
-  padding: 1px 3px;
-  margin-right: 2px;
-  margin-left: 2px;
-  border-radius: 2px;
+  bottom: .2em;
+  padding: .1em .3em;
+  margin-right: .2em;
+  margin-left: .2em;
+  border-radius: .2em;
   text-transform: uppercase;
   text-decoration: none;
 }
 .badge-private {
-  background: #d22;
+  background: $color_red_dark;
   color: $color_white;
-  order: 1px solid #d22;
+  border: 1px solid $color_red_dark;
 }
 .badge-count {
-  background:#9DB9D5;
+  background: $color_gray;
   color: $color_white;
+  border: 1px solid $color_gray;
 }
 .badge-status-open {
-  color: #205D86;
-  border: 1px solid #205D86;
+  color: $color_blue_dark;
+  border: 1px solid $color_blue_dark;
 }
 .badge-status-locked {
-  color: #696969;
-  border: 1px solid #696969;
+  color: $color_gray_dark;
+  border: 1px solid $color_gray_dark;
 }
 .badge-status-closed {
-  color: #1D781D;
-  border: 1px solid #1D781D;
+  color: $color_green_dark;
+  border: 1px solid $color_green_dark;
 }
 .badge-issues-count {
-  background: #EEEEEE;
+  background: $color_gray_light_b;
+  border: 1px solid $color_gray_light_b;
 }
 
 /***** Tooltips *****/
