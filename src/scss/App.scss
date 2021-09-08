@@ -1823,12 +1823,12 @@ div#activity dt.icon {
   background-position: 0 10px !important;
 }
 div#activity h3 {
-  padding: 5px;
-  background-color: #eeeeee;
+  padding: .3em;
+  border-radius: .2em;
+  background-color: $color_gray_light_b;
 }
 div#activity dt {
-  padding-top: 10px;
-  border-top: 1px solid #eeeeee;
+  padding-top: .5em;
 }
 div#activity dl dt:first-child {
   border: 0px;
