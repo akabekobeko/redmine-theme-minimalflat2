@@ -1,4 +1,12 @@
-# ChangeLog
+# Change Log
+
+## v1.8.1
+
+### Features
+
+- Stayling issue state badge [#173](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/173)
+- Styling activity header [#172](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/172)
+- Delete `normalize.css` [#170](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/170)
 
 ## v1.8.0
 
