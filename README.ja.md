@@ -63,16 +63,16 @@ $ npm watch
 
 このモードを中断させるには <kbd>Ctrl</kbd> + <kbd>C</kbd> を押してください。
 
-### docker-compose
+### docker compose
 
 テーマを Redmine 上で動作確認する場合は以下を実行してください。
 
-1. `docker-compose up -d`
+1. `docker compose up -d`
 2. Web ブラウザーで http://localhost:8080/ にアクセス
 3. Redmine に管理者としてログイン
 4. 管理画面からテーマとして `minimalflat2` を選択
 
-停止コマンドは `docker-compose stop` です。
+停止コマンドは `docker compose stop` です。
 
 ## ライブラリ
 

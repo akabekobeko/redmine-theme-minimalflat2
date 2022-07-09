@@ -60,14 +60,14 @@ $ npm watch
 
 Stop is <kbd>Ctrl</kbd> + <kbd> C </kbd>.
 
-### docker-compose
+### docker compose
 
-1. `docker-compose up -d`
+1. `docker compose up -d`
 2. Access to http://localhost:8080/ on web browser
 3. Sign in to Redmine as an administrator
 4. Select `mytheme` as the theme from the administration screen.
 
-Stop is `docker-compose stop`.
+Stop is `docker compose stop`.
 
 ## Libraries
 
