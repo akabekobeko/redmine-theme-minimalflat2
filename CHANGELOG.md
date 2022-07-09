@@ -1,5 +1,11 @@
 # Change Log
 
+## v1.9.0
+
+### Features
+
+- Support Redmine v5.0.2 [#179](https://github.com/akabekobeko/redmine-theme-minimalflat2/issues/179)
+
 ## v1.8.1
 
 ### Features

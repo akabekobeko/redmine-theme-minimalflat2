@@ -44,13 +44,10 @@ li {
 }
 
 /***** Layout *****/
-div#wrapper, div#wrapper2, div#wrapper3 {
-  min-height: inherit;
-}
 #wrapper {
+  min-height: inherit;
+  background: $color_page_back;
   overflow: hidden;
-}
-#wrapper3 {
   display: flex;
   flex-direction: column;
 }
@@ -399,18 +396,6 @@ div#wrapper, div#wrapper2, div#wrapper3 {
   padding: .5em 1em;
   overflow-x: auto;
 }
-* html #content {
-  width: 75%;
-  padding-left: 0;
-  margin-top: 0;
-  padding: 6px 10px 10px 10px;
-}
-html > body #content {
-  min-height: 600px;
-}
-* html body #content {
-  height: 600px; // IE
-}
 
 #main.nosidebar #sidebar {
   display: none;
@@ -456,10 +441,6 @@ html > body #content {
 #login-form a.lost_password {
   float: right;
   font-weight: normal;
-}
-#login-form input#openid_url {
-  background: $color_white url(../images/openid-bg.gif) no-repeat 4px 50%;
-  padding-left: 24px !important;
 }
 #login-form h3 {
   text-align: center;
@@ -522,6 +503,11 @@ a.project.closed, a.project.closed:link, a.project.closed:visited {
 a.user.locked, a.user.locked:link, a.user.locked:visited {
   color: $color_gray;
 }
+a.user.user-mention {
+  background-color: #DDEEFF;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+}
 
 #sidebar a.selected {
   line-height: 1.7em;
@@ -531,6 +517,9 @@ a.user.locked, a.user.locked:link, a.user.locked:visited {
 }
 #sidebar a.selected:hover {
   text-decoration: none;
+}
+#sidebar .query.default {
+  font-weight: bold;
 }
 #admin-menu a {
   line-height: 1.7em;
@@ -553,10 +542,6 @@ a.user.locked, a.user.locked:link, a.user.locked:visited {
     padding: 0;
   }
 }
-// #admin-menu a.selected {
-//  padding-left: 20px !important;
-//  background-position: 2px 40%;
-// }
 
 a.collapsible:before {
   @include iconbase();
@@ -700,6 +685,7 @@ div + .drdn-items {
   background-color: $color_blue_dark;
   color: $color_white !important;
 }
+
 /***** Tables *****/
 table.list, .table-list {
   border: 1px solid $color_gray_light_a;
@@ -715,6 +701,9 @@ table.list th, .table-list-header {
   padding: .3em .5em;
   white-space: nowrap;
   font-weight: normal;
+}
+table.list th.whitespace-normal {
+  white-space: normal;
 }
 table.list td {
   border: 1px solid $color_gray_light_a;
@@ -1061,6 +1050,11 @@ table.files tr.file td.digest {
 
 table.members td.roles, table.memberships td.roles {
   width: 45%;
+}
+table.members td.buttons {
+  text-align: left;
+  width: 1px;
+  white-space: nowrap;
 }
 
 table.members {
@@ -1487,6 +1481,10 @@ textarea:focus, textarea:active {
   outline: none;
 }
 
+input:placeholder-shown {
+  text-overflow: ellipsis;
+}
+
 select[multiple=multiple] {
   background: $color_white;
   padding-right: initial;
@@ -1570,6 +1568,7 @@ p.footnote {
 
 div.issue div.subject div div {
   padding-left: 16px;
+  word-break: break-word;
 }
 div.issue div.subject p {
   margin: 0;
@@ -1613,6 +1612,13 @@ div.issue .attribute .value {
   overflow: auto;
   text-overflow: ellipsis;
 }
+div.issue .attribute.string_cf .value .wiki p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.issue .attribute.text_cf .value .wiki p:first-of-type {
+  margin-top: 0;
+}
 div.issue.overdue .due-date .value {
   color: $color_red;
 }
@@ -1626,19 +1632,24 @@ body.controller-issues h2.inline-flex {
 #issue_tree td.checkbox, #relations td.checkbox {
   display: none;
 }
-#issue_tree td.subject, #relations td.subject {
-  width: 50%;
-}
 #issue_tree td.buttons, #relations td.buttons {
   padding:0;
 }
-#issue_tree .issues-stat {
-  font-size: 80%;
+#issue_tree .issues-stat, #relations .issues-stat {
+  font-size: 80%
 }
-#issue_tree .issues-stat .badge {
+#issue_tree .issues-stat .badge, #relations .issues-stat .badge {
   bottom: initial;
 }
-
+#issue_tree .issue > td, #relations .issue > td, #issue_tree .issue .user {
+  text-overflow: ellipsis; /* if text exceeds its space, add ... */
+  overflow: hidden;
+}
+#issue_tree .issue > td.subject, #relations .issue > td.subject {
+  width: 100%; /* let subject have one full width column */
+  word-break: break-word; /* break word if subject is too long */
+  padding-right: 25px; /* this is the spaces that .buttons uses next to subject */
+}
 #trackers_description {
   display:none;
 }
@@ -1881,6 +1892,10 @@ div#roadmap h2, div#roadmap h3 {
 }
 body.controller-versions.action-show div#roadmap .related-issues {
   width: 70%;
+}
+
+div#roadmap .version-article {
+  padding-bottom: 12px;
 }
 
 div#version-summary {
@@ -2149,7 +2164,7 @@ ul.properties li span {
   margin-bottom: 1.2em;
   position: relative;
 }
-#user_login, #user_firstname, #user_lastname, #user_mail, #my_account_form select, #user_form select, #user_identity_url {
+#user_login, #user_firstname, #user_lastname, #user_mail, #my_account_form select, #user_form select {
   width: 90%;
 }
 
@@ -2244,7 +2259,7 @@ span.pagination {
 span.pagination > span {
   white-space: nowrap;
 }
-.controller-attachments.action-show span.pagination {
+.controller-attachments.action-show span.pagination, .controller-repositories.action-entry span.pagination {
   display: block;
   margin-top: 1.2em;
 }
@@ -2889,6 +2904,12 @@ img.ui-datepicker-trigger {
   margin-left: 4px;
 }
 
+/***** Documents *****/
+
+#document-list .document-group {
+  margin-bottom: 1rem;
+}
+
 /***** Progress bar *****/
 table.progress {
   border-collapse: collapse;
@@ -3214,6 +3235,14 @@ h1:hover a.wiki-anchor, h2:hover a.wiki-anchor, h3:hover a.wiki-anchor, h4:hover
 div.wiki img {
   vertical-align: middle;
   max-width: 100%;
+}
+
+div.wiki .task-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+div.wiki .task-list input.task-list-item-checkbox {
+  height: initial;
 }
 
 .wiki {
@@ -3562,9 +3591,10 @@ td.gantt_selected_column .gantt_hdr,.gantt_selected_column_container {
 .ui-tooltip {
   background: $color_text;
   color: $color_white;
-  border-radius: 3px;
+  border-radius: .2rem;
   border: 0;
-  box-shadow: none
+  box-shadow: none;
+  white-space: pre-wrap;
 }
 
 /***** Icons *****/
@@ -3866,7 +3896,7 @@ code.syntaxhl { background-color: $color_syntax_back; color: $color_white; }
   max-width: 100%;
 }
 
-.filecontent-container > .filecontent.wiki {
+.filecontent.wiki {
   position: relative;
   padding: 1em;
   border: 1px solid $color_gray_light_b;
