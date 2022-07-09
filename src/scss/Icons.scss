@@ -283,7 +283,7 @@
   @include icon($icon_updown, $color_green)
 }
 
-.icon-expended:before {
+.icon-expanded:before {
   @include icon($icon_chevron_down, $color_gray)
 }
 
@@ -469,7 +469,7 @@
   &.icon-shared,
   &.icon_actions,
   &.icon-sort-handle,
-  &.icon-expended,
+  &.icon-expanded,
   &.icon-collapsed,
   &.icon-bookmark,
   &.icon-bookmark-off,
@@ -569,7 +569,7 @@
   &.icon-shared,
   &.icon-actions,
   &.icon-sort-handle,
-  &.icon-expended,
+  &.icon-expanded,
   &.icon-collapsed,
   &.icon-bookmark,
   &.icon-bookmark-off,

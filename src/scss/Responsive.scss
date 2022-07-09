@@ -79,9 +79,6 @@
     position: relative;
     overflow-x: hidden; // hide horizontal overflow
     max-width: 100%;
-  }
-
-  #wrapper,   #wrapper2 {
     margin: 0;
   }
 
@@ -679,7 +676,7 @@
     content: '\00D7'; // close glyph
   }
 
-  .flyout-is-active #wrapper2 {
+  .flyout-is-active #main {
      // only relevant for devices with cursor when flyout it active, in order to show,
      // that whole wrapper content is clickable and closes flyout menu
     cursor: pointer;
@@ -931,17 +928,6 @@
     float: left;
     text-align: left;
     padding-right: 5px;
-  }
-
-  #issue_tree .issue > td, #relations .issue > td, #issue_tree .issue .user {
-    text-overflow: ellipsis; // if text exceeds its space, add ...
-    overflow: hidden;
-  }
-
-  #issue_tree .issue > td.subject, #relations .issue > td.subject {
-    width: 100%; // let subject have one full width column
-    word-break: break-word; //break word if subject is too long
-    padding-right: 25px; // this is the spaces that .buttons uses next to subject
   }
 
   #issue_tree .issue > td:not(.subject), #relations .issue > td:not(.subject) {

@@ -1,6 +1,6 @@
 # minimalflat2
 
-![Redmine](https://img.shields.io/badge/Redmine-4.2-brightgreen)
+![Redmine](https://img.shields.io/badge/Redmine-5.0.2-brightgreen)
 
 簡素でフラットな外観の Redmine テーマです。
 
